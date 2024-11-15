@@ -3,7 +3,7 @@ import {
     Component,
     ViewEncapsulation,
 } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'usuarios',
@@ -17,5 +17,14 @@ export class InventoryComponent {
     /**
      * Constructor
      */
-    constructor() {}
+    constructor(
+        private router: Router,
+        private route: ActivatedRoute
+    ) {
+       
+    }
+    crearUsuario() {
+        this.router.navigate(['crear-editar'], { relativeTo: this.route });
+    }
 }
+

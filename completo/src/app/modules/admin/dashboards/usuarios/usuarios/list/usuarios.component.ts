@@ -36,6 +36,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSort, MatSortModule } from '@angular/material/sort';
+import { ActivatedRoute, Router } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
 import { InventoryService } from 'app/modules/admin/dashboards/usuarios/usuarios.service';
@@ -61,7 +62,7 @@ import {
     selector: 'usuarios-list',
     templateUrl: './usuarios.component.html',
     styles: [
-        /* language=SCSS */
+        /* language=SCSS */ // Table sizes 
         `
             .inventory-grid {
                 grid-template-columns: 48px auto 40px;
@@ -134,8 +135,14 @@ export class InventoryListComponent
         private _changeDetectorRef: ChangeDetectorRef,
         private _fuseConfirmationService: FuseConfirmationService,
         private _formBuilder: UntypedFormBuilder,
-        private _inventoryService: InventoryService
+        private _inventoryService: InventoryService,
+        private router: Router,
+        private route: ActivatedRoute
     ) {}
+   
+    crearUsuario() {
+        this.router.navigate(['crear'], { relativeTo: this.route });
+    }
 
     // -----------------------------------------------------------------------------------------------------
     // @ Lifecycle hooks
@@ -148,11 +155,12 @@ export class InventoryListComponent
         // Create the selected product form
         this.selectedProductForm = this._formBuilder.group({
             id: [''],
+            ced:[''],
             name: ['', [Validators.required]],
             tel: [''],
-            cel: [''],
+            active:[''],
             email: [''],
-            thumbnail: [''],
+            
         });
 
         // Get the brands

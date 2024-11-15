@@ -37,7 +37,7 @@
                 class="ml-4"
                 mat-flat-button
                 [color]="'primary'"
-                (click)="createProduct()"
+                (click)="crearUsuario()"
             >
                 <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
                 <span class="ml-2 mr-1">Añadir</span>
@@ -68,7 +68,7 @@
                                 No.
                             </div>
                             <div class="hidden lg:block" [mat-sort-header]="'name'">Nombre</div>
-                            <div class="hidden lg:block" [mat-sort-header]="'name'">Cédula</div>
+                            <div class="hidden lg:block" [mat-sort-header]="'ced'">Cédula</div>
                             <div
                                 class="hidden sm:block"
                                 [mat-sort-header]="'email'"
@@ -119,7 +119,7 @@
                                     </div>
                                     <!-- Name -->
                                     <div class="truncate">
-                                        {{ product.name }}
+                                        {{ product.ced }}
                                     </div>
 
                                     <!-- email -->

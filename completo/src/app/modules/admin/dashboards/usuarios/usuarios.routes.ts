@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { InventoryComponent } from 'app/modules/admin/dashboards/usuarios/usuarios.component';
 import { InventoryService } from 'app/modules/admin/dashboards/usuarios/usuarios.service';
 import { InventoryListComponent } from 'app/modules/admin/dashboards/usuarios/usuarios/list/usuarios.component';
+import { UsuariosCrearComponent } from './usuarios-crear/usuarios-crear.component';
 
 export default [
     {
@@ -24,7 +25,13 @@ export default [
                     tags: () => inject(InventoryService).getTags(),
                     vendors: () => inject(InventoryService).getVendors(),
                 },
+                
+                
             },
+            {
+                path: 'crear',
+                component: UsuariosCrearComponent
+            }
         ],
     },
 ] as Routes;

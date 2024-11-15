@@ -1,0 +1,43 @@
+<div class="flex min-w-0 flex-auto flex-col">
+    <!-- Main -->
+    <div class="flex-auto p-6 sm:p-10">
+        <!-- CONTENT GOES HERE -->
+        <div class="container">
+            <h1 class="text-4xl font-bold pb-3 text-contrast">Jo</h1> 
+            <h3 class="pb-3 text-contrast">Campos con símbolo (*) son obligatorios </h3>
+            <mat-accordion multi>
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="font-bold text-black">Datos Generales de Ingreso</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    
+                    <div class="container">
+                        <form class="mt-8" [formGroup]="fichaIngresoGeneralForm"> 
+                            <div class="grid gap-4 grid-cols-1 md:grid-cols-8">
+                                <!-- Fecha input -->
+                                <mat-form-field class="w-full md:col-span-2">
+                                    <mat-label class="font-bold text-black">Fecha de ingreso: </mat-label>
+                                    <input 
+                                        type="date"
+                                        matInput 
+                                        [formControlName]="'fechaIngreso'" 
+                                        readonly="true"/>
+                                </mat-form-field>
+                            
+                                <!-- Hora input -->
+                                <mat-form-field class="w-full md:col-span-1">
+                                    <mat-label class="font-bold text-black">Hora de ingreso: </mat-label>
+                                    <input 
+                                        type="time"
+                                        matInput 
+                                        [formControlName]="'horaIngreso'" 
+                                        readonly="true"/>
+                                </mat-form-field>
+                            </div>
+                        </form>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>
