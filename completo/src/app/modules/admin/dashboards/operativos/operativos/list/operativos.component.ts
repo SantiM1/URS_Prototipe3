@@ -62,8 +62,8 @@ import {
 } from 'rxjs';
 
 @Component({
-    selector: 'usuarios-list',
-    templateUrl: './usuarios.component.html',
+    selector: 'operativos-list',
+    templateUrl: './operativos.component.html',
     styles: [
         /* language=SCSS */ // Table sizes 
         `

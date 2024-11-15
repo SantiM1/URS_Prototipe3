@@ -86,6 +86,7 @@ export const appRoutes: Route[] = [
                 {path: 'finance', loadChildren: () => import('app/modules/admin/dashboards/finance/finance.routes')},
                 {path: 'crypto', loadChildren: () => import('app/modules/admin/dashboards/crypto/crypto.routes')},
                 {path: 'usuarios', loadChildren: () => import('app/modules/admin/dashboards/usuarios/usuarios.routes')},
+                {path: 'operativos', loadChildren: () => import('app/modules/admin/dashboards/operativos/operativos.routes')},
             ]},
 
             // Apps

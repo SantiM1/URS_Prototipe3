@@ -14,7 +14,7 @@
     <ng-container fuseVerticalNavigationContentHeader>
         <!-- Logo -->
         <div class="mb-4 mt-3 flex h-20 items-center justify-center">
-            <img class="w-10" src="images/logo/logo.svg" alt="Logo image" />
+            <img class="w-20" src="images/logo/logo-republica-del-ecuador.png" alt="Logo image" />
         </div>
     </ng-container>
 </fuse-vertical-navigation>
@@ -40,7 +40,7 @@
             <button
                 class="lg:hidden"
                 mat-icon-button
-                (click)="quickChat.toggle()"
+                
             >
                 <mat-icon
                     [svgIcon]="'heroicons_outline:chat-bubble-left-right'"
@@ -64,10 +64,10 @@
         class="bg-card relative z-49 flex h-14 w-full flex-0 items-center justify-start border-t px-4 dark:bg-transparent md:px-6 print:hidden"
     >
         <span class="text-secondary font-medium"
-            >Fuse &copy; {{ currentYear }}</span
+            >URS &copy; {{ currentYear }}</span
         >
     </div>
 </div>
 
-<!-- Quick chat -->
-<quick-chat #quickChat="quickChat"></quick-chat>
+<!-- Quick chat
+<quick-chat #quickChat="quickChat"></quick-chat> -->

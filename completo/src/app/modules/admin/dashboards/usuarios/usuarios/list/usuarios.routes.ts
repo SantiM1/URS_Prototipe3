@@ -5,11 +5,7 @@ import { UsuariosCrearComponent } from '../../usuarios-crear/usuarios-crear.comp
 
 
 export default [
-    {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'us',
-    },
+    
     {
         path: '',
         component: InventoryComponent,

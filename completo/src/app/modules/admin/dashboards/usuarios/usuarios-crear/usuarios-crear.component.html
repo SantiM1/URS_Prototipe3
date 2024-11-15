@@ -3,41 +3,88 @@
     <div class="flex-auto p-6 sm:p-10">
         <!-- CONTENT GOES HERE -->
         <div class="container">
-            <h1 class="text-4xl font-bold pb-3 text-contrast">Jo</h1> 
+            <h1 class="text-4xl font-bold pb-3 text-contrast">Crear Usuario</h1> 
             <h3 class="pb-3 text-contrast">Campos con símbolo (*) son obligatorios </h3>
-            <mat-accordion multi>
-                <mat-expansion-panel [expanded]="true">
+            <mat-expansion-panel [expanded]="true">
                     <mat-expansion-panel-header>
-                        <mat-panel-title class="font-bold text-black">Datos Generales de Ingreso</mat-panel-title>
+                        <mat-panel-title class="font-bold text-black">Datos Generales</mat-panel-title>
                     </mat-expansion-panel-header>
                     
                     <div class="container">
-                        <form class="mt-8" [formGroup]="fichaIngresoGeneralForm"> 
+                        <form class="mt-8"> 
                             <div class="grid gap-4 grid-cols-1 md:grid-cols-8">
-                                <!-- Fecha input -->
-                                <mat-form-field class="w-full md:col-span-2">
-                                    <mat-label class="font-bold text-black">Fecha de ingreso: </mat-label>
-                                    <input 
-                                        type="date"
-                                        matInput 
-                                        [formControlName]="'fechaIngreso'" 
-                                        readonly="true"/>
-                                </mat-form-field>
-                            
-                                <!-- Hora input -->
-                                <mat-form-field class="w-full md:col-span-1">
-                                    <mat-label class="font-bold text-black">Hora de ingreso: </mat-label>
-                                    <input 
-                                        type="time"
-                                        matInput 
-                                        [formControlName]="'horaIngreso'" 
-                                        readonly="true"/>
-                                </mat-form-field>
+                                <!-- Name -->
+                                    <mat-form-field class="col-span-2">
+                                        <mat-label>Nombre</mat-label>
+                                        <input
+                                            matInput
+                                            
+                                        />
+                                    </mat-form-field>
+                                    <!-- cedula -->
+                                    <mat-form-field class="col-span-1">
+                                        <mat-label>Cédula</mat-label>
+                                        <input
+                                            matInput
+                                            
+                                        />
+                                    </mat-form-field>
+                                    <!-- Email -->
+                                    <mat-form-field class="col-span-2">
+                                        <mat-label>Correo Electrónico</mat-label>
+                                        <input
+                                            matInput
+                                            
+                                        />
+                                    </mat-form-field>
+                                    
+
+                        
+
+                                    <!--Telephone and Celular-->
+                                    <mat-form-field class="col-span-1">
+                                            <mat-label>Teléfono/Celular</mat-label>
+                                            <input
+                                                matInput
+                                               
+                                            />
+                                        </mat-form-field>
+                                        <mat-slide-toggle class="col-span-1"
+                                        
+                                        [color]="'primary'"
+                                    >
+                                        Activo?
+                                             
+                                    </mat-slide-toggle>
+                                    
+                                    
                             </div>
+                                    <div
+                                    class="flex w-full items-center justify-end border-t px-8 py-4"
+                                    >
+                                    <button
+                                        class="-ml-4"
+                                        mat-button
+                                        [color]="'warn'"
+                                        (click) = "back()"
+                                    >
+                                        Cancelar
+                                    </button>
+                                    <div class="flex items-center">
+                                        
+                                        <button
+                                            mat-flat-button
+                                            [color]="'primary'"
+                                            (click) = "back()"
+                                        >
+                                            Crear
+                                        </button>
+                                    </div>
+                                </div>
                         </form>
                     </div>
                 </mat-expansion-panel>
-            </mat-accordion>
+           
         </div>
     </div>
 </div>

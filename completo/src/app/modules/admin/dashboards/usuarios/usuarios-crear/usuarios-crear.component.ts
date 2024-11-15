@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { Location } from '@angular/common'
 import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,12 +15,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { FuseConfirmationService } from '@fuse/services/confirmation';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuarios-crear',
   standalone: true,
   imports: [MatTableModule,
-    CommonModule,
     MatTabsModule,
     MatExpansionModule,
     ReactiveFormsModule,
@@ -29,6 +31,7 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
     MatCheckboxModule,
     MatRadioModule,
     MatProgressSpinnerModule,
+    MatSlideToggleModule,
     MatSelectModule,
     MatDatepickerModule,
     MatBottomSheetModule,
@@ -36,8 +39,32 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
     MatFormFieldModule,
     MatIconModule,],
   templateUrl: './usuarios-crear.component.html',
-  styleUrl: './usuarios-crear.component.scss'
+  
 })
 export class UsuariosCrearComponent {
-
+  
+  constructor(
+    private _fuseConfirmationService: FuseConfirmationService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private location: Location,
+) {}
+  delete() {
+    // Open the confirmation dialog
+    const confirmation = this._fuseConfirmationService.open({
+        title: 'Borrar usuario',
+        message:
+            '¿Estás seguro que deseas borrar este usuario? Esta acción es permanente',
+        actions: {
+            confirm: {
+                label: 'Borrar',
+            },
+        },
+    });
+    this.router.navigate(['..'], { relativeTo: this.route });
+  }
+  
+back ():void{
+  this.router.navigate(['..'], { relativeTo: this.route });
+}
 }

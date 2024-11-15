@@ -3,6 +3,7 @@ import { FuseNavigationItem } from '@fuse/components/navigation';
 
 export const defaultNavigation: FuseNavigationItem[] = [
     {
+        //SidebarHere
         id: 'dashboards',
         title: 'Dashboards',
         subtitle: 'Unique dashboard designs',
@@ -15,6 +16,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 type: 'basic',
                 icon: 'heroicons_outline:user',
                 link: '/dashboards/usuarios',
+            },
+            {
+                id: 'dashboards.operativos',
+                title: 'Operativos',
+                type: 'basic',
+                icon: 'heroicons_outline:user',
+                link: '/dashboards/operativos',
             },
             {
                 id: 'dashboards.project',
