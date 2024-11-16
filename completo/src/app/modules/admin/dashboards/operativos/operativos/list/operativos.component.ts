@@ -42,7 +42,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseAlertService } from '@fuse/components/alert';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
-import { InventoryService } from 'app/modules/admin/dashboards/usuarios/usuarios.service';
+import { InventoryService } from 'app/modules/admin/dashboards/operativos/operativos.service';
 import {
     InventoryBrand,
     InventoryCategory,
@@ -50,7 +50,7 @@ import {
     InventoryProduct,
     InventoryTag,
     InventoryVendor,
-} from 'app/modules/admin/dashboards/usuarios/usuarios.types';
+} from 'app/modules/admin/dashboards/operativos/operativos.types';
 import {
     Observable,
     Subject,

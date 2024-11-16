@@ -5,27 +5,17 @@
         <!-- Drawer -->
         <mat-drawer class="sm:w-72 dark:bg-gray-900" [autoFocus]="false" [mode]="drawerMode" [opened]="drawerOpened"
             #drawer>
-
+<!--
             <div class="flex items-center justify-between m-8 mr-6 sm:my-10">
-                <!-- Title -->
-                <fuse-card class="flex items-center flex-col max-w-70 w-auto filter-article" *ngIf="this.fotografia">
-                    <div class="m-8">
-                        <div class="mt-4"> <strong>Identificación: </strong>
-                            {{ fichaIdentificacionDTO?.dni }}
-                        </div>
-                        <div class="mt-4"> <strong>Nombres y apellidos: </strong>
-                            {{fichaIdentificacionDTO?.nombres + " " + fichaIdentificacionDTO?.apellidoPaterno + " " + fichaIdentificacionDTO?.apellidoMaterno}}
-                        </div>
-                    </div>
-                </fuse-card>
+                
 
-                <!-- Close button -->
+                 Close button
                 <div class="lg:hidden">
                     <button mat-icon-button (click)="drawer.close()">
                         <mat-icon [svgIcon]="'heroicons_outline:x-mark'"></mat-icon>
                     </button>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Panel links -->
             <div class="flex flex-col divide-y border-t border-b">
