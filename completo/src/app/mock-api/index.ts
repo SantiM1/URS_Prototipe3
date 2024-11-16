@@ -22,6 +22,7 @@ import { ProjectMockApi } from 'app/mock-api/dashboards/project/api';
 import { ActivitiesMockApi } from 'app/mock-api/pages/activities/api';
 import { IconsMockApi } from 'app/mock-api/ui/icons/api';
 import { UsuariosMockApi } from './apps/usuarios/api';
+import { OperativosMockApi } from './apps/operativos/api';
 
 export const mockApiServices = [
     AcademyMockApi,
@@ -33,6 +34,7 @@ export const mockApiServices = [
     CryptoMockApi,
     ECommerceInventoryMockApi,
     UsuariosMockApi,
+    OperativosMockApi,
     FileManagerMockApi,
     FinanceMockApi,
     HelpCenterMockApi,

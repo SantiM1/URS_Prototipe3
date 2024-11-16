@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { FuseMockApiService, FuseMockApiUtils } from '@fuse/lib/mock-api';
 import {
 
-    operativos as operativosData,
+    products as productsData,
 
 } from 'app/mock-api/apps/operativos/data';
 import { assign, cloneDeep } from 'lodash-es';
@@ -10,7 +10,7 @@ import { assign, cloneDeep } from 'lodash-es';
 @Injectable({ providedIn: 'root' })
 export class OperativosMockApi {
 
-    private _operativos: any[] = operativosData;
+    private _products: any[] = productsData;
 
 
     /**
@@ -29,13 +29,12 @@ export class OperativosMockApi {
      * Register Mock API handlers
      */
     registerHandlers(): void {
-      
-      
+  
         // -----------------------------------------------------------------------------------------------------
         // @ Products - GET
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onGet('api/apps/operativos/operativos', 300)
+            .onGet('api/apps/operativos/products', 300)
             .reply(({ request }) => {
                 // Get available queries
                 const search = request.params.get('search');
@@ -44,12 +43,12 @@ export class OperativosMockApi {
                 const page = parseInt(request.params.get('page') ?? '1', 10);
                 const size = parseInt(request.params.get('size') ?? '10', 10);
 
-                // Clone the operativos
-                let operativos: any[] | null = cloneDeep(this._operativos);
+                // Clone the products
+                let products: any[] | null = cloneDeep(this._products);
 
-                // Sort the operativos
+                // Sort the products
                 if (sort === 'sku' || sort === 'name' || sort === 'active') {
-                    operativos.sort((a, b) => {
+                    products.sort((a, b) => {
                         const fieldA = a[sort].toString().toUpperCase();
                         const fieldB = b[sort].toString().toUpperCase();
                         return order === 'asc'
@@ -57,15 +56,15 @@ export class OperativosMockApi {
                             : fieldB.localeCompare(fieldA);
                     });
                 } else {
-                    operativos.sort((a, b) =>
+                    products.sort((a, b) =>
                         order === 'asc' ? a[sort] - b[sort] : b[sort] - a[sort]
                     );
                 }
 
                 // If search exists...
                 if (search) {
-                    // Filter the operativos
-                    operativos = operativos.filter(
+                    // Filter the products
+                    products = products.filter(
                         (contact) =>
                             contact.name &&
                             contact.name
@@ -75,32 +74,32 @@ export class OperativosMockApi {
                 }
 
                 // Paginate - Start
-                const operativosLength = operativos.length;
+                const productsLength = products.length;
 
                 // Calculate pagination details
                 const begin = page * size;
-                const end = Math.min(size * (page + 1), operativosLength);
-                const lastPage = Math.max(Math.ceil(operativosLength / size), 1);
+                const end = Math.min(size * (page + 1), productsLength);
+                const lastPage = Math.max(Math.ceil(productsLength / size), 1);
 
                 // Prepare the pagination object
                 let pagination = {};
 
                 // If the requested page number is bigger than
                 // the last possible page number, return null for
-                // operativos but also send the last possible page so
+                // products but also send the last possible page so
                 // the app can navigate to there
                 if (page > lastPage) {
-                    operativos = null;
+                    products = null;
                     pagination = {
                         lastPage,
                     };
                 } else {
                     // Paginate the results by size
-                    operativos = operativos.slice(begin, end);
+                    products = products.slice(begin, end);
 
                     // Prepare the pagination mock-api
                     pagination = {
-                        length: operativosLength,
+                        length: productsLength,
                         size: size,
                         page: page,
                         lastPage: lastPage,
@@ -113,7 +112,7 @@ export class OperativosMockApi {
                 return [
                     200,
                     {
-                        operativos,
+                        products,
                         pagination,
                     },
                 ];
@@ -123,28 +122,28 @@ export class OperativosMockApi {
         // @ Product - GET
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onGet('api/apps/operativos/operativo')
+            .onGet('api/apps/operativos/product')
             .reply(({ request }) => {
                 // Get the id from the params
                 const id = request.params.get('id');
 
-                // Clone the operativos
-                const operativos = cloneDeep(this._operativos);
+                // Clone the products
+                const products = cloneDeep(this._products);
 
-                // Find the operativo
-                const operativo = operativos.find((item) => item.id === id);
+                // Find the product
+                const product = products.find((item) => item.id === id);
 
                 // Return the response
-                return [200, operativo];
+                return [200, product];
             });
 
         // -----------------------------------------------------------------------------------------------------
         // @ Product - POST
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onPost('api/apps/operativos/operativo')
+            .onPost('api/apps/operativos/product')
             .reply(() => {
-                // Generate a new operativo
+                // Generate a new product
                 const newProduct = {
                     id: FuseMockApiUtils.guid(),
                     name: 'Un nuevo operativo',
@@ -155,8 +154,8 @@ export class OperativosMockApi {
                     thumbnail: 'images/avatars/male-16.jpg',
                 };
 
-                // Unshift the new operativo
-                this._operativos.unshift(newProduct);
+                // Unshift the new product
+                this._products.unshift(newProduct);
 
                 // Return the response
                 return [200, newProduct];
@@ -166,23 +165,23 @@ export class OperativosMockApi {
         // @ Product - PATCH
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onPatch('api/apps/operativos/operativo')
+            .onPatch('api/apps/operativos/product')
             .reply(({ request }) => {
-                // Get the id and operativo
+                // Get the id and product
                 const id = request.body.id;
-                const operativo = cloneDeep(request.body.operativo);
+                const product = cloneDeep(request.body.product);
 
-                // Prepare the updated operativo
+                // Prepare the updated product
                 let updatedProduct = null;
 
-                // Find the operativo and update it
-                this._operativos.forEach((item, index, operativos) => {
+                // Find the product and update it
+                this._products.forEach((item, index, products) => {
                     if (item.id === id) {
-                        // Update the operativo
-                        operativos[index] = assign({}, operativos[index], operativo);
+                        // Update the product
+                        products[index] = assign({}, products[index], product);
 
-                        // Store the updated operativo
-                        updatedProduct = operativos[index];
+                        // Store the updated product
+                        updatedProduct = products[index];
                     }
                 });
 
@@ -194,21 +193,20 @@ export class OperativosMockApi {
         // @ Product - DELETE
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onDelete('api/apps/operativos/operativo')
+            .onDelete('api/apps/operativos/product')
             .reply(({ request }) => {
                 // Get the id
                 const id = request.params.get('id');
 
-                // Find the operativo and delete it
-                this._operativos.forEach((item, index) => {
+                // Find the product and delete it
+                this._products.forEach((item, index) => {
                     if (item.id === id) {
-                        this._operativos.splice(index, 1);
+                        this._products.splice(index, 1);
                     }
                 });
 
                 // Return the response
                 return [200, true];
             });
-
         }
 }

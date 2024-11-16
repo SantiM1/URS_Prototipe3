@@ -88,7 +88,7 @@ export class OperativoService {
             .get<{
                 pagination: OperativoPagination;
                 products: OperativoProduct[];
-            }>('api/apps/usuarios/products', {
+            }>('api/apps/operativos/products', {
                 params: {
                     page: '' + page,
                     size: '' + size,
@@ -142,7 +142,7 @@ export class OperativoService {
             switchMap((products) =>
                 this._httpClient
                     .post<OperativoProduct>(
-                        'api/apps/usuarios/product',
+                        'api/apps/operativos/product',
                         {}
                     )
                     .pipe(
@@ -173,7 +173,7 @@ export class OperativoService {
             switchMap((products) =>
                 this._httpClient
                     .patch<OperativoProduct>(
-                        'api/apps/usuarios/product',
+                        'api/apps/operativos/product',
                         {
                             id,
                             product,
@@ -223,7 +223,7 @@ export class OperativoService {
             take(1),
             switchMap((products) =>
                 this._httpClient
-                    .delete('api/apps/usuarios/product', {
+                    .delete('api/apps/operativos/product', {
                         params: { id },
                     })
                     .pipe(
