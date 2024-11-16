@@ -1,4 +1,4 @@
-export interface InventoryProduct {
+export interface OperativoProduct {
     id: string;
     name: string;
     ced: string;
@@ -11,7 +11,7 @@ export interface InventoryProduct {
  
 }
 
-export interface InventoryPagination {
+export interface OperativoPagination {
     length: number;
     size: number;
     page: number;
@@ -20,26 +20,4 @@ export interface InventoryPagination {
     endIndex: number;
 }
 
-export interface InventoryCategory {
-    id: string;
-    parentId: string;
-    name: string;
-    slug: string;
-}
 
-export interface InventoryBrand {
-    id: string;
-    name: string;
-    slug: string;
-}
-
-export interface InventoryTag {
-    id?: string;
-    title?: string;
-}
-
-export interface InventoryVendor {
-    id: string;
-    name: string;
-    slug: string;
-}

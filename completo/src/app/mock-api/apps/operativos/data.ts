@@ -1,5 +1,5 @@
 
-export const products = [
+export const operativos = [
     {
         id: 1,
         name: 'Alejandro David García López',

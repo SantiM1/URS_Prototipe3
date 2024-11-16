@@ -42,14 +42,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseAlertService } from '@fuse/components/alert';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
-import { InventoryService } from 'app/modules/admin/dashboards/operativos/operativos.service';
+import { OperativoService } from 'app/modules/admin/dashboards/operativos/operativos.service';
 import {
-    InventoryBrand,
-    InventoryCategory,
-    InventoryPagination,
-    InventoryProduct,
-    InventoryTag,
-    InventoryVendor,
+    OperativoPagination,
+    OperativoProduct,
 } from 'app/modules/admin/dashboards/operativos/operativos.types';
 import {
     Observable,
@@ -67,7 +63,7 @@ import {
     styles: [
         /* language=SCSS */ // Table sizes 
         `
-            .inventory-grid {
+            .operativo-grid {
                 grid-template-columns: 48px auto 40px;
 
                 @screen sm {
@@ -111,26 +107,20 @@ import {
         CurrencyPipe,
     ],
 })
-export class InventoryListComponent
+export class OperativoListComponent
     implements OnInit, AfterViewInit, OnDestroy
 {
     @ViewChild(MatPaginator) private _paginator: MatPaginator;
     @ViewChild(MatSort) private _sort: MatSort;
     
-    products$: Observable<InventoryProduct[]>;
+    products$: Observable<OperativoProduct[]>;
    
-    brands: InventoryBrand[];
-    categories: InventoryCategory[];
-    filteredTags: InventoryTag[];
     flashMessage: 'success' | 'error' | null = null;
     isLoading: boolean = false;
-    pagination: InventoryPagination;
+    pagination: OperativoPagination;
     searchInputControl: UntypedFormControl = new UntypedFormControl();
-    selectedProduct: InventoryProduct | null = null;
+    selectedProduct: OperativoProduct | null = null;
     selectedProductForm: UntypedFormGroup;
-    tags: InventoryTag[];
-    tagsEditMode: boolean = false;
-    vendors: InventoryVendor[];
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     private _fuseAlertService = inject(FuseAlertService);
     crearSegment:boolean=false;
@@ -142,7 +132,7 @@ export class InventoryListComponent
         private _changeDetectorRef: ChangeDetectorRef,
         private _fuseConfirmationService: FuseConfirmationService,
         private _formBuilder: UntypedFormBuilder,
-        private _inventoryService: InventoryService,
+        private _operativoService: OperativoService,
         private router: Router,
         private route: ActivatedRoute
     ) {}
@@ -211,32 +201,12 @@ export class InventoryListComponent
             
         });
 
-        // Get the brands
-        this._inventoryService.brands$
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((brands: InventoryBrand[]) => {
-                // Update the brands
-                this.brands = brands;
-
-                // Mark for check
-                this._changeDetectorRef.markForCheck();
-            });
-
-        // Get the categories
-        this._inventoryService.categories$
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((categories: InventoryCategory[]) => {
-                // Update the categories
-                this.categories = categories;
-
-                // Mark for check
-                this._changeDetectorRef.markForCheck();
-            });
+        
 
         // Get the pagination
-        this._inventoryService.pagination$
+        this._operativoService.pagination$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((pagination: InventoryPagination) => {
+            .subscribe((pagination: OperativoPagination) => {
                 // Update the pagination
                 this.pagination = pagination;
 
@@ -245,30 +215,7 @@ export class InventoryListComponent
             });
 
         // Get the products
-        this.products$ = this._inventoryService.products$;
-
-        // Get the tags
-        this._inventoryService.tags$
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((tags: InventoryTag[]) => {
-                // Update the tags
-                this.tags = tags;
-                this.filteredTags = tags;
-
-                // Mark for check
-                this._changeDetectorRef.markForCheck();
-            });
-
-        // Get the vendors
-        this._inventoryService.vendors$
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((vendors: InventoryVendor[]) => {
-                // Update the vendors
-                this.vendors = vendors;
-
-                // Mark for check
-                this._changeDetectorRef.markForCheck();
-            });
+        this.products$ = this._operativoService.products$;
 
         // Subscribe to search input field value changes
         this.searchInputControl.valueChanges
@@ -278,7 +225,7 @@ export class InventoryListComponent
                 switchMap((query) => {
                     this.closeDetails();
                     this.isLoading = true;
-                    return this._inventoryService.getProducts(
+                    return this._operativoService.getProducts(
                         0,
                         10,
                         'name',
@@ -325,7 +272,7 @@ export class InventoryListComponent
                     switchMap(() => {
                         this.closeDetails();
                         this.isLoading = true;
-                        return this._inventoryService.getProducts(
+                        return this._operativoService.getProducts(
                             this._paginator.pageIndex,
                             this._paginator.pageSize,
                             this._sort.active,
@@ -367,7 +314,7 @@ export class InventoryListComponent
         }
 
         // Get the product by id
-        this._inventoryService
+        this._operativoService
             .getProductById(productId)
             .subscribe((product) => {
                 // Set the selected product
@@ -416,189 +363,11 @@ export class InventoryListComponent
     }
 
     /**
-     * Toggle the tags edit mode
-     */
-    toggleTagsEditMode(): void {
-        this.tagsEditMode = !this.tagsEditMode;
-    }
-
-    /**
-     * Filter tags
-     *
-     * @param event
-     */
-    filterTags(event): void {
-        // Get the value
-        const value = event.target.value.toLowerCase();
-
-        // Filter the tags
-        this.filteredTags = this.tags.filter((tag) =>
-            tag.title.toLowerCase().includes(value)
-        );
-    }
-
-    /**
-     * Filter tags input key down event
-     *
-     * @param event
-     */
-    filterTagsInputKeyDown(event): void {
-        // Return if the pressed key is not 'Enter'
-        if (event.key !== 'Enter') {
-            return;
-        }
-
-        // If there is no tag available...
-        if (this.filteredTags.length === 0) {
-            // Create the tag
-            this.createTag(event.target.value);
-
-            // Clear the input
-            event.target.value = '';
-
-            // Return
-            return;
-        }
-
-        // If there is a tag...
-        const tag = this.filteredTags[0];
-        const isTagApplied = this.selectedProduct.tags.find(
-            (id) => id === tag.id
-        );
-
-        // If the found tag is already applied to the product...
-        if (isTagApplied) {
-            // Remove the tag from the product
-            this.removeTagFromProduct(tag);
-        } else {
-            // Otherwise add the tag to the product
-            this.addTagToProduct(tag);
-        }
-    }
-
-    /**
-     * Create a new tag
-     *
-     * @param title
-     */
-    createTag(title: string): void {
-        const tag = {
-            title,
-        };
-
-        // Create tag on the server
-        this._inventoryService.createTag(tag).subscribe((response) => {
-            // Add the tag to the product
-            this.addTagToProduct(response);
-        });
-    }
-
-    /**
-     * Update the tag title
-     *
-     * @param tag
-     * @param event
-     */
-    updateTagTitle(tag: InventoryTag, event): void {
-        // Update the title on the tag
-        tag.title = event.target.value;
-
-        // Update the tag on the server
-        this._inventoryService
-            .updateTag(tag.id, tag)
-            .pipe(debounceTime(300))
-            .subscribe();
-
-        // Mark for check
-        this._changeDetectorRef.markForCheck();
-    }
-
-    /**
-     * Delete the tag
-     *
-     * @param tag
-     */
-    deleteTag(tag: InventoryTag): void {
-        // Delete the tag from the server
-        this._inventoryService.deleteTag(tag.id).subscribe();
-
-        // Mark for check
-        this._changeDetectorRef.markForCheck();
-    }
-
-    /**
-     * Add tag to the product
-     *
-     * @param tag
-     */
-    addTagToProduct(tag: InventoryTag): void {
-        // Add the tag
-        this.selectedProduct.tags.unshift(tag.id);
-
-        // Update the selected product form
-        this.selectedProductForm
-            .get('tags')
-            .patchValue(this.selectedProduct.tags);
-
-        // Mark for check
-        this._changeDetectorRef.markForCheck();
-    }
-
-    /**
-     * Remove tag from the product
-     *
-     * @param tag
-     */
-    removeTagFromProduct(tag: InventoryTag): void {
-        // Remove the tag
-        this.selectedProduct.tags.splice(
-            this.selectedProduct.tags.findIndex((item) => item === tag.id),
-            1
-        );
-
-        // Update the selected product form
-        this.selectedProductForm
-            .get('tags')
-            .patchValue(this.selectedProduct.tags);
-
-        // Mark for check
-        this._changeDetectorRef.markForCheck();
-    }
-
-    /**
-     * Toggle product tag
-     *
-     * @param tag
-     * @param change
-     */
-    toggleProductTag(tag: InventoryTag, change: MatCheckboxChange): void {
-        if (change.checked) {
-            this.addTagToProduct(tag);
-        } else {
-            this.removeTagFromProduct(tag);
-        }
-    }
-
-    /**
-     * Should the create tag button be visible
-     *
-     * @param inputValue
-     */
-    shouldShowCreateTagButton(inputValue: string): boolean {
-        return !!!(
-            inputValue === '' ||
-            this.tags.findIndex(
-                (tag) => tag.title.toLowerCase() === inputValue.toLowerCase()
-            ) > -1
-        );
-    }
-
-    /**
      * Create product
      */
     createProduct(): void {
         // Create the product
-        this._inventoryService.createProduct().subscribe((newProduct) => {
+        this._operativoService.createProduct().subscribe((newProduct) => {
             // Go to new product
             this.selectedProduct = newProduct;
 
@@ -621,7 +390,7 @@ export class InventoryListComponent
         delete product.currentImageIndex;
 
         // Update the product on the server
-        this._inventoryService
+        this._operativoService
             .updateProduct(product.id, product)
             .subscribe(() => {
                 // Show a success message
@@ -653,7 +422,7 @@ export class InventoryListComponent
                 const product = this.selectedProductForm.getRawValue();
 
                 // Delete the product on the server
-                this._inventoryService
+                this._operativoService
                     .deleteProduct(product.id)
                     .subscribe(() => {
                         // Close the details
@@ -684,7 +453,7 @@ export class InventoryListComponent
             if (result === 'confirmed') {
                 
                 // Delete the product on the server
-                this._inventoryService
+                this._operativoService
                     .deleteProduct(productId)
                     .subscribe(() => {
                         // Close the details

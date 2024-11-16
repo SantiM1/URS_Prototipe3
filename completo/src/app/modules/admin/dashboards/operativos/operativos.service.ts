@@ -1,12 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
-    InventoryBrand,
-    InventoryCategory,
-    InventoryPagination,
-    InventoryProduct,
-    InventoryTag,
-    InventoryVendor,
+    OperativoPagination,
+    OperativoProduct,
+
 } from 'app/modules/admin/dashboards/operativos/operativos.types';
 import {
     BehaviorSubject,
@@ -21,23 +18,15 @@ import {
 } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class InventoryService {
+export class OperativoService {
     // Private
-    private _brands: BehaviorSubject<InventoryBrand[] | null> =
+    private _pagination: BehaviorSubject<OperativoPagination | null> =
         new BehaviorSubject(null);
-    private _categories: BehaviorSubject<InventoryCategory[] | null> =
+    private _product: BehaviorSubject<OperativoProduct | null> =
         new BehaviorSubject(null);
-    private _pagination: BehaviorSubject<InventoryPagination | null> =
+    private _products: BehaviorSubject<OperativoProduct[] | null> =
         new BehaviorSubject(null);
-    private _product: BehaviorSubject<InventoryProduct | null> =
-        new BehaviorSubject(null);
-    private _products: BehaviorSubject<InventoryProduct[] | null> =
-        new BehaviorSubject(null);
-    private _tags: BehaviorSubject<InventoryTag[] | null> = new BehaviorSubject(
-        null
-    );
-    private _vendors: BehaviorSubject<InventoryVendor[] | null> =
-        new BehaviorSubject(null);
+
 
     /**
      * Constructor
@@ -48,84 +37,32 @@ export class InventoryService {
     // @ Accessors
     // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * Getter for brands
-     */
-    get brands$(): Observable<InventoryBrand[]> {
-        return this._brands.asObservable();
-    }
-
-    /**
-     * Getter for categories
-     */
-    get categories$(): Observable<InventoryCategory[]> {
-        return this._categories.asObservable();
-    }
 
     /**
      * Getter for pagination
      */
-    get pagination$(): Observable<InventoryPagination> {
+    get pagination$(): Observable<OperativoPagination> {
         return this._pagination.asObservable();
     }
 
     /**
      * Getter for product
      */
-    get product$(): Observable<InventoryProduct> {
+    get product$(): Observable<OperativoProduct> {
         return this._product.asObservable();
     }
 
     /**
      * Getter for products
      */
-    get products$(): Observable<InventoryProduct[]> {
+    get products$(): Observable<OperativoProduct[]> {
         return this._products.asObservable();
     }
-
-    /**
-     * Getter for tags
-     */
-    get tags$(): Observable<InventoryTag[]> {
-        return this._tags.asObservable();
-    }
-
-    /**
-     * Getter for vendors
-     */
-    get vendors$(): Observable<InventoryVendor[]> {
-        return this._vendors.asObservable();
-    }
-
-    // -----------------------------------------------------------------------------------------------------
+   // -----------------------------------------------------------------------------------------------------
     // @ Public methods
     // -----------------------------------------------------------------------------------------------------
 
-    /**
-     * Get brands
-     */
-    getBrands(): Observable<InventoryBrand[]> {
-        return this._httpClient
-            .get<InventoryBrand[]>('api/apps/usuarios/brands')
-            .pipe(
-                tap((brands) => {
-                    this._brands.next(brands);
-                })
-            );
-    }
-
-    /**
-     * Get categories
-     */
-    getCategories(): Observable<InventoryCategory[]> {
-        return this._httpClient
-            .get<InventoryCategory[]>('api/apps/usuarios/categories')
-            .pipe(
-                tap((categories) => {
-                    this._categories.next(categories);
-                })
-            );
-    }
+    
 
     /**
      * Get products
@@ -144,13 +81,13 @@ export class InventoryService {
         order: 'asc' | 'desc' | '' = 'asc',
         search: string = ''
     ): Observable<{
-        pagination: InventoryPagination;
-        products: InventoryProduct[];
+        pagination: OperativoPagination;
+        products: OperativoProduct[];
     }> {
         return this._httpClient
             .get<{
-                pagination: InventoryPagination;
-                products: InventoryProduct[];
+                pagination: OperativoPagination;
+                products: OperativoProduct[];
             }>('api/apps/usuarios/products', {
                 params: {
                     page: '' + page,
@@ -171,7 +108,7 @@ export class InventoryService {
     /**
      * Get product by id
      */
-    getProductById(id: string): Observable<InventoryProduct> {
+    getProductById(id: string): Observable<OperativoProduct> {
         return this._products.pipe(
             take(1),
             map((products) => {
@@ -199,12 +136,12 @@ export class InventoryService {
     /**
      * Create product
      */
-    createProduct(): Observable<InventoryProduct> {
+    createProduct(): Observable<OperativoProduct> {
         return this.products$.pipe(
             take(1),
             switchMap((products) =>
                 this._httpClient
-                    .post<InventoryProduct>(
+                    .post<OperativoProduct>(
                         'api/apps/usuarios/product',
                         {}
                     )
@@ -229,13 +166,13 @@ export class InventoryService {
      */
     updateProduct(
         id: string,
-        product: InventoryProduct
-    ): Observable<InventoryProduct> {
+        product: OperativoProduct
+    ): Observable<OperativoProduct> {
         return this.products$.pipe(
             take(1),
             switchMap((products) =>
                 this._httpClient
-                    .patch<InventoryProduct>(
+                    .patch<OperativoProduct>(
                         'api/apps/usuarios/product',
                         {
                             id,
@@ -310,147 +247,4 @@ export class InventoryService {
         );
     }
 
-    /**
-     * Get tags
-     */
-    getTags(): Observable<InventoryTag[]> {
-        return this._httpClient
-            .get<InventoryTag[]>('api/apps/usuarios/tags')
-            .pipe(
-                tap((tags) => {
-                    this._tags.next(tags);
-                })
-            );
-    }
-
-    /**
-     * Create tag
-     *
-     * @param tag
-     */
-    createTag(tag: InventoryTag): Observable<InventoryTag> {
-        return this.tags$.pipe(
-            take(1),
-            switchMap((tags) =>
-                this._httpClient
-                    .post<InventoryTag>('api/apps/usuarios/tag', {
-                        tag,
-                    })
-                    .pipe(
-                        map((newTag) => {
-                            // Update the tags with the new tag
-                            this._tags.next([...tags, newTag]);
-
-                            // Return new tag from observable
-                            return newTag;
-                        })
-                    )
-            )
-        );
-    }
-
-    /**
-     * Update the tag
-     *
-     * @param id
-     * @param tag
-     */
-    updateTag(id: string, tag: InventoryTag): Observable<InventoryTag> {
-        return this.tags$.pipe(
-            take(1),
-            switchMap((tags) =>
-                this._httpClient
-                    .patch<InventoryTag>('api/apps/usuarios/tag', {
-                        id,
-                        tag,
-                    })
-                    .pipe(
-                        map((updatedTag) => {
-                            // Find the index of the updated tag
-                            const index = tags.findIndex(
-                                (item) => item.id === id
-                            );
-
-                            // Update the tag
-                            tags[index] = updatedTag;
-
-                            // Update the tags
-                            this._tags.next(tags);
-
-                            // Return the updated tag
-                            return updatedTag;
-                        })
-                    )
-            )
-        );
-    }
-
-    /**
-     * Delete the tag
-     *
-     * @param id
-     */
-    deleteTag(id: string): Observable<boolean> {
-        return this.tags$.pipe(
-            take(1),
-            switchMap((tags) =>
-                this._httpClient
-                    .delete('api/apps/usuarios/tag', {
-                        params: { id },
-                    })
-                    .pipe(
-                        map((isDeleted: boolean) => {
-                            // Find the index of the deleted tag
-                            const index = tags.findIndex(
-                                (item) => item.id === id
-                            );
-
-                            // Delete the tag
-                            tags.splice(index, 1);
-
-                            // Update the tags
-                            this._tags.next(tags);
-
-                            // Return the deleted status
-                            return isDeleted;
-                        }),
-                        filter((isDeleted) => isDeleted),
-                        switchMap((isDeleted) =>
-                            this.products$.pipe(
-                                take(1),
-                                map((products) => {
-                                    // Iterate through the contacts
-                                    products.forEach((product) => {
-                                        const tagIndex = product.tags.findIndex(
-                                            (tag) => tag === id
-                                        );
-
-                                        // If the contact has the tag, remove it
-                                        if (tagIndex > -1) {
-                                            product.tags.splice(tagIndex, 1);
-                                        }
-                                    });
-
-                                    // Return the deleted status
-                                    return isDeleted;
-                                })
-                            )
-                        )
-                    )
-            )
-        );
-    }
-
-    /**
-     * Get vendors
-     */
-    getVendors(): Observable<InventoryVendor[]> {
-        return this._httpClient
-            .get<InventoryVendor[]>('api/apps/usuarios/vendors')
-            .pipe(
-                tap((vendors) => {
-                    this._vendors.next(vendors);
-                })
-            );
-    }
 }

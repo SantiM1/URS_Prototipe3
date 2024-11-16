@@ -21,7 +21,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
   templateUrl: './operativos.component.html',
 })
 
-export class InventoryComponent {
+export class OperativoComponent {
 
   @ViewChild('drawer') drawer: MatDrawer;
   drawerMode: 'over' | 'side' = 'side';
