@@ -42,10 +42,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseAlertService } from '@fuse/components/alert';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
-import { InventoryService } from 'app/modules/admin/dashboards/usuarios/usuarios.service';
+import { UsuarioService } from 'app/modules/admin/dashboards/usuarios/usuarios.service';
 import {
-    InventoryPagination,
-    InventoryProduct,
+    UsuarioPagination,
+    UsuarioProduct,
 } from 'app/modules/admin/dashboards/usuarios/usuarios.types';
 import {
     Observable,
@@ -63,7 +63,7 @@ import {
     styles: [
         /* language=SCSS */ // Table sizes 
         `
-            .inventory-grid {
+            .usuario-grid {
                 grid-template-columns: 48px auto 40px;
 
                 @screen sm {
@@ -107,20 +107,20 @@ import {
         CurrencyPipe,
     ],
 })
-export class InventoryListComponent
+export class UsuarioListComponent
     implements OnInit, AfterViewInit, OnDestroy
 {
     @ViewChild(MatPaginator) private _paginator: MatPaginator;
     @ViewChild(MatSort) private _sort: MatSort;
     
-    products$: Observable<InventoryProduct[]>;
+    products$: Observable<UsuarioProduct[]>;
    
 
     flashMessage: 'success' | 'error' | null = null;
     isLoading: boolean = false;
-    pagination: InventoryPagination;
+    pagination: UsuarioPagination;
     searchInputControl: UntypedFormControl = new UntypedFormControl();
-    selectedProduct: InventoryProduct | null = null;
+    selectedProduct: UsuarioProduct | null = null;
     selectedProductForm: UntypedFormGroup;
 
     private _unsubscribeAll: Subject<any> = new Subject<any>();
@@ -134,7 +134,7 @@ export class InventoryListComponent
         private _changeDetectorRef: ChangeDetectorRef,
         private _fuseConfirmationService: FuseConfirmationService,
         private _formBuilder: UntypedFormBuilder,
-        private _inventoryService: InventoryService,
+        private _usuarioService: UsuarioService,
         private router: Router,
         private route: ActivatedRoute
     ) {}
@@ -205,9 +205,9 @@ export class InventoryListComponent
 
         
         // Get the pagination
-        this._inventoryService.pagination$
+        this._usuarioService.pagination$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((pagination: InventoryPagination) => {
+            .subscribe((pagination: UsuarioPagination) => {
                 // Update the pagination
                 this.pagination = pagination;
 
@@ -216,7 +216,7 @@ export class InventoryListComponent
             });
 
         // Get the products
-        this.products$ = this._inventoryService.products$;
+        this.products$ = this._usuarioService.products$;
 
         // Subscribe to search input field value changes
         this.searchInputControl.valueChanges
@@ -226,7 +226,7 @@ export class InventoryListComponent
                 switchMap((query) => {
                     this.closeDetails();
                     this.isLoading = true;
-                    return this._inventoryService.getProducts(
+                    return this._usuarioService.getProducts(
                         0,
                         10,
                         'name',
@@ -273,7 +273,7 @@ export class InventoryListComponent
                     switchMap(() => {
                         this.closeDetails();
                         this.isLoading = true;
-                        return this._inventoryService.getProducts(
+                        return this._usuarioService.getProducts(
                             this._paginator.pageIndex,
                             this._paginator.pageSize,
                             this._sort.active,
@@ -315,7 +315,7 @@ export class InventoryListComponent
         }
 
         // Get the product by id
-        this._inventoryService
+        this._usuarioService
             .getProductById(productId)
             .subscribe((product) => {
                 // Set the selected product
@@ -367,7 +367,7 @@ export class InventoryListComponent
      */
     createProduct(): void {
         // Create the product
-        this._inventoryService.createProduct().subscribe((newProduct) => {
+        this._usuarioService.createProduct().subscribe((newProduct) => {
             // Go to new product
             this.selectedProduct = newProduct;
 
@@ -390,7 +390,7 @@ export class InventoryListComponent
         delete product.currentImageIndex;
 
         // Update the product on the server
-        this._inventoryService
+        this._usuarioService
             .updateProduct(product.id, product)
             .subscribe(() => {
                 // Show a success message
@@ -422,7 +422,7 @@ export class InventoryListComponent
                 const product = this.selectedProductForm.getRawValue();
 
                 // Delete the product on the server
-                this._inventoryService
+                this._usuarioService
                     .deleteProduct(product.id)
                     .subscribe(() => {
                         // Close the details
@@ -453,7 +453,7 @@ export class InventoryListComponent
             if (result === 'confirmed') {
                 
                 // Delete the product on the server
-                this._inventoryService
+                this._usuarioService
                     .deleteProduct(productId)
                     .subscribe(() => {
                         // Close the details

@@ -1,8 +1,8 @@
 import { inject } from '@angular/core';
 import { Routes } from '@angular/router';
-import { InventoryComponent } from 'app/modules/admin/dashboards/usuarios/usuarios.component';
-import { InventoryService } from 'app/modules/admin/dashboards/usuarios/usuarios.service';
-import { InventoryListComponent } from 'app/modules/admin/dashboards/usuarios/usuarios/list/usuarios.component';
+import { UsuarioComponent } from 'app/modules/admin/dashboards/usuarios/usuarios.component';
+import { UsuarioService } from 'app/modules/admin/dashboards/usuarios/usuarios.service';
+import { UsuarioListComponent } from 'app/modules/admin/dashboards/usuarios/usuarios/list/usuarios.component';
 import { UsuariosCrearComponent } from './usuarios-crear/usuarios-crear.component';
 
 export default [
@@ -13,13 +13,13 @@ export default [
     },
     {
         path: '',
-        component: InventoryComponent,
+        component: UsuarioComponent,
         children: [
             {
                 path: '',
-                component: InventoryListComponent,
+                component: UsuarioListComponent,
                 resolve: {
-                    products: () => inject(InventoryService).getProducts(),
+                    products: () => inject(UsuarioService).getProducts(),
                 },
                 
                 

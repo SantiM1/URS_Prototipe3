@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
 
-    InventoryPagination,
-    InventoryProduct,
+    UsuarioPagination,
+    UsuarioProduct,
 
 } from 'app/modules/admin/dashboards/usuarios/usuarios.types';
 import {
@@ -19,13 +19,13 @@ import {
 } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class InventoryService {
+export class UsuarioService {
     // Private
-    private _pagination: BehaviorSubject<InventoryPagination | null> =
+    private _pagination: BehaviorSubject<UsuarioPagination | null> =
         new BehaviorSubject(null);
-    private _product: BehaviorSubject<InventoryProduct | null> =
+    private _product: BehaviorSubject<UsuarioProduct | null> =
         new BehaviorSubject(null);
-    private _products: BehaviorSubject<InventoryProduct[] | null> =
+    private _products: BehaviorSubject<UsuarioProduct[] | null> =
         new BehaviorSubject(null);
     /**
      * Constructor
@@ -39,21 +39,21 @@ export class InventoryService {
     /**
      * Getter for pagination
      */
-    get pagination$(): Observable<InventoryPagination> {
+    get pagination$(): Observable<UsuarioPagination> {
         return this._pagination.asObservable();
     }
 
     /**
      * Getter for product
      */
-    get product$(): Observable<InventoryProduct> {
+    get product$(): Observable<UsuarioProduct> {
         return this._product.asObservable();
     }
 
     /**
      * Getter for products
      */
-    get products$(): Observable<InventoryProduct[]> {
+    get products$(): Observable<UsuarioProduct[]> {
         return this._products.asObservable();
     }
 
@@ -82,13 +82,13 @@ export class InventoryService {
         order: 'asc' | 'desc' | '' = 'asc',
         search: string = ''
     ): Observable<{
-        pagination: InventoryPagination;
-        products: InventoryProduct[];
+        pagination: UsuarioPagination;
+        products: UsuarioProduct[];
     }> {
         return this._httpClient
             .get<{
-                pagination: InventoryPagination;
-                products: InventoryProduct[];
+                pagination: UsuarioPagination;
+                products: UsuarioProduct[];
             }>('api/apps/usuarios/products', {
                 params: {
                     page: '' + page,
@@ -109,7 +109,7 @@ export class InventoryService {
     /**
      * Get product by id
      */
-    getProductById(id: string): Observable<InventoryProduct> {
+    getProductById(id: string): Observable<UsuarioProduct> {
         return this._products.pipe(
             take(1),
             map((products) => {
@@ -137,12 +137,12 @@ export class InventoryService {
     /**
      * Create product
      */
-    createProduct(): Observable<InventoryProduct> {
+    createProduct(): Observable<UsuarioProduct> {
         return this.products$.pipe(
             take(1),
             switchMap((products) =>
                 this._httpClient
-                    .post<InventoryProduct>(
+                    .post<UsuarioProduct>(
                         'api/apps/usuarios/product',
                         {}
                     )
@@ -167,13 +167,13 @@ export class InventoryService {
      */
     updateProduct(
         id: string,
-        product: InventoryProduct
-    ): Observable<InventoryProduct> {
+        product: UsuarioProduct
+    ): Observable<UsuarioProduct> {
         return this.products$.pipe(
             take(1),
             switchMap((products) =>
                 this._httpClient
-                    .patch<InventoryProduct>(
+                    .patch<UsuarioProduct>(
                         'api/apps/usuarios/product',
                         {
                             id,

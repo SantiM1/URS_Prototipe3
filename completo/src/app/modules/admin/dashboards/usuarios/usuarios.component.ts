@@ -13,7 +13,7 @@ import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
     standalone: true,
     imports: [RouterOutlet],
 })
-export class InventoryComponent {
+export class UsuarioComponent {
     /**
      * Constructor
      */

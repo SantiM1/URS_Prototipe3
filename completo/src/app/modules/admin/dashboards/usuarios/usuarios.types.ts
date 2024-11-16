@@ -1,4 +1,4 @@
-export interface InventoryProduct {
+export interface UsuarioProduct {
     id: string;
     name: string;
     ced: string;
@@ -11,7 +11,7 @@ export interface InventoryProduct {
  
 }
 
-export interface InventoryPagination {
+export interface UsuarioPagination {
     length: number;
     size: number;
     page: number;
