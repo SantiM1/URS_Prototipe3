@@ -42,10 +42,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseAlertService } from '@fuse/components/alert';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
-import { OperativoService } from 'app/modules/admin/dashboards/operativos/operativos.service';
+import { FaseService } from 'app/modules/admin/dashboards/operativos/fase.service';
 import {
-    OperativoPagination,
-    OperativoProduct,
+    FasePagination,
+    FaseProduct,
 } from 'app/modules/admin/dashboards/operativos/operativos.types';
 import {
     Observable,
@@ -59,7 +59,7 @@ import {
 
 @Component({
     selector: 'operativos-list',
-    templateUrl: './operativos.component.html',
+    templateUrl: './fase.component.html',
     styles: [
         /* language=SCSS */ // Table sizes 
         `
@@ -107,19 +107,19 @@ import {
         CurrencyPipe,
     ],
 })
-export class OperativoListComponent
+export class FaseListComponent
     implements OnInit, AfterViewInit, OnDestroy
 {
     @ViewChild(MatPaginator) private _paginator: MatPaginator;
     @ViewChild(MatSort) private _sort: MatSort;
     
-    products$: Observable<OperativoProduct[]>;
+    products$: Observable<FaseProduct[]>;
    
     flashMessage: 'success' | 'error' | null = null;
     isLoading: boolean = false;
-    pagination: OperativoPagination;
+    pagination: FasePagination;
     searchInputControl: UntypedFormControl = new UntypedFormControl();
-    selectedProduct: OperativoProduct | null = null;
+    selectedProduct: FaseProduct | null = null;
     selectedProductForm: UntypedFormGroup;
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     private _fuseAlertService = inject(FuseAlertService);
@@ -132,7 +132,7 @@ export class OperativoListComponent
         private _changeDetectorRef: ChangeDetectorRef,
         private _fuseConfirmationService: FuseConfirmationService,
         private _formBuilder: UntypedFormBuilder,
-        private _operativoService: OperativoService,
+        private _operativoService: FaseService,
         private router: Router,
         private route: ActivatedRoute
     ) {}
@@ -207,7 +207,7 @@ export class OperativoListComponent
         // Get the pagination
         this._operativoService.pagination$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((pagination: OperativoPagination) => {
+            .subscribe((pagination: FasePagination) => {
                 // Update the pagination
                 this.pagination = pagination;
 

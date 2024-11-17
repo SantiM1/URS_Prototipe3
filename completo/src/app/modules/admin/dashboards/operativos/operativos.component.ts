@@ -57,14 +57,14 @@ export class OperativoComponent {
 
     this.paneles = [
       {
-        id: 'fichaPrincipal',
+        id: 'operativos',
         icon: 'heroicons_outline:user-circle',
-        title: 'Ficha Principal'
+        title: 'Operativos'
       },
       {
-        id: 'fichaDeIngreso',
+        id: 'fase',
         icon: 'heroicons_outline:bell',
-        title: 'Ingreso'
+        title: 'Fase'
       },
     
     ];

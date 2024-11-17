@@ -22,7 +22,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: 'Operativos',
                 type: 'basic',
                 icon: 'heroicons_outline:user',
-                link: '/dashboards/operativos',
+                link: '/dashboards/operativosfase/operativos',
             },
             {
                 id: 'dashboards.project',

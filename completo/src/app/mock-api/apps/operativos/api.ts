@@ -38,7 +38,7 @@ export class OperativosMockApi {
             .reply(({ request }) => {
                 // Get available queries
                 const search = request.params.get('search');
-                const sort = request.params.get('sort') || 'name';
+                const sort = request.params.get('sort') || 'inst';
                 const order = request.params.get('order') || 'asc';
                 const page = parseInt(request.params.get('page') ?? '1', 10);
                 const size = parseInt(request.params.get('size') ?? '10', 10);
@@ -47,7 +47,7 @@ export class OperativosMockApi {
                 let products: any[] | null = cloneDeep(this._products);
 
                 // Sort the products
-                if (sort === 'sku' || sort === 'name' || sort === 'active') {
+                if (sort === 'op' || sort === 'inst' || sort === 'active') {
                     products.sort((a, b) => {
                         const fieldA = a[sort].toString().toUpperCase();
                         const fieldB = b[sort].toString().toUpperCase();
