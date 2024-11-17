@@ -3,6 +3,7 @@ import { initialDataResolver } from 'app/app.resolvers';
 import { AuthGuard } from 'app/core/auth/guards/auth.guard';
 import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
 import { LayoutComponent } from 'app/layout/layout.component';
+import { MapComponent } from './modules/admin/dashboards/map/map.component';
 
 // prettier-ignore
 /* eslint-disable max-len */
@@ -87,6 +88,7 @@ export const appRoutes: Route[] = [
                 {path: 'crypto', loadChildren: () => import('app/modules/admin/dashboards/crypto/crypto.routes')},
                 {path: 'usuarios', loadChildren: () => import('app/modules/admin/dashboards/usuarios/usuarios.routes')},
                 {path: 'operativosfase', loadChildren: () => import('app/modules/admin/dashboards/operativos/operativos.routes')},
+                {path: 'maps',  component: MapComponent},
             ]},
 
             // Apps
