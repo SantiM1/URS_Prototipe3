@@ -58,12 +58,12 @@ import {
 } from 'rxjs';
 
 @Component({
-    selector: 'operativos-list',
+    selector: 'fases-list',
     templateUrl: './fase.component.html',
     styles: [
         /* language=SCSS */ // Table sizes 
         `
-            .operativo-grid {
+            .fase-grid {
                 grid-template-columns: 48px auto 40px;
 
                 @screen sm {
@@ -75,7 +75,7 @@ import {
                 }
 
                 @screen lg {
-                    grid-template-columns: 10px 35px auto 100px 120px 120px 120px 150px 50px 100px;
+                    grid-template-columns: 0px 10px 75px 75px auto 100px 35px 100px 100px 100px 100px 50px 100px;
                 }
             }
         `,
@@ -132,19 +132,19 @@ export class FaseListComponent
         private _changeDetectorRef: ChangeDetectorRef,
         private _fuseConfirmationService: FuseConfirmationService,
         private _formBuilder: UntypedFormBuilder,
-        private _operativoService: FaseService,
+        private _faseService: FaseService,
         private router: Router,
         private route: ActivatedRoute
     ) {}
     
-    crearUsuario() {
+    crearFase() {
        this.crearSegment = true
        //this.router.navigate(['crear'], { relativeTo: this.route });
     }
     cancelar(){
         /* Open the confirmation dialog
         const confirmation = this._fuseConfirmationService.open({
-            title: 'Cancelar creación de usuario',
+            title: 'Cancelar creación de fase',
             message:
                 '',
             actions: {
@@ -164,9 +164,9 @@ export class FaseListComponent
     crear(name: string):void{
         // Open the confirmation dialog
         const confirmation = this._fuseConfirmationService.open({
-            title: 'Creación de usuario exitosa',
+            title: 'Creación de fase exitosa',
             message:
-                'El usuario fue creado de manera exitosa',
+                'El fase fue creado de manera exitosa',
             actions: {
                 confirm: {
                     label: 'Confirmar',
@@ -195,17 +195,21 @@ export class FaseListComponent
             id: [''],
             inst:[''],
             op: [''],
+            mod: [''],
+            nomf: [''],
+            idf: [''],
             f_ini: [''],
             f_fin:[''],
             f_ing: [''],
             f_des: [''],
             active: ['']
+        
         });
 
         
 
         // Get the pagination
-        this._operativoService.pagination$
+        this._faseService.pagination$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((pagination: FasePagination) => {
                 // Update the pagination
@@ -216,7 +220,7 @@ export class FaseListComponent
             });
 
         // Get the products
-        this.products$ = this._operativoService.products$;
+        this.products$ = this._faseService.products$;
 
         // Subscribe to search input field value changes
         this.searchInputControl.valueChanges
@@ -226,7 +230,7 @@ export class FaseListComponent
                 switchMap((query) => {
                     this.closeDetails();
                     this.isLoading = true;
-                    return this._operativoService.getProducts(
+                    return this._faseService.getProducts(
                         0,
                         10,
                         'name',
@@ -273,7 +277,7 @@ export class FaseListComponent
                     switchMap(() => {
                         this.closeDetails();
                         this.isLoading = true;
-                        return this._operativoService.getProducts(
+                        return this._faseService.getProducts(
                             this._paginator.pageIndex,
                             this._paginator.pageSize,
                             this._sort.active,
@@ -315,7 +319,7 @@ export class FaseListComponent
         }
 
         // Get the product by id
-        this._operativoService
+        this._faseService
             .getProductById(productId)
             .subscribe((product) => {
                 // Set the selected product
@@ -368,7 +372,7 @@ export class FaseListComponent
      */
     createProduct(): void {
         // Create the product
-        this._operativoService.createProduct().subscribe((newProduct) => {
+        this._faseService.createProduct().subscribe((newProduct) => {
             // Go to new product
             this.selectedProduct = newProduct;
 
@@ -391,7 +395,7 @@ export class FaseListComponent
         delete product.currentImageIndex;
 
         // Update the product on the server
-        this._operativoService
+        this._faseService
             .updateProduct(product.id, product)
             .subscribe(() => {
                 // Show a success message
@@ -405,9 +409,9 @@ export class FaseListComponent
     deleteSelectedProduct(): void {
         // Open the confirmation dialog
         const confirmation = this._fuseConfirmationService.open({
-            title: 'Borrar usuario',
+            title: 'Borrar fase',
             message:
-                '¿Estás seguro que deseas borrar este usuario? Esta acción es permanente',
+                '¿Estás seguro que deseas borrar este fase? Esta acción es permanente',
             actions: {
                 confirm: {
                     label: 'Borrar',
@@ -423,7 +427,7 @@ export class FaseListComponent
                 const product = this.selectedProductForm.getRawValue();
 
                 // Delete the product on the server
-                this._operativoService
+                this._faseService
                     .deleteProduct(product.id)
                     .subscribe(() => {
                         // Close the details
@@ -438,9 +442,9 @@ export class FaseListComponent
     deleteProduct(productId: string): void {
         // Open the confirmation dialog
         const confirmation = this._fuseConfirmationService.open({
-            title: 'Borrar usuario',
+            title: 'Borrar fase',
             message:
-                '¿Estás seguro que deseas borrar este usuario? Esta acción es permanente',
+                '¿Estás seguro que deseas borrar este fase? Esta acción es permanente',
             actions: {
                 confirm: {
                     label: 'Borrar',
@@ -454,7 +458,7 @@ export class FaseListComponent
             if (result === 'confirmed') {
                 
                 // Delete the product on the server
-                this._operativoService
+                this._faseService
                     .deleteProduct(productId)
                     .subscribe(() => {
                         // Close the details

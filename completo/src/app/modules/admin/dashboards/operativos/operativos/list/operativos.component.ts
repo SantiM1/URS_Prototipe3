@@ -137,14 +137,14 @@ export class OperativoListComponent
         private route: ActivatedRoute
     ) {}
     
-    crearUsuario() {
+    crearOperativo() {
        this.crearSegment = true
        //this.router.navigate(['crear'], { relativeTo: this.route });
     }
     cancelar(){
         /* Open the confirmation dialog
         const confirmation = this._fuseConfirmationService.open({
-            title: 'Cancelar creación de usuario',
+            title: 'Cancelar creación de operativo',
             message:
                 '',
             actions: {
@@ -164,9 +164,9 @@ export class OperativoListComponent
     crear(name: string):void{
         // Open the confirmation dialog
         const confirmation = this._fuseConfirmationService.open({
-            title: 'Creación de usuario exitosa',
+            title: 'Creación de operativo exitosa',
             message:
-                'El usuario fue creado de manera exitosa',
+                'El operativo fue creado de manera exitosa',
             actions: {
                 confirm: {
                     label: 'Confirmar',
@@ -405,9 +405,9 @@ export class OperativoListComponent
     deleteSelectedProduct(): void {
         // Open the confirmation dialog
         const confirmation = this._fuseConfirmationService.open({
-            title: 'Borrar usuario',
+            title: 'Borrar operativo',
             message:
-                '¿Estás seguro que deseas borrar este usuario? Esta acción es permanente',
+                '¿Estás seguro que deseas borrar este operativo? Esta acción es permanente',
             actions: {
                 confirm: {
                     label: 'Borrar',
@@ -438,9 +438,9 @@ export class OperativoListComponent
     deleteProduct(productId: string): void {
         // Open the confirmation dialog
         const confirmation = this._fuseConfirmationService.open({
-            title: 'Borrar usuario',
+            title: 'Borrar operativo',
             message:
-                '¿Estás seguro que deseas borrar este usuario? Esta acción es permanente',
+                '¿Estás seguro que deseas borrar este operativo? Esta acción es permanente',
             actions: {
                 confirm: {
                     label: 'Borrar',

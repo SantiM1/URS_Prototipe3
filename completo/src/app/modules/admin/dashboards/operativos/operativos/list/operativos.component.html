@@ -13,17 +13,17 @@
             }
 
             <!-- Title -->
-            <div class="text-4xl font-extrabold tracking-tight">Usuarios</div>
+            <div class="text-4xl font-extrabold tracking-tight">Operativos</div>
             <!-- Actions -->
             <div class="mt-6 flex shrink-0 items-center sm:ml-4 sm:mt-0">
                 <!-- Search -->
                 <mat-form-field class="fuse-mat-dense fuse-mat-rounded min-w-64" [subscriptSizing]="'dynamic'">
                     <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
                     <input matInput [formControl]="searchInputControl" [autocomplete]="'off'"
-                        [placeholder]="'Buscar Usuario'" />
+                        [placeholder]="'Buscar Operativo'" />
                 </mat-form-field>
                 <!-- Add product button -->
-                <button class="ml-4" mat-flat-button [color]="'primary'" (click)="crearUsuario()">
+                <button class="ml-4" mat-flat-button [color]="'primary'" (click)="crearOperativo()">
                     <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
                     <span class="ml-2 mr-1">Añadir</span>
                 </button>
@@ -32,13 +32,13 @@
         </div>
         <div class="container">
             @if (crearSegment) {
-            <!-- CrearUsuarios -->
+            <!-- CrearOperativos -->
             <div class="flex min-w-0 flex-auto flex-col">
                 <!-- Main -->
                 <div class="flex-auto p-6 sm:p-10">
                     <!-- CONTENT GOES HERE -->
                     <div class="container">
-                        <h1 class="text-4xl font-bold pb-3 text-contrast">Crear Usuario</h1>
+                        <h1 class="text-4xl font-bold pb-3 text-contrast">Crear Operativo</h1>
                         <h3 class="pb-3 text-contrast">Campos con símbolo (*) son obligatorios </h3>
                         <mat-expansion-panel [expanded]="crearSegment">
                             <mat-expansion-panel-header>
@@ -102,7 +102,7 @@
             </div>
              }
 
-            <!-- Usuarios -->
+            <!-- Operativos -->
             <div class="flex flex-auto overflow-hidden">
                 <!-- Products list -->
 
@@ -308,7 +308,7 @@
                                                 <mat-icon class="text-green-500" [svgIcon]="
                                                         'heroicons_outline:check'
                                                     "></mat-icon>
-                                                <span class="ml-2">Usuario Actualizado</span>
+                                                <span class="ml-2">Operativo Actualizado</span>
                                                 }
                                                 @if (flashMessage === 'error') {
                                                 <mat-icon class="text-red-500" [svgIcon]="

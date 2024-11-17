@@ -88,7 +88,7 @@ export class FaseService {
             .get<{
                 pagination: FasePagination;
                 products: FaseProduct[];
-            }>('api/apps/operativos/products', {
+            }>('api/apps/fases/products', {
                 params: {
                     page: '' + page,
                     size: '' + size,
@@ -142,7 +142,7 @@ export class FaseService {
             switchMap((products) =>
                 this._httpClient
                     .post<FaseProduct>(
-                        'api/apps/operativos/product',
+                        'api/apps/fases/product',
                         {}
                     )
                     .pipe(
@@ -173,7 +173,7 @@ export class FaseService {
             switchMap((products) =>
                 this._httpClient
                     .patch<FaseProduct>(
-                        'api/apps/operativos/product',
+                        'api/apps/fases/product',
                         {
                             id,
                             product,
@@ -223,7 +223,7 @@ export class FaseService {
             take(1),
             switchMap((products) =>
                 this._httpClient
-                    .delete('api/apps/operativos/product', {
+                    .delete('api/apps/fases/product', {
                         params: { id },
                     })
                     .pipe(

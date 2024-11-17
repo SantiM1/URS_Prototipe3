@@ -23,6 +23,7 @@ import { ActivitiesMockApi } from 'app/mock-api/pages/activities/api';
 import { IconsMockApi } from 'app/mock-api/ui/icons/api';
 import { UsuariosMockApi } from './apps/usuarios/api';
 import { OperativosMockApi } from './apps/operativos/api';
+import { FasesMockApi } from './apps/fases/api';
 
 export const mockApiServices = [
     AcademyMockApi,
@@ -37,6 +38,7 @@ export const mockApiServices = [
     OperativosMockApi,
     FileManagerMockApi,
     FinanceMockApi,
+    FasesMockApi,
     HelpCenterMockApi,
     IconsMockApi,
     MailboxMockApi,

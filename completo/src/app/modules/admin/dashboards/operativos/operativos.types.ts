@@ -23,6 +23,9 @@ export interface FaseProduct {
     id: string;
     inst: string;
     op: string;
+    mod: string;
+    nomf: string;
+    idf: string;
     f_ini: string;
     f_fin: string;
     f_ing: string;
