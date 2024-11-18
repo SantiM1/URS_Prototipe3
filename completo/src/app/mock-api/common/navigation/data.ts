@@ -11,6 +11,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
         icon: 'heroicons_outline:home',
         children: [
             {
+                id: 'dashboards.maps',
+                title: 'Geoportal',
+                type: 'basic',
+                icon: 'heroicons_outline:map',
+                link: '/dashboards/maps',
+            },
+            {
                 id: 'dashboards.usuarios',
                 title: 'Usuarios',
                 type: 'basic',
@@ -21,7 +28,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 id: 'dashboards.operativos',
                 title: 'Operativos',
                 type: 'basic',
-                icon: 'heroicons_outline:user',
+                icon: 'heroicons_outline:wrench-screwdriver',
                 link: '/dashboards/operativosfase/operativos',
             },
             {

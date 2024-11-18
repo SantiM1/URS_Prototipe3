@@ -1,35 +1,20 @@
 <div class="w-72"> 
     <mat-tab-group>
-        <mat-tab label="1">
+        <mat-tab label="Coberturas">
             <section class="example-section">
-            <mat-checkbox class="example-margin">Check me!</mat-checkbox>
-            <mat-checkbox class="example-margin" [disabled]="true">Disabled</mat-checkbox>
+            <mat-checkbox class="example-margin py-1"> Hogares URS </mat-checkbox>
+            <mat-checkbox class="example-margin py-1"> Riesgos naturales </mat-checkbox>
+            <mat-checkbox class="example-margin py-1"> Sectores y manzanas censales </mat-checkbox>
+
             </section>
         </mat-tab>
-        <mat-tab label="2">
-            <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-                <!-- This is the tree node template for leaf nodes -->
-                <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
-                  <!-- use a disabled button to provide padding for tree leaf -->
-                  <button mat-icon-button disabled></button>
-                  {{node.name}}
-                </mat-tree-node>
-                <!-- This is the tree node template for expandable nodes -->
-                <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding matTreeNodeToggle
-                               [cdkTreeNodeTypeaheadLabel]="node.name">
-                  <button mat-icon-button matTreeNodeToggle
-                          [attr.aria-label]="'Toggle ' + node.name">
-                    <mat-icon class="mat-icon-rtl-mirror">
-                      {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
-                    </mat-icon>
-                  </button>
-                  {{node.name}}
-                </mat-tree-node>
-              </mat-tree>
+        <mat-tab label="Capas">
+            <section class="example-section">
+                <mat-checkbox class="example-margin">Indicador1</mat-checkbox>
+                <mat-checkbox class="example-margin">Indicador2</mat-checkbox>
+            </section>
               
         </mat-tab>
-        <mat-tab label="3"> Content 3 </mat-tab>
-        <mat-tab label="4"> Content 4 </mat-tab>
       </mat-tab-group>
       
 </div>
@@ -47,24 +32,72 @@
         <mat-toolbar-row>
             <span>
                 <mat-chip-set aria-label="Fish selection">
-                <mat-chip>One fish</mat-chip>
-                <mat-chip>Two fish</mat-chip>
-                <mat-chip>Three fish</mat-chip>
-                <mat-chip disabled>Four fish</mat-chip>
+                <mat-chip >
+                    <mat-icon class="icon-size-5 flex justify-center " matPrefix [svgIcon]="'heroicons_solid:magnifying-glass-plus'"></mat-icon>
+                </mat-chip>
+                <mat-chip>
+                    <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:magnifying-glass-minus'"></mat-icon>
+                </mat-chip>
+                <mat-chip>
+                    <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:chevron-left'"></mat-icon>
+                </mat-chip>
+                <mat-chip>
+                    <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:chevron-right'"></mat-icon>
+                </mat-chip>
+                <mat-chip>
+                    <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:arrows-pointing-out'"></mat-icon>
+                </mat-chip>
+                <mat-chip  class="fuse-mat-dense fuse-mat-rounded min-w-64 place-content-center">
+                    <mat-icon class="icon-size-3" matPrefix [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
+                    <input matInput class="px-2"  [autocomplete]="'off'"
+                        [placeholder]="'Buscar Operativo'" />
+                </mat-chip>
+                <mat-chip>
+                    <div class="flex">
+                        <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:adjustments-vertical'"/>
+                        <p class="text-sm"> Coordenadas</p>
+                    </div>
+                </mat-chip>
+                <mat-chip>
+                    <div class="flex">
+                        <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:map-pin'"/>
+                        <p class="text-sm"> Medir</p>
+                    </div>
+                </mat-chip>
+                <mat-chip><mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:document-arrow-down'"></mat-icon></mat-chip>
               </mat-chip-set>
             </span>
+
+      
         </mat-toolbar-row>
+       
         
         
     <div class="map-container flex-grow col-span-2" #map></div>
     
 </div>
-<div class="w-24">
-    <mat-chip-set aria-label="Fish selection">
-        <mat-chip>One fish</mat-chip>
-        <mat-chip>Two fish</mat-chip>
-        <mat-chip>Three fish</mat-chip>
-        <mat-chip disabled>Four fish</mat-chip>
+<div class="w-30">
+    <div class="text-8lg font-extrabold tracking-tight flex py-6 px-1"> Otras Opciones</div>
+    <mat-chip-set class="px-2"aria-label="Op selection">
+        <mat-chip class="px-1 max-w-26" >
+            <div class="flex">
+            <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:cloud-arrow-down'"/>
+            <p class="text-sm"> Descarga</p>
+            </div>
+        </mat-chip>
+        <mat-chip class="px-1 min-w-26">
+            <div class="flex">
+                <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:cube-transparent'"/>
+                <p class="text-sm"> Servicios </p>
+            </div>
+            
+        </mat-chip>
+        <mat-chip class="px-1 min-w-26">
+            <div class="flex">
+                <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:academic-cap'"/>
+                <p class="text-sm"> Análisis</p>
+            </div>
+        </mat-chip>
       </mat-chip-set>
       
 </div>
