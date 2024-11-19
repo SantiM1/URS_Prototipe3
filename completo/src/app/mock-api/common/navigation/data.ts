@@ -5,24 +5,25 @@ export const defaultNavigation: FuseNavigationItem[] = [
     {
         //SidebarHere
         id: 'dashboards',
-        title: 'Dashboards',
+        title: 'Seguridad',
         subtitle: 'Unique dashboard designs',
         type: 'group',
-        icon: 'heroicons_outline:home',
+        icon: 'heroicons_outline:globe-alt',
         children: [
-            {
-                id: 'dashboards.maps',
-                title: 'Geoportal',
-                type: 'basic',
-                icon: 'heroicons_outline:map',
-                link: '/dashboards/maps',
-            },
+           
             {
                 id: 'dashboards.usuarios',
                 title: 'Usuarios',
                 type: 'basic',
                 icon: 'heroicons_outline:user',
                 link: '/dashboards/usuarios',
+            },
+            {
+                id: 'dashboards.dispositivos',
+                title: 'Dispositivos',
+                type: 'basic',
+                icon: 'heroicons_outline:device-phone-mobile',
+                link: '/dashboards/dispositivos/registro',
             },
             {
                 id: 'dashboards.operativos',
@@ -69,6 +70,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
         type: 'group',
         icon: 'heroicons_outline:home',
         children: [
+            {
+                id: 'dashboards.maps',
+                title: 'Geoportal',
+                type: 'basic',
+                icon: 'heroicons_outline:map',
+                link: '/apps/maps',
+            },
             {
                 id: 'apps.academy',
                 title: 'Academy',
@@ -1191,15 +1199,15 @@ export const defaultNavigation: FuseNavigationItem[] = [
 export const compactNavigation: FuseNavigationItem[] = [
     {
         id: 'dashboards',
-        title: 'Dashboards',
+        title: 'Seguridad',
         tooltip: 'Dashboards',
         type: 'aside',
-        icon: 'heroicons_outline:home',
+        icon: 'heroicons_outline:globe-alt',
         children: [], // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
     },
     {
         id: 'apps',
-        title: 'Apps',
+        title: 'Aplicaciones',
         tooltip: 'Apps',
         type: 'aside',
         icon: 'heroicons_outline:squares-2x2',

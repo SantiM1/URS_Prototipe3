@@ -13,24 +13,22 @@
             }
 
             <!-- Title -->
-            <div class="text-4xl font-extrabold tracking-tight">Fases
+            <div class="text-4xl font-extrabold tracking-tight">Registros
                 <div class="flex">
                     <img class="w-7" src="images/logo/PDF.svg" alt="Logo image" />
                     <img class="w-7" src="images/logo/Excel.svg" alt="Logo image" />
                 </div>
-                
             </div>
-           
             <!-- Actions -->
             <div class="mt-6 flex shrink-0 items-center sm:ml-4 sm:mt-0">
                 <!-- Search -->
                 <mat-form-field class="fuse-mat-dense fuse-mat-rounded min-w-64" [subscriptSizing]="'dynamic'">
                     <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
                     <input matInput [formControl]="searchInputControl" [autocomplete]="'off'"
-                        [placeholder]="'Buscar Fase'" />
+                        [placeholder]="'Buscar Registro'" />
                 </mat-form-field>
                 <!-- Add product button -->
-                <button class="ml-4" mat-flat-button [color]="'primary'" (click)="crearFase()">
+                <button class="ml-4" mat-flat-button [color]="'primary'" (click)="crearRegistro()">
                     <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
                     <span class="ml-2 mr-1">Añadir</span>
                 </button>
@@ -39,13 +37,13 @@
         </div>
         <div class="container">
             @if (crearSegment) {
-            <!-- CrearFases -->
+            <!-- CrearRegistros -->
             <div class="flex min-w-0 flex-auto flex-col">
                 <!-- Main -->
                 <div class="flex-auto p-6 sm:p-10">
                     <!-- CONTENT GOES HERE -->
                     <div class="container">
-                        <h1 class="text-4xl font-bold pb-3 text-contrast">Crear Fase</h1>
+                        <h1 class="text-4xl font-bold pb-3 text-contrast">Crear Registro</h1>
                         <h3 class="pb-3 text-contrast">Campos con símbolo (*) son obligatorios </h3>
                         <mat-expansion-panel [expanded]="crearSegment">
                             <mat-expansion-panel-header>
@@ -62,19 +60,7 @@
                                         </mat-form-field>
                                         <!-- cedula -->
                                         <mat-form-field class="col-span-3">
-                                            <mat-label>Operativo</mat-label>
-                                            <input matInput />
-                                        </mat-form-field>
-                                        <mat-form-field class="col-span-4">
-                                            <mat-label>Modalidad de recopilación de datos</mat-label>
-                                            <input matInput />
-                                        </mat-form-field>
-                                        <mat-form-field class="col-span-3">
-                                            <mat-label>Nombre Fase</mat-label>
-                                            <input matInput />
-                                        </mat-form-field>
-                                        <mat-form-field class="col-span-1">
-                                            <mat-label>Id Fase</mat-label>
+                                            <mat-label>Registro</mat-label>
                                             <input matInput />
                                         </mat-form-field>
                                         <!-- Email -->
@@ -121,7 +107,7 @@
             </div>
              }
 
-            <!-- Fases -->
+            <!-- Registros -->
             <div class="flex flex-auto overflow-hidden">
                 <!-- Products list -->
 
@@ -130,17 +116,14 @@
                     @if (products.length > 0) {
                     <div class="grid">
                         <!-- Header -->
-                        <div class="fase-grid text-secondary sticky top-0 z-10 grid gap-4 bg-gray-50 px-6 py-4 text-md font-semibold shadow dark:bg-black dark:bg-opacity-5 md:px-8"
+                        <div class="registro-grid text-secondary sticky top-0 z-10 grid gap-4 bg-gray-50 px-6 py-4 text-md font-semibold shadow dark:bg-black dark:bg-opacity-5 md:px-8"
                             matSort matSortDisableClear>
                             <div></div>
                             <div class="hidden md:block" [mat-sort-header]="'No.'">
                                 No.
                             </div>
                             <div class="hidden lg:block" [mat-sort-header]="'inst'">Institución</div>
-                            <div class="hidden lg:block" [mat-sort-header]="'op'">Operativo</div>
-                            <div class="hidden lg:block" [mat-sort-header]="'mod'">Modalidad de recopilación de datos</div>
-                            <div class="hidden lg:block" [mat-sort-header]="'nomf'">Nombre Fase</div>
-                            <div class="hidden lg:block" [mat-sort-header]="'idf'">Id Fase</div>
+                            <div class="hidden lg:block" [mat-sort-header]="'op'">Registro</div>
                             <div class="hidden sm:block" [mat-sort-header]="'fini'">
                                 Fecha inicio
                             </div>
@@ -167,7 +150,7 @@
                         product of products;
                         track trackByFn($index, product)
                         ) {
-                        <div class="fase-grid grid items-center gap-4 border-b px-6 py-3 md:px-8">
+                        <div class="registro-grid grid items-center gap-4 border-b px-6 py-3 md:px-8">
                             <!-- Image -->
                             <div class="flex items-center">
 
@@ -182,18 +165,9 @@
                             <div class="truncate">
                                 {{ product.inst }}
                             </div>
-                            <!-- fase -->
+                            <!-- registro -->
                             <div class="truncate">
                                 {{ product.op }}
-                            </div>
-                            <div class="truncate">
-                                {{ product.mod }}
-                            </div>
-                            <div class="truncate">
-                                {{ product.nomf }}
-                            </div>
-                            <div class="truncate">
-                                {{ product.idf }}
                             </div>
 
                             <!-- fechas -->
@@ -264,7 +238,7 @@
                         [showFirstLastButtons]="true"></mat-paginator>
                     } @else {
                     <div class="border-t p-8 text-center text-4xl font-semibold tracking-tight sm:p-16">
-                        No hay fases!
+                        No hay registros!
                     </div>
                     }
                     }
@@ -287,7 +261,7 @@
                                             </mat-form-field>
                                             <!-- cedula -->
                                             <mat-form-field class="w-full pr-2">
-                                                <mat-label>Operativo</mat-label>
+                                                <mat-label>Registro</mat-label>
                                                 <input matInput [formControlName]="'ced'" />
                                             </mat-form-field>
                                             <!-- Email -->
@@ -339,7 +313,7 @@
                                                 <mat-icon class="text-green-500" [svgIcon]="
                                                         'heroicons_outline:check'
                                                     "></mat-icon>
-                                                <span class="ml-2">Fase Actualizado</span>
+                                                <span class="ml-2">Registro Actualizado</span>
                                                 }
                                                 @if (flashMessage === 'error') {
                                                 <mat-icon class="text-red-500" [svgIcon]="

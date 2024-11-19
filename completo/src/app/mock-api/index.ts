@@ -24,6 +24,7 @@ import { IconsMockApi } from 'app/mock-api/ui/icons/api';
 import { UsuariosMockApi } from './apps/usuarios/api';
 import { OperativosMockApi } from './apps/operativos/api';
 import { FasesMockApi } from './apps/fases/api';
+import { DispositivosMockApi } from './apps/dispositivos/api';
 
 export const mockApiServices = [
     AcademyMockApi,
@@ -36,6 +37,7 @@ export const mockApiServices = [
     ECommerceInventoryMockApi,
     UsuariosMockApi,
     OperativosMockApi,
+    DispositivosMockApi,
     FileManagerMockApi,
     FinanceMockApi,
     FasesMockApi,
