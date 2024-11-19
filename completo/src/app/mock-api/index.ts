@@ -25,6 +25,7 @@ import { UsuariosMockApi } from './apps/usuarios/api';
 import { OperativosMockApi } from './apps/operativos/api';
 import { FasesMockApi } from './apps/fases/api';
 import { DispositivosMockApi } from './apps/dispositivos/api';
+import { PlanificacionMockApi } from './apps/planificacion/api';
 
 export const mockApiServices = [
     AcademyMockApi,
@@ -38,6 +39,7 @@ export const mockApiServices = [
     UsuariosMockApi,
     OperativosMockApi,
     DispositivosMockApi,
+    PlanificacionMockApi,
     FileManagerMockApi,
     FinanceMockApi,
     FasesMockApi,

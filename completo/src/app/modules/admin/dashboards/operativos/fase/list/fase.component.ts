@@ -75,7 +75,7 @@ import {
                 }
 
                 @screen lg {
-                    grid-template-columns: 0px 10px 75px 75px auto 100px 35px 100px 100px 100px 100px 50px 100px;
+                    grid-template-columns: 0px 10px 75px 75px auto 100px 35px 100px 100px 50px 100px;
                 }
             }
         `,

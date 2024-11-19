@@ -26,6 +26,13 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 link: '/dashboards/dispositivos/registro',
             },
             {
+                id: 'dashboards.planificacion',
+                title: 'Planificación',
+                type: 'basic',
+                icon: 'heroicons_outline:clipboard-document-check',
+                link: '/dashboards/planificacion',
+            },
+            {
                 id: 'dashboards.operativos',
                 title: 'Operativos',
                 type: 'basic',

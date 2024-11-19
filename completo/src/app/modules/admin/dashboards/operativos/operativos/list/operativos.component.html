@@ -15,7 +15,7 @@
             <!-- Title -->
             <div class="text-4xl font-extrabold tracking-tight">Operativos
                 <div class="flex">
-                    <img class="w-7" src="images/logo/PDF.svg" alt="Logo image" />
+                    <img class="w-6" src="images/logo/PDF.svg" alt="Logo image" />
                     <img class="w-7" src="images/logo/Excel.svg" alt="Logo image" />
                 </div>
             </div>
@@ -73,14 +73,7 @@
                                             <mat-label>Fecha fin</mat-label>
                                             <input matInput />
                                         </mat-form-field>
-                                        <mat-form-field class="col-span-2">
-                                            <mat-label>Fecha ingreso</mat-label>
-                                            <input matInput />
-                                        </mat-form-field>
-                                        <mat-form-field class="col-span-2">
-                                            <mat-label>Fecha desactivación</mat-label>
-                                            <input matInput />
-                                        </mat-form-field>
+                                        
                                         <mat-slide-toggle class="col-span-1" [color]="'primary'">
                                             Estado
 
@@ -122,8 +115,12 @@
                             <div class="hidden md:block" [mat-sort-header]="'No.'">
                                 No.
                             </div>
-                            <div class="hidden lg:block" [mat-sort-header]="'inst'">Institución</div>
-                            <div class="hidden lg:block" [mat-sort-header]="'op'">Operativo</div>
+                            <div class="hidden lg:block" [mat-sort-header]="'inst'">
+                                Institución
+                            </div>
+                            <div class="hidden lg:block" [mat-sort-header]="'op'">
+                                Operativo
+                            </div>
                             <div class="hidden sm:block" [mat-sort-header]="'fini'">
                                 Fecha inicio
                             </div>
@@ -249,43 +246,27 @@
                                 <!-- Selected product form -->
                                 <form class="flex w-full flex-col" [formGroup]="selectedProductForm">
                                     <div class="flex flex-auto p-8 sm:flex-row">
-
-
-
-
-                                        <div class="flex flex-auto">
+                                       <div class="flex flex-auto">
                                             <!-- Name -->
                                             <mat-form-field class="w-full pr-2">
                                                 <mat-label>Institución</mat-label>
-                                                <input matInput [formControlName]="'name'" />
+                                                <input matInput [formControlName]="'inst'" />
                                             </mat-form-field>
                                             <!-- cedula -->
                                             <mat-form-field class="w-full pr-2">
                                                 <mat-label>Operativo</mat-label>
-                                                <input matInput [formControlName]="'ced'" />
+                                                <input matInput [formControlName]="'op'" />
                                             </mat-form-field>
                                             <!-- Email -->
                                             <mat-form-field class="w-full pl-2">
                                                 <mat-label>Fecha inicio</mat-label>
-                                                <input matInput [formControlName]="'email'" />
+                                                <input matInput [formControlName]="'f_ini'" />
                                             </mat-form-field>
                                         </div>
-
-
-
-                                        <!--Telephone and Celular-->
                                         <div class="flex flex-auto">
                                             <mat-form-field class="w-1/3 pl-2 pr-4">
                                                 <mat-label>Fecha fin</mat-label>
-                                                <input matInput [formControlName]="'tel'" />
-                                            </mat-form-field>
-                                            <mat-form-field class="w-1/3 pl-2 pr-4">
-                                                <mat-label>Fecha ingreso</mat-label>
-                                                <input matInput [formControlName]="'tel'" />
-                                            </mat-form-field>
-                                            <mat-form-field class="w-1/3 pl-2 pr-4">
-                                                <mat-label>Fecha desactivación</mat-label>
-                                                <input matInput [formControlName]="'tel'" />
+                                                <input matInput [formControlName]="'f_fin'" />
                                             </mat-form-field>
                                             <mat-slide-toggle [formControlName]="'active'" [color]="'primary'">
                                                 {{

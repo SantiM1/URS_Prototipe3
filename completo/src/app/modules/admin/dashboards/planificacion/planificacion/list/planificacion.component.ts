@@ -38,15 +38,16 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatTabsModule } from '@angular/material/tabs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseAlertService } from '@fuse/components/alert';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
-import { DispositivosService } from 'app/modules/admin/dashboards/dispositivos/dispositivos.service';
+import { PlanificacionService } from 'app/modules/admin/dashboards/planificacion/planificacion.service';
 import {
-    DispositivosPagination,
-    DispositivosProduct,
-} from 'app/modules/admin/dashboards/dispositivos/dispositivos.types';
+    PlanificacionPagination,
+    PlanificacionProduct,
+} from 'app/modules/admin/dashboards/planificacion/planificacion.types';
 import {
     Observable,
     Subject,
@@ -58,12 +59,12 @@ import {
 } from 'rxjs';
 
 @Component({
-    selector: 'reporte-historial-list',
-    templateUrl: './reporte-historial.component.html',
+    selector: 'planificacion-list',
+    templateUrl: './planificacion.component.html',
     styles: [
         /* language=SCSS */ // Table sizes 
         `
-            .registro-grid {
+            .planificacion-grid {
                 grid-template-columns: 48px auto 40px;
 
                 @screen sm {
@@ -75,7 +76,7 @@ import {
                 }
 
                 @screen lg {
-                    grid-template-columns: 10px 35px auto 100px 100px 100px 100px 100px 50px 50px 100px;
+                    grid-template-columns: 2px 20px 75px auto 100px 100px 75px 75px 75px 75px 75px 100px 50px 100px;
                 }
             }
         `,
@@ -103,23 +104,24 @@ import {
         MatOptionModule,
         MatCheckboxModule,
         MatRippleModule,
+        MatTabsModule,
         AsyncPipe,
         CurrencyPipe,
     ],
 })
-export class ReporteHistorialListComponent
+export class PlanificacionListComponent
     implements OnInit, AfterViewInit, OnDestroy
 {
     @ViewChild(MatPaginator) private _paginator: MatPaginator;
     @ViewChild(MatSort) private _sort: MatSort;
     
-    products$: Observable<DispositivosProduct[]>;
+    products$: Observable<PlanificacionProduct[]>;
    
     flashMessage: 'success' | 'error' | null = null;
     isLoading: boolean = false;
-    pagination: DispositivosPagination;
+    pagination: PlanificacionPagination;
     searchInputControl: UntypedFormControl = new UntypedFormControl();
-    selectedProduct: DispositivosProduct | null = null;
+    selectedProduct: PlanificacionProduct | null = null;
     selectedProductForm: UntypedFormGroup;
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     private _fuseAlertService = inject(FuseAlertService);
@@ -132,7 +134,7 @@ export class ReporteHistorialListComponent
         private _changeDetectorRef: ChangeDetectorRef,
         private _fuseConfirmationService: FuseConfirmationService,
         private _formBuilder: UntypedFormBuilder,
-        private _dispositivoService: DispositivosService,
+        private _planificacionService: PlanificacionService,
         private router: Router,
         private route: ActivatedRoute
     ) {}
@@ -144,7 +146,7 @@ export class ReporteHistorialListComponent
     cancelar(){
         /* Open the confirmation dialog
         const confirmation = this._fuseConfirmationService.open({
-            title: 'Cancelar creación de dispositivo',
+            title: 'Cancelar creación de planificacion',
             message:
                 '',
             actions: {
@@ -164,9 +166,9 @@ export class ReporteHistorialListComponent
     crear(name: string):void{
         // Open the confirmation dialog
         const confirmation = this._fuseConfirmationService.open({
-            title: 'Creación de dispositivo exitosa',
+            title: 'Creación de planificacion exitosa',
             message:
-                'El dispositivo fue creado de manera exitosa',
+                'El planificacion fue creado de manera exitosa',
             actions: {
                 confirm: {
                     label: 'Confirmar',
@@ -192,11 +194,15 @@ export class ReporteHistorialListComponent
     ngOnInit(): void {
         // Create the selected product form
         this.selectedProductForm = this._formBuilder.group({
-            id: [''],
-            inst:[''],
-            op: [''],
+            id:[''],
+            inst: [''],
+            op:[''],
+            fase: [''],
+            dpa: [''],
+            p_viv: [''],
+            p_hog:[''],
             f_ini: [''],
-            f_fin:[''],
+            f_fin: [''],
             f_ing: [''],
             f_des: [''],
             active: ['']
@@ -205,9 +211,9 @@ export class ReporteHistorialListComponent
         
 
         // Get the pagination
-        this._dispositivoService.pagination$
+        this._planificacionService.pagination$
             .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((pagination: DispositivosPagination) => {
+            .subscribe((pagination: PlanificacionPagination) => {
                 // Update the pagination
                 this.pagination = pagination;
 
@@ -216,7 +222,7 @@ export class ReporteHistorialListComponent
             });
 
         // Get the products
-        this.products$ = this._dispositivoService.products$;
+        this.products$ = this._planificacionService.products$;
 
         // Subscribe to search input field value changes
         this.searchInputControl.valueChanges
@@ -226,7 +232,7 @@ export class ReporteHistorialListComponent
                 switchMap((query) => {
                     this.closeDetails();
                     this.isLoading = true;
-                    return this._dispositivoService.getProducts(
+                    return this._planificacionService.getProducts(
                         0,
                         10,
                         'name',
@@ -273,7 +279,7 @@ export class ReporteHistorialListComponent
                     switchMap(() => {
                         this.closeDetails();
                         this.isLoading = true;
-                        return this._dispositivoService.getProducts(
+                        return this._planificacionService.getProducts(
                             this._paginator.pageIndex,
                             this._paginator.pageSize,
                             this._sort.active,
@@ -315,7 +321,7 @@ export class ReporteHistorialListComponent
         }
 
         // Get the product by id
-        this._dispositivoService
+        this._planificacionService
             .getProductById(productId)
             .subscribe((product) => {
                 // Set the selected product
@@ -368,7 +374,7 @@ export class ReporteHistorialListComponent
      */
     createProduct(): void {
         // Create the product
-        this._dispositivoService.createProduct().subscribe((newProduct) => {
+        this._planificacionService.createProduct().subscribe((newProduct) => {
             // Go to new product
             this.selectedProduct = newProduct;
 
@@ -391,7 +397,7 @@ export class ReporteHistorialListComponent
         delete product.currentImageIndex;
 
         // Update the product on the server
-        this._dispositivoService
+        this._planificacionService
             .updateProduct(product.id, product)
             .subscribe(() => {
                 // Show a success message
@@ -405,9 +411,9 @@ export class ReporteHistorialListComponent
     deleteSelectedProduct(): void {
         // Open the confirmation dialog
         const confirmation = this._fuseConfirmationService.open({
-            title: 'Borrar dispositivo',
+            title: 'Borrar planificacion',
             message:
-                '¿Estás seguro que deseas borrar este dispositivo? Esta acción es permanente',
+                '¿Estás seguro que deseas borrar este planificacion? Esta acción es permanente',
             actions: {
                 confirm: {
                     label: 'Borrar',
@@ -423,7 +429,7 @@ export class ReporteHistorialListComponent
                 const product = this.selectedProductForm.getRawValue();
 
                 // Delete the product on the server
-                this._dispositivoService
+                this._planificacionService
                     .deleteProduct(product.id)
                     .subscribe(() => {
                         // Close the details
@@ -438,9 +444,9 @@ export class ReporteHistorialListComponent
     deleteProduct(productId: string): void {
         // Open the confirmation dialog
         const confirmation = this._fuseConfirmationService.open({
-            title: 'Borrar dispositivo',
+            title: 'Borrar planificacion',
             message:
-                '¿Estás seguro que deseas borrar este dispositivo? Esta acción es permanente',
+                '¿Estás seguro que deseas borrar este planificacion? Esta acción es permanente',
             actions: {
                 confirm: {
                     label: 'Borrar',
@@ -454,7 +460,7 @@ export class ReporteHistorialListComponent
             if (result === 'confirmed') {
                 
                 // Delete the product on the server
-                this._dispositivoService
+                this._planificacionService
                     .deleteProduct(productId)
                     .subscribe(() => {
                         // Close the details

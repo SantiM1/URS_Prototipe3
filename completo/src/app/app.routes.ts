@@ -89,6 +89,7 @@ export const appRoutes: Route[] = [
                 {path: 'usuarios', loadChildren: () => import('app/modules/admin/dashboards/usuarios/usuarios.routes')},
                 {path: 'operativosfase', loadChildren: () => import('app/modules/admin/dashboards/operativos/operativos.routes')},
                 {path: 'dispositivos', loadChildren: () => import('app/modules/admin/dashboards/dispositivos/dispositivos.routes')},
+                {path: 'planificacion', loadChildren: () => import('app/modules/admin/dashboards/planificacion/planificacion.routes')},
             ]},
 
             // Apps

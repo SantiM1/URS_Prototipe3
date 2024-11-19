@@ -123,18 +123,21 @@
                                 No.
                             </div>
                             <div class="hidden lg:block" [mat-sort-header]="'inst'">Institución</div>
-                            <div class="hidden lg:block" [mat-sort-header]="'op'">Registro</div>
+                            <div class="hidden lg:block" [mat-sort-header]="'op'">Cédula</div>
                             <div class="hidden sm:block" [mat-sort-header]="'fini'">
-                                Fecha inicio
+                                Nombre
                             </div>
                             <div class="hidden lg:block" [mat-sort-header]="'ffin'">
-                                Fecha fin
+                                Código
                             </div>
                             <div class="hidden lg:block" [mat-sort-header]="'fing'">
-                                Fecha ingreso
+                                Imei
                             </div>
                             <div class="hidden lg:block" [mat-sort-header]="'fdes'">
-                                Fecha desactivación
+                                Fecha ingreso
+                            </div>
+                            <div class="hidden lg:block" [mat-sort-header]="'fdess'">
+                                Fecha salida
                             </div>
                             <div class="hidden lg:block" [mat-sort-header]="'Active'">
                                 Activo
@@ -249,10 +252,6 @@
                                 <!-- Selected product form -->
                                 <form class="flex w-full flex-col" [formGroup]="selectedProductForm">
                                     <div class="flex flex-auto p-8 sm:flex-row">
-
-
-
-
                                         <div class="flex flex-auto">
                                             <!-- Name -->
                                             <mat-form-field class="w-full pr-2">
