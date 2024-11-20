@@ -16,35 +16,36 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: 'Usuarios',
                 type: 'basic',
                 icon: 'heroicons_outline:user',
-                link: '/dashboards/usuarios',
-            },
-            {
-                id: 'dashboards.dispositivos',
-                title: 'Dispositivos',
-                type: 'basic',
-                icon: 'heroicons_outline:device-phone-mobile',
-                link: '/dashboards/dispositivos/registro',
-            },
-            {
-                id: 'dashboards.planificacion',
-                title: 'Planificación',
-                type: 'basic',
-                icon: 'heroicons_outline:clipboard-document-check',
-                link: '/dashboards/planificacion',
+                link: '/seguridad/usuarios',
             },
             {
                 id: 'dashboards.operativos',
                 title: 'Operativos',
                 type: 'basic',
                 icon: 'heroicons_outline:wrench-screwdriver',
-                link: '/dashboards/operativosfase/operativos',
+                link: '/seguridad/operativosfase/operativos',
             },
+            {
+                id: 'dashboards.dispositivos',
+                title: 'Dispositivos',
+                type: 'basic',
+                icon: 'heroicons_outline:device-phone-mobile',
+                link: '/seguridad/dispositivos/registro',
+            },
+            {
+                id: 'dashboards.planificacion',
+                title: 'Planificación',
+                type: 'basic',
+                icon: 'heroicons_outline:clipboard-document-check',
+                link: '/seguridad/planificacion',
+            },
+            
             {
                 id: 'dashboards.sistema',
                 title: 'Sistema',
                 type: 'basic',
                 icon: 'heroicons_outline:cog-6-tooth',
-                link: '/dashboards/sistema/aplicaciones',
+                link: '/seguridad/sistema/aplicaciones',
             },
             /*
             {
@@ -76,6 +77,24 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 link: '/dashboards/crypto',
             },
             */
+        ],
+    },
+    {
+        //SidebarHere
+        id: 'autoregistro',
+        title: 'Registro',
+        subtitle: 'Unique dashboard designs',
+        type: 'group',
+        icon: 'heroicons_outline:globe-alt',
+        children: [
+           
+            {
+                id: 'dashboards.usuarios',
+                title: 'Usuarios',
+                type: 'basic',
+                icon: 'heroicons_outline:user',
+                link: '/dashboards/usuarios',
+            },
         ],
     },
     {
@@ -1215,7 +1234,15 @@ export const compactNavigation: FuseNavigationItem[] = [
     {
         id: 'dashboards',
         title: 'Seguridad',
-        tooltip: 'Dashboards',
+        tooltip: 'Seguridad',
+        type: 'aside',
+        icon: 'heroicons_outline:globe-alt',
+        children: [], // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
+    },
+    {
+        id: 'autoregistro',
+        title: 'Registro',
+        tooltip: 'Registro',
         type: 'aside',
         icon: 'heroicons_outline:globe-alt',
         children: [], // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation

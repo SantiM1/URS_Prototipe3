@@ -81,16 +81,16 @@ export const appRoutes: Route[] = [
         children: [
 
             // Dashboards
-            {path: 'dashboards', children: [
+            {path: 'seguridad', children: [
                 /*{path: 'project', loadChildren: () => import('app/modules/admin/dashboards/project/project.routes')},
                 {path: 'analytics', loadChildren: () => import('app/modules/admin/dashboards/analytics/analytics.routes')},
                 {path: 'finance', loadChildren: () => import('app/modules/admin/dashboards/finance/finance.routes')},
                 {path: 'crypto', loadChildren: () => import('app/modules/admin/dashboards/crypto/crypto.routes')},*/
-                {path: 'usuarios', loadChildren: () => import('app/modules/admin/dashboards/usuarios/usuarios.routes')},
-                {path: 'operativosfase', loadChildren: () => import('app/modules/admin/dashboards/operativos/operativos.routes')},
-                {path: 'dispositivos', loadChildren: () => import('app/modules/admin/dashboards/dispositivos/dispositivos.routes')},
-                {path: 'planificacion', loadChildren: () => import('app/modules/admin/dashboards/planificacion/planificacion.routes')},
-                {path: 'sistema', loadChildren: () => import('app/modules/admin/dashboards/sistema/sistema.routes')},
+                {path: 'usuarios', loadChildren: () => import('app/modules/admin/seguridad/usuarios/usuarios.routes')},
+                {path: 'operativosfase', loadChildren: () => import('app/modules/admin/seguridad/operativos/operativos.routes')},
+                {path: 'dispositivos', loadChildren: () => import('app/modules/admin/seguridad/dispositivos/dispositivos.routes')},
+                {path: 'planificacion', loadChildren: () => import('app/modules/admin/seguridad/planificacion/planificacion.routes')},
+                {path: 'sistema', loadChildren: () => import('app/modules/admin/seguridad/sistema/sistema.routes')},
             ]},
 
             // Apps
