@@ -11,7 +11,7 @@ import { MapComponent } from './modules/admin/apps/map/map.component';
 export const appRoutes: Route[] = [
 
     // Redirect empty path to '/dashboards/project'
-    {path: '', pathMatch : 'full', redirectTo: 'dashboards/project'},
+    {path: '', pathMatch : 'full', redirectTo: 'seguridad/usuarios'},
 
     // Redirect signed-in user to the '/dashboards/project'
     //
@@ -21,7 +21,7 @@ export const appRoutes: Route[] = [
     {
         path: 'signed-in-redirect',
         pathMatch : 'full',
-        redirectTo: 'dashboards/project'
+        redirectTo: 'seguridad/usuarios'
     },
 
     // Auth routes for guests
