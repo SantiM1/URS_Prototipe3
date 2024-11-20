@@ -40,6 +40,14 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 link: '/dashboards/operativosfase/operativos',
             },
             {
+                id: 'dashboards.sistema',
+                title: 'Sistema',
+                type: 'basic',
+                icon: 'heroicons_outline:cog-6-tooth',
+                link: '/dashboards/sistema/aplicaciones',
+            },
+            /*
+            {
                 id: 'dashboards.project',
                 title: 'Project',
                 type: 'basic',
@@ -67,7 +75,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 icon: 'heroicons_outline:currency-dollar',
                 link: '/dashboards/crypto',
             },
-            
+            */
         ],
     },
     {

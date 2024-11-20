@@ -82,14 +82,15 @@ export const appRoutes: Route[] = [
 
             // Dashboards
             {path: 'dashboards', children: [
-                {path: 'project', loadChildren: () => import('app/modules/admin/dashboards/project/project.routes')},
+                /*{path: 'project', loadChildren: () => import('app/modules/admin/dashboards/project/project.routes')},
                 {path: 'analytics', loadChildren: () => import('app/modules/admin/dashboards/analytics/analytics.routes')},
                 {path: 'finance', loadChildren: () => import('app/modules/admin/dashboards/finance/finance.routes')},
-                {path: 'crypto', loadChildren: () => import('app/modules/admin/dashboards/crypto/crypto.routes')},
+                {path: 'crypto', loadChildren: () => import('app/modules/admin/dashboards/crypto/crypto.routes')},*/
                 {path: 'usuarios', loadChildren: () => import('app/modules/admin/dashboards/usuarios/usuarios.routes')},
                 {path: 'operativosfase', loadChildren: () => import('app/modules/admin/dashboards/operativos/operativos.routes')},
                 {path: 'dispositivos', loadChildren: () => import('app/modules/admin/dashboards/dispositivos/dispositivos.routes')},
                 {path: 'planificacion', loadChildren: () => import('app/modules/admin/dashboards/planificacion/planificacion.routes')},
+                {path: 'sistema', loadChildren: () => import('app/modules/admin/dashboards/sistema/sistema.routes')},
             ]},
 
             // Apps
