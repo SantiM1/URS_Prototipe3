@@ -1,0 +1,336 @@
+<div class="flex min-w-0 flex-auto flex-col">
+    <!-- Header -->
+    <div
+        class="bg-card flex flex-0 flex-col border-b p-6 dark:bg-transparent sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:py-8"
+    >
+        <div class="min-w-0 flex-1">
+            <!-- Breadcrumbs -->
+            <div class="flex flex-wrap items-center font-medium">
+                <div>
+                    <a class="whitespace-nowrap text-primary-500"
+                        >Portal</a
+                    >
+                </div>
+                <div class="ml-1 flex items-center whitespace-nowrap">
+                    <mat-icon
+                        class="text-secondary icon-size-5"
+                        [svgIcon]="'heroicons_mini:chevron-right'"
+                    ></mat-icon>
+                    <a class="ml-1 text-primary-500">Formulario</a>
+                </div>
+            </div>
+            <!-- Title -->
+            <div class="mt-2">
+                <h2
+                    class="truncate text-3xl font-extrabold leading-7 tracking-tight sm:leading-10 md:text-4xl"
+                >
+                    Formulario URS
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="flex-auto p-6 sm:p-10">
+        <div class="flex justify-center">
+            <!-- Horizontal stepper -->
+            
+
+            <form
+                class="bg-card overflow-hidden rounded p-4 shadow"
+                [formGroup]="horizontalStepperForm"
+            >
+                <mat-horizontal-stepper [linear]="true" #horizontalStepper>
+                    <mat-step
+                        [formGroupName]="'step1'"
+                        [stepControl]="horizontalStepperForm.get('step1')"
+                        #horizontalStepperStep1
+                    >
+                        <ng-template matStepLabel
+                            >Pregunta 1. </ng-template
+                        >
+                        <p class="my-6 font-medium">
+                            Pregunta 1
+                        </p>
+                        <div class="flex">
+                            <mat-form-field class="flex-auto">
+                                <input
+                                    matInput
+                                    [formControlName]="'email'"
+                                    [placeholder]="'Escribe una respuesta'"
+                                    
+                                />
+                                <mat-icon
+                                    class="icon-size-5"
+                                    matPrefix
+                                    [svgIcon]="'heroicons_solid:building-storefront'"
+                                ></mat-icon>
+                            </mat-form-field>
+                        </div>
+                        <div class="gt-xs:flex-row flex flex-col">
+                            <mat-form-field class="gt-xs:pr-3 flex-auto">
+                                <mat-select
+                                    [formControlName]="'Option'"
+                                    [placeholder]="'Selecciona una opción'"
+                                    
+                                >
+                                    <mat-option value="country-1"
+                                        >Opción 1</mat-option
+                                    >
+                                    <mat-option value="country-2"
+                                        >Opción 2</mat-option
+                                    >
+                                    <mat-option value="country-3"
+                                        >Opción 3</mat-option
+                                    >
+                                </mat-select>
+                                <mat-icon
+                                    class="icon-size-5"
+                                    matPrefix
+                                    [svgIcon]="'heroicons_solid:map-pin'"
+                                ></mat-icon>
+                            </mat-form-field>
+                            <mat-form-field class="gt-xs:pl-3 flex-auto">
+                                <mat-select
+                                    [formControlName]="'language'"
+                                    [placeholder]="'Selecciona otra opción'"
+                                    
+                                >
+                                    <mat-option value="language-1"
+                                        >Opción 1</mat-option
+                                    >
+                                    <mat-option value="language-2"
+                                        >Opción 2</mat-option
+                                    >
+                                    <mat-option value="language-3"
+                                        >Opción 3</mat-option
+                                    >
+                                </mat-select>
+                                <mat-icon
+                                    class="icon-size-5"
+                                    matPrefix
+                                    [svgIcon]="'heroicons_solid:building-office'"
+                                ></mat-icon>
+                            </mat-form-field>
+                        </div>
+                        <div class="flex justify-end">
+                            <button
+                                class="px-8"
+                                mat-flat-button
+                                [color]="'primary'"
+                                
+                                type="button"
+                                matStepperNext
+                            >
+                               Siguiente
+                            </button>
+                        </div>
+                    </mat-step>
+
+                    <mat-step
+                        [formGroupName]="'step2'"
+                        [stepControl]="horizontalStepperForm.get('step2')"
+                        #horizontalStepperStep2
+                    >
+                        <ng-template matStepLabel>Pregunta 3</ng-template>
+                        <p class="my-6 font-medium">
+                            Pregunta 2
+                        </p>
+                        <div class="gt-xs:flex-row flex flex-col">
+                            <mat-form-field class="gt-xs:pr-3 flex-auto">
+                                <input
+                                    matInput
+                                    [formControlName]="'firstName'"
+                                    [placeholder]="'Nombres'"
+                                    
+                                />
+                                <mat-icon
+                                    class="icon-size-5"
+                                    matPrefix
+                                    [svgIcon]="'heroicons_solid:user-circle'"
+                                ></mat-icon>
+                            </mat-form-field>
+                            <mat-form-field class="gt-xs:pl-3 flex-auto">
+                                <input
+                                    matInput
+                                    [formControlName]="'lastName'"
+                                    [placeholder]="'Apellidos'"
+                                    
+                                />
+                                <mat-icon
+                                    class="icon-size-5"
+                                    matPrefix
+                                    [svgIcon]="'heroicons_solid:user-circle'"
+                                ></mat-icon>
+                            </mat-form-field>
+                        </div>
+                        <div class="flex">
+                            <mat-form-field class="flex-auto">
+                                <input
+                                    matInput
+                                    [formControlName]="'userName'"
+                                    [placeholder]="'Cédula'"
+                                    
+                                />
+                                
+                            </mat-form-field>
+                        </div>
+                        <div class="flex">
+                            <mat-form-field class="flex-auto">
+                                <textarea
+                                    matInput
+                                    [formControlName]="'about'"
+                                    [placeholder]="'Descripción'"
+                                    [rows]="3"
+                                ></textarea>
+                                <mat-icon
+                                    class="icon-size-5"
+                                    matPrefix
+                                    [svgIcon]="
+                                        'heroicons_solid:bars-3-bottom-left'
+                                    "
+                                ></mat-icon>
+                            </mat-form-field>
+                        </div>
+                        <div class="flex justify-end">
+                            <button
+                                class="mr-2 px-8"
+                                mat-flat-button
+                                [color]="'accent'"
+                                type="button"
+                                matStepperPrevious
+                            >
+                                Anterior
+                            </button>
+                            <button
+                                class="px-8"
+                                mat-flat-button
+                                [color]="'primary'"
+                                matStepperNext
+                            >
+                               Siguiente
+                            </button>
+                        </div>
+                    </mat-step>
+
+                    <mat-step
+                        [formGroupName]="'step3'"
+                        [stepControl]="horizontalStepperForm.get('step3')"
+                    >
+                        <ng-template matStepLabel>Pregunta 3</ng-template>
+                        <p class="my-6 font-medium">
+                            Pregunta 3
+                        </p>
+                        <div class="gt-sm:flex-row flex flex-col">
+                            <div class="flex flex-col">
+                                <span class="mb-2 font-medium">Opciones</span>
+                                <div
+                                    class="flex flex-col"
+                                    [formGroupName]="'byEmail'"
+                                >
+                                    <mat-checkbox
+                                        class="mb-1"
+                                        [color]="'primary'"
+                                        [formControlName]="'companyNews'"
+                                    >
+                                        Opción 1
+                                    </mat-checkbox>
+                                    <mat-checkbox
+                                        class="mb-1"
+                                        [color]="'primary'"
+                                        [formControlName]="'featuredProducts'"
+                                    >
+                                        Opción 2
+                                    </mat-checkbox>
+                                    <mat-checkbox
+                                        [color]="'primary'"
+                                        [formControlName]="'messages'"
+                                    >
+                                        Opción 3
+                                    </mat-checkbox>
+                                </div>
+                            </div>
+                            <div
+                                class="gt-sm:mt-0 gt-sm:ml-16 mt-8 flex flex-col"
+                            >
+                                <span class="mb-2 font-medium"
+                                    >Escoge una opción</span
+                                >
+                                <mat-radio-group
+                                    class="flex flex-col"
+                                    [color]="'primary'"
+                                    [formControlName]="'pushNotifications'"
+                                >
+                                    <mat-radio-button
+                                        class="mb-2"
+                                        [value]="'everything'"
+                                    >
+                                    Opción 1
+                                    </mat-radio-button>
+                                    <mat-radio-button
+                                        class="mb-2"
+                                        [value]="'just-good'"
+                                    >
+                                    Opción 2
+                                    </mat-radio-button>
+                                    <mat-radio-button [value]="'no-push'">
+                                    Opción 3
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+                        </div>
+                        <div class="mt-8 flex justify-end">
+                            <button
+                                class="mr-2 px-8"
+                                mat-flat-button
+                                [color]="'accent'"
+                                type="button"
+                                matStepperPrevious
+                            >
+                                Anterior
+                            </button>
+                            <button
+                                class="px-8"
+                                mat-flat-button
+                                [color]="'primary'"
+                                type="button"
+                                matStepperNext
+                            >
+                               Siguiente
+                            </button>
+                        </div>
+                    </mat-step>
+
+                    <mat-step>
+                        <ng-template matStepLabel>Finalizar</ng-template>
+                        <p class="my-6 font-medium">
+                            Gracias por tu participación! Si tienes dudas no olvides 
+                            consultar el Manual de Actualización del Registro Social.
+                        </p>
+                        <div class="mt-8 flex justify-end">
+                            <button
+                                class="mr-2 px-8"
+                                mat-flat-button
+                                [color]="'accent'"
+                                type="button"
+                                matStepperPrevious
+                            >
+                                Anterior
+                            </button>
+                            <button
+                                class="px-8"
+                                mat-flat-button
+                                [color]="'primary'"
+                                type="reset"
+                                
+                            >
+                                Terminar
+                            </button>
+                        </div>
+                    </mat-step>
+                </mat-horizontal-stepper>
+            </form>
+
+        </div>
+    </div>
+</div>

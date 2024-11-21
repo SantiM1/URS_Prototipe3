@@ -1,0 +1,175 @@
+<div
+    class="flex min-w-0 flex-auto flex-col items-center sm:justify-center md:p-8"
+>
+    <div
+        class="flex overflow-hidden sm:bg-card sm:rounded-2xl sm:shadow md:w-full md:max-w-6xl"
+    >
+        <div class="w-full px-4 py-8 sm:w-auto sm:p-12 md:p-16">
+            <div class="mx-auto w-full max-w-80 sm:mx-0 sm:w-80">
+                <!-- Logo -->
+                <div class="w-28">
+                    <img src="\images\logo\logo-republica-del-ecuador.png" />
+                </div>
+    
+
+                <!-- Title -->
+                <div
+                    class="mt-8 text-4xl font-extrabold leading-tight tracking-tight"
+                >
+                    Sign up
+                </div>
+                <div class="mt-0.5 flex items-baseline font-medium">
+                    <div>Already have an account?</div>
+                    <a
+                        class="ml-1 text-primary-500 hover:underline"
+                        [routerLink]="['/pages/authentication/sign-in']"
+                        >Sign in
+                    </a>
+                </div>
+
+                <!-- Alert -->
+                @if (showAlert) {
+                    <fuse-alert
+                        class="-mb-4 mt-8"
+                        [appearance]="'outline'"
+                        [showIcon]="false"
+                        [type]="alert.type"
+                        [@shake]="alert.type === 'error'"
+                    >
+                        {{ alert.message }}
+                    </fuse-alert>
+                }
+
+                <!-- Sign Up form -->
+                <form class="mt-8" [formGroup]="signUpForm">
+                    <!-- Name field -->
+                    <mat-form-field class="w-full">
+                        <mat-label>Cédula de Identidad</mat-label>
+                        <input id="name" matInput [formControlName]="'name'" />
+                        @if (signUpForm.get('name').hasError('required')) {
+                            <mat-error> Full name is required </mat-error>
+                        }
+                    </mat-form-field>
+
+                    <!-- Email field -->
+                    <mat-form-field class="w-full">
+                        <mat-label>Correo Electrónico</mat-label>
+                        <input
+                            id="email"
+                            matInput
+                            [formControlName]="'email'"
+                        />
+                        @if (signUpForm.get('email').hasError('required')) {
+                            <mat-error> Email address is required </mat-error>
+                        }
+                        @if (signUpForm.get('email').hasError('email')) {
+                            <mat-error>
+                                Please enter a valid email address
+                            </mat-error>
+                        }
+                    </mat-form-field>
+                    
+                    <!-- ToS and PP -->
+                    <div class="border rounded bg-gray-25 mt-1.5 inline-flex w-full  justify-between items-end">
+                        
+                        <mat-checkbox
+                            class="px-2 h-14 -ml-2"
+                            [color]="'primary'"
+                            [formControlName]="'agreements'"
+                        >
+                            <span>No soy un robot</span>
+                            
+                        </mat-checkbox>
+                        <div class="w-14">
+                            <img src="\images\logo\RecaptchaLogo.svg" />
+                        </div>
+                    </div>
+                    <div class="mt-1.5 inline-flex w-full items-end">
+                        
+                        <mat-checkbox
+                            class="-ml-2"
+                            [color]="'primary'"
+                            [formControlName]="'agreements'"
+                        >
+                            <span>Acepto los</span>
+                            <a
+                                class="ml-1 text-primary-500 hover:underline"
+                                [routerLink]="['./']"
+                                >Terminos
+                            </a>
+                            <span>y</span>
+                            <a
+                                class="ml-1 text-primary-500 hover:underline"
+                                [routerLink]="['./']"
+                                >Condiciones    
+                            </a>
+                        </mat-checkbox>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button
+                        class="fuse-mat-button-large mt-6 w-full"
+                        mat-flat-button
+                        [color]="'primary'"
+                        [disabled]="signUpForm.disabled"
+                        (click)="signUp()"
+                    >
+                        @if (!signUpForm.disabled) {
+                            <span> Create your free account </span>
+                        }
+                        @if (signUpForm.disabled) {
+                            <mat-progress-spinner
+                                [diameter]="24"
+                                [mode]="'indeterminate'"
+                            ></mat-progress-spinner>
+                        }
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div
+            class="relative hidden h-full flex-auto items-center justify-center overflow-hidden bg-blue-950 p-16 dark:border-l md:flex lg:px-28"
+        >
+            <!-- Background -->
+            <!-- Rings -->
+            <!-- prettier-ignore -->
+            <svg class="absolute inset-0 pointer-events-none"
+                 viewBox="0 0 960 540" width="100%" height="100%" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+                <g class="text-blue-700 opacity-25" fill="none" stroke="currentColor" stroke-width="100">
+                    <circle r="234" cx="196" cy="23"></circle>
+                    <circle r="234" cx="790" cy="491"></circle>
+                </g>
+            </svg>
+            <!-- Dots -->
+            <!-- prettier-ignore -->
+            <svg class="absolute -top-16 -right-16 text-blue-700"
+                 viewBox="0 0 220 192" width="220" height="192" fill="none">
+                <defs>
+                    <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <rect x="0" y="0" width="4" height="4" fill="currentColor"></rect>
+                    </pattern>
+                </defs>
+                <rect width="220" height="192" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"></rect>
+            </svg>
+            <!-- Content -->
+            <div class="relative z-10 w-full max-w-2xl">
+                <div class="text-7xl font-bold leading-none text-gray-100">
+                    <div>Bienvenido a la</div>
+                    <div>Unidad del Registro Social</div>
+                </div>
+                <div class="mt-6 text-lg leading-6 tracking-tight text-gray-400">
+                    La URS un catastro en el que consta información social,  
+                    económica y demográfica individualizada y a nivel de familias; 
+                    que  permite a las instituciones identificar a sus poblaciones objetivo,
+                    para enfocar mejor los esfuerzos hacia los grupos en condiciones de pobreza. 
+                </div>
+                <div class="mt-8 flex items-center">
+                    
+                    <div class="ml-4 font-medium tracking-tight text-gray-400">
+                        10.924.734 de personas registradas
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

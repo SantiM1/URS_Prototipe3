@@ -4,7 +4,7 @@ import { FuseNavigationItem } from '@fuse/components/navigation';
 export const defaultNavigation: FuseNavigationItem[] = [
     {
         //SidebarHere
-        id: 'dashboards',
+        id: 'seguridad',
         title: 'Seguridad',
         subtitle: 'Unique dashboard designs',
         type: 'group',
@@ -12,28 +12,28 @@ export const defaultNavigation: FuseNavigationItem[] = [
         children: [
            
             {
-                id: 'dashboards.usuarios',
+                id: 'seguridad.usuarios',
                 title: 'Usuarios',
                 type: 'basic',
                 icon: 'heroicons_outline:user',
                 link: '/seguridad/usuarios',
             },
             {
-                id: 'dashboards.operativos',
+                id: 'seguridad.operativos',
                 title: 'Operativos',
                 type: 'basic',
                 icon: 'heroicons_outline:wrench-screwdriver',
                 link: '/seguridad/operativosfase/operativos',
             },
             {
-                id: 'dashboards.dispositivos',
+                id: 'seguridad.dispositivos',
                 title: 'Dispositivos',
                 type: 'basic',
                 icon: 'heroicons_outline:device-phone-mobile',
                 link: '/seguridad/dispositivos/registro',
             },
             {
-                id: 'dashboards.planificacion',
+                id: 'seguridad.planificacion',
                 title: 'Planificación',
                 type: 'basic',
                 icon: 'heroicons_outline:clipboard-document-check',
@@ -41,13 +41,68 @@ export const defaultNavigation: FuseNavigationItem[] = [
             },
             
             {
-                id: 'dashboards.sistema',
+                id: 'seguridad.sistema',
                 title: 'Sistema',
                 type: 'basic',
                 icon: 'heroicons_outline:cog-6-tooth',
                 link: '/seguridad/sistema/aplicaciones',
             },
-            /*
+        ],
+    },
+    {
+        //SidebarHere
+        id: 'portal',
+        title: 'Portal',
+        subtitle: 'Unique dashboard designs',
+        type: 'group',
+        icon: 'heroicons_outline:globe-alt',
+        children: [
+            {
+                id: 'portal.main',
+                title: 'Portal',
+                type: 'basic',
+                icon: 'heroicons_outline:user',
+                link: '/portal/land',
+            },
+            {
+                id: 'portal.autoregistro',
+                title: 'Autoregistro',
+                type: 'basic',
+                icon: 'heroicons_outline:user',
+                link: '/portal/autoregistro',
+            },
+            {
+                id: 'portal.formulario',
+                title: 'Formulario',
+                type: 'basic',
+                icon: 'heroicons_outline:user',
+                link: '/portal/formulario-urs',
+            },
+            {
+                id: 'portal.usuario-autentificado',
+                title: 'Usuario Autentificados',
+                type: 'basic',
+                icon: 'heroicons_outline:user',
+                link: '/portal/usuario-autentificado',
+            },
+            {
+                id: 'portal.usuario-institucional',
+                title: 'Usuario Institucional',
+                type: 'basic',
+                icon: 'heroicons_outline:user',
+                link: '/portal/usuario-institucional',
+            },
+        ],
+    },
+    {
+        //SidebarHere
+        id: 'dashboards',
+        title: 'Dashboards',
+        subtitle: 'Unique dashboard designs',
+        type: 'group',
+        icon: 'heroicons_outline:clipboard-document-check',
+        children: [
+           
             {
                 id: 'dashboards.project',
                 title: 'Project',
@@ -75,25 +130,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 type: 'basic',
                 icon: 'heroicons_outline:currency-dollar',
                 link: '/dashboards/crypto',
-            },
-            */
-        ],
-    },
-    {
-        //SidebarHere
-        id: 'autoregistro',
-        title: 'Registro',
-        subtitle: 'Unique dashboard designs',
-        type: 'group',
-        icon: 'heroicons_outline:globe-alt',
-        children: [
-           
-            {
-                id: 'dashboards.usuarios',
-                title: 'Usuarios',
-                type: 'basic',
-                icon: 'heroicons_outline:user',
-                link: '/dashboards/usuarios',
             },
         ],
     },
@@ -1232,7 +1268,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
 ];
 export const compactNavigation: FuseNavigationItem[] = [
     {
-        id: 'dashboards',
+        id: 'seguridad',
         title: 'Seguridad',
         tooltip: 'Seguridad',
         type: 'aside',
@@ -1240,11 +1276,19 @@ export const compactNavigation: FuseNavigationItem[] = [
         children: [], // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
     },
     {
-        id: 'autoregistro',
-        title: 'Registro',
-        tooltip: 'Registro',
+        id: 'portal',
+        title: 'Portal',
+        tooltip: 'Portal',
         type: 'aside',
         icon: 'heroicons_outline:globe-alt',
+        children: [], // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
+    },
+    {
+        id: 'dashboards',
+        title: 'Dashboards',
+        tooltip: 'Dashboards',
+        type: 'aside',
+        icon: 'heroicons_outline:clipboard-document-check',
         children: [], // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
     },
     {

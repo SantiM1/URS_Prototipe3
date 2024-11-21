@@ -81,18 +81,29 @@ export const appRoutes: Route[] = [
         children: [
 
             // Dashboards
-            {path: 'seguridad', children: [
-                /*{path: 'project', loadChildren: () => import('app/modules/admin/dashboards/project/project.routes')},
+            {path: 'dashboards', children:[
+                {path: 'project', loadChildren: () => import('app/modules/admin/dashboards/project/project.routes')},
                 {path: 'analytics', loadChildren: () => import('app/modules/admin/dashboards/analytics/analytics.routes')},
                 {path: 'finance', loadChildren: () => import('app/modules/admin/dashboards/finance/finance.routes')},
-                {path: 'crypto', loadChildren: () => import('app/modules/admin/dashboards/crypto/crypto.routes')},*/
+                {path: 'crypto', loadChildren: () => import('app/modules/admin/dashboards/crypto/crypto.routes')},
+            ]},
+            //Seguridad
+            {path: 'seguridad', children: [
+                
                 {path: 'usuarios', loadChildren: () => import('app/modules/admin/seguridad/usuarios/usuarios.routes')},
                 {path: 'operativosfase', loadChildren: () => import('app/modules/admin/seguridad/operativos/operativos.routes')},
                 {path: 'dispositivos', loadChildren: () => import('app/modules/admin/seguridad/dispositivos/dispositivos.routes')},
                 {path: 'planificacion', loadChildren: () => import('app/modules/admin/seguridad/planificacion/planificacion.routes')},
                 {path: 'sistema', loadChildren: () => import('app/modules/admin/seguridad/sistema/sistema.routes')},
             ]},
-
+            //Portal
+            {path: 'portal', children: [
+                {path: 'land', loadChildren: () => import('app/modules/admin/portal/project/project.routes')},
+                {path: 'formulario-urs', loadChildren: () => import('app/modules/admin/portal/forms/portal.routes')},
+                {path: 'usuario-institucional', loadChildren: () => import('app/modules/admin/portal/mailbox/mailbox.routes')},
+                {path: 'usuario-autentificado', loadChildren: () => import('app/modules/admin/portal/activities/activities.routes')},
+                {path: 'autoregistro', loadChildren: () => import('app/modules/admin/portal/sign-up/sign-up.routes')},
+            ]},
             // Apps
             {path: 'apps', children: [
                 {path: 'maps',  component: MapComponent},
