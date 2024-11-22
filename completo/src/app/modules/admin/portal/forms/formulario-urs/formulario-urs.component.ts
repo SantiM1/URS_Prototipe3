@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import {
     FormsModule,
     ReactiveFormsModule,
@@ -15,6 +15,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatStepperModule } from '@angular/material/stepper';
+import { Router } from '@angular/router';
+import { Map } from 'maplibre-gl';
+
 
 @Component({
     selector: 'formulario-urs',
@@ -34,15 +37,25 @@ import { MatStepperModule } from '@angular/material/stepper';
         MatCheckboxModule,
         MatRadioModule,
     ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormularioURSComponent implements OnInit {
+    @ViewChild('map')
+    private mapContainer: ElementRef<HTMLElement>;
+  
+  
+    private map: Map;
     horizontalStepperForm: UntypedFormGroup;
     verticalStepperForm: UntypedFormGroup;
 
     /**
      * Constructor
      */
-    constructor(private _formBuilder: UntypedFormBuilder) {}
+    constructor(private _formBuilder: UntypedFormBuilder,
+        private _router: Router
+    ) {
+        
+    }
 
     // -----------------------------------------------------------------------------------------------------
     // @ Lifecycle hooks
@@ -77,4 +90,24 @@ export class FormularioURSComponent implements OnInit {
 
        
     }
+    back(): void {
+        this._router.navigate(['/portal/land']);
+    }
+    ngAfterViewInit() {
+        const myAPIKey = '8c31c50c46834e5aaa1a7d1246c6e9d7'; 
+        const mapStyle = 'https://maps.geoapify.com/v1/styles/osm-bright/style.json';
+    
+        const initialState = {
+          lng: 11,
+          lat: 49,
+          zoom: 4
+        };
+    
+        this.map = new Map({
+          container: this.mapContainer.nativeElement,
+          style: `${mapStyle}?apiKey=${myAPIKey}`,
+          center: [initialState.lng, initialState.lat],
+          zoom: initialState.zoom
+        });
+      }
 }

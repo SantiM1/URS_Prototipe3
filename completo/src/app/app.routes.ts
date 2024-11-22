@@ -3,7 +3,7 @@ import { initialDataResolver } from 'app/app.resolvers';
 import { AuthGuard } from 'app/core/auth/guards/auth.guard';
 import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
 import { LayoutComponent } from 'app/layout/layout.component';
-import { MapComponent } from './modules/admin/apps/map/map.component';
+import { MapComponent } from './modules/admin/map/map.component';
 
 // prettier-ignore
 /* eslint-disable max-len */
@@ -11,7 +11,7 @@ import { MapComponent } from './modules/admin/apps/map/map.component';
 export const appRoutes: Route[] = [
 
     // Redirect empty path to '/dashboards/project'
-    {path: '', pathMatch : 'full', redirectTo: 'seguridad/usuarios'},
+    {path: '', pathMatch : 'full', redirectTo: 'portal/land'},
 
     // Redirect signed-in user to the '/dashboards/project'
     //
@@ -21,7 +21,7 @@ export const appRoutes: Route[] = [
     {
         path: 'signed-in-redirect',
         pathMatch : 'full',
-        redirectTo: 'seguridad/usuarios'
+        redirectTo: 'portal/land'
     },
 
     // Auth routes for guests

@@ -10,5 +10,6 @@ export default [
         resolve: {
             data: () => inject(ProjectService).getData(),
         },
+        
     },
 ] as Routes;

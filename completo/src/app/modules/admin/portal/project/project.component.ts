@@ -6,18 +6,25 @@ import {
     OnInit,
     ViewEncapsulation,
 } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatRippleModule } from '@angular/material/core';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { Router } from '@angular/router';
+import { FuseCardComponent } from '@fuse/components/card';
 import { TranslocoModule } from '@ngneat/transloco';
 import { ProjectService } from 'app/modules/admin/portal/project/project.service';
 import { ApexOptions, NgApexchartsModule } from 'ng-apexcharts';
 import { Subject, takeUntil } from 'rxjs';
+
 
 @Component({
     selector: 'project',
@@ -37,6 +44,13 @@ import { Subject, takeUntil } from 'rxjs';
         MatTableModule,
         NgClass,
         CurrencyPipe,
+        MatExpansionModule,
+        MatFormFieldModule,
+        FuseCardComponent,
+        MatSlideToggleModule,
+        FormsModule,
+        MatInputModule,
+
     ],
 })
 export class ProjectComponent implements OnInit, OnDestroy {
@@ -57,6 +71,21 @@ export class ProjectComponent implements OnInit, OnDestroy {
         private _projectService: ProjectService,
         private _router: Router
     ) {}
+    
+    slides: string [] = ['images/URS/urs1.png', 'images/URS/fam1.jpg', 'images/URS/urs2.jpg' ]
+    i=0;
+
+    getSlide() {
+        return this.slides[this.i];
+    }
+
+    getPrev() {
+        this.i = this.i===0 ? this.slides.length-1 : this.i - 1;
+    }
+//edit here    
+    getNext() {
+        this.i = this.i===this.slides.length-1 ? 0 : this.i + 1;
+    }
 
     // -----------------------------------------------------------------------------------------------------
     // @ Lifecycle hooks
@@ -453,5 +482,14 @@ export class ProjectComponent implements OnInit, OnDestroy {
                 },
             },
         };
+    }
+    signOut(): void {
+        this._router.navigate(['/sign-out']);
+    }
+    register(): void {
+        this._router.navigate(['/portal/autoregistro']);
+    }
+    forms(): void {
+        this._router.navigate(['/portal/formulario-urs']);
     }
 }

@@ -22,8 +22,8 @@ const themes = {
     // Default theme is required for theming system to work correctly!
     default: {
         primary: {
-            ...colors.indigo,
-            DEFAULT: colors.indigo[600],
+            ...colors.blue,
+            DEFAULT: colors.blue[950],
         },
         accent: {
             ...colors.slate,
@@ -67,7 +67,9 @@ const themes = {
  */
 const config = {
     darkMode: 'class',
-    content: ['./src/**/*.{html,scss,ts}'],
+    content: ['./src/**/*.{html,scss,ts}', 
+        "./node_modules/flowbite/**/*.js"
+        ],
     important: true,
     theme: {
         fontSize: {
@@ -104,8 +106,8 @@ const config = {
                 0: '0 0 auto',
             },
             fontFamily: {
-                sans: `"Inter var", ${defaultTheme.fontFamily.sans.join(',')}`,
-                mono: `"IBM Plex Mono", ${defaultTheme.fontFamily.mono.join(',')}`,
+                sans: `"Arial Regular", ${defaultTheme.fontFamily.sans.join(',')}`,
+                mono: `"Arial Regular", ${defaultTheme.fontFamily.mono.join(',')}`,
             },
             opacity: {
                 12: '0.12',
@@ -283,6 +285,7 @@ const config = {
     },
     plugins: [
         // Fuse - Tailwind plugins
+        
         require(
             path.resolve(__dirname, 'src/@fuse/tailwind/plugins/utilities')
         ),
@@ -295,6 +298,7 @@ const config = {
 
         // Other third party and/or custom plugins
         require('@tailwindcss/typography')({ modifiers: ['sm', 'lg'] }),
+        require('flowbite/plugin'),
     ],
 };
 

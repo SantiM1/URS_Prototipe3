@@ -13,7 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseAlertComponent, FuseAlertType } from '@fuse/components/alert';
 import { AuthService } from 'app/core/auth/auth.service';
@@ -52,7 +52,8 @@ export class SignUpModernComponent implements OnInit {
      */
     constructor(
         private _authService: AuthService,
-        private _formBuilder: UntypedFormBuilder
+        private _formBuilder: UntypedFormBuilder,
+        private _router: Router
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
@@ -80,5 +81,7 @@ export class SignUpModernComponent implements OnInit {
     /**
      * Sign in
      */
-    signUp(): void {}
+    signUp(): void {
+        this._router.navigate(['/portal/land']);
+    }
 }
