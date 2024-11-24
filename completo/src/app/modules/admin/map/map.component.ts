@@ -110,20 +110,21 @@ export class MapComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    
     const myAPIKey = '8c31c50c46834e5aaa1a7d1246c6e9d7'; 
     const mapStyle = 'https://maps.geoapify.com/v1/styles/osm-bright/style.json';
 
     const initialState = {
-      lng: 11,
-      lat: 49,
-      zoom: 4
+      lng: -80,
+      lat: -2,
+      zoom: 6
     };
 
     this.map = new Map({
       container: this.mapContainer.nativeElement,
       style: `${mapStyle}?apiKey=${myAPIKey}`,
       center: [initialState.lng, initialState.lat],
-      zoom: initialState.zoom
+      zoom: initialState.zoom,
     });
   }
   

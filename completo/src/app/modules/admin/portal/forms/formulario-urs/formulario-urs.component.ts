@@ -39,14 +39,12 @@ import { Map } from 'maplibre-gl';
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormularioURSComponent implements OnInit {
+export class FormularioURSComponent {
     @ViewChild('map')
     private mapContainer: ElementRef<HTMLElement>;
-  
+    
   
     private map: Map;
-    horizontalStepperForm: UntypedFormGroup;
-    verticalStepperForm: UntypedFormGroup;
 
     /**
      * Constructor
@@ -64,32 +62,7 @@ export class FormularioURSComponent implements OnInit {
     /**
      * On init
      */
-    ngOnInit(): void {
-        // Horizontal stepper form
-        this.horizontalStepperForm = this._formBuilder.group({
-            step1: this._formBuilder.group({
-                email: [''],
-                country: [''],
-                language: [''],
-            }),
-            step2: this._formBuilder.group({
-                firstName: [''],
-                lastName: [''],
-                userName: [''],
-                about: [''],
-            }),
-            step3: this._formBuilder.group({
-                byEmail: this._formBuilder.group({
-                    companyNews: [true],
-                    featuredProducts: [false],
-                    messages: [true],
-                }),
-                pushNotifications: ['everything'],
-            }),
-        });
-
-       
-    }
+   
     back(): void {
         this._router.navigate(['/portal/land']);
     }
@@ -98,9 +71,9 @@ export class FormularioURSComponent implements OnInit {
         const mapStyle = 'https://maps.geoapify.com/v1/styles/osm-bright/style.json';
     
         const initialState = {
-          lng: 11,
-          lat: 49,
-          zoom: 4
+          lng: -80,
+          lat: -2,
+          zoom: 5
         };
     
         this.map = new Map({

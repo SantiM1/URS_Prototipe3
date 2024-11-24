@@ -490,6 +490,6 @@ export class ProjectComponent implements OnInit, OnDestroy {
         this._router.navigate(['/portal/autoregistro']);
     }
     forms(): void {
-        this._router.navigate(['/portal/formulario-urs']);
+        this._router.navigate(['/portal/formulario-urs/declaracion']);
     }
 }

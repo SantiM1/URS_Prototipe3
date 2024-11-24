@@ -1,89 +1,18 @@
 <div class="flex min-w-0 flex-auto flex-col">
-    <!-- Header -->
-    <div
-        class="bg-card flex flex-0 flex-col border-b p-6 dark:bg-transparent sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:py-8">
-        <div class="min-w-0 flex-1">
-            <!-- Breadcrumbs -->
-            <div class="flex flex-wrap items-center font-medium">
-                <div>
-                    <a class="whitespace-nowrap text-primary-500" (click)="back()">Portal</a>
-                </div>
-                <div class="ml-1 flex items-center whitespace-nowrap">
-                    <mat-icon class="text-secondary icon-size-5" [svgIcon]="'heroicons_mini:chevron-right'"></mat-icon>
-                    <a class="ml-1 text-primary-500">Formulario</a>
-                </div>
-            </div>
-            <!-- Title -->
-            <div class="mt-2">
-                <h2 class="truncate text-3xl font-extrabold leading-7 tracking-tight sm:leading-10 md:text-4xl">
-                    Formulario URS
-                </h2>
-            </div>
-        </div>
-    </div>
-
     <!-- Main -->
     <div class="flex-auto p-6 sm:p-10">
         <div class="flex justify-center">
             <!-- Horizontal stepper -->
 
-
-            <form class="bg-card overflow-hidden rounded p-4 shadow" [formGroup]="horizontalStepperForm">
-                <mat-horizontal-stepper [linear]="true" #horizontalStepper>
-                    <mat-step [formGroupName]="'step1'" [stepControl]="horizontalStepperForm.get('step1')"
-                        #horizontalStepperStep1>
-                        <ng-template matStepLabel>Aceptación de la declaración</ng-template>
-                        <pre>
-Declaro que la información proporcionada es verdadera e integra. Autorizo el uso y verificación de toda esta información para 
-programas y/o subsidios estatales, por lo que conozco que cualquier falsedad en la información proporcionada excluye a los miembros
-de este hogar de ser beneficiarios de los mismos
-Por tanto:
-
-    1. Eximo a la Unidad del Registro Social de todas las responsabilidades, inclusive frente a terceros, si esta información 
-        proporcionada fuere falsa o errónea.
-    2. Me comprometo a proporcionar a la Unidad del Registro Social los sustentos que justifiquen la información registrada. 
-    3. Autorizo a la Unidad del Registro Social a realizar cuantos análisis y verificación se consideren necesarias.
-    4. En virtud de la presente declaración, renuncio a instaurar por este motivo cualquier tipo de acción civil, penal o 
-        administrativa en contra de la Unidad del Registro Social y de sus representantes legales y demás servidores por el 
-        contenido erróneo de la información.
-    5. Autorizo capturar las fotografías de documentos de identificación y del informante calificado, mismas que serán consideradas 
-        como mecanismo de validación y aceptación de la información que proporciono.
-    6. Me comprometo a mantener actualizada la información que consta en la base de datos del Registro Social, cuando se presenten
-        cambios en las condiciones económicas, socio demográficas o previo el vencimiento de 36 meses desde el último registro.
-                        </pre>
-                        <div class="flex justify-center font-medium">
-                            ¿Está de acuerdo con esta declaración?
-                         </div>
-                        
-                        <div class="flex justify-center">
-                            
-                            <mat-radio-group aria-label="Select an option">
-                                <mat-radio-button value="1">Si</mat-radio-button>
-                                <mat-radio-button value="2">No</mat-radio-button>
-                              </mat-radio-group>
-                              
-                        </div>
                         
                        
-                        <div class="flex justify-end">
-                            <button class="px-8" mat-flat-button [color]="'primary'" type="button" matStepperNext>
-                                Siguiente
-                            </button>
-                        </div>
-                    </mat-step>
-                    <mat-step [formGroupName]="'step1'" [stepControl]="horizontalStepperForm.get('step1')"
-                        #horizontalStepperStep1>
-                        <ng-template matStepLabel>Pregunta 1. </ng-template>
-                        
-                        <p class="my-6 font-medium">
+                        <div class="flex-grow">
                             
-                            Selecciona tu hogar en el mapa interactivo
-                        </p>
-                        <div class="grid-cols-4">
-                       
-                        <div class="gt-xs:flex-row flex ">
-                            <mat-form-field class="gt-xs:pr-3 flex-auto">
-                                <mat-select [formControlName]="'Option'" [placeholder]="'Selecciona una opción'">
+                        <div class="grid gap-4 grid-cols-8">
+                            <div class="col-span-3">
+                                <p> 1. Provincia</p>
+                            <mat-form-field class="w-96 ">
+                                <mat-select [formControlName]="'Option'" [placeholder]="'Selecciona la provincia'">
                                     <mat-option value="country-1">Opción 1</mat-option>
                                     <mat-option value="country-2">Opción 2</mat-option>
                                     <mat-option value="country-3">Opción 3</mat-option>
@@ -91,169 +20,46 @@ Por tanto:
                                 <mat-icon class="icon-size-5" matPrefix
                                     [svgIcon]="'heroicons_solid:map-pin'"></mat-icon>
                             </mat-form-field>
-                        </div>
-                        <div class="col-span-2">
-                            <div class="map-container flex-grow h-96" #map></div>
-                        </div>
-                    </div>
-                        <div class="flex justify-end">
-                            <button class="px-8" mat-flat-button [color]="'primary'" type="button" matStepperNext>
-                                Siguiente
-                            </button>
-                        </div>
-                    </mat-step>
-                    <mat-step [formGroupName]="'step1'" [stepControl]="horizontalStepperForm.get('step1')"
-                        #horizontalStepperStep1>
-                        <ng-template matStepLabel>Pregunta 2. </ng-template>
-                        <p class="my-6 font-medium">
-                            ¿De cuántos cuartos dispone este HOGAR sin incluir cuartos de cocina, baños, 
-garajes o los dedicados para negocios? 
-                        </p>
-                        <div class="flex">
-                            <mat-form-field class="flex-auto">
-                                <input matInput [formControlName]="'email'" [placeholder]="'Escribe una respuesta'" />
-                                <mat-icon class="icon-size-5" matPrefix
-                                    [svgIcon]="'heroicons_solid:building-storefront'"></mat-icon>
-                            </mat-form-field>
-                        </div>
-                        <p class="my-6 font-medium">
-                            ¿Cuántos utiliza este HOGAR en forma exclusiva para dormir?  
-                        </p>
-                        <div class="gt-xs:flex-row flex flex-col">
-                            <mat-form-field class="flex-auto">
-                                <input matInput [formControlName]="'email'" [placeholder]="'Escribe una respuesta'" />
-                                <mat-icon class="icon-size-5" matPrefix
-                                    [svgIcon]="'heroicons_solid:building-office'"></mat-icon>
-                            </mat-form-field>
-                            <img src="images/URS/dorm.png"/>
-                        </div>
-                        <div class="flex justify-end">
-                            <button class="px-8" mat-flat-button [color]="'primary'" type="button" matStepperNext>
-                                Siguiente
-                            </button>
-                        </div>
-                    </mat-step>
-
-                    <mat-step [formGroupName]="'step2'" [stepControl]="horizontalStepperForm.get('step2')"
-                        #horizontalStepperStep2>
-                        <ng-template matStepLabel>Pregunta 3.</ng-template>
-                        <p class="my-6 font-medium">
-                            El material predominante del techo de la vivienda es:
-                        </p>
-                        <div class="gt-xs:flex-row flex flex-col">
-                            <mat-form-field class="gt-xs:pr-3 flex-auto">
-                                <mat-select [formControlName]="'Option'" [placeholder]="'Selecciona una opción'">
-                                    <mat-option value="country-1">Hormigón/Losa/cemento </mat-option>
-                                    <mat-option value="country-2">Asbesto (Eternit, eurolit) </mat-option>
-                                    <mat-option value="country-3">Zinc</mat-option>
-                                    <mat-option value="country-3">Teja</mat-option>
-                                    <mat-option value="country-3">Palma/paja/hoja </mat-option>
-                                    
+                            <p> 2. Cantón</p>
+                            <mat-form-field class="w-96">
+                                <mat-select [formControlName]="'Option'" [placeholder]="'Selecciona el cantón'">
+                                    <mat-option value="country-1">Opción 1</mat-option>
+                                    <mat-option value="country-2">Opción 2</mat-option>
+                                    <mat-option value="country-3">Opción 3</mat-option>
                                 </mat-select>
                                 <mat-icon class="icon-size-5" matPrefix
-                                    [svgIcon]="'heroicons_solid:home'"></mat-icon>
+                                    [svgIcon]="'heroicons_solid:map-pin'"></mat-icon>
                             </mat-form-field>
-                        </div>
-                        <div class="flex">
-                            <mat-form-field class="flex-auto">
-                                <input matInput [formControlName]="'userName'" [placeholder]="'¿Otro? Especifique'" />
-
+                            <p> 3. Parroquia </p>
+                            <mat-form-field class="w-96 ">
+                                <mat-select [formControlName]="'Option'" [placeholder]="'Selecciona la parroquia'">
+                                    <mat-option value="country-1">Opción 1</mat-option>
+                                    <mat-option value="country-2">Opción 2</mat-option>
+                                    <mat-option value="country-3">Opción 3</mat-option>
+                                </mat-select>
+                                <mat-icon class="icon-size-5" matPrefix
+                                    [svgIcon]="'heroicons_solid:map-pin'"></mat-icon>
                             </mat-form-field>
-                        </div>
-                        <div class="flex">
-                            <mat-form-field class="flex-auto">
-                                <textarea matInput [formControlName]="'about'" [placeholder]="'Observaciones'"
-                                    [rows]="3"></textarea>
-                                <mat-icon class="icon-size-5" matPrefix [svgIcon]="
-                                        'heroicons_solid:bars-3-bottom-left'
-                                    "></mat-icon>
-                            </mat-form-field>
-                        </div>
-                        <div class="flex justify-end">
-                            <button class="mr-2 px-8" mat-flat-button [color]="'accent'" type="button"
-                                matStepperPrevious>
-                                Anterior
-                            </button>
-                            <button class="px-8" mat-flat-button [color]="'primary'" matStepperNext>
-                                Siguiente
-                            </button>
-                        </div>
-                    </mat-step>
-
-                    <mat-step [formGroupName]="'step3'" [stepControl]="horizontalStepperForm.get('step3')">
-                        <ng-template matStepLabel>Pregunta 4.</ng-template>
-                        <p class="my-6 font-medium">
-                            ¿Con qué tipo de ALUMBRADO cuenta este HOGAR?
-                        </p>
-                        <div class="gt-sm:flex-row flex flex-col">
-                            <div class="flex flex-col">
-                                <div class="flex flex-col" [formGroupName]="'byEmail'">
-                                    <mat-checkbox class="mb-1" [color]="'primary'" [formControlName]="'companyNews'">
-                                        Empresa eléctrica pública
-                                    </mat-checkbox>
-                                    <mat-checkbox class="mb-1" [color]="'primary'"
-                                        [formControlName]="'featuredProducts'">
-                                        Planta eléctrica privada (generadores de luz)
-                                    </mat-checkbox>
-                                    <mat-checkbox [color]="'primary'" [formControlName]="'messages'">
-                                        Panel Solar
-                                    </mat-checkbox>
-                                    <mat-checkbox [color]="'primary'" [formControlName]="'messages'">
-                                        Velas, candil, mechero, gas
-                                    </mat-checkbox>
-                                </div>
-                            </div>
-                            <div class="gt-sm:mt-0 gt-sm:ml-16 mt-8 flex flex-col">
-                                <span class="mb-2 font-medium"> Cómo ELIMINAN en este hogar la mayor parte de la BASURA</span>
+                            <div class=" flex flex-col">
+                                <span class="mb-2 font-medium"> 4. Área</span>
                                 <mat-radio-group class="flex flex-col" [color]="'primary'"
                                     [formControlName]="'pushNotifications'">
                                     <mat-radio-button class="mb-2" [value]="'everything'">
-                                        Servicio Municipal
+                                        Rural
                                     </mat-radio-button>
                                     <mat-radio-button class="mb-2" [value]="'just-good'">
-                                        La botan a la calle/quebrada/río/lote
-                                    </mat-radio-button>
-                                    <mat-radio-button [value]="'no-push'">
-                                        La queman, entierran
-                                    </mat-radio-button>
-                                    <mat-radio-button [value]="'no-push'">
-                                        Contratan el servicio
-                                    </mat-radio-button>
-                                    <mat-radio-button [value]="'no-push'">
-                                        Otro
+                                       Urbana
                                     </mat-radio-button>
                                 </mat-radio-group>
                             </div>
                         </div>
-                        <div class="mt-8 flex justify-end">
-                            <button class="mr-2 px-8" mat-flat-button [color]="'accent'" type="button"
-                                matStepperPrevious>
-                                Anterior
-                            </button>
-                            <button class="px-8" mat-flat-button [color]="'primary'" type="button" matStepperNext>
-                                Siguiente
-                            </button>
+                            <div class="col-span-5">
+                                <div class="map-container col-span-2 h-96 rounded-2xl py-3" #map></div>
+                            </div>
                         </div>
-                    </mat-step>
-
-                    <mat-step>
-                        <ng-template matStepLabel>Finalizar</ng-template>
-                        <p class="my-6 font-medium">
-                            Gracias por tu participación! Si tienes dudas no olvides
-                            consultar el Manual de Actualización del Registro Social.
-                        </p>
-                        <div class="mt-8 flex justify-end">
-                            <button class="mr-2 px-8" mat-flat-button [color]="'accent'" type="button"
-                                matStepperPrevious>
-                                Anterior
-                            </button>
-                            <button class="px-8" mat-flat-button [color]="'primary'" type="reset" (click)="back()">
-                                Terminar
-                            </button>
-                        </div>
-                    </mat-step>
-                </mat-horizontal-stepper>
-            </form>
+                        
+                    </div>
+ 
 
         </div>
     </div>

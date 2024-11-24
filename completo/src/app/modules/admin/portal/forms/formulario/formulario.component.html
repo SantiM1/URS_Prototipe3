@@ -1,0 +1,58 @@
+<div class="absolute inset-0 flex min-w-0 flex-col overflow-hidden">
+    <mat-drawer-container class="h-full flex-auto">
+        <!-- Drawer -->
+        <mat-drawer class="w-72 dark:bg-gray-900" [autoFocus]="false" [mode]="drawerMode" [opened]="drawerOpened"
+            [position]="'end'" #matDrawer>
+            <!-- Demo sidebar -->
+            <form-sidebar></form-sidebar>
+        </mat-drawer>
+
+        <!-- Drawer content -->
+        <mat-drawer-content class="flex flex-col overflow-hidden">
+            <!-- Header -->
+            <div
+                class="bg-card flex flex-0 flex-col border-b p-6 dark:bg-transparent sm:flex-row sm:items-center sm:justify-between ">
+                <div class="min-w-0 flex-1">
+
+                    <!-- Title -->
+                    <div class="mt-2">
+                        <h2 class="truncate text-3xl font-extrabold leading-7 tracking-tight sm:leading-10 md:text-4xl">
+                            Formulario de la Unidad del Registro Social-2024
+                        </h2>
+                        <h3 class="truncate text-2xl font-medium leading-7 tracking-tight">
+                            Sección I: Identificación y Ubicación Geográfica de la Vivienda
+                        </h3>
+                    </div>
+                    
+                    
+                </div>
+                
+                <!-- Actions -->
+                <div class="mt-6 flex shrink-0 items-center sm:ml-4 sm:mt-0">
+                    <button mat-icon-button (click)="matDrawer.toggle()">
+                        <mat-icon [svgIcon]="'heroicons_outline:bars-3'"></mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="bg-gray-900 max-h-4 flex-grow"></div>
+
+            <!-- Main -->
+            <div class="flex-auto overflow-y-auto" cdkScrollable>
+                <!-- CONTENT GOES HERE -->
+               <router-outlet></router-outlet>
+            </div>
+            <!-- Footer -->
+            <div
+                class="bg-card flex flex-0 flex-col border-b p-2  ">
+                <div class="flex justify-end">
+                    <button class="mr-2 px-8" mat-flat-button [color]="'accent'" type="button" matStepperPrevious (click)="navFormPrev()">
+                        Anterior
+                    </button>
+                    <button class="px-8" mat-flat-button [color]="'primary'" type="button" matStepperNext (click)="navFormNext()">
+                        Siguiente
+                    </button>
+                </div>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>
