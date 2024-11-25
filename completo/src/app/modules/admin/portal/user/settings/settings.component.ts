@@ -14,17 +14,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { MailboxComponent } from 'app/modules/admin/apps/mailbox/mailbox.component';
+import { UserComponent } from 'app/modules/admin/portal/user/user.component';
 import {
     labelColorDefs,
     labelColors,
-} from 'app/modules/admin/apps/mailbox/mailbox.constants';
-import { MailboxService } from 'app/modules/admin/apps/mailbox/mailbox.service';
-import { MailLabel } from 'app/modules/admin/apps/mailbox/mailbox.types';
+} from 'app/modules/admin/portal/user/user.constants';
+import { UserService } from 'app/modules/admin/portal/user/user.service';
+import { MailLabel } from 'app/modules/admin/portal/user/user.types';
 import { debounceTime, take } from 'rxjs';
 
 @Component({
-    selector: 'mailbox-settings',
+    selector: 'user-settings',
     templateUrl: './settings.component.html',
     encapsulation: ViewEncapsulation.None,
     standalone: true,
@@ -40,7 +40,7 @@ import { debounceTime, take } from 'rxjs';
         MatOptionModule,
     ],
 })
-export class MailboxSettingsComponent implements OnInit {
+export class UserSettingsComponent implements OnInit {
     labelColors: any = labelColors;
     labelColorDefs: any = labelColorDefs;
     labels: MailLabel[];
@@ -50,9 +50,9 @@ export class MailboxSettingsComponent implements OnInit {
      * Constructor
      */
     constructor(
-        public mailboxComponent: MailboxComponent,
+        public userComponent: UserComponent,
         private _formBuilder: UntypedFormBuilder,
-        private _mailboxService: MailboxService
+        private _userService: UserService
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
@@ -73,7 +73,7 @@ export class MailboxSettingsComponent implements OnInit {
         });
 
         // Labels
-        this._mailboxService.labels$
+        this._userService.labels$
             .pipe(take(1))
             .subscribe((labels: MailLabel[]) => {
                 // Get the labels
@@ -114,7 +114,7 @@ export class MailboxSettingsComponent implements OnInit {
      */
     addLabel(): void {
         // Add label to the server
-        this._mailboxService
+        this._userService
             .addLabel(this.labelsForm.get('newLabel').value)
             .subscribe((addedLabel) => {
                 // Push the new label to the labels form array
@@ -151,7 +151,7 @@ export class MailboxSettingsComponent implements OnInit {
         );
 
         // Delete label on the server
-        this._mailboxService.deleteLabel(id).subscribe();
+        this._userService.deleteLabel(id).subscribe();
     }
 
     /**
@@ -164,7 +164,7 @@ export class MailboxSettingsComponent implements OnInit {
                 // If the label has been edited...
                 if (labelFormGroup.dirty) {
                     // Update the label on the server
-                    this._mailboxService
+                    this._userService
                         .updateLabel(
                             labelFormGroup.value.id,
                             labelFormGroup.value

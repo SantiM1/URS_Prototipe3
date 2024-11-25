@@ -7,25 +7,25 @@ import {
     FuseNavigationService,
     FuseVerticalNavigationComponent,
 } from '@fuse/components/navigation';
-import { MailboxComposeComponent } from 'app/modules/admin/apps/mailbox/compose/compose.component';
-import { labelColorDefs } from 'app/modules/admin/apps/mailbox/mailbox.constants';
-import { MailboxService } from 'app/modules/admin/apps/mailbox/mailbox.service';
+import { UserComposeComponent } from 'app/modules/admin/portal/user/compose/compose.component';
+import { labelColorDefs } from 'app/modules/admin/portal/user/user.constants';
+import { UserService } from 'app/modules/admin/portal/user/user.service';
 import {
     MailFilter,
     MailFolder,
     MailLabel,
-} from 'app/modules/admin/apps/mailbox/mailbox.types';
+} from 'app/modules/admin/portal/user/user.types';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
-    selector: 'mailbox-sidebar',
+    selector: 'user-sidebar',
     templateUrl: './sidebar.component.html',
     styleUrls: ['./sidebar.component.scss'],
     encapsulation: ViewEncapsulation.None,
     standalone: true,
     imports: [MatButtonModule, MatIconModule, FuseVerticalNavigationComponent],
 })
-export class MailboxSidebarComponent implements OnInit, OnDestroy {
+export class UserSidebarComponent implements OnInit, OnDestroy {
     filters: MailFilter[];
     folders: MailFolder[];
     labels: MailLabel[];
@@ -40,7 +40,7 @@ export class MailboxSidebarComponent implements OnInit, OnDestroy {
      * Constructor
      */
     constructor(
-        private _mailboxService: MailboxService,
+        private _userService: UserService,
         private _matDialog: MatDialog,
         private _fuseNavigationService: FuseNavigationService
     ) {}
@@ -54,7 +54,7 @@ export class MailboxSidebarComponent implements OnInit, OnDestroy {
      */
     ngOnInit(): void {
         // Filters
-        this._mailboxService.filters$
+        this._userService.filters$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((filters: MailFilter[]) => {
                 this.filters = filters;
@@ -64,7 +64,7 @@ export class MailboxSidebarComponent implements OnInit, OnDestroy {
             });
 
         // Folders
-        this._mailboxService.folders$
+        this._userService.folders$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((folders: MailFolder[]) => {
                 this.folders = folders;
@@ -77,7 +77,7 @@ export class MailboxSidebarComponent implements OnInit, OnDestroy {
             });
 
         // Labels
-        this._mailboxService.labels$
+        this._userService.labels$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((labels: MailLabel[]) => {
                 this.labels = labels;
@@ -108,7 +108,7 @@ export class MailboxSidebarComponent implements OnInit, OnDestroy {
      */
     openComposeDialog(): void {
         // Open the dialog
-        const dialogRef = this._matDialog.open(MailboxComposeComponent);
+        const dialogRef = this._matDialog.open(UserComposeComponent);
 
         dialogRef.afterClosed().subscribe((result) => {
             console.log('Compose dialog was closed!');
@@ -136,7 +136,7 @@ export class MailboxSidebarComponent implements OnInit, OnDestroy {
                 title: folder.title,
                 type: 'basic',
                 icon: folder.icon,
-                link: '/apps/mailbox/' + folder.slug,
+                link: '/portal/user/' + folder.slug,
             };
 
             // If the count is available and is bigger than zero...
@@ -172,7 +172,7 @@ export class MailboxSidebarComponent implements OnInit, OnDestroy {
                 title: filter.title,
                 type: 'basic',
                 icon: filter.icon,
-                link: '/apps/mailbox/filter/' + filter.slug,
+                link: '/portal/user/filter/' + filter.slug,
             });
         });
 
@@ -200,7 +200,7 @@ export class MailboxSidebarComponent implements OnInit, OnDestroy {
                 classes: {
                     icon: labelColorDefs[label.color].text,
                 },
-                link: '/apps/mailbox/label/' + label.slug,
+                link: '/portal/user/label/' + label.slug,
             });
         });
 
@@ -219,7 +219,7 @@ export class MailboxSidebarComponent implements OnInit, OnDestroy {
             title: 'Settings',
             type: 'basic',
             icon: 'heroicons_outline:cog-8-tooth',
-            link: '/apps/mailbox/settings',
+            link: '/portal/user/settings',
         });
 
         // Update the menu data
@@ -278,7 +278,7 @@ export class MailboxSidebarComponent implements OnInit, OnDestroy {
         if (mainNavigationComponent) {
             const mainNavigation = mainNavigationComponent.navigation;
             const menuItem = this._fuseNavigationService.getItem(
-                'apps.mailbox',
+                'portal.user',
                 mainNavigation
             );
 

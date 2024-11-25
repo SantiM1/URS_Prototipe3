@@ -14,29 +14,8 @@ import { FuseNavigationItem } from '@fuse/components/navigation/navigation.types
             </div>
 
             <!-- Fixed form sidebar -->
-            <div class="mx-6 text-3xl font-bold tracking-tighter">
-                Preguntas
-            </div>
-            <!-- Storage -->
-            <div class="mx-6 mt-2">
-                <div class="flex items-center">
-                    <mat-icon
-                        class="mr-2 icon-size-5"
-                        [svgIcon]="'heroicons_solid:academic-cap'"
-                    ></mat-icon>
-                    <div class="text-lg font-semibold">Progreso</div>
-                </div>
-                <div class="mt-4 flex flex-auto flex-col">
-                    <span class="mb-3 text-sm leading-none"
-                        >7 de 24 preguntas completadas</span
-                    >
-                    <mat-progress-bar
-                        [mode]="'determinate'"
-                        [color]="'primary'"
-                        [value]="34.3"
-                    ></mat-progress-bar>
-                </div>
-            </div>
+            
+            
             <!-- NAV -->
             <fuse-vertical-navigation
                 [appearance]="'default'"
@@ -45,7 +24,34 @@ import { FuseNavigationItem } from '@fuse/components/navigation/navigation.types
                 [mode]="'side'"
                 [name]="'form-sidebar-navigation'"
                 [opened]="true"
-            ></fuse-vertical-navigation>
+                [autoCollapse]="false"
+            >
+                 <div fuseVerticalNavigationContentHeader>
+                    <div class="mx-6 text-3xl font-bold tracking-tighter">
+                    Preguntas
+                    </div>
+                    <!-- Storage -->
+                    <div class="mx-6 mt-2">
+                        <div class="flex items-center">
+                            <mat-icon
+                            class="mr-2 icon-size-5"
+                            [svgIcon]="'heroicons_solid:academic-cap'"
+                        ></mat-icon>
+                        <div class="text-lg font-semibold">Progreso</div>
+                    </div>
+                        <div class="mt-4 flex flex-auto flex-col">
+                            <span class="mb-3 text-sm leading-none"
+                            >7 de 24 preguntas completadas</span
+                        >
+                        <mat-progress-bar
+                            [mode]="'determinate'"
+                            [color]="'primary'"
+                            [value]="34.3"
+                        ></mat-progress-bar>
+                        </div>
+                    </div>
+                </div>
+    </fuse-vertical-navigation>
 
         </div>
     `,
@@ -72,11 +78,11 @@ export class FormSidebarComponent {
     /**
      * Constructor
      */
-    changeScreen(name: string){
+    changeScreen(name: string) {
         this.currentScreen = name;
     }
     constructor(
-        
+
     ) {
         this.menuData = [
             /*
@@ -155,12 +161,15 @@ export class FormSidebarComponent {
                 ],
             },
             */
-           {type: 'spacer'},
             {
-                title:'Aceptación de declaración',
+                type: 'divider',
+            },
+            {
+                title: 'Aceptación de declaración',
                 subtitle: 'del Formulario del Registro Social',
                 type: 'basic',
-                link: 'declaracion'
+                link: 'declaracion',
+
             },
             {
                 title: 'Sección I',
@@ -177,17 +186,17 @@ export class FormSidebarComponent {
                         title: 'Identificación Censal',
                         type: 'basic',
                         icon: 'heroicons_outline:user-circle',
-                        
+
                     },
                     {
                         title: 'Dirección',
                         type: 'basic',
                         icon: 'heroicons_outline:user-circle',
-                        
-                        
+
+
                     },
                 ],
-                
+
             },
             {
                 title: 'Sección II',
@@ -198,51 +207,9 @@ export class FormSidebarComponent {
                         title: 'Datos Generales',
                         type: 'basic',
                         icon: 'heroicons_outline:cog-8-tooth',
-                        
+
                     },
-                    {
-                        title: 'Identificación Censal',
-                        type: 'collapsable',
-                        icon: 'heroicons_outline:user-circle',
-                        children: [
-                            {
-                                title: 'Personal',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Payment',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Security',
-                                type: 'basic',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'Dirección',
-                        type: 'collapsable',
-                        icon: 'heroicons_outline:user-circle',
-                        children: [
-                            {
-                                title: 'Personal',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Payment',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Security',
-                                type: 'basic',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'Create task',
-                        type: 'basic',
-                        icon: 'heroicons_outline:plus-circle',
-                    },
+
                 ],
             },
             {
@@ -252,65 +219,14 @@ export class FormSidebarComponent {
                 children: [
                     {
                         title: 'Datos Generales',
-                        type: 'collapsable',
-                        icon: 'heroicons_outline:cog-8-tooth',
-                        children: [
-                            {
-                                title: 'Tasks',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Users',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Teams',
-                                type: 'basic',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'Identificación Censal',
-                        type: 'collapsable',
-                        icon: 'heroicons_outline:user-circle',
-                        children: [
-                            {
-                                title: 'Personal',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Payment',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Security',
-                                type: 'basic',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'Dirección',
-                        type: 'collapsable',
-                        icon: 'heroicons_outline:user-circle',
-                        children: [
-                            {
-                                title: 'Personal',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Payment',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Security',
-                                type: 'basic',
-                            },
-                        ],
-                    },
-                    {
-                        title: 'Create task',
                         type: 'basic',
-                        icon: 'heroicons_outline:plus-circle',
+                        icon: 'heroicons_outline:cog-8-tooth',
+                    },
+                    {
+                        title: 'Materiales de la vivienda',
+                        type: 'basic',
+                        icon: 'heroicons_outline:user-circle',
+                        link: 'materiales-vivienda'
                     },
                 ],
             },
@@ -321,66 +237,31 @@ export class FormSidebarComponent {
                 children: [
                     {
                         title: 'Datos Generales',
-                        type: 'collapsable',
+                        type: 'basic',
                         icon: 'heroicons_outline:cog-8-tooth',
-                        children: [
-                            {
-                                title: 'Tasks',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Users',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Teams',
-                                type: 'basic',
-                            },
-                        ],
+
                     },
                     {
-                        title: 'Identificación Censal',
-                        type: 'collapsable',
+                        title: 'Cuartos',
+                        type: 'basic',
                         icon: 'heroicons_outline:user-circle',
-                        children: [
-                            {
-                                title: 'Personal',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Payment',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Security',
-                                type: 'basic',
-                            },
-                        ],
+                        link: 'cuartos-hogar'
+
                     },
                     {
-                        title: 'Dirección',
-                        type: 'collapsable',
+                        title: 'Servicios',
+                        type: 'basic',
                         icon: 'heroicons_outline:user-circle',
-                        children: [
-                            {
-                                title: 'Personal',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Payment',
-                                type: 'basic',
-                            },
-                            {
-                                title: 'Security',
-                                type: 'basic',
-                            },
-                        ],
                     },
                 ],
             },
             {
-                type: 'divider',
+                title: 'Finalizar Encuesta',
+                type: 'basic',
+                link: 'finalizar'
+                //disabled: true,
             },
+
         ];
     }
 }

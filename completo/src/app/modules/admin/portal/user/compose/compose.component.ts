@@ -14,7 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { QuillEditorComponent } from 'ngx-quill';
 
 @Component({
-    selector: 'mailbox-compose',
+    selector: 'user-compose',
     templateUrl: './compose.component.html',
     encapsulation: ViewEncapsulation.None,
     standalone: true,
@@ -28,7 +28,7 @@ import { QuillEditorComponent } from 'ngx-quill';
         QuillEditorComponent,
     ],
 })
-export class MailboxComposeComponent implements OnInit {
+export class UserComposeComponent implements OnInit {
     composeForm: UntypedFormGroup;
     copyFields: { cc: boolean; bcc: boolean } = {
         cc: false,
@@ -46,7 +46,7 @@ export class MailboxComposeComponent implements OnInit {
      * Constructor
      */
     constructor(
-        public matDialogRef: MatDialogRef<MailboxComposeComponent>,
+        public matDialogRef: MatDialogRef<UserComposeComponent>,
         private _formBuilder: UntypedFormBuilder
     ) {}
 

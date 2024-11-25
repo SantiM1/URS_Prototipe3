@@ -100,7 +100,7 @@ export const appRoutes: Route[] = [
             {path: 'portal', children: [
                 {path: 'land', loadChildren: () => import('app/modules/admin/portal/project/project.routes')},
                 {path: 'formulario-urs', loadChildren: () => import('app/modules/admin/portal/forms/portal.routes')},
-                {path: 'usuario-institucional', loadChildren: () => import('app/modules/admin/portal/mailbox/mailbox.routes')},
+                {path: 'usuario-institucional', loadChildren: () => import('app/modules/admin/portal/user/user.routes')},
                 {path: 'usuario-autentificado', loadChildren: () => import('app/modules/admin/portal/activities/activities.routes')},
                 {path: 'autoregistro', loadChildren: () => import('app/modules/admin/portal/sign-up/sign-up.routes')},
             ]},

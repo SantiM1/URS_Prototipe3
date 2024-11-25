@@ -7,7 +7,7 @@ import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/route
 import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 import { FormSidebarComponent } from './form-sidebar/form-sidebar.component';
 import { Subject, takeUntil } from 'rxjs';
-import { FormularioURSComponent } from '../formulario-urs/formulario-urs.component';
+import { FormularioURSComponent } from '../formulario-datos-generales/formulario-urs.component';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { DeclaracionComponent } from '../declaracion/declaracion.component';
 
@@ -36,7 +36,7 @@ export class FormularioComponent
     drawerOpened: boolean = true;
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     @Input() currentScreen: string = 'aceptacion';
-    private pages: string[] = ['declaracion', 'datos-generales'];
+    private pages: string[] = ['declaracion', 'datos-generales', 'materiales-vivienda','cuartos-hogar', 'finalizar'];
     private pageIndex: number = 0;
     /**
      * Constructor

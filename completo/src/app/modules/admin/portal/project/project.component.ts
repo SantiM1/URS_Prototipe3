@@ -20,10 +20,18 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { Router } from '@angular/router';
 import { FuseCardComponent } from '@fuse/components/card';
+import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
 import { TranslocoModule } from '@ngneat/transloco';
+import { LanguagesComponent } from 'app/layout/common/languages/languages.component';
+import { MessagesComponent } from 'app/layout/common/messages/messages.component';
+import { NotificationsComponent } from 'app/layout/common/notifications/notifications.component';
+import { SearchComponent } from 'app/layout/common/search/search.component';
+import { ShortcutsComponent } from 'app/layout/common/shortcuts/shortcuts.component';
 import { ProjectService } from 'app/modules/admin/portal/project/project.service';
 import { ApexOptions, NgApexchartsModule } from 'ng-apexcharts';
 import { Subject, takeUntil } from 'rxjs';
+import { FuseFullscreenComponent } from '@fuse/components/fullscreen';
+import { UserComponent } from 'app/layout/common/user/user.component';
 
 
 @Component({
@@ -50,6 +58,13 @@ import { Subject, takeUntil } from 'rxjs';
         MatSlideToggleModule,
         FormsModule,
         MatInputModule,
+        LanguagesComponent,
+        SearchComponent,
+        ShortcutsComponent,
+        MessagesComponent,
+        NotificationsComponent,
+        UserComponent,
+        FuseFullscreenComponent
 
     ],
 })
@@ -69,7 +84,8 @@ export class ProjectComponent implements OnInit, OnDestroy {
      */
     constructor(
         private _projectService: ProjectService,
-        private _router: Router
+        private _router: Router,
+        private _fuseNavigationService: FuseNavigationService
     ) {}
     
     slides: string [] = ['images/URS/urs1.png', 'images/URS/fam1.jpg', 'images/URS/urs2.jpg' ]
@@ -491,5 +507,18 @@ export class ProjectComponent implements OnInit, OnDestroy {
     }
     forms(): void {
         this._router.navigate(['/portal/formulario-urs/declaracion']);
+ 
+    }
+    toggleNavigation(name: string): void {
+        // Get the navigation
+        const navigation =
+            this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>(
+                name
+            );
+
+        if (navigation) {
+            // Toggle the opened status
+            navigation.toggle();
+        }
     }
 }

@@ -7,21 +7,21 @@ import {
     UrlMatchResult,
     UrlSegment,
 } from '@angular/router';
-import { MailboxDetailsComponent } from 'app/modules/admin/apps/mailbox/details/details.component';
-import { MailboxEmptyDetailsComponent } from 'app/modules/admin/apps/mailbox/empty-details/empty-details.component';
-import { MailboxListComponent } from 'app/modules/admin/apps/mailbox/list/list.component';
-import { MailboxComponent } from 'app/modules/admin/apps/mailbox/mailbox.component';
-import { MailboxService } from 'app/modules/admin/apps/mailbox/mailbox.service';
-import { MailboxSettingsComponent } from 'app/modules/admin/apps/mailbox/settings/settings.component';
+import { UserDetailsComponent } from 'app/modules/admin/portal/user/details/details.component';
+import { UserEmptyDetailsComponent } from 'app/modules/admin/portal/user/empty-details/empty-details.component';
+import { UserListComponent } from 'app/modules/admin/portal/user/list/list.component';
+import { UserComponent } from 'app/modules/admin/portal/user/user.component';
+import { UserService } from 'app/modules/admin/portal/user/user.service';
+import { UserSettingsComponent } from 'app/modules/admin/portal/user/settings/settings.component';
 import { isEqual } from 'lodash-es';
 import { catchError, finalize, forkJoin, throwError } from 'rxjs';
 
 /**
- * Mailbox custom route matcher
+ * User custom route matcher
  *
  * @param url
  */
-const mailboxRouteMatcher: (url: UrlSegment[]) => UrlMatchResult = (
+const userRouteMatcher: (url: UrlSegment[]) => UrlMatchResult = (
     url: UrlSegment[]
 ) => {
     // Prepare consumed url and positional parameters
@@ -61,12 +61,12 @@ const mailboxRouteMatcher: (url: UrlSegment[]) => UrlMatchResult = (
 };
 
 /**
- * Mailbox custom guards and resolvers runner
+ * User custom guards and resolvers runner
  *
  * @param from
  * @param to
  */
-const mailboxRunGuardsAndResolvers: (
+const userRunGuardsAndResolvers: (
     from: ActivatedRouteSnapshot,
     to: ActivatedRouteSnapshot
 ) => boolean = (from: ActivatedRouteSnapshot, to: ActivatedRouteSnapshot) => {
@@ -124,7 +124,7 @@ const mailsResolver = (
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
 ) => {
-    const mailboxService = inject(MailboxService);
+    const userService = inject(UserService);
     const router = inject(Router);
 
     // Don't allow page param to go below 1
@@ -148,7 +148,7 @@ const mailsResolver = (
     // If folder is set on the parameters...
     if (route.paramMap.get('folder')) {
         sources.push(
-            mailboxService.getMailsByFolder(
+            userService.getMailsByFolder(
                 route.paramMap.get('folder'),
                 route.paramMap.get('page')
             )
@@ -158,7 +158,7 @@ const mailsResolver = (
     // If filter is set on the parameters...
     if (route.paramMap.get('filter')) {
         sources.push(
-            mailboxService.getMailsByFilter(
+            userService.getMailsByFilter(
                 route.paramMap.get('filter'),
                 route.paramMap.get('page')
             )
@@ -168,7 +168,7 @@ const mailsResolver = (
     // If label is set on the parameters...
     if (route.paramMap.get('label')) {
         sources.push(
-            mailboxService.getMailsByLabel(
+            userService.getMailsByLabel(
                 route.paramMap.get('label'),
                 route.paramMap.get('page')
             )
@@ -193,7 +193,7 @@ const mailsResolver = (
             // Make sure there is no 'id' parameter on the current route
             if (!currentRoute.paramMap.get('id')) {
                 // Reset the mail
-                mailboxService.resetMail().subscribe();
+                userService.resetMail().subscribe();
             }
         }),
 
@@ -227,10 +227,10 @@ const mailResolver = (
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
 ) => {
-    const mailboxService = inject(MailboxService);
+    const userService = inject(UserService);
     const router = inject(Router);
 
-    return mailboxService.getMailById(route.paramMap.get('id')).pipe(
+    return userService.getMailById(route.paramMap.get('id')).pipe(
         // Error here means the requested mail is either
         // not available on the requested page or not
         // available at all
@@ -273,17 +273,17 @@ export default [
     },
     {
         path: '',
-        component: MailboxComponent,
+        component: UserComponent,
         resolve: {
-            filters: () => inject(MailboxService).getFilters(),
-            folders: () => inject(MailboxService).getFolders(),
-            labels: () => inject(MailboxService).getLabels(),
+            filters: () => inject(UserService).getFilters(),
+            folders: () => inject(UserService).getFolders(),
+            labels: () => inject(UserService).getLabels(),
         },
         children: [
             {
-                component: MailboxListComponent,
-                matcher: mailboxRouteMatcher,
-                runGuardsAndResolvers: mailboxRunGuardsAndResolvers,
+                component: UserListComponent,
+                matcher: userRouteMatcher,
+                runGuardsAndResolvers: userRunGuardsAndResolvers,
                 resolve: {
                     mails: mailsResolver,
                 },
@@ -291,11 +291,11 @@ export default [
                     {
                         path: '',
                         pathMatch: 'full',
-                        component: MailboxEmptyDetailsComponent,
+                        component: UserEmptyDetailsComponent,
                     },
                     {
                         path: ':id',
-                        component: MailboxDetailsComponent,
+                        component: UserDetailsComponent,
                         resolve: {
                             mail: mailResolver,
                         },
@@ -304,7 +304,7 @@ export default [
             },
             {
                 path: 'settings',
-                component: MailboxSettingsComponent,
+                component: UserSettingsComponent,
             },
         ],
     },

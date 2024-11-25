@@ -27,17 +27,17 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FuseScrollResetDirective } from '@fuse/directives/scroll-reset';
 import { FuseFindByKeyPipe } from '@fuse/pipes/find-by-key/find-by-key.pipe';
-import { labelColorDefs } from 'app/modules/admin/apps/mailbox/mailbox.constants';
-import { MailboxService } from 'app/modules/admin/apps/mailbox/mailbox.service';
+import { labelColorDefs } from 'app/modules/admin/portal/user/user.constants';
+import { UserService } from 'app/modules/admin/portal/user/user.service';
 import {
     Mail,
     MailFolder,
     MailLabel,
-} from 'app/modules/admin/apps/mailbox/mailbox.types';
+} from 'app/modules/admin/portal/user/user.types';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
-    selector: 'mailbox-details',
+    selector: 'user-details',
     templateUrl: './details.component.html',
     encapsulation: ViewEncapsulation.None,
     standalone: true,
@@ -59,7 +59,7 @@ import { Subject, takeUntil } from 'rxjs';
         DatePipe,
     ],
 })
-export class MailboxDetailsComponent implements OnInit, OnDestroy {
+export class UserDetailsComponent implements OnInit, OnDestroy {
     @ViewChild('infoDetailsPanelOrigin')
     private _infoDetailsPanelOrigin: MatButton;
     @ViewChild('infoDetailsPanel') private _infoDetailsPanel: TemplateRef<any>;
@@ -78,7 +78,7 @@ export class MailboxDetailsComponent implements OnInit, OnDestroy {
     constructor(
         private _activatedRoute: ActivatedRoute,
         private _elementRef: ElementRef,
-        private _mailboxService: MailboxService,
+        private _userService: UserService,
         private _overlay: Overlay,
         private _router: Router,
         private _viewContainerRef: ViewContainerRef
@@ -96,28 +96,28 @@ export class MailboxDetailsComponent implements OnInit, OnDestroy {
         this.labelColors = labelColorDefs;
 
         // Folders
-        this._mailboxService.folders$
+        this._userService.folders$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((folders: MailFolder[]) => {
                 this.folders = folders;
             });
 
         // Labels
-        this._mailboxService.labels$
+        this._userService.labels$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((labels: MailLabel[]) => {
                 this.labels = labels;
             });
 
         // Mail
-        this._mailboxService.mail$
+        this._userService.mail$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((mail: Mail) => {
                 this.mail = mail;
             });
 
         // Selected mail changed
-        this._mailboxService.selectedMailChanged
+        this._userService.selectedMailChanged
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe(() => {
                 // De-activate the reply form
@@ -164,7 +164,7 @@ export class MailboxDetailsComponent implements OnInit, OnDestroy {
         this.mail.folder = folder.id;
 
         // Update the mail on the server
-        this._mailboxService
+        this._userService
             .updateMail(this.mail.id, { folder: this.mail.folder })
             .subscribe();
 
@@ -195,7 +195,7 @@ export class MailboxDetailsComponent implements OnInit, OnDestroy {
         }
 
         // Update the mail on the server
-        this._mailboxService
+        this._userService
             .updateMail(this.mail.id, { labels: this.mail.labels })
             .subscribe();
 
@@ -223,7 +223,7 @@ export class MailboxDetailsComponent implements OnInit, OnDestroy {
         this.mail.important = !this.mail.important;
 
         // Update the mail on the server
-        this._mailboxService
+        this._userService
             .updateMail(this.mail.id, { important: this.mail.important })
             .subscribe();
 
@@ -251,7 +251,7 @@ export class MailboxDetailsComponent implements OnInit, OnDestroy {
         this.mail.starred = !this.mail.starred;
 
         // Update the mail on the server
-        this._mailboxService
+        this._userService
             .updateMail(this.mail.id, { starred: this.mail.starred })
             .subscribe();
 
@@ -281,7 +281,7 @@ export class MailboxDetailsComponent implements OnInit, OnDestroy {
         this.mail.unread = unread;
 
         // Update the mail on the server
-        this._mailboxService
+        this._userService
             .updateMail(this.mail.id, { unread: this.mail.unread })
             .subscribe();
     }

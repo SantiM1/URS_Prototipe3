@@ -1,0 +1,39 @@
+<div class="flex min-w-0 flex-auto flex-col">
+    <!-- Main -->
+    <div class="flex-auto px-6 sm:p-10">
+        <div class="flex justify-center py-16 content-center">
+            <!-- Horizontal stepper -->
+            <div class="grid gap-4 grid-cols-8">
+
+                <div class="col-span-4">
+
+                    <h2 class="truncate text-lg font-bold leading-7 tracking-tight">
+                        4. ¿Cuantos cuartos dispone este hogar? </h2>
+                    <h3 class="truncate text-sm font-medium leading-7 tracking-tight">
+                        Sin incluir cuartos de cocina, baños, garajes o dedicados para negocios </h3>
+                    <mat-form-field class="w-full pr-2">
+                        <mat-label>Cuartos</mat-label>
+                        <input matInput [formControlName]="'name'" />
+                    </mat-form-field>
+                    <h2 class="truncate text-lg font-bold leading-7 tracking-tight">
+                        5. ¿Cuantos de estos cuartos se utilizan exclusivamente para dormir? </h2>
+                    <h3 class="truncate text-sm font-medium leading-7 tracking-tight">
+                        Si el espacio se comparte con otra actividad, no se considera para la pregunta </h3>
+                    <mat-form-field class="w-full pr-2">
+                        <mat-label>Dormitorios</mat-label>
+                        <input matInput [formControlName]="'name'" />
+                    </mat-form-field>
+
+
+                </div>
+                <div class="col-span-4">
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>

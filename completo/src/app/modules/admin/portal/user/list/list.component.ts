@@ -11,16 +11,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { MailboxComponent } from 'app/modules/admin/apps/mailbox/mailbox.component';
-import { MailboxService } from 'app/modules/admin/apps/mailbox/mailbox.service';
+import { UserComponent } from 'app/modules/admin/portal/user/user.component';
+import { UserService } from 'app/modules/admin/portal/user/user.service';
 import {
     Mail,
     MailCategory,
-} from 'app/modules/admin/apps/mailbox/mailbox.types';
+} from 'app/modules/admin/portal/user/user.types';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
-    selector: 'mailbox-list',
+    selector: 'user-list',
     templateUrl: './list.component.html',
     encapsulation: ViewEncapsulation.None,
     standalone: true,
@@ -34,7 +34,7 @@ import { Subject, takeUntil } from 'rxjs';
         DatePipe,
     ],
 })
-export class MailboxListComponent implements OnInit, OnDestroy {
+export class UserListComponent implements OnInit, OnDestroy {
     @ViewChild('mailList') mailList: ElementRef;
 
     category: MailCategory;
@@ -48,8 +48,8 @@ export class MailboxListComponent implements OnInit, OnDestroy {
      * Constructor
      */
     constructor(
-        public mailboxComponent: MailboxComponent,
-        private _mailboxService: MailboxService
+        public userComponent: UserComponent,
+        private _userService: UserService
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
@@ -61,21 +61,21 @@ export class MailboxListComponent implements OnInit, OnDestroy {
      */
     ngOnInit(): void {
         // Category
-        this._mailboxService.category$
+        this._userService.category$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((category: MailCategory) => {
                 this.category = category;
             });
 
         // Mails
-        this._mailboxService.mails$
+        this._userService.mails$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((mails: Mail[]) => {
                 this.mails = mails;
             });
 
         // Mails loading
-        this._mailboxService.mailsLoading$
+        this._userService.mailsLoading$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((mailsLoading: boolean) => {
                 this.mailsLoading = mailsLoading;
@@ -88,14 +88,14 @@ export class MailboxListComponent implements OnInit, OnDestroy {
             });
 
         // Pagination
-        this._mailboxService.pagination$
+        this._userService.pagination$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((pagination) => {
                 this.pagination = pagination;
             });
 
         // Selected mail
-        this._mailboxService.mail$
+        this._userService.mail$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((mail: Mail) => {
                 this.selectedMail = mail;
@@ -127,13 +127,13 @@ export class MailboxListComponent implements OnInit, OnDestroy {
             mail.unread = false;
 
             // Update the mail on the server
-            this._mailboxService
+            this._userService
                 .updateMail(mail.id, { unread: false })
                 .subscribe();
         }
 
         // Execute the mailSelected observable
-        this._mailboxService.selectedMailChanged.next(mail);
+        this._userService.selectedMailChanged.next(mail);
     }
 
     /**

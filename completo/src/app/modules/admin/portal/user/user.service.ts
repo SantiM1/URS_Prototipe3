@@ -6,7 +6,7 @@ import {
     MailFilter,
     MailFolder,
     MailLabel,
-} from 'app/modules/admin/apps/mailbox/mailbox.types';
+} from 'app/modules/admin/portal/user/user.types';
 import {
     BehaviorSubject,
     Observable,
@@ -19,7 +19,7 @@ import {
 } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class MailboxService {
+export class UserService {
     selectedMailChanged: BehaviorSubject<any> = new BehaviorSubject(null);
     private _category: BehaviorSubject<MailCategory> = new BehaviorSubject(
         null
