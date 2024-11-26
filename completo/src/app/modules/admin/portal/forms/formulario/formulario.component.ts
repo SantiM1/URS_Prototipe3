@@ -3,14 +3,15 @@ import { Component, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 import { FormSidebarComponent } from './form-sidebar/form-sidebar.component';
-import { Subject, takeUntil } from 'rxjs';
+import { filter, Subject, takeUntil } from 'rxjs';
 import { FormularioURSComponent } from '../formulario-datos-generales/formulario-urs.component';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { DeclaracionComponent } from '../declaracion/declaracion.component';
 import { MatChip } from '@angular/material/chips';
+import { findIndex } from 'lodash';
 
 @Component({
     selector: 'formulario',
@@ -38,7 +39,7 @@ export class FormularioComponent
     drawerOpened: boolean = true;
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     @Input() currentScreen: string = 'declaracion';
-    private pages: string[] = ['declaracion', 'datos-generales', 'materiales-vivienda','cuartos-hogar', 'finalizar'];
+    //private pages: string[] = ['declaracion', 'datos-generales', 'materiales-vivienda','cuartos-hogar', 'finalizar'];
     private pageIndex: number = 0;
     /**
      * Constructor
@@ -52,27 +53,33 @@ export class FormularioComponent
     // @ Lifecycle hooks
     // -----------------------------------------------------------------------------------------------------
     navFormNext():void{
+        /*this.pageIndex = this.pages.indexOf(this.currentScreen);
         if(this.pageIndex < this.pages.length-1){
             this.pageIndex += 1
-        }else{
-            this.pageIndex = 0
         }
-        this.router.navigate([this.pages[this.pageIndex]], { relativeTo: this.route });
+        this.router.navigate([this.pages[this.pageIndex]], { relativeTo: this.route });*/
+        if(this.pageIndex < 4){
+            this.pageIndex += 1
+        }
+        this.router.navigate([`portal/formulario-urs/p${this.pageIndex}`]);
     }
     navFormPrev():void{
-        if(this.pageIndex < this.pages.length-1){
+        /*this.pageIndex = this.pages.indexOf(this.currentScreen);
+        if(this.pageIndex > 0 ){
             this.pageIndex -= 1
-        }else{
-            this.pageIndex = 0
         }
-        this.router.navigate([this.pages[this.pageIndex]], { relativeTo: this.route });
+        this.router.navigate([this.pages[this.pageIndex]], { relativeTo: this.route });*/
+        if(this.pageIndex > 0 ){
+            this.pageIndex -= 1
+        }
+        this.router.navigate([`portal/formulario-urs/p${this.pageIndex}`]);
     }
     navInit(){
         this.router.navigate(['../land'], { relativeTo: this.route });
     }
 
     changeBtn(){
-        if(this.pages[this.pageIndex] == 'finalizar'){
+        if(this.pageIndex === 4){
             return true
         }
     }
@@ -93,7 +100,19 @@ export class FormularioComponent
                     this.drawerOpened = false;
                 }
             });
+          
+            this.router.events.pipe(
+                filter(event => event instanceof NavigationEnd)  // Filter for NavigationEnd events
+              ).subscribe((event: NavigationEnd) => {
+                 // Get the current URL
+                this.pageIndex = Number(event.urlAfterRedirects.slice(-1));
+                //console.log('Current URL:', this.pageIndex);
+              });
+                // Get the current URL using the Router service
+                
+        
     }
+    
 
     /**
      * On destroy

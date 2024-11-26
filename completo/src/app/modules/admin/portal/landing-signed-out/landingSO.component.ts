@@ -506,7 +506,7 @@ export class LandingSOComponent implements OnInit, OnDestroy {
         this._router.navigate(['/portal/autoregistro']);
     }
     forms(): void {
-        this._router.navigate(['/portal/formulario-urs/declaracion']);
+        this._router.navigate(['/portal/autoregistro']);
  
     }
     toggleNavigation(name: string): void {

@@ -168,7 +168,7 @@ export class FormSidebarComponent {
                 title: 'Aceptación de declaración',
                 subtitle: 'del Formulario del Registro Social',
                 type: 'basic',
-                link: 'declaracion',
+                link: 'p0',
 
             },
             {
@@ -180,7 +180,7 @@ export class FormSidebarComponent {
                         title: 'Datos Generales',
                         type: 'basic',
                         icon: 'heroicons_outline:cog-8-tooth',
-                        link: 'datos-generales'
+                        link: 'p1'
                     },
                     {
                         title: 'Identificación Censal',
@@ -226,7 +226,7 @@ export class FormSidebarComponent {
                         title: 'Materiales de la vivienda',
                         type: 'basic',
                         icon: 'heroicons_outline:user-circle',
-                        link: 'materiales-vivienda'
+                        link: 'p2'
                     },
                 ],
             },
@@ -245,7 +245,7 @@ export class FormSidebarComponent {
                         title: 'Cuartos',
                         type: 'basic',
                         icon: 'heroicons_outline:user-circle',
-                        link: 'cuartos-hogar'
+                        link: 'p3'
 
                     },
                     {
@@ -258,7 +258,7 @@ export class FormSidebarComponent {
             {
                 title: 'Finalizar Encuesta',
                 type: 'basic',
-                link: 'finalizar'
+                link: 'p4'
                 //disabled: true,
             },
 

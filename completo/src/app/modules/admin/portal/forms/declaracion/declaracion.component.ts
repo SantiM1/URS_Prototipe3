@@ -16,6 +16,8 @@ import { FuseConfirmationService } from '@fuse/services/confirmation';
   templateUrl: './declaracion.component.html',
 })
 export class DeclaracionComponent {
+
+  
   constructor(
     private _fuseConfirmationService: FuseConfirmationService,
     private _router: Router

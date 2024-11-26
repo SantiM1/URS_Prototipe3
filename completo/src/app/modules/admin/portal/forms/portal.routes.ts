@@ -12,27 +12,27 @@ export default [
         component: FormularioComponent,
         children: [
             {
-                path: 'declaracion',
+                path: 'p0',
                 component: DeclaracionComponent,
                               
             },
             {
-                path: 'datos-generales',
+                path: 'p1',
                 component: FormularioURSComponent,
                               
             },
             {
-                path: 'materiales-vivienda',
+                path: 'p2',
                 component: FormularioP2Component,
                               
             },
             {
-                path: 'cuartos-hogar',
+                path: 'p3',
                 component: FormularioP3Component,
                               
             },
             {
-                path: 'finalizar',
+                path: 'p4',
                 component: FinalizarComponent,
                               
             },
