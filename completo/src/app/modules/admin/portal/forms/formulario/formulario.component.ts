@@ -11,7 +11,7 @@ import { FormularioURSComponent } from '../formulario-datos-generales/formulario
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { DeclaracionComponent } from '../declaracion/declaracion.component';
 import { MatChip } from '@angular/material/chips';
-import { findIndex } from 'lodash';
+import { InfoSidebarComponent } from './info-sidebar/info-sidebar.component';
 
 @Component({
     selector: 'formulario',
@@ -21,6 +21,7 @@ import { findIndex } from 'lodash';
     imports: [
         MatSidenavModule,
         FormSidebarComponent,
+        InfoSidebarComponent,
         MatIconModule,
         RouterLink,
         MatButtonModule,

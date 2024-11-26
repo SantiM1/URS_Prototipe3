@@ -81,6 +81,44 @@ export const settings = {
 };
 export const mails = [
     {
+        id: "01aaad4b5f6f5-32e4-43c9-89d1-34d97a5d67e7",
+        type: "mail",
+        from: {
+            contact: "Unidad del registro social <registro.social@company.com>"
+        },
+        to: "me <hughes.brian@company.com>",
+        cc: ["Santiago Ruiz <santiago.ruiz@company.com>", "Marcela Gutierrez <marcela.gutierrez@company.com>"],
+        bcc: ["Carlos Lopez <carlos.lopez@company.com>", "Sofia Torres <sofia.torres@company.com>"],
+        date: new Date('Mon Dec 30 2019 09:15:00 GMT+0000 (UTC)').toISOString(),
+        subject: "Solicitud #7345: Ingreso de Formulario del Registro Social",
+        content: "Estimado Juan, \n \nSu solicitud de ingreso del formulario de Registro social ha sido aprobada. \n\n A continuación, debe dar clic sobre el botón de inicio de encuesta para iniciar el proceso de registro.\n\n\n (Iniciar registro de Formulario) \n\n\n Agradecemos su atención. \n Atentamente, \n\n Unidad del Registro Social",
+        attachments: [],
+        starred: false,
+        important: true,
+        unread: false,
+        folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
+        labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
+    },
+    {
+        id: "0011aac0c5ab6f-37d9-4bfc-bfcd-f64d79e98444",
+        type: "mail",
+        from: {
+            contact: "Unidad del registro social <registro.social@company.com>"
+        },
+        to: "me <hughes.brian@company.com>",
+        cc: ["David Ruiz <david.ruiz@company.com>", "Luz Gonzalez <luz.gonzalez@company.com>"],
+        bcc: ["Ramiro Jimenez <ramiro.jimenez@company.com>", "Nadia Garcia <nadia.garcia@company.com>"],
+        date: new Date('Mon Dec 29 2019 12:30:00 GMT+0000 (UTC)').toISOString(),
+        subject: "Solicitud #2190: Certificado de Registro del Formulario del Registro Social",
+        content: "Estimado Juan, \n \nSu solicitud de certificado de haber ingresado el formulario de Registro social ha sido aprobada. \n\n A continuación, debe dar clic sobre el botón de descarga del documento digital aprobado.\n\n\n (Descargar Certificado) \n\n Atentamente, \n\n Unidad del Registro Social",
+        attachments: [],
+        starred: false,
+        important: false,
+        unread: true,
+        folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
+        labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
+    },
+    {
         id: "f389cf89-8eac-43fb-b2b9-70b1e50d4e63",
         type: "mail",
         from: {
@@ -425,25 +463,7 @@ export const mails = [
                 labels: ["b67fc437-6118-4ec8-a3c7-9320b828e3fc"]
             },
             
-                {
-                    id: "d4b5f6f5-32e4-43c9-89d1-34d97a5d67e7",
-                    type: "mail",
-                    from: {
-                        contact: "Unidad del registro social <registro.social@company.com>"
-                    },
-                    to: "me <hughes.brian@company.com>",
-                    cc: ["Santiago Ruiz <santiago.ruiz@company.com>", "Marcela Gutierrez <marcela.gutierrez@company.com>"],
-                    bcc: ["Carlos Lopez <carlos.lopez@company.com>", "Sofia Torres <sofia.torres@company.com>"],
-                    date: new Date('Mon Dec 31 2018 09:15:00 GMT+0000 (UTC)').toISOString(),
-                    subject: "Solicitud de ingreso de formulario del Registro Social",
-                    content: "Hi Brian,\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.\n\nMauris massa. Vestibulum lacinia arcu eget nulla. Nulla vitae mauris non felis mollis faucibus. Ut diam neque, interdum eget, malesuada et, lacinia vitae, sapien.\n\nCheers!\nUnidad del registro social",
-                    attachments: [],
-                    starred: false,
-                    important: true,
-                    unread: false,
-                    folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
-                    labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
-                },
+                
                 {
                     id: "cb2f2649-7e1f-43ec-97ae-dfc4a0625b09",
                     type: "mail",
@@ -520,25 +540,7 @@ export const mails = [
                     folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
                     labels: ["184cd689-4ee4-47cf-9f8a-12233d614326"]
                 },
-                {
-                    id: "c0c5ab6f-37d9-4bfc-bfcd-f64d79e98444",
-                    type: "mail",
-                    from: {
-                        contact: "Unidad del registro social <registro.social@company.com>"
-                    },
-                    to: "me <hughes.brian@company.com>",
-                    cc: ["David Ruiz <david.ruiz@company.com>", "Luz Gonzalez <luz.gonzalez@company.com>"],
-                    bcc: ["Ramiro Jimenez <ramiro.jimenez@company.com>", "Nadia Garcia <nadia.garcia@company.com>"],
-                    date: new Date('Mon Dec 31 2018 12:30:00 GMT+0000 (UTC)').toISOString(),
-                    subject: "Solicitud de certificado de haber registrado el formulario del Registro Social",
-                    content: "Hi Brian,\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.\n\nMauris massa. Vestibulum lacinia arcu eget nulla. Nulla vitae mauris non felis mollis faucibus. Ut diam neque, interdum eget, malesuada et, lacinia vitae, sapien.\n\nCheers!\nUnidad del registro social",
-                    attachments: [],
-                    starred: false,
-                    important: false,
-                    unread: true,
-                    folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
-                    labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
-                }
+                
             
             
         

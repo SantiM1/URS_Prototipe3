@@ -1,6 +1,7 @@
+
 <div class="absolute inset-0 flex min-w-0 flex-col overflow-hidden">
     <mat-drawer-container class="h-full flex-auto">
-        <!-- Drawer -->
+        
         <mat-drawer class="w-72 dark:bg-gray-900" [autoFocus]="false" [mode]="drawerMode" [opened]="drawerOpened"
             [position]="'end'" #matDrawer>
             <!-- Demo sidebar -->
@@ -46,7 +47,12 @@
             </div>
             <!-- Footer -->
             <div
-                class="bg-card flex flex-0 flex-col border-b p-2  ">
+                class="bg-card flex flex-0 justify-between border-b p-2  ">
+                <div class="mt-6 flex shrink-0 items-center sm:ml-4 sm:mt-0">
+                    <button mat-icon-button (click)="matDrawer2.toggle()">
+                        <mat-icon [svgIcon]="'heroicons_outline:question-mark-circle'"></mat-icon>
+                    </button>
+                </div>
                 <div class="flex justify-end">
                     <button class="mr-2 px-8 bg-contrast " mat-flat-button type="button" matStepperPrevious (click)="navFormPrev()">
                         Anterior
@@ -64,5 +70,13 @@
                 </div>
             </div>
         </mat-drawer-content>
+            <mat-drawer class="w-72 dark:bg-gray-900" [autoFocus]="false" [mode]="drawerMode" [opened]="drawerOpened"
+            #matDrawer2>
+       <!-- Demo sidebar -->
+            <info-sidebar></info-sidebar>
+           
+             </mat-drawer>
+
     </mat-drawer-container>
+ 
 </div>
