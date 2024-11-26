@@ -86,11 +86,11 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 link: '/portal/usuario-autentificado',
             },
             {
-                id: 'portal.usuario-institucional',
+                id: 'portal.inbox',
                 title: 'Usuario Institucional',
                 type: 'basic',
                 icon: 'heroicons_outline:user',
-                link: '/portal/usuario-institucional',
+                link: '/portal/inbox',
             },
         ],
     },

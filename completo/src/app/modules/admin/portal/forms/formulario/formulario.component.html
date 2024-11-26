@@ -19,9 +19,7 @@
                         <h2 class="truncate text-3xl font-extrabold leading-7 tracking-tight sm:leading-10 md:text-4xl">
                             Formulario de la Unidad del Registro Social-2024
                         </h2>
-                        <h3 class="truncate text-2xl font-medium leading-7 tracking-tight">
-                            Sección I: Identificación y Ubicación Geográfica de la Vivienda
-                        </h3>
+                       
                     </div>
                     
                     
@@ -34,6 +32,11 @@
                     </button>
                 </div>
             </div>
+            
+            <div class="flex border-solid border-black bg-contrast py-2  text-2xl justify-center items-center">
+                <div> Sección I: Identificación y Ubicación Geográfica de la Vivienda </div>
+               
+            </div>
             <div class="bg-gray-900 max-h-4 flex-grow"></div>
 
             <!-- Main -->
@@ -45,12 +48,19 @@
             <div
                 class="bg-card flex flex-0 flex-col border-b p-2  ">
                 <div class="flex justify-end">
-                    <button class="mr-2 px-8" mat-flat-button [color]="'accent'" type="button" matStepperPrevious (click)="navFormPrev()">
+                    <button class="mr-2 px-8 bg-contrast " mat-flat-button type="button" matStepperPrevious (click)="navFormPrev()">
                         Anterior
                     </button>
+                    @if(!changeBtn()){
                     <button class="px-8" mat-flat-button [color]="'primary'" type="button" matStepperNext (click)="navFormNext()">
                         Siguiente
                     </button>
+                    }  
+                    @if(changeBtn()){
+                        <button class="px-8" mat-flat-button [color]="'primary'" type="button" matStepperNext (click)="navInit()">
+                            Finalizar
+                        </button>
+                    } 
                 </div>
             </div>
         </mat-drawer-content>

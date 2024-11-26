@@ -11,7 +11,7 @@ import { MapComponent } from './modules/admin/map/map.component';
 export const appRoutes: Route[] = [
 
     // Redirect empty path to '/dashboards/project'
-    {path: '', pathMatch : 'full', redirectTo: 'portal/land'},
+    {path: '', pathMatch : 'full', redirectTo: 'portal/land-so'},
 
     // Redirect signed-in user to the '/dashboards/project'
     //
@@ -98,9 +98,10 @@ export const appRoutes: Route[] = [
             ]},
             //Portal
             {path: 'portal', children: [
-                {path: 'land', loadChildren: () => import('app/modules/admin/portal/project/project.routes')},
+                {path: 'land-so', loadChildren: () => import('app/modules/admin/portal/landing-signed-out/landingSO.routes')},
+                {path: 'land', loadChildren: () => import('app/modules/admin/portal/landing-signed-in/landing.routes')},
                 {path: 'formulario-urs', loadChildren: () => import('app/modules/admin/portal/forms/portal.routes')},
-                {path: 'usuario-institucional', loadChildren: () => import('app/modules/admin/portal/user/user.routes')},
+                {path: 'inbox', loadChildren: () => import('app/modules/admin/portal/inbox/inbox.routes')},
                 {path: 'usuario-autentificado', loadChildren: () => import('app/modules/admin/portal/activities/activities.routes')},
                 {path: 'autoregistro', loadChildren: () => import('app/modules/admin/portal/sign-up/sign-up.routes')},
             ]},

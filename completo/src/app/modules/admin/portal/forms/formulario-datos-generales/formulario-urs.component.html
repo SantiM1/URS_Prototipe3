@@ -12,7 +12,7 @@
                             <div class="col-span-3">
                                 <p> 1. Provincia</p>
                             <mat-form-field class="w-96 ">
-                                <mat-select [formControlName]="'Option'" [placeholder]="'Selecciona la provincia'">
+                                <mat-select  [placeholder]="'Selecciona la provincia'">
                                     <mat-option value="country-1">Opción 1</mat-option>
                                     <mat-option value="country-2">Opción 2</mat-option>
                                     <mat-option value="country-3">Opción 3</mat-option>
@@ -22,7 +22,7 @@
                             </mat-form-field>
                             <p> 2. Cantón</p>
                             <mat-form-field class="w-96">
-                                <mat-select [formControlName]="'Option'" [placeholder]="'Selecciona el cantón'">
+                                <mat-select [placeholder]="'Selecciona el cantón'">
                                     <mat-option value="country-1">Opción 1</mat-option>
                                     <mat-option value="country-2">Opción 2</mat-option>
                                     <mat-option value="country-3">Opción 3</mat-option>
@@ -32,7 +32,7 @@
                             </mat-form-field>
                             <p> 3. Parroquia </p>
                             <mat-form-field class="w-96 ">
-                                <mat-select [formControlName]="'Option'" [placeholder]="'Selecciona la parroquia'">
+                                <mat-select [placeholder]="'Selecciona la parroquia'">
                                     <mat-option value="country-1">Opción 1</mat-option>
                                     <mat-option value="country-2">Opción 2</mat-option>
                                     <mat-option value="country-3">Opción 3</mat-option>
@@ -43,7 +43,7 @@
                             <div class=" flex flex-col">
                                 <span class="mb-2 font-medium"> 4. Área</span>
                                 <mat-radio-group class="flex flex-col" [color]="'primary'"
-                                    [formControlName]="'pushNotifications'">
+                                    >
                                     <mat-radio-button class="mb-2" [value]="'everything'">
                                         Rural
                                     </mat-radio-button>

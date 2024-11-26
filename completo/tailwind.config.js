@@ -25,9 +25,37 @@ const themes = {
             ...colors.blue,
             DEFAULT: colors.blue[950],
         },
+        contrast: {
+            '50': '#f2f9fd',
+            '100': '#e3f2fb',
+            '200': '#c2e5f5',
+            '300': '#95d4ef',
+            '400': '#4eb8e2',
+            '500': '#27a0d0',
+            '600': '#1880b1',
+            '700': '#15678f',
+            '800': '#155777',
+            '900': '#174963',
+            '950': '#0f2f42',
+            DEFAULT: "#95D4EF",
+        },
         accent: {
             ...colors.slate,
             DEFAULT: colors.slate[800],
+        },
+        tertiary: {
+            '50': '#edefff',
+            '100': '#dfe0ff',
+            '200': '#c5c7ff',
+            '300': '#9494ff',
+            '400': '#877dfc',
+            '500': '#755ef6',
+            '600': '#6741ea',
+            '700': '#5a33cf',
+            '800': '#492ca7',
+            '900': '#3d2b84',
+            '950': '#26194d',
+            DEFAULT: "#9494FF",
         },
         warn: {
             ...colors.red,
@@ -67,9 +95,9 @@ const themes = {
  */
 const config = {
     darkMode: 'class',
-    content: ['./src/**/*.{html,scss,ts}', 
+    content: ['./src/**/*.{html,scss,ts}',
         "./node_modules/flowbite/**/*.js"
-        ],
+    ],
     important: true,
     theme: {
         fontSize: {
@@ -285,7 +313,7 @@ const config = {
     },
     plugins: [
         // Fuse - Tailwind plugins
-        
+
         require(
             path.resolve(__dirname, 'src/@fuse/tailwind/plugins/utilities')
         ),

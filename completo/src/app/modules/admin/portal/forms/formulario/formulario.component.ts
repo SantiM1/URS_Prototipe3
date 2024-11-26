@@ -10,6 +10,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { FormularioURSComponent } from '../formulario-datos-generales/formulario-urs.component';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { DeclaracionComponent } from '../declaracion/declaracion.component';
+import { MatChip } from '@angular/material/chips';
 
 @Component({
     selector: 'formulario',
@@ -27,6 +28,7 @@ import { DeclaracionComponent } from '../declaracion/declaracion.component';
         MatPseudoCheckboxModule,
         DeclaracionComponent,
         RouterOutlet,
+        MatChip
     ],
 })
 export class FormularioComponent
@@ -35,7 +37,7 @@ export class FormularioComponent
     drawerMode: 'over' | 'side' = 'side';
     drawerOpened: boolean = true;
     private _unsubscribeAll: Subject<any> = new Subject<any>();
-    @Input() currentScreen: string = 'aceptacion';
+    @Input() currentScreen: string = 'declaracion';
     private pages: string[] = ['declaracion', 'datos-generales', 'materiales-vivienda','cuartos-hogar', 'finalizar'];
     private pageIndex: number = 0;
     /**
@@ -64,6 +66,15 @@ export class FormularioComponent
             this.pageIndex = 0
         }
         this.router.navigate([this.pages[this.pageIndex]], { relativeTo: this.route });
+    }
+    navInit(){
+        this.router.navigate(['../land'], { relativeTo: this.route });
+    }
+
+    changeBtn(){
+        if(this.pages[this.pageIndex] == 'finalizar'){
+            return true
+        }
     }
     /**
      * On init
