@@ -1,18 +1,23 @@
+
+
 <div class="w-72"> 
     <mat-tab-group>
-        <mat-tab label="Coberturas">
+        <mat-tab label="Info Base">
             <section class="example-section">
-            <mat-checkbox class="example-margin py-1"> Hogares URS </mat-checkbox>
-            <mat-checkbox class="example-margin py-1"> Riesgos naturales </mat-checkbox>
-            <mat-checkbox class="example-margin py-1"> Sectores y manzanas censales </mat-checkbox>
+            <mat-radio-group aria-label="Capas Base">
+                <mat-radio-button>OpenStreetMap</mat-radio-button>
+                <mat-radio-button>Google Satellite</mat-radio-button>
+                <mat-radio-button>Google Terrain</mat-radio-button>
+                <br/>
+                <mat-radio-button>Ninguno</mat-radio-button>
+            </mat-radio-group>
+            
+             
 
             </section>
         </mat-tab>
         <mat-tab label="Capas">
-            <section class="example-section">
-                <mat-checkbox class="example-margin">Indicador1</mat-checkbox>
-                <mat-checkbox class="example-margin">Indicador2</mat-checkbox>
-            </section>
+            <tree></tree>
               
         </mat-tab>
       </mat-tab-group>
@@ -24,7 +29,7 @@
         <div
             class="relative flex flex-0 flex-col border-b px-6 py-2 sm:flex-row sm:items-center sm:justify-between md:px-8">
             <!-- Title -->
-            <div class="text-8lg font-extrabold tracking-tight">Geoportal</div>
+            <div class="text-8lg font-extrabold tracking-tight">Visor Geográfico</div>
            
            
 
@@ -47,24 +52,35 @@
                 <mat-chip>
                     <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:arrows-pointing-out'"></mat-icon>
                 </mat-chip>
-                <mat-chip  class="fuse-mat-dense fuse-mat-rounded min-w-64 place-content-center">
+                <mat-chip  class="bg-gray-50 fuse-mat-dense fuse-mat-rounded min-w-64 place-content-center">
                     <mat-icon class="icon-size-3" matPrefix [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
                     <input matInput class="px-2"  [autocomplete]="'off'"
-                        [placeholder]="'Buscar Operativo'" />
+                        [placeholder]="'Buscar lugar...'" />
                 </mat-chip>
                 <mat-chip>
                     <div class="flex">
-                        <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:adjustments-vertical'"/>
+                        <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:map-pin'"/>
                         <p class="text-sm"> Coordenadas</p>
                     </div>
                 </mat-chip>
                 <mat-chip>
                     <div class="flex">
-                        <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:map-pin'"/>
+                        <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:information-circle'"/>
+                        <p class="text-sm"> Información</p>
+                    </div>
+                </mat-chip>
+                <mat-chip>
+                    <div class="flex">
+                        <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:adjustments-vertical'"/>
                         <p class="text-sm"> Medir</p>
                     </div>
                 </mat-chip>
-                <mat-chip><mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:document-arrow-down'"></mat-icon></mat-chip>
+                <mat-chip>
+                    <div class="flex">
+                        <mat-icon class="icon-size-5 flex justify-center" matPrefix [svgIcon]="'heroicons_solid:document-arrow-down'"/>
+                        <p class="text-sm"> Descargar PDF</p>
+                    </div>
+                </mat-chip>
               </mat-chip-set>
             </span>
 

@@ -81,74 +81,36 @@ export const settings = {
 };
 export const mails = [
     {
-        id: "01aaad4b5f6f5-32e4-43c9-89d1-34d97a5d67e7",
+        id: "a1f7d459-4b64-482e-876e-7a493afc9bce",
         type: "mail",
         from: {
             contact: "Unidad del registro social <registro.social@company.com>"
         },
         to: "me <hughes.brian@company.com>",
-        cc: ["Santiago Ruiz <santiago.ruiz@company.com>", "Marcela Gutierrez <marcela.gutierrez@company.com>"],
-        bcc: ["Carlos Lopez <carlos.lopez@company.com>", "Sofia Torres <sofia.torres@company.com>"],
-        date: new Date('Mon Dec 30 2019 09:15:00 GMT+0000 (UTC)').toISOString(),
-        subject: "Solicitud #7345: Ingreso de Formulario del Registro Social",
-        content: "Estimado Juan, \n \nSu solicitud de ingreso del formulario de Registro social ha sido aprobada. \n\n A continuación, debe dar clic sobre el botón de inicio de encuesta para iniciar el proceso de registro.\n\n\n (Iniciar registro de Formulario) \n\n\n Agradecemos su atención. \n Atentamente, \n\n Unidad del Registro Social",
-        attachments: [],
-        starred: false,
-        important: true,
-        unread: false,
-        folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
-        labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
-    },
-    {
-        id: "0011aac0c5ab6f-37d9-4bfc-bfcd-f64d79e98444",
-        type: "mail",
-        from: {
-            contact: "Unidad del registro social <registro.social@company.com>"
-        },
-        to: "me <hughes.brian@company.com>",
-        cc: ["David Ruiz <david.ruiz@company.com>", "Luz Gonzalez <luz.gonzalez@company.com>"],
-        bcc: ["Ramiro Jimenez <ramiro.jimenez@company.com>", "Nadia Garcia <nadia.garcia@company.com>"],
-        date: new Date('Mon Dec 29 2019 12:30:00 GMT+0000 (UTC)').toISOString(),
-        subject: "Solicitud #2190: Certificado de Registro del Formulario del Registro Social",
-        content: "Estimado Juan, \n \nSu solicitud de certificado de haber ingresado el formulario de Registro social ha sido aprobada. \n\n A continuación, debe dar clic sobre el botón de descarga del documento digital aprobado.\n\n\n (Descargar Certificado) \n\n Atentamente, \n\n Unidad del Registro Social",
+        cc: ["Ana Morales <ana.morales@company.com>", "Luis Torres <luis.torres@company.com>"],
+        bcc: ["Marta Alvarez <marta.alvarez@company.com>", "Daniel Ramirez <daniel.ramirez@company.com>"],
+        date: "2019-12-28T15:20:00.000Z",
+        subject: "Solicitud #4567: Ingreso de Formulario del Registro Social",
+        content: "Estimado Juan, \n\nSu solicitud para el ingreso del formulario de Registro Social está en proceso. Por favor, revise los documentos requeridos y asegúrese de completar los pasos pendientes. \n\nPara continuar, haga clic en el siguiente enlace: (Ingresar Formulario). \n\nAtentamente,\n\nUnidad del Registro Social",
         attachments: [],
         starred: false,
         important: false,
         unread: true,
         folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
-        labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
+        labels: ["67d3c4-f6ed-4ea6-9579-a12f95a9d76e"]
     },
     {
-        id: "f389cf89-8eac-43fb-b2b9-70b1e50d4e63",
+        id: "7fd9e3ba-9077-4c94-92d5-b3f77b6fd924",
         type: "mail",
         from: {
             contact: "Unidad del registro social <registro.social@company.com>"
         },
         to: "me <hughes.brian@company.com>",
-        cc: ["Luis Fernandez <luis.fernandez@company.com>", "Maria Gonzalez <maria.gonzalez@company.com>"],
-        bcc: ["Jorge Ruiz <jorge.ruiz@company.com>", "Elena Morales <elena.morales@company.com>"],
-        date: new Date('Mon Dec 31 2018 15:30:00 GMT+0000 (UTC)').toISOString(),
-        subject: "Solicitud de ingreso de formulario del Registro Social",
-        content: "Hi Brian,\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.\n\nMauris massa. Vestibulum lacinia arcu eget nulla. Nulla vitae mauris non felis mollis faucibus. Ut diam neque, interdum eget, malesuada et, lacinia vitae, sapien.\n\nCheers!\nUnidad del registro social",
-        attachments: [],
-        starred: true,
-        important: true,
-        unread: false,
-        folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
-        labels: ["b2d1e4e7-7cfd-4b51-ae59-217a093df754"]
-    },
-    {
-        id: "a67c56bc-d0f7-49f3-bc93-b042f3b28233",
-        type: "mail",
-        from: {
-            contact: "Unidad del registro social <registro.social@company.com>"
-        },
-        to: "me <hughes.brian@company.com>",
-        cc: ["Victor Alvarez <victor.alvarez@company.com>", "Laura Diaz <laura.diaz@company.com>"],
-        bcc: ["Roberto Soto <roberto.soto@company.com>", "Catalina Perez <catalina.perez@company.com>"],
-        date: new Date('Mon Dec 31 2018 11:00:00 GMT+0000 (UTC)').toISOString(),
-        subject: "Solicitud de Actualización de datos del formulario de Registro Social",
-        content: "Hi Brian,\n\nQuis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nCheers!\nUnidad del registro social",
+        cc: ["Camila Diaz <camila.diaz@company.com>", "Jose Marin <jose.marin@company.com>"],
+        bcc: ["Paula Ortiz <paula.ortiz@company.com>", "Esteban Castillo <esteban.castillo@company.com>"],
+        date: "2019-12-27T10:45:00.000Z",
+        subject: "Solicitud #8934: Actualización de datos del Formulario de Registro Social",
+        content: "Estimado Juan, \n\nSu solicitud de actualización de datos del formulario de Registro Social ha sido recibida. En breve, recibirá una notificación para confirmar los cambios realizados. \n\nAgradecemos su colaboración.\n\nAtentamente,\n\nUnidad del Registro Social",
         attachments: [],
         starred: false,
         important: false,
@@ -157,392 +119,335 @@ export const mails = [
         labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
     },
     {
-        id: "fbd5cc98-d72e-49d4-9930-06a1a99ec601",
+        id: "ef679d53-3219-4817-91a5-8c874c6e89dc",
         type: "mail",
         from: {
             contact: "Unidad del registro social <registro.social@company.com>"
         },
         to: "me <hughes.brian@company.com>",
-        cc: ["Carlos Torres <carlos.torres@company.com>", "Sofia Martinez <sofia.martinez@company.com>"],
-        bcc: ["Eva Lopez <eva.lopez@company.com>", "Miguel Perez <miguel.perez@company.com>"],
-        date: new Date('Mon Dec 31 2018 17:45:00 GMT+0000 (UTC)').toISOString(),
-        subject: "Solicitud de pertenecer a un nuevo núcleo familiar",
-        content: "Hi Brian,\n\nUllamco deserunt commodo esse deserunt deserunt quis eiusmod. Laborum sint excepteur non sit eiusmod sunt voluptate ipsum nisi ullamco magna. Lorem consectetur est dolor minim exercitation deserunt quis duis fugiat ipsum incididunt non. Anim aute ipsum cupidatat nisi occaecat quis sit nisi labore labore dolore do. Pariatur veniam culpa quis veniam nisi exercitation veniam ut. Quis do sint proident fugiat ad.\n\nNon id nisi commodo veniam. Veniam veniam minim ea laborum voluptate id duis deserunt. Anim ut ut amet et ullamco nulla fugiat id incididunt adipisicing excepteur amet.\n\nCheers!\nUnidad del registro social",
+        cc: ["Alejandro Ponce <alejandro.ponce@company.com>", "Lucia Perez <lucia.perez@company.com>"],
+        bcc: ["Fernando Ruiz <fernando.ruiz@company.com>", "Carla Rojas <carla.rojas@company.com>"],
+        date: "2019-12-26T08:10:00.000Z",
+        subject: "Solicitud #1234: Cambio de núcleo familiar",
+        content: "Estimado Juan, \n\nLa solicitud para el cambio de núcleo familiar en el Registro Social ha sido aceptada. Por favor, revise los documentos actualizados en el portal en línea. \n\nPuede acceder al enlace aquí: (Acceder a Núcleo Familiar). \n\nAtentamente,\n\nUnidad del Registro Social",
         attachments: [],
-        starred: true,
-        important: true,
-        unread: false,
-        folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
+        starred: false,
+        important: false,
+        unread: true,
+        folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
         labels: ["8b035cb5-65c0-4ab1-bb4c-43b0e442d1f3"]
-    },
-    {
-        id: "92b3ac9d-e2c7-4ecf-bdfe-e1c23a7b3c58",
-        type: "mail",
-        from: {
-            contact: "Unidad del registro social <registro.social@company.com>"
-        },
-        to: "me <hughes.brian@company.com>",
-        cc: ["Pedro Garcia <pedro.garcia@company.com>", "Lucia Gomez <lucia.gomez@company.com>"],
-        bcc: ["Marcos Ruiz <marcos.ruiz@company.com>", "Ana Ramos <ana.ramos@company.com>"],
-        date: new Date('Mon Dec 31 2018 14:30:00 GMT+0000 (UTC)').toISOString(),
-        subject: "Solicitud de reclamo de porcentaje de pobreza",
-        content: "Hi Brian,\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.\n\nMauris massa. Vestibulum lacinia arcu eget nulla. Nulla vitae mauris non felis mollis faucibus. Ut diam neque, interdum eget, malesuada et, lacinia vitae, sapien.\n\nCheers!\nUnidad del registro social",
-        attachments: [],
-        starred: false,
-        important: true,
-        unread: true,
-        folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
-        labels: ["b167d3c4-f6ed-4ea6-9579-a12f95a9d76e"]
-    },
-    {
-        id: "d412ced9-4595-4633-94f1-c8bc720606a5",
-        type: "mail",
-        from: {
-            contact: "Unidad del registro social <registro.social@company.com>"
-        },
-        to: "me <hughes.brian@company.com>",
-        cc: ["Carlos Torres <carlos.torres@company.com>", "Sofia Martinez <sofia.martinez@company.com>"],
-        bcc: ["Eva Lopez <eva.lopez@company.com>", "Miguel Perez <miguel.perez@company.com>"],
-        date: new Date('Mon Dec 31 2018 08:30:00 GMT+0000 (UTC)').toISOString(),
-        subject: "Solicitud de información para acceder a información del Registro social",
-        content: "Hi Brian,\n\nNulla facilisi. Vivamus sit amet tristique orci. Morbi malesuada urna sit amet orci volutpat, a ullamcorper nunc auctor. Nunc fringilla dui et sem fringilla, non tincidunt metus vestibulum. Etiam ut sapien ac risus condimentum interdum.\n\nCheers!\nUnidad del registro social",
-        attachments: [],
-        starred: true,
-        important: false,
-        unread: false,
-        folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
-        labels: ["184cd689-4ee4-47cf-9f8a-12233d614326"]
-    },
-    {
-        id: "5c83f87d-6e72-4e73-9f83-e4b5ff1ab7b8",
-        type: "mail",
-        from: {
-            contact: "Unidad del registro social <registro.social@company.com>"
-        },
-        to: "me <hughes.brian@company.com>",
-        cc: ["Victor Alvarez <victor.alvarez@company.com>", "Laura Diaz <laura.diaz@company.com>"],
-        bcc: ["Roberto Soto <roberto.soto@company.com>", "Catalina Perez <catalina.perez@company.com>"],
-        date: new Date('Mon Dec 31 2018 17:00:00 GMT+0000 (UTC)').toISOString(),
-        subject: "Solicitud de certificado de haber registrado el formulario del Registro Social",
-        content: "Hi Brian,\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.\n\nMauris massa. Vestibulum lacinia arcu eget nulla. Nulla vitae mauris non felis mollis faucibus. Ut diam neque, interdum eget, malesuada et, lacinia vitae, sapien.\n\nCheers!\nUnidad del registro social",
-        attachments: [],
-        starred: true,
-        important: false,
-        unread: true,
-        folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
-        labels: ["b67fc437-6118-4ec8-a3c7-9320b828e3fc"]
     },
     
         {
-            id: "f389cf89-8eac-43fb-b2b9-70b1e50d4e63",
+            id: "b89f0531-4c2a-497b-873e-6f7db00c450e",
             type: "mail",
             from: {
                 contact: "Unidad del registro social <registro.social@company.com>"
             },
             to: "me <hughes.brian@company.com>",
-            cc: ["Luis Fernandez <luis.fernandez@company.com>", "Maria Gonzalez <maria.gonzalez@company.com>"],
-            bcc: ["Jorge Ruiz <jorge.ruiz@company.com>", "Elena Morales <elena.morales@company.com>"],
-            date: new Date('Mon Dec 31 2018 15:30:00 GMT+0000 (UTC)').toISOString(),
-            subject: "Solicitud de ingreso de formulario del Registro Social",
-            content: "Hi Brian,\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.\n\nMauris massa. Vestibulum lacinia arcu eget nulla. Nulla vitae mauris non felis mollis faucibus. Ut diam neque, interdum eget, malesuada et, lacinia vitae, sapien.\n\nCheers!\nUnidad del registro social",
-            attachments: [],
-            starred: true,
-            important: true,
-            unread: false,
-            folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
-            labels: ["b2d1e4e7-7cfd-4b51-ae59-217a093df754"]
-        },
-        {
-            id: "a67c56bc-d0f7-49f3-bc93-b042f3b28233",
-            type: "mail",
-            from: {
-                contact: "Unidad del registro social <registro.social@company.com>"
-            },
-            to: "me <hughes.brian@company.com>",
-            cc: ["Victor Alvarez <victor.alvarez@company.com>", "Laura Diaz <laura.diaz@company.com>"],
-            bcc: ["Roberto Soto <roberto.soto@company.com>", "Catalina Perez <catalina.perez@company.com>"],
-            date: new Date('Mon Dec 31 2018 11:00:00 GMT+0000 (UTC)').toISOString(),
-            subject: "Solicitud de Actualización de datos del formulario de Registro Social",
-            content: "Hi Brian,\n\nQuis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nCheers!\nUnidad del registro social",
+            cc: ["Sofia Martinez <sofia.martinez@company.com>", "Javier Guzman <javier.guzman@company.com>"],
+            bcc: ["Carlos Perez <carlos.perez@company.com>", "Andrea Torres <andrea.torres@company.com>"],
+            date: "2019-12-24T14:00:00.000Z",
+            subject: "Solicitud #3456: Reclamo de porcentaje de pobreza",
+            content: "Estimado Juan, \n\nHemos recibido su reclamo respecto al porcentaje de pobreza asignado. Nuestro equipo está revisando la información y le contactará próximamente con una resolución. \n\nGracias por su paciencia.\n\nAtentamente,\n\nUnidad del Registro Social",
             attachments: [],
             starred: false,
             important: false,
             unread: true,
-            folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
-            labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
-        },
-        {
-            id: "fbd5cc98-d72e-49d4-9930-06a1a99ec601",
-            type: "mail",
-            from: {
-                contact: "Unidad del registro social <registro.social@company.com>"
-            },
-            to: "me <hughes.brian@company.com>",
-            cc: ["Carlos Torres <carlos.torres@company.com>", "Sofia Martinez <sofia.martinez@company.com>"],
-            bcc: ["Eva Lopez <eva.lopez@company.com>", "Miguel Perez <miguel.perez@company.com>"],
-            date: new Date('Mon Dec 31 2018 17:45:00 GMT+0000 (UTC)').toISOString(),
-            subject: "Solicitud de pertenecer a un nuevo núcleo familiar",
-            content: "Hi Brian,\n\nUllamco deserunt commodo esse deserunt deserunt quis eiusmod. Laborum sint excepteur non sit eiusmod sunt voluptate ipsum nisi ullamco magna. Lorem consectetur est dolor minim exercitation deserunt quis duis fugiat ipsum incididunt non. Anim aute ipsum cupidatat nisi occaecat quis sit nisi labore labore dolore do. Pariatur veniam culpa quis veniam nisi exercitation veniam ut. Quis do sint proident fugiat ad.\n\nNon id nisi commodo veniam. Veniam veniam minim ea laborum voluptate id duis deserunt. Anim ut ut amet et ullamco nulla fugiat id incididunt adipisicing excepteur amet.\n\nCheers!\nUnidad del registro social",
-            attachments: [],
-            starred: true,
-            important: true,
-            unread: false,
-            folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
-            labels: ["8b035cb5-65c0-4ab1-bb4c-43b0e442d1f3"]
-        },
-        {
-            id: "92b3ac9d-e2c7-4ecf-bdfe-e1c23a7b3c58",
-            type: "mail",
-            from: {
-                contact: "Unidad del registro social <registro.social@company.com>"
-            },
-            to: "me <hughes.brian@company.com>",
-            cc: ["Pedro Garcia <pedro.garcia@company.com>", "Lucia Gomez <lucia.gomez@company.com>"],
-            bcc: ["Marcos Ruiz <marcos.ruiz@company.com>", "Ana Ramos <ana.ramos@company.com>"],
-            date: new Date('Mon Dec 31 2018 14:30:00 GMT+0000 (UTC)').toISOString(),
-            subject: "Solicitud de reclamo de porcentaje de pobreza",
-            content: "Hi Brian,\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.\n\nMauris massa. Vestibulum lacinia arcu eget nulla. Nulla vitae mauris non felis mollis faucibus. Ut diam neque, interdum eget, malesuada et, lacinia vitae, sapien.\n\nCheers!\nUnidad del registro social",
-            attachments: [],
-            starred: false,
-            important: true,
-            unread: true,
-            folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
-            labels: ["b167d3c4-f6ed-4ea6-9579-a12f95a9d76e"]
-        },
-        {
-            id: "d412ced9-4595-4633-94f1-c8bc720606a5",
-            type: "mail",
-            from: {
-                contact: "Unidad del registro social <registro.social@company.com>"
-            },
-            to: "me <hughes.brian@company.com>",
-            cc: ["Carlos Torres <carlos.torres@company.com>", "Sofia Martinez <sofia.martinez@company.com>"],
-            bcc: ["Eva Lopez <eva.lopez@company.com>", "Miguel Perez <miguel.perez@company.com>"],
-            date: new Date('Mon Dec 31 2018 08:30:00 GMT+0000 (UTC)').toISOString(),
-            subject: "Solicitud de información para acceder a información del Registro social",
-            content: "Hi Brian,\n\nNulla facilisi. Vivamus sit amet tristique orci. Morbi malesuada urna sit amet orci volutpat, a ullamcorper nunc auctor. Nunc fringilla dui et sem fringilla, non tincidunt metus vestibulum. Etiam ut sapien ac risus condimentum interdum.\n\nCheers!\nUnidad del registro social",
-            attachments: [],
-            starred: true,
-            important: false,
-            unread: false,
-            folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
+            folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
             labels: ["184cd689-4ee4-47cf-9f8a-12233d614326"]
         },
         {
-            id: "5c83f87d-6e72-4e73-9f83-e4b5ff1ab7b8",
+            id: "3e4dc751-8a56-4c69-b211-79cb9ae703b4",
             type: "mail",
             from: {
                 contact: "Unidad del registro social <registro.social@company.com>"
             },
             to: "me <hughes.brian@company.com>",
-            cc: ["Victor Alvarez <victor.alvarez@company.com>", "Laura Diaz <laura.diaz@company.com>"],
-            bcc: ["Roberto Soto <roberto.soto@company.com>", "Catalina Perez <catalina.perez@company.com>"],
-            date: new Date('Mon Dec 31 2018 17:00:00 GMT+0000 (UTC)').toISOString(),
-            subject: "Solicitud de certificado de haber registrado el formulario del Registro Social",
-            content: "Hi Brian,\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.\n\nMauris massa. Vestibulum lacinia arcu eget nulla. Nulla vitae mauris non felis mollis faucibus. Ut diam neque, interdum eget, malesuada et, lacinia vitae, sapien.\n\nCheers!\nUnidad del registro social",
+            cc: ["Paola Rojas <paola.rojas@company.com>", "Diego Vargas <diego.vargas@company.com>"],
+            bcc: ["Fernando Jimenez <fernando.jimenez@company.com>", "Carolina Rivera <carolina.rivera@company.com>"],
+            date: "2019-12-23T16:30:00.000Z",
+            subject: "Solicitud #5678: Información para acceder al Registro Social",
+            content: "Estimado Juan, \n\nA continuación, encontrará la información necesaria para acceder al Registro Social. Por favor, asegúrese de tener los documentos requeridos a la mano antes de iniciar el proceso. \n\nPuede acceder aquí: (Acceder a Información). \n\nAtentamente,\n\nUnidad del Registro Social",
             attachments: [],
-            starred: true,
-            important: true,
-            unread: false,
+            starred: false,
+            important: false,
+            unread: true,
+            folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
+            labels: ["b2d1e4e7-7cfd-4b51-ae59-217a093df754"]
+        },
+        {
+            id: "6cd3291f-b8a4-40e2-a3f2-f54c1d835e7f",
+            type: "mail",
+            from: {
+                contact: "Unidad del registro social <registro.social@company.com>"
+            },
+            to: "me <hughes.brian@company.com>",
+            cc: ["Laura Navarro <laura.navarro@company.com>", "Juan Hernandez <juan.hernandez@company.com>"],
+            bcc: ["Pablo Gutierrez <pablo.gutierrez@company.com>", "Maria Leon <maria.leon@company.com>"],
+            date: "2019-12-22T18:45:00.000Z",
+            subject: "Solicitud #7890: Certificado de Registro del Formulario del Registro Social",
+            content: "Estimado Juan, \n\nSu certificado de Registro Social ha sido generado con éxito. Puede descargarlo utilizando el siguiente enlace: (Descargar Certificado). \n\nGracias por usar nuestro servicio.\n\nAtentamente,\n\nUnidad del Registro Social",
+            attachments: [],
+            starred: false,
+            important: false,
+            unread: true,
             folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
             labels: ["b67fc437-6118-4ec8-a3c7-9320b828e3fc"]
         },
-        
-            {
-                id: "a3c54b32-4c57-4e50-b2a9-9b13e3d39be4",
-                type: "mail",
-                from: {
-                    contact: "Unidad del registro social <registro.social@company.com>"
-                },
-                to: "me <hughes.brian@company.com>",
-                cc: ["Luis Fernandez <luis.fernandez@company.com>", "Maria Gonzalez <maria.gonzalez@company.com>"],
-                bcc: ["Jorge Ruiz <jorge.ruiz@company.com>", "Elena Morales <elena.morales@company.com>"],
-                date: new Date('Mon Dec 31 2018 15:30:00 GMT+0000 (UTC)').toISOString(),
-                subject: "Solicitud de ingreso de formulario del Registro Social",
-                content: "Hi Brian,\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.\n\nMauris massa. Vestibulum lacinia arcu eget nulla. Nulla vitae mauris non felis mollis faucibus. Ut diam neque, interdum eget, malesuada et, lacinia vitae, sapien.\n\nCheers!\nUnidad del registro social",
-                attachments: [],
-                starred: true,
-                important: true,
-                unread: false,
-                folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
-                labels: ["b2d1e4e7-7cfd-4b51-ae59-217a093df754"]
+        {
+            id: "2ef1c7d6-83dc-4574-8cf2-43aeb9a7ed3d",
+            type: "mail",
+            from: {
+                contact: "Unidad del registro social <registro.social@company.com>"
             },
+            to: "me <hughes.brian@company.com>",
+            cc: ["Victor Salinas <victor.salinas@company.com>", "Elena Montoya <elena.montoya@company.com>"],
+            bcc: ["Gabriel Vega <gabriel.vega@company.com>", "Monica Aguilar <monica.aguilar@company.com>"],
+            date: "2019-12-21T20:15:00.000Z",
+            subject: "Solicitud #3457: Ingreso de Formulario del Registro Social",
+            content: "Estimado Juan, \n\nEl ingreso de su formulario ha sido confirmado. Por favor, haga clic en el siguiente enlace para completar el proceso: (Ingresar Formulario). \n\nGracias por su colaboración.\n\nAtentamente,\n\nUnidad del Registro Social",
+            attachments: [],
+            starred: false,
+            important: false,
+            unread: true,
+            folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
+            labels: ["b167d3c4-f6ed-4ea6-9579-a12f95a9d76e"]
+        },
             {
-                id: "c56fd9f5-5c26-4977-9135-e92977e93565",
+                id: "8a10f5d3-86b9-4c60-990f-9b2e7e8d5c21",
                 type: "mail",
                 from: {
                     contact: "Unidad del registro social <registro.social@company.com>"
                 },
                 to: "me <hughes.brian@company.com>",
-                cc: ["Victor Alvarez <victor.alvarez@company.com>", "Laura Diaz <laura.diaz@company.com>"],
-                bcc: ["Roberto Soto <roberto.soto@company.com>", "Catalina Perez <catalina.perez@company.com>"],
-                date: new Date('Mon Dec 31 2018 11:00:00 GMT+0000 (UTC)').toISOString(),
-                subject: "Solicitud de Actualización de datos del formulario de Registro Social",
-                content: "Hi Brian,\n\nQuis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nCheers!\nUnidad del registro social",
+                cc: ["Ana Lopez <ana.lopez@company.com>", "Luis Mendoza <luis.mendoza@company.com>"],
+                bcc: ["Carmen Torres <carmen.torres@company.com>", "Pedro Ramirez <pedro.ramirez@company.com>"],
+                date: "2019-12-20T13:00:00.000Z",
+                subject: "Solicitud #1289: Actualización de datos del Formulario de Registro Social",
+                content: "Estimado Juan, \n\nHemos actualizado los datos de su formulario de Registro Social. Por favor revise la información ingresada y comuníquese con nosotros si encuentra algún error. \n\nGracias por su colaboración.\n\nAtentamente,\n\nUnidad del Registro Social",
                 attachments: [],
                 starred: false,
                 important: false,
                 unread: true,
-                folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
+                folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
                 labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
             },
             {
-                id: "c8db8fcf-17e1-48b2-9d62-121287f4647b",
+                id: "4a61d841-f3c2-4b2c-828f-659e02827d52",
                 type: "mail",
                 from: {
                     contact: "Unidad del registro social <registro.social@company.com>"
                 },
                 to: "me <hughes.brian@company.com>",
-                cc: ["Carlos Torres <carlos.torres@company.com>", "Sofia Martinez <sofia.martinez@company.com>"],
-                bcc: ["Eva Lopez <eva.lopez@company.com>", "Miguel Perez <miguel.perez@company.com>"],
-                date: new Date('Mon Dec 31 2018 17:45:00 GMT+0000 (UTC)').toISOString(),
-                subject: "Solicitud de pertenecer a un nuevo núcleo familiar",
-                content: "Hi Brian,\n\nUllamco deserunt commodo esse deserunt deserunt quis eiusmod. Laborum sint excepteur non sit eiusmod sunt voluptate ipsum nisi ullamco magna. Lorem consectetur est dolor minim exercitation deserunt quis duis fugiat ipsum incididunt non. Anim aute ipsum cupidatat nisi occaecat quis sit nisi labore labore dolore do. Pariatur veniam culpa quis veniam nisi exercitation veniam ut. Quis do sint proident fugiat ad.\n\nNon id nisi commodo veniam. Veniam veniam minim ea laborum voluptate id duis deserunt. Anim ut ut amet et ullamco nulla fugiat id incididunt adipisicing excepteur amet.\n\nCheers!\nUnidad del registro social",
-                attachments: [],
-                starred: true,
-                important: true,
-                unread: false,
-                folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
-                labels: ["8b035cb5-65c0-4ab1-bb4c-43b0e442d1f3"]
-            },
-            {
-                id: "3d956c12-b993-4c72-b0e1-e2d54d4d6a0e",
-                type: "mail",
-                from: {
-                    contact: "Unidad del registro social <registro.social@company.com>"
-                },
-                to: "me <hughes.brian@company.com>",
-                cc: ["Pedro Garcia <pedro.garcia@company.com>", "Lucia Gomez <lucia.gomez@company.com>"],
-                bcc: ["Marcos Ruiz <marcos.ruiz@company.com>", "Ana Ramos <ana.ramos@company.com>"],
-                date: new Date('Mon Dec 31 2018 14:30:00 GMT+0000 (UTC)').toISOString(),
-                subject: "Solicitud de reclamo de porcentaje de pobreza",
-                content: "Hi Brian,\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.\n\nMauris massa. Vestibulum lacinia arcu eget nulla. Nulla vitae mauris non felis mollis faucibus. Ut diam neque, interdum eget, malesuada et, lacinia vitae, sapien.\n\nCheers!\nUnidad del registro social",
+                cc: ["Oscar Medina <oscar.medina@company.com>", "Patricia Alvarez <patricia.alvarez@company.com>"],
+                bcc: ["Diego Sanchez <diego.sanchez@company.com>", "Laura Ortiz <laura.ortiz@company.com>"],
+                date: "2019-12-19T15:15:00.000Z",
+                subject: "Solicitud #3541: Cambio de núcleo familiar",
+                content: "Estimado Juan, \n\nEl cambio de núcleo familiar en su Registro Social ha sido procesado. Por favor revise los datos para confirmar que todo esté correcto. \n\nGracias por su confianza.\n\nAtentamente,\n\nUnidad del Registro Social",
                 attachments: [],
                 starred: false,
-                important: true,
+                important: false,
+                unread: true,
+                folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
+                labels: ["b2d1e4e7-7cfd-4b51-ae59-217a093df754"]
+            },
+            {
+                id: "0fc5d82b-e6b0-4c02-bd6d-0b69e6379b12",
+                type: "mail",
+                from: {
+                    contact: "Unidad del registro social <registro.social@company.com>"
+                },
+                to: "me <hughes.brian@company.com>",
+                cc: ["Elena Vargas <elena.vargas@company.com>", "Julio Herrera <julio.herrera@company.com>"],
+                bcc: ["Susana Diaz <susana.diaz@company.com>", "Felipe Rios <felipe.rios@company.com>"],
+                date: "2019-12-18T11:45:00.000Z",
+                subject: "Solicitud #6592: Reclamo de porcentaje de pobreza",
+                content: "Estimado Juan, \n\nHemos recibido su reclamo y estamos revisando los detalles del porcentaje asignado. Le notificaremos tan pronto como tengamos una actualización. \n\nGracias por su paciencia.\n\nAtentamente,\n\nUnidad del Registro Social",
+                attachments: [],
+                starred: false,
+                important: false,
                 unread: true,
                 folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
                 labels: ["b167d3c4-f6ed-4ea6-9579-a12f95a9d76e"]
             },
             {
-                id: "d3d91de3-b0c0-4ff4-8262-b3474db8eb6a",
+                id: "2438b2b5-70ab-4b86-9299-02c15c04194c",
                 type: "mail",
                 from: {
                     contact: "Unidad del registro social <registro.social@company.com>"
                 },
                 to: "me <hughes.brian@company.com>",
-                cc: ["Carlos Torres <carlos.torres@company.com>", "Sofia Martinez <sofia.martinez@company.com>"],
-                bcc: ["Eva Lopez <eva.lopez@company.com>", "Miguel Perez <miguel.perez@company.com>"],
-                date: new Date('Mon Dec 31 2018 08:30:00 GMT+0000 (UTC)').toISOString(),
-                subject: "Solicitud de información para acceder a información del Registro social",
-                content: "Hi Brian,\n\nNulla facilisi. Vivamus sit amet tristique orci. Morbi malesuada urna sit amet orci volutpat, a ullamcorper nunc auctor. Nunc fringilla dui et sem fringilla, non tincidunt metus vestibulum. Etiam ut sapien ac risus condimentum interdum.\n\nCheers!\nUnidad del registro social",
-                attachments: [],
-                starred: true,
-                important: false,
-                unread: false,
-                folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
-                labels: ["184cd689-4ee4-47cf-9f8a-12233d614326"]
-            },
-            {
-                id: "82bdf540-d2ea-4d16-a08f-d4b3a11eaff9",
-                type: "mail",
-                from: {
-                    contact: "Unidad del registro social <registro.social@company.com>"
-                },
-                to: "me <hughes.brian@company.com>",
-                cc: ["Victor Alvarez <victor.alvarez@company.com>", "Laura Diaz <laura.diaz@company.com>"],
-                bcc: ["Roberto Soto <roberto.soto@company.com>", "Catalina Perez <catalina.perez@company.com>"],
-                date: new Date('Mon Dec 31 2018 17:00:00 GMT+0000 (UTC)').toISOString(),
-                subject: "Solicitud de certificado de haber registrado el formulario del Registro Social",
-                content: "Hi Brian,\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.\n\nMauris massa. Vestibulum lacinia arcu eget nulla. Nulla vitae mauris non felis mollis faucibus. Ut diam neque, interdum eget, malesuada et, lacinia vitae, sapien.\n\nCheers!\nUnidad del registro social",
+                cc: ["Gabriela Flores <gabriela.flores@company.com>", "Mario Suarez <mario.suarez@company.com>"],
+                bcc: ["Nicolas Vargas <nicolas.vargas@company.com>", "Sara Castillo <sara.castillo@company.com>"],
+                date: "2019-12-17T19:30:00.000Z",
+                subject: "Solicitud #7853: Información para acceder al Registro Social",
+                content: "Estimado Juan, \n\nAquí encontrará la información para acceder al Registro Social. Por favor, asegúrese de revisar los requisitos antes de proceder. \n\nPuede consultar la información aquí: (Ver información). \n\nAtentamente,\n\nUnidad del Registro Social",
                 attachments: [],
                 starred: false,
-                important: true,
+                important: false,
                 unread: true,
-                folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
-                labels: ["b67fc437-6118-4ec8-a3c7-9320b828e3fc"]
+                folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
+                labels: ["8b035cb5-65c0-4ab1-bb4c-43b0e442d1f3"]
             },
-            
-                
                 {
-                    id: "cb2f2649-7e1f-43ec-97ae-dfc4a0625b09",
+                    id: "9d04e192-4c8c-4d26-9b16-2ecb85f48b27",
                     type: "mail",
                     from: {
                         contact: "Unidad del registro social <registro.social@company.com>"
                     },
                     to: "me <hughes.brian@company.com>",
-                    cc: ["Gerardo Rios <gerardo.rios@company.com>", "Rita Vasquez <rita.vasquez@company.com>"],
-                    bcc: ["Marta Jimenez <marta.jimenez@company.com>", "Isabel Cruz <isabel.cruz@company.com>"],
-                    date: new Date('Mon Dec 31 2018 13:30:00 GMT+0000 (UTC)').toISOString(),
-                    subject: "Solicitud de Actualización de datos del formulario de Registro Social",
-                    content: "Hi Brian,\n\nQuis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nCheers!\nUnidad del registro social",
+                    cc: ["Claudia Reyes <claudia.reyes@company.com>", "Hector Silva <hector.silva@company.com>"],
+                    bcc: ["Isabel Mendez <isabel.mendez@company.com>", "Jorge Castillo <jorge.castillo@company.com>"],
+                    date: "2019-12-16T08:00:00.000Z",
+                    subject: "Solicitud #9301: Certificado de Registro del Formulario del Registro Social",
+                    content: "Estimado Juan, \n\nEl certificado solicitado está disponible para su descarga. Por favor, utilice el siguiente enlace: (Descargar Certificado). \n\nGracias por confiar en nosotros.\n\nAtentamente,\n\nUnidad del Registro Social",
                     attachments: [],
-                    starred: true,
+                    starred: false,
+                    important: false,
+                    unread: true,
+                    folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
+                    labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
+                },
+                {
+                    id: "c8b738b9-b426-4370-9751-47d7a6fa9f45",
+                    type: "mail",
+                    from: {
+                        contact: "Unidad del registro social <registro.social@company.com>"
+                    },
+                    to: "me <hughes.brian@company.com>",
+                    cc: ["Silvia Romero <silvia.romero@company.com>", "Alfonso Ortega <alfonso.ortega@company.com>"],
+                    bcc: ["Adriana Santos <adriana.santos@company.com>", "Luis Vega <luis.vega@company.com>"],
+                    date: "2019-12-15T10:15:00.000Z",
+                    subject: "Solicitud #3458: Ingreso de Formulario del Registro Social",
+                    content: "Estimado Juan, \n\nEl formulario que ingresó ha sido procesado correctamente. Puede verificar los detalles y continuar con los pasos requeridos aquí: (Ver detalles). \n\nGracias por su cooperación.\n\nAtentamente,\n\nUnidad del Registro Social",
+                    attachments: [],
+                    starred: false,
+                    important: false,
+                    unread: true,
+                    folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
+                    labels: ["b2d1e4e7-7cfd-4b51-ae59-217a093df754"]
+                },
+                {
+                    id: "4dfec8c4-13c1-4eb6-a9e4-cc66a45f3bb6",
+                    type: "mail",
+                    from: {
+                        contact: "Unidad del registro social <registro.social@company.com>"
+                    },
+                    to: "me <hughes.brian@company.com>",
+                    cc: ["Enrique Alvarez <enrique.alvarez@company.com>", "Marina Gutierrez <marina.gutierrez@company.com>"],
+                    bcc: ["Luis Ramos <luis.ramos@company.com>", "Clara Jimenez <clara.jimenez@company.com>"],
+                    date: "2019-12-14T14:30:00.000Z",
+                    subject: "Solicitud #4502: Actualización de datos del Formulario de Registro Social",
+                    content: "Estimado Juan, \n\nSe han actualizado exitosamente los datos de su formulario. Por favor, revise la nueva información ingresada y confirme su validez. \n\nGracias por colaborar con nuestro equipo.\n\nAtentamente,\n\nUnidad del Registro Social",
+                    attachments: [],
+                    starred: false,
                     important: false,
                     unread: true,
                     folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
                     labels: ["b167d3c4-f6ed-4ea6-9579-a12f95a9d76e"]
                 },
                 {
-                    id: "e2d88e65-c91d-42a1-8537-fb017f34bfa8",
+                    id: "51a92712-67d7-4d32-82cd-9d37d79f7075",
                     type: "mail",
                     from: {
                         contact: "Unidad del registro social <registro.social@company.com>"
                     },
                     to: "me <hughes.brian@company.com>",
-                    cc: ["Pablo Herrera <pablo.herrera@company.com>", "Ana Gutierrez <ana.gutierrez@company.com>"],
-                    bcc: ["Antonio Gomez <antonio.gomez@company.com>", "Felipe Martinez <felipe.martinez@company.com>"],
-                    date: new Date('Mon Dec 31 2018 16:00:00 GMT+0000 (UTC)').toISOString(),
-                    subject: "Solicitud de pertenecer a un nuevo núcleo familiar",
-                    content: "Hi Brian,\n\nNulla facilisi. Vivamus sit amet tristique orci. Morbi malesuada urna sit amet orci volutpat, a ullamcorper nunc auctor. Nunc fringilla dui et sem fringilla, non tincidunt metus vestibulum. Etiam ut sapien ac risus condimentum interdum.\n\nCheers!\nUnidad del registro social",
-                    attachments: [],
-                    starred: true,
-                    important: true,
-                    unread: false,
-                    folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
-                    labels: ["b67fc437-6118-4ec8-a3c7-9320b828e3fc"]
-                },
-                {
-                    id: "f129cae0-5f5d-4f8e-a6cd-ccbe8f76ff92",
-                    type: "mail",
-                    from: {
-                        contact: "Unidad del registro social <registro.social@company.com>"
-                    },
-                    to: "me <hughes.brian@company.com>",
-                    cc: ["Ricardo Soto <ricardo.soto@company.com>", "Olivia Romero <olivia.romero@company.com>"],
-                    bcc: ["Victor Fernandez <victor.fernandez@company.com>", "Elena Tovar <elena.tovar@company.com>"],
-                    date: new Date('Mon Dec 31 2018 18:00:00 GMT+0000 (UTC)').toISOString(),
-                    subject: "Solicitud de reclamo de porcentaje de pobreza",
-                    content: "Hi Brian,\n\nUllamco deserunt commodo esse deserunt deserunt quis eiusmod. Laborum sint excepteur non sit eiusmod sunt voluptate ipsum nisi ullamco magna. Lorem consectetur est dolor minim exercitation deserunt quis duis fugiat ipsum incididunt non. Anim aute ipsum cupidatat nisi occaecat quis sit nisi labore labore dolore do. Pariatur veniam culpa quis veniam nisi exercitation veniam ut. Quis do sint proident fugiat ad.\n\nNon id nisi commodo veniam. Veniam veniam minim ea laborum voluptate id duis deserunt. Anim ut ut amet et ullamco nulla fugiat id incididunt adipisicing excepteur amet.\n\nCheers!\nUnidad del registro social",
-                    attachments: [],
-                    starred: true,
-                    important: false,
-                    unread: true,
-                    folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
-                    labels: ["8b035cb5-65c0-4ab1-bb4c-43b0e442d1f3"]
-                },
-                {
-                    id: "ad2a6b63-3b7d-47f7-b1d5-4b187697a413",
-                    type: "mail",
-                    from: {
-                        contact: "Unidad del registro social <registro.social@company.com>"
-                    },
-                    to: "me <hughes.brian@company.com>",
-                    cc: ["Carlos Gonzalez <carlos.gonzalez@company.com>", "Sandra Perez <sandra.perez@company.com>"],
-                    bcc: ["Luis Torres <luis.torres@company.com>", "Manuela Herrera <manuela.herrera@company.com>"],
-                    date: new Date('Mon Dec 31 2018 10:00:00 GMT+0000 (UTC)').toISOString(),
-                    subject: "Solicitud de información para acceder a información del Registro social",
-                    content: "Hi Brian,\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.\n\nMauris massa. Vestibulum lacinia arcu eget nulla. Nulla vitae mauris non felis mollis faucibus. Ut diam neque, interdum eget, malesuada et, lacinia vitae, sapien.\n\nCheers!\nUnidad del registro social",
+                    cc: ["Ricardo Vargas <ricardo.vargas@company.com>", "Luisa Morales <luisa.morales@company.com>"],
+                    bcc: ["Angela Paredes <angela.paredes@company.com>", "Carlos Diaz <carlos.diaz@company.com>"],
+                    date: "2019-12-13T16:45:00.000Z",
+                    subject: "Solicitud #6583: Cambio de núcleo familiar",
+                    content: "Estimado Juan, \n\nEl cambio de núcleo familiar ha sido aprobado y actualizado en su Registro Social. Si tiene preguntas adicionales, no dude en contactarnos. \n\nGracias por utilizar nuestro servicio.\n\nAtentamente,\n\nUnidad del Registro Social",
                     attachments: [],
                     starred: false,
-                    important: true,
-                    unread: false,
-                    folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
-                    labels: ["184cd689-4ee4-47cf-9f8a-12233d614326"]
+                    important: false,
+                    unread: true,
+                    folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
+                    labels: ["8b035cb5-65c0-4ab1-bb4c-43b0e442d1f3"]
                 },
+                    {
+                        id: "0e42a27d-4b0b-4ab5-b702-bc9e246e716b",
+                        type: "mail",
+                        from: {
+                            contact: "Unidad del registro social <registro.social@company.com>"
+                        },
+                        to: "me <hughes.brian@company.com>",
+                        cc: ["Manuel Torres <manuel.torres@company.com>", "Cecilia Ruiz <cecilia.ruiz@company.com>"],
+                        bcc: ["Arturo Guzman <arturo.guzman@company.com>", "Lucia Ramos <lucia.ramos@company.com>"],
+                        date: "2019-12-12T09:20:00.000Z",
+                        subject: "Solicitud #5732: Reclamo de porcentaje de pobreza",
+                        content: "Estimado Juan, \n\nEstamos procesando su reclamo sobre el porcentaje de pobreza asignado. Le notificaremos en cuanto tengamos una resolución al respecto. \n\nGracias por su paciencia.\n\nAtentamente,\n\nUnidad del Registro Social",
+                        attachments: [],
+                        starred: false,
+                        important: false,
+                        unread: true,
+                        folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
+                        labels: ["184cd689-4ee4-47cf-9f8a-12233d614326"]
+                    },
+                    {
+                        id: "acf493bf-5de2-42c9-9127-b9e814a3d337",
+                        type: "mail",
+                        from: {
+                            contact: "Unidad del registro social <registro.social@company.com>"
+                        },
+                        to: "me <hughes.brian@company.com>",
+                        cc: ["Diana Salinas <diana.salinas@company.com>", "Pablo Herrera <pablo.herrera@company.com>"],
+                        bcc: ["Andres Gutierrez <andres.gutierrez@company.com>", "Gabriela Morales <gabriela.morales@company.com>"],
+                        date: "2019-12-11T17:40:00.000Z",
+                        subject: "Solicitud #8965: Información para acceder al Registro Social",
+                        content: "Estimado Juan, \n\nAdjuntamos información detallada sobre cómo acceder al Registro Social y los pasos a seguir. Si tiene alguna duda, no dude en contactarnos. \n\nGracias por elegir nuestro servicio.\n\nAtentamente,\n\nUnidad del Registro Social",
+                        attachments: [],
+                        starred: false,
+                        important: false,
+                        unread: true,
+                        folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
+                        labels: ["b67fc437-6118-4ec8-a3c7-9320b828e3fc"]
+                    },
+                    {
+                        id: "18397b42-94ae-4de4-9fa7-f44a53273b27",
+                        type: "mail",
+                        from: {
+                            contact: "Unidad del registro social <registro.social@company.com>"
+                        },
+                        to: "me <hughes.brian@company.com>",
+                        cc: ["Eduardo Martinez <eduardo.martinez@company.com>", "Carmen Rojas <carmen.rojas@company.com>"],
+                        bcc: ["Victoria Chavez <victoria.chavez@company.com>", "Fernando Lopez <fernando.lopez@company.com>"],
+                        date: "2019-12-10T13:50:00.000Z",
+                        subject: "Solicitud #7146: Certificado de Registro del Formulario del Registro Social",
+                        content: "Estimado Juan, \n\nEl certificado solicitado ya está disponible. Por favor, utilice el enlace para proceder con la descarga: (Descargar Certificado). \n\nAtentamente,\n\nUnidad del Registro Social",
+                        attachments: [],
+                        starred: false,
+                        important: false,
+                        unread: true,
+                        folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
+                        labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
+                    },
+                    {
+                        id: "84ab8cd7-ecfc-4f46-9dc2-3b9268b8a9fb",
+                        type: "mail",
+                        from: {
+                            contact: "Unidad del registro social <registro.social@company.com>"
+                        },
+                        to: "me <hughes.brian@company.com>",
+                        cc: ["Teresa Alvarez <teresa.alvarez@company.com>", "Hugo Castillo <hugo.castillo@company.com>"],
+                        bcc: ["Margarita Rivera <margarita.rivera@company.com>", "Francisco Ortiz <francisco.ortiz@company.com>"],
+                        date: "2019-12-09T21:10:00.000Z",
+                        subject: "Solicitud #3287: Actualización de datos del Formulario de Registro Social",
+                        content: "Estimado Juan, \n\nSus datos han sido actualizados satisfactoriamente en el formulario de Registro Social. Por favor, revise los cambios realizados. \n\nAgradecemos su atención.\n\nAtentamente,\n\nUnidad del Registro Social",
+                        attachments: [],
+                        starred: false,
+                        important: false,
+                        unread: true,
+                        folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
+                        labels: ["8b035cb5-65c0-4ab1-bb4c-43b0e442d1f3"]
+                    }
+                
                 
             
             
         
     
-];
+    
+]
+;

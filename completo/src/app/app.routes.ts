@@ -107,7 +107,7 @@ export const appRoutes: Route[] = [
             ]},
             // Apps
             {path: 'apps', children: [
-                {path: 'maps',  component: MapComponent},
+                {path: 'maps',  loadChildren: () => import('app/modules/admin/map/map.routes')},
                 {path: 'academy', loadChildren: () => import('app/modules/admin/apps/academy/academy.routes')},
                 {path: 'chat', loadChildren: () => import('app/modules/admin/apps/chat/chat.routes')},
                 {path: 'contacts', loadChildren: () => import('app/modules/admin/apps/contacts/contacts.routes')},

@@ -38,6 +38,7 @@ export class FormularioComponent
 {
     drawerMode: 'over' | 'side' = 'side';
     drawerOpened: boolean = true;
+    drawerClosed: boolean = false;
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     @Input() currentScreen: string = 'declaracion';
     //private pages: string[] = ['declaracion', 'datos-generales', 'materiales-vivienda','cuartos-hogar', 'finalizar'];

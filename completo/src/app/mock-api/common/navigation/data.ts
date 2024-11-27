@@ -79,13 +79,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 link: '/portal/formulario-urs',
             },
             {
-                id: 'portal.usuario-autentificado',
-                title: 'Usuario Autentificados',
-                type: 'basic',
-                icon: 'heroicons_outline:user',
-                link: '/portal/usuario-autentificado',
-            },
-            {
                 id: 'portal.inbox',
                 title: 'Usuario Institucional',
                 type: 'basic',
@@ -93,6 +86,22 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 link: '/portal/inbox',
             },
         ],
+    },
+    {
+        id: 'geoportal',
+        title: 'Geoportal',
+        subtitle: 'Unique dashboard designs',
+        type: 'group',
+        icon: 'heroicons_outline:globe-alt',
+        children: [
+            {
+                id: 'dashboards.maps',
+                title: 'Geoportal',
+                type: 'basic',
+                icon: 'heroicons_outline:map',
+                link: '/apps/maps/geovisor',
+            },
+        ]
     },
     {
         //SidebarHere
@@ -140,13 +149,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
         type: 'group',
         icon: 'heroicons_outline:home',
         children: [
-            {
-                id: 'dashboards.maps',
-                title: 'Geoportal',
-                type: 'basic',
-                icon: 'heroicons_outline:map',
-                link: '/apps/maps',
-            },
             {
                 id: 'apps.academy',
                 title: 'Academy',
@@ -1282,6 +1284,14 @@ export const compactNavigation: FuseNavigationItem[] = [
         type: 'aside',
         icon: 'heroicons_outline:globe-alt',
         children: [], // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
+    },
+    {
+        id: 'geoportal',
+        title: 'Geoportal',
+        tooltip: 'Geoportal',
+        type: 'aside',
+        icon: 'heroicons_outline:globe-alt',
+       children: [],
     },
     {
         id: 'dashboards',

@@ -15,7 +15,7 @@ import {
 import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MessagesService } from 'app/layout/common/messages/messages.service';
 import { Message } from 'app/layout/common/messages/messages.types';
 import { Subject, takeUntil } from 'rxjs';
@@ -53,7 +53,8 @@ export class MessagesComponent implements OnInit, OnDestroy {
         private _changeDetectorRef: ChangeDetectorRef,
         private _messagesService: MessagesService,
         private _overlay: Overlay,
-        private _viewContainerRef: ViewContainerRef
+        private _viewContainerRef: ViewContainerRef,
+        private _router: Router,
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
@@ -228,5 +229,8 @@ export class MessagesComponent implements OnInit, OnDestroy {
         }
 
         this.unreadCount = count;
+    }
+    goToInbox(){
+        this._router.navigate(['/portal/inbox']);
     }
 }

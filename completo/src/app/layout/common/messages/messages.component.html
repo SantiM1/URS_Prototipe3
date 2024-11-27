@@ -37,7 +37,7 @@
                     class="dark:text-white"
                     mat-icon-button
                     [disabled]="unreadCount === 0"
-                    [matTooltip]="'Mark all as read'"
+                    [matTooltip]="'Marcar como leídos'"
                     (click)="markAllAsRead()"
                 >
                     <mat-icon
@@ -194,6 +194,21 @@
                     </div>
                 </div>
             }
+        </div>
+        <div
+            class="flex items-center bg-primary py-4 pl-6 pr-4 text-on-primary"(click)="goToInbox()"
+        >
+            
+            <div class="flex items-center text-lg text-center  leading-10" >
+                    Ver más 
+                    <button mat-icon-button>
+                        <mat-icon
+                            class="text-current icon-size-5"
+                            [svgIcon]="'heroicons_solid:ellipsis-horizontal'"
+                        ></mat-icon>
+                    </button>
+            </div>
+            
         </div>
     </div>
 </ng-template>

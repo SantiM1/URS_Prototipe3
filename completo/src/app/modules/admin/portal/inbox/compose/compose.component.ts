@@ -11,6 +11,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { QuillEditorComponent } from 'ngx-quill';
 
 @Component({
@@ -26,6 +27,7 @@ import { QuillEditorComponent } from 'ngx-quill';
         MatFormFieldModule,
         MatInputModule,
         QuillEditorComponent,
+        MatSelectModule,
     ],
 })
 export class UserComposeComponent implements OnInit {

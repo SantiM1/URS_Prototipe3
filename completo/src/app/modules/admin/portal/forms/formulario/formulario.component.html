@@ -34,11 +34,7 @@
                 </div>
             </div>
             
-            <div class="flex border-solid border-black bg-contrast py-2  text-2xl justify-center items-center">
-                <div> Sección I: Identificación y Ubicación Geográfica de la Vivienda </div>
-               
-            </div>
-            <div class="bg-gray-900 min-h-4 max-h-4 flex-grow"></div>
+            
 
             <!-- Main -->
             <div class="flex-auto overflow-y-auto" cdkScrollable>
@@ -70,7 +66,7 @@
                 </div>
             </div>
         </mat-drawer-content>
-            <mat-drawer class="w-72 dark:bg-gray-900" [autoFocus]="false" [mode]="drawerMode" [opened]="drawerOpened"
+            <mat-drawer class="w-72 dark:bg-gray-900" [autoFocus]="false" [mode]="drawerMode" [opened]="drawerClosed"
             #matDrawer2>
        <!-- Demo sidebar -->
             <info-sidebar></info-sidebar>

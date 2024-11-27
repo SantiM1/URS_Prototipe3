@@ -1,0 +1,32 @@
+<div class="flex min-w-0 flex-auto flex-col">
+     <!-- Header -->
+
+    <!-- Header -->
+    <div class="bg-card pb-16">
+        <!--img-->
+        <img class="absolute opacity-90 object-fit"src="images/URS/headerURS.png"/>
+        <div class="relative mx-auto flex w-full max-w-screen-xl flex-col px-6 sm:px-8">
+            <div class="my-8 flex min-w-0 flex-auto flex-col justify-end">
+                <!-- Avatar and name -->
+                <div class="flex min-w-0 flex-auto justify-end">
+                    <div class="ml-4 flex min-w-0 bg-white p-4 rounded-2xl flex-col">
+                        <!-- Actions -->
+                        <div class="mt-6 flex items-center space-x-3 sm:ml-2 sm:mt-0">
+                            <button class="bg-accent" mat-flat-button [color]="'accent'" (click)="register()">
+                                <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:plus'"></mat-icon>
+                                <span class="ml-2">Registro</span>
+                            </button>
+                            <button mat-flat-button [color]="'primary'" (click)="signOut()">
+                                <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:user'"></mat-icon>
+                                <span class="ml-2">Iniciar Sesión</span>
+                            </button>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

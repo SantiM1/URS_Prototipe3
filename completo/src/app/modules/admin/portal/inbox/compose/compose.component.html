@@ -18,52 +18,21 @@
         [formGroup]="composeForm"
     >
         <!-- To -->
+        <p> Tipo</p>
         <mat-form-field>
-            <mat-label>To</mat-label>
-            <input matInput [formControlName]="'to'" />
-            <div class="copy-fields-toggles" matSuffix>
-                @if (!copyFields.cc) {
-                    <span
-                        class="cursor-pointer select-none text-sm font-medium hover:underline"
-                        (click)="showCopyField('cc')"
-                    >
-                        Cc
-                    </span>
-                }
-                @if (!copyFields.bcc) {
-                    <span
-                        class="ml-2 cursor-pointer select-none text-sm font-medium hover:underline"
-                        (click)="showCopyField('bcc')"
-                    >
-                        Bcc
-                    </span>
-                }
-            </div>
+            <mat-select  [placeholder]="'Selecciona el tipo de solicitud'">
+                <mat-option value="opt-1">Ingreso de Formulario del Registro Social</mat-option>
+                <mat-option value="opt-2">Actualización de datos del Formulario de Registro Social</mat-option>
+                <mat-option value="opt-3"> Cambio de núcleo familiar </mat-option>
+                <mat-option value="opt-4">Reclamo de porcentaje de pobreza </mat-option>
+                <mat-option value="opt-5">Información para acceder al Registro Social </mat-option>
+                <mat-option value="opt-6">Certificado de Registro del Formulario del Registro Social </mat-option>
+
+            </mat-select>
+            <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:envelope-open'"></mat-icon>
         </mat-form-field>
 
-        <!-- Cc -->
-        @if (copyFields.cc) {
-            <mat-form-field>
-                <mat-label>Cc</mat-label>
-                <input matInput [formControlName]="'cc'" />
-            </mat-form-field>
-        }
-
-        <!-- Bcc -->
-        @if (copyFields.bcc) {
-            <mat-form-field>
-                <mat-label>Bcc</mat-label>
-                <input matInput [formControlName]="'bcc'" />
-            </mat-form-field>
-        }
-
-        <!-- Subject -->
-        <mat-form-field>
-            <mat-label>Subject</mat-label>
-            <input matInput [formControlName]="'subject'" />
-        </mat-form-field>
-
-        <!-- Body -->
+        <p> Observaciones</p> <!-- Body -->
         <quill-editor
             class="mt-2"
             [formControlName]="'body'"
@@ -83,54 +52,26 @@
                         [svgIcon]="'heroicons_solid:paper-clip'"
                     ></mat-icon>
                 </button>
-                <!-- Insert link -->
-                <button mat-icon-button>
-                    <mat-icon
-                        class="icon-size-5"
-                        [svgIcon]="'heroicons_solid:link'"
-                    ></mat-icon>
-                </button>
-                <!-- Insert emoji -->
-                <button mat-icon-button>
-                    <mat-icon
-                        class="icon-size-5"
-                        [svgIcon]="'heroicons_solid:face-smile'"
-                    ></mat-icon>
-                </button>
-                <!-- Insert image -->
-                <button mat-icon-button>
-                    <mat-icon
-                        class="icon-size-5"
-                        [svgIcon]="'heroicons_solid:photo'"
-                    ></mat-icon>
-                </button>
+                
             </div>
 
-            <div class="mt-4 flex items-center sm:mt-0">
+            <div class="mt-4 flex items-center space-x-2">
                 <!-- Discard -->
                 <button
                     class="ml-auto sm:ml-0"
                     mat-stroked-button
-                    (click)="discard()"
+                    (click)="saveAndClose()"
                 >
-                    Discard
+                    Cancelar
                 </button>
-                <!-- Save as draft -->
-                <button
-                    class="sm:mx-3"
-                    mat-stroked-button
-                    (click)="saveAsDraft()"
-                >
-                    <span>Save as draft</span>
-                </button>
-                <!-- Send -->
+               
                 <button
                     class="order-first sm:order-last"
                     mat-flat-button
                     [color]="'primary'"
-                    (click)="send()"
+                    (click)="saveAndClose()"
                 >
-                    Send
+                    Enviar
                 </button>
             </div>
         </div>
