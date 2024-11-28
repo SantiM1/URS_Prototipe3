@@ -6,6 +6,7 @@ import { MapServiceComponent } from './catalogos-servicios/list.component';
 import { MapDatosComponent } from './catalogo-datos/list.component';
 import { MapDetailsComponent } from './catalogo-datos/datos-page/details.component';
 import { MapAppsComponent } from './geo-apps/list.component';
+import { DescargasComponent } from './descargas/descargas.component';
 
 
 
@@ -40,7 +41,12 @@ export default [
             {
                 path: 'geo-apps',
                 component: MapAppsComponent,
+            },
+            {
+                path: 'descargas',
+                component: DescargasComponent,
             }
+        
         ]
     },
     

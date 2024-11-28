@@ -13,6 +13,8 @@ import { MatChip } from '@angular/material/chips';
 import { SearchComponent } from 'app/layout/common/search/search.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @Component({
@@ -31,7 +33,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         MatChip,
         SearchComponent,
         MatTabsModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatFormFieldModule,
+        MatInputModule 
     ],
 })
 export class MapContainerComponent {

@@ -1,0 +1,79 @@
+<div class="-m-6 flex max-h-screen max-w-240 flex-col md:min-w-160">
+    <!-- Header -->
+    <div
+        class="flex h-16 flex-0 items-center justify-between bg-primary pl-6 pr-3 text-on-primary sm:pl-8 sm:pr-5"
+    >
+        <div class="text-lg font-medium">New Message</div>
+        <button mat-icon-button (click)="saveAndClose()" [tabIndex]="-1">
+            <mat-icon
+                class="text-current"
+                [svgIcon]="'heroicons_outline:x-mark'"
+            ></mat-icon>
+        </button>
+    </div>
+
+    <!-- Compose form -->
+    <form
+        class="flex flex-auto flex-col overflow-y-auto p-6 sm:p-8"
+        [formGroup]="composeForm"
+    >
+        <!-- To -->
+        <p> Tipo</p>
+        <mat-form-field>
+            <mat-select  [placeholder]="'Selecciona el tipo de solicitud'">
+                <mat-option value="opt-1">Ingreso de Formulario del Registro Social</mat-option>
+                <mat-option value="opt-2">Actualización de datos del Formulario de Registro Social</mat-option>
+                <mat-option value="opt-3"> Cambio de núcleo familiar </mat-option>
+                <mat-option value="opt-4">Reclamo de porcentaje de pobreza </mat-option>
+                <mat-option value="opt-5">Información para acceder al Registro Social </mat-option>
+                <mat-option value="opt-6">Certificado de Registro del Formulario del Registro Social </mat-option>
+
+            </mat-select>
+            <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:envelope-open'"></mat-icon>
+        </mat-form-field>
+
+        <p> Observaciones</p> <!-- Body -->
+        <quill-editor
+            class="mt-2"
+            [formControlName]="'body'"
+            [bounds]="'self'"
+            [modules]="quillModules"
+        ></quill-editor>
+
+        <!-- Actions -->
+        <div
+            class="mt-4 flex flex-col justify-between sm:mt-6 sm:flex-row sm:items-center"
+        >
+            <div class="-ml-2">
+                <!-- Attach file -->
+                <button mat-icon-button>
+                    <mat-icon
+                        class="icon-size-5"
+                        [svgIcon]="'heroicons_solid:paper-clip'"
+                    ></mat-icon>
+                </button>
+                
+            </div>
+
+            <div class="mt-4 flex items-center space-x-2">
+                <!-- Discard -->
+                <button
+                    class="ml-auto sm:ml-0"
+                    mat-stroked-button
+                    (click)="saveAndClose()"
+                >
+                    Cancelar
+                </button>
+               
+                <button
+                    class="order-first sm:order-last"
+                    mat-flat-button
+                    [color]="'primary'"
+                    (click)="saveAndClose()"
+                >
+                    Enviar
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

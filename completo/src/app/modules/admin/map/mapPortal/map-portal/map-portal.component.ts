@@ -73,6 +73,10 @@ export class MapPortalComponent  {
   navApps(){
     this._router.navigate(['../geo-apps'], {relativeTo: this._activatedRoute,});   
   }
+  navDescargas(){
+    this._router.navigate(['../descargas'], {relativeTo: this._activatedRoute,});   
+  }
+ 
  
  
 }

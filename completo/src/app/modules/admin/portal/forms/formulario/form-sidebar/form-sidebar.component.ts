@@ -85,82 +85,6 @@ export class FormSidebarComponent {
 
     ) {
         this.menuData = [
-            /*
-            {
-                title: 'Actions',
-                subtitle: 'Task, project & team',
-                type: 'group',
-                children: [
-                    {
-                        title: 'Create task',
-                        type: 'basic',
-                        icon: 'heroicons_outline:plus-circle',
-                    },
-                    {
-                        title: 'Create team',
-                        type: 'basic',
-                        icon: 'heroicons_outline:user-group',
-                    },
-                    {
-                        title: 'Create project',
-                        type: 'basic',
-                        icon: 'heroicons_outline:briefcase',
-                    },
-                    {
-                        title: 'Create user',
-                        type: 'basic',
-                        icon: 'heroicons_outline:user-plus',
-                    },
-                    {
-                        title: 'Assign user or team',
-                        subtitle: 'Assign to a task or a project',
-                        type: 'basic',
-                        icon: 'heroicons_outline:check-badge',
-                    },
-                ],
-            },
-            {
-                title: 'Tasks',
-                type: 'group',
-                children: [
-                    {
-                        title: 'All tasks',
-                        type: 'basic',
-                        icon: 'heroicons_outline:clipboard-document-list',
-                        badge: {
-                            title: '49',
-                            classes:
-                                'px-2 bg-primary text-on-primary rounded-full',
-                        },
-                    },
-                    {
-                        title: 'Ongoing tasks',
-                        type: 'basic',
-                        icon: 'heroicons_outline:clipboard-document-check',
-                    },
-                    {
-                        title: 'Completed tasks',
-                        type: 'basic',
-                        icon: 'heroicons_outline:clipboard-document-check',
-                    },
-                    {
-                        title: 'Abandoned tasks',
-                        type: 'basic',
-                        icon: 'heroicons_outline:clipboard',
-                    },
-                    {
-                        title: 'Assigned to me',
-                        type: 'basic',
-                        icon: 'heroicons_outline:user',
-                    },
-                    {
-                        title: 'Assigned to my team',
-                        type: 'basic',
-                        icon: 'heroicons_outline:users',
-                    },
-                ],
-            },
-            */
             {
                 type: 'divider',
             },
@@ -169,6 +93,7 @@ export class FormSidebarComponent {
                 subtitle: 'del Formulario del Registro Social',
                 type: 'basic',
                 link: 'p0',
+                
 
             },
             {
@@ -265,3 +190,5 @@ export class FormSidebarComponent {
         ];
     }
 }
+
+
