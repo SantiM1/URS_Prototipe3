@@ -70,6 +70,9 @@ export class MapPortalComponent  {
   navDatos(){
     this._router.navigate(['../catalogo-datos'], {relativeTo: this._activatedRoute,});   
   }
+  navApps(){
+    this._router.navigate(['../geo-apps'], {relativeTo: this._activatedRoute,});   
+  }
  
  
 }

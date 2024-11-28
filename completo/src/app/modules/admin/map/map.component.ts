@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { TreeComponent } from './tree/tree.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -34,6 +35,21 @@ import { TreeComponent } from './tree/tree.component';
 })
 
 export class MapComponent implements OnInit, AfterViewInit {
+  constructor(
+    private _activatedRoute: ActivatedRoute,
+
+    private _router: Router,
+
+) {}
+  navDatos(){
+    this._router.navigate(['../catalogo-datos'], {relativeTo: this._activatedRoute,});   
+  }
+  navServicios(){
+    this._router.navigate(['../catalogo-servicios'], {relativeTo: this._activatedRoute,});   
+  }
+  navApps(){
+    this._router.navigate(['../geo-apps'], {relativeTo: this._activatedRoute,});   
+  }
 
   @ViewChild('map')
   private mapContainer: ElementRef<HTMLElement>;

@@ -5,6 +5,7 @@ import { MapPortalComponent } from './mapPortal/map-portal/map-portal.component'
 import { MapServiceComponent } from './catalogos-servicios/list.component';
 import { MapDatosComponent } from './catalogo-datos/list.component';
 import { MapDetailsComponent } from './catalogo-datos/datos-page/details.component';
+import { MapAppsComponent } from './geo-apps/list.component';
 
 
 
@@ -35,6 +36,10 @@ export default [
             {
                 path: 'detalle',
                 component: MapDetailsComponent,
+            },
+            {
+                path: 'geo-apps',
+                component: MapAppsComponent,
             }
         ]
     },
