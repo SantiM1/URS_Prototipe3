@@ -2,14 +2,15 @@
      <!-- Header -->
 
     <!-- Header -->
-    <div class="bg-card pb-16">
+    <div class="bg-card mb-1 ">
         <!--img-->
         <img class="absolute opacity-90 object-fit"src="images/URS/headerURS.png"/>
         <div class="relative mx-auto flex w-full max-w-screen-xl flex-col px-6 sm:px-8">
             <div class="my-8 flex min-w-0 flex-auto flex-col justify-end">
                 <!-- Avatar and name -->
                 <div class="flex min-w-0 flex-auto justify-end">
-                    <div class="ml-4 flex min-w-0 bg-white p-4 rounded-2xl flex-col">
+                    <div class="ml-4  flex min-w-0 bg-white pt-10 pb-4 px-4 rounded-2xl flex-col">
+                        <img class="pb-4 h-10" src="images/logo/URS_Logo.svg" alt="URS logo" />
                         <!-- Actions -->
                         <div class="mt-6 flex items-center space-x-3 sm:ml-2 sm:mt-0">
                             <button class="bg-accent" mat-flat-button [color]="'accent'" (click)="register()">
@@ -28,5 +29,37 @@
             </div>
         </div>
     </div>
+    <div class="flex-1">
+        <mat-toolbar class="bg-primary flex">
+            <button mat-icon-button class="flex pr-4" (click)="home()">
+                <mat-icon
+                    class="text-secondary"
+                    [svgIcon]="'heroicons_solid:home'"
+                ></mat-icon>
+            </button>
+            <div class="flex-auto">
+            <search  [appearance]="'basic'"></search>
+            </div>
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+              <mat-icon>menu</mat-icon>
+            </button>
+            <button mat-button class="text-gray-400 font-bold ">
+                <mat-icon class="icon-size-8 px-2" [svgIcon]="'heroicons_solid:presentation-chart-line'"></mat-icon>
+                <span>Noticias</span>
+            </button>
+            <button mat-button class="text-gray-400 font-bold ">
+                <mat-icon class="icon-size-8 px-2" [svgIcon]="'heroicons_solid:star'"></mat-icon>
+                <span>Temas Relevantes</span>
+            </button>
+            <button mat-button class="text-gray-400 font-bold">
+                <span>Ayuda</span>
+            </button>
+            <button mat-button class="text-gray-400 font-bold">
+                <span>Contactos</span>
+            </button>
+          </mat-toolbar>
+    </div>
+    <div class="flex min-h-160">
     <router-outlet></router-outlet>
+</div>
 </div>

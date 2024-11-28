@@ -10,6 +10,9 @@ import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 
 import { MatChip } from '@angular/material/chips';
+import { SearchComponent } from 'app/layout/common/search/search.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @Component({
@@ -25,7 +28,10 @@ import { MatChip } from '@angular/material/chips';
         CdkScrollable,
         MatPseudoCheckboxModule,
         RouterOutlet,
-        MatChip
+        MatChip,
+        SearchComponent,
+        MatTabsModule,
+        MatToolbarModule
     ],
 })
 export class MapContainerComponent {
@@ -34,7 +40,9 @@ export class MapContainerComponent {
         private _router: Router,
         private route: ActivatedRoute
     ) {}
-
+    home(): void {
+        this._router.navigate(['/apps/maps/portal']);
+    }
     signOut(): void {
         this._router.navigate(['/sign-out']);
     }

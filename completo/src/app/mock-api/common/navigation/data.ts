@@ -95,12 +95,20 @@ export const defaultNavigation: FuseNavigationItem[] = [
         icon: 'heroicons_outline:globe-alt',
         children: [
             {
-                id: 'dashboards.maps',
-                title: 'Geoportal',
+                id: 'geoportal',
+                title: 'Portal',
+                type: 'basic',
+                icon: 'heroicons_outline:map',
+                link: '/apps/maps/portal',
+            },
+            {
+                id: 'geoportal',
+                title: 'Visor Geográfico',
                 type: 'basic',
                 icon: 'heroicons_outline:map',
                 link: '/apps/maps/geovisor',
             },
+           
         ]
     },
     {

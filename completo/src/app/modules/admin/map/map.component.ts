@@ -26,7 +26,6 @@ import { TreeComponent } from './tree/tree.component';
     MatIconModule,
     MatFormFieldModule,
     MatRadioModule,
-    MatTreeNode,
     TreeComponent
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
