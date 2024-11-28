@@ -1,0 +1,52 @@
+<div class="absolute inset-0 flex min-w-0 flex-col overflow-y-auto" >
+    <!-- Header -->
+    <div class="dark relative flex-0 overflow-hidden bg-blue-950 px-4 py-8 sm:p-16">
+        <!-- Background -->
+        <!-- Rings -->
+        <!-- prettier-ignore -->
+        <svg class="absolute inset-0 pointer-events-none" viewBox="0 0 960 540" width="100%" height="100%"
+            preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+            <g class="text-blue-800 opacity-25" fill="none" stroke="currentColor" stroke-width="100">
+                <circle r="234" cx="196" cy="23"></circle>
+                <circle r="234" cx="790" cy="491"></circle>
+            </g>
+        </svg>
+        <div class="relative z-10 flex flex-col items-center">
+            <h2 class="text-xl font-semibold">Unidad del Registro Social</h2>
+            <div class="mt-1 text-center text-4xl font-extrabold leading-tight tracking-tight sm:text-7xl">
+                Catálogo de datos
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <!-- Main -->
+        <div class="flex flex-auto">
+        <div class="mx-auto flex flex-auto flex-col ">
+            
+            <!-- Filters -->
+             
+            
+            <div class="flex  place-content-center">
+                <mat-form-field class="mt-4 w-96 " [subscriptSizing]="'dynamic'">
+                    <mat-icon matPrefix class="icon-size-5" [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
+                    <input placeholder="Buscar" matInput #query />
+                </mat-form-field>
+            </div>
+
+            <div class="m-6 flex w-full max-w-400 flex-wrap space-x-6 place-content-center">
+            </div>
+            <div class="grid grid-cols-3 gap-4 px-10">
+                <div class="col-span-1">
+                    <button mat-raised-button >
+                        Categoría                    
+                    </button>
+                </div>
+                <div class="col-span-1">2</div>
+                <div class="col-span-1">3</div>
+            </div>
+        </div>
+        </div>
+    
+</div>

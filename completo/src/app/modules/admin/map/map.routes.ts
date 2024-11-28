@@ -2,7 +2,9 @@ import { Routes } from '@angular/router';
 import { MapContainerComponent } from './mapContainer/map-container.component ';
 import { MapComponent } from './map.component';
 import { MapPortalComponent } from './mapPortal/map-portal/map-portal.component';
-import { MapServiceComponent } from './catalogo-servicios/list.component';
+import { MapServiceComponent } from './catalogos-servicios/list.component';
+import { MapDatosComponent } from './catalogo-datos/list.component';
+
 
 
 
@@ -24,6 +26,10 @@ export default [
             {
                 path: 'catalogo-servicios',
                 component: MapServiceComponent
+            },
+            {
+                path: 'catalogo-datos',
+                component: MapDatosComponent
             }
         ]
     },
