@@ -67,5 +67,9 @@ export class MapPortalComponent  {
   navServicios(){
     this._router.navigate(['../catalogo-servicios'], {relativeTo: this._activatedRoute,});   
   }
+  navDatos(){
+    this._router.navigate(['../catalogo-datos'], {relativeTo: this._activatedRoute,});   
+  }
+ 
  
 }

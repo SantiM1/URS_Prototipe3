@@ -21,13 +21,13 @@ import {
     MatSlideToggleModule,
 } from '@angular/material/slide-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {  ActivatedRoute, Router, RouterLink } from '@angular/router';
+import {  RouterLink } from '@angular/router';
 import { FuseCardComponent } from '@fuse/components/card';
 
 
 @Component({
     selector: 'datos-list',
-    templateUrl: './list.component.html',
+    templateUrl: './details.component.html',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
@@ -49,16 +49,6 @@ import { FuseCardComponent } from '@fuse/components/card';
         MatSidenavModule,
     ],
 })
-export class MapDatosComponent {
+export class MapDetailsComponent {
     
-    constructor(
-        private _activatedRoute: ActivatedRoute,
-    
-        private _router: Router,
-    
-    ) {}
-      navDetail(){
-        this._router.navigate(['../detalle'], {relativeTo: this._activatedRoute,});   
-      }
-      
 }
