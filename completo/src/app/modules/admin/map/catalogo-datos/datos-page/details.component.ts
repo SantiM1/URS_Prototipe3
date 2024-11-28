@@ -21,8 +21,11 @@ import {
     MatSlideToggleModule,
 } from '@angular/material/slide-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {  RouterLink } from '@angular/router';
+import {  ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
 import { FuseCardComponent } from '@fuse/components/card';
+import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
+import { filter, Subject, takeUntil } from 'rxjs';
+import { DatosSidebarComponent } from './datos-sidebar/datos-sidebar.component';
 
 
 @Component({
@@ -47,8 +50,65 @@ import { FuseCardComponent } from '@fuse/components/card';
         FuseCardComponent,
         MatTooltipModule,
         MatSidenavModule,
+        DatosSidebarComponent
     ],
 })
 export class MapDetailsComponent {
+    drawerMode: 'over' | 'side' = 'side';
+    drawerOpened: boolean = true;
+    drawerClosed: boolean = false;
+    private _unsubscribeAll: Subject<any> = new Subject<any>();
+    @Input() currentScreen: string = 'declaracion';
+    //private pages: string[] = ['declaracion', 'datos-generales', 'materiales-vivienda','cuartos-hogar', 'finalizar'];
+    private pageIndex: number = 0;
+    /**
+     * Constructor
+     */
+    constructor(private _fuseMediaWatcherService: FuseMediaWatcherService,
+        private router: Router,
+        private route: ActivatedRoute
+    ) {}
+
+    // -----------------------------------------------------------------------------------------------------
+    // @ Lifecycle hooks
+    // -----------------------------------------------------------------------------------------------------
+    /**
+     * On init
+     */
+    ngOnInit(): void {
+        // Subscribe to media changes
+        this._fuseMediaWatcherService.onMediaChange$
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(({ matchingAliases }) => {
+                // Set the drawerMode and drawerOpened
+                if (matchingAliases.includes('lg')) {
+                    this.drawerMode = 'side';
+                    this.drawerOpened = true;
+                } else {
+                    this.drawerMode = 'over';
+                    this.drawerOpened = false;
+                }
+            });
+          
+            this.router.events.pipe(
+                filter(event => event instanceof NavigationEnd)  // Filter for NavigationEnd events
+              ).subscribe((event: NavigationEnd) => {
+                 // Get the current URL
+                this.pageIndex = Number(event.urlAfterRedirects.slice(-1));
+                //console.log('Current URL:', this.pageIndex);
+              });
+                // Get the current URL using the Router service
+                
+        
+    }
     
+
+    /**
+     * On destroy
+     */
+    ngOnDestroy(): void {
+        // Unsubscribe from all subscriptions
+        this._unsubscribeAll.next(null);
+        this._unsubscribeAll.complete();
+    }
 }

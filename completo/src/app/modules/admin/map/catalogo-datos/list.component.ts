@@ -23,6 +23,7 @@ import {
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {  ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FuseCardComponent } from '@fuse/components/card';
+import { DatosSidebarComponent } from './datos-page/datos-sidebar/datos-sidebar.component';
 
 
 @Component({
@@ -47,6 +48,7 @@ import { FuseCardComponent } from '@fuse/components/card';
         FuseCardComponent,
         MatTooltipModule,
         MatSidenavModule,
+        
     ],
 })
 export class MapDatosComponent {
