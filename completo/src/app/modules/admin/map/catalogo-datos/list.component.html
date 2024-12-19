@@ -1,4 +1,4 @@
-<div class="absolute inset-0 flex min-w-0 flex-col overflow-y-auto" >
+<div class="flex min-w-0 flex-auto flex-col">
     <!-- Header -->
     <div class="dark relative flex-0 overflow-hidden bg-blue-950 px-4 py-8 sm:p-16">
         <!-- Background -->
@@ -16,18 +16,18 @@
             <div class="mt-1 text-center text-4xl font-extrabold leading-tight tracking-tight sm:text-7xl">
                 Catálogo de datos
             </div>
-            
+
         </div>
     </div>
-    
+
 
     <!-- Main -->
-        <div class="flex flex-auto">
+    <div class="flex flex-auto">
         <div class="mx-auto flex flex-auto flex-col ">
-            
+
             <!-- Filters -->
-             
-            
+
+
             <div class="flex  place-content-center">
                 <mat-form-field class="mt-4 w-96 " [subscriptSizing]="'dynamic'">
                     <mat-icon matPrefix class="icon-size-5" [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
@@ -35,53 +35,25 @@
                 </mat-form-field>
             </div>
 
-            <div class="m-6 flex w-full max-w-400 flex-wrap space-x-6 place-content-center">
-            </div>
-            <div class="grid grid-cols-3 gap-4 px-10">
-                <div class="col-span-1 max-w-26 space-y-8">
+            <div class="flex w-full max-w-400 flex-wrap space-x-6 place-content-center">
+
+
+                <div class="space-x-6 pt-10">
                     <button mat-raised-button (click)="navDetail()">
-                        Categoría  1                  
+                        Hogares del Registro Social
                     </button>
                     <button mat-raised-button (click)="navDetail()">
-                        Categoría  1                  
+                        Categoría 1
                     </button>
                     <button mat-raised-button (click)="navDetail()">
-                        Categoría  1                
+                        Categoría 1
                     </button>
-                    <button mat-raised-button (click)="navDetail()">
-                        Categoría  1               
-                    </button>
+                    
                 </div>
-                <div class="col-span-1 max-w-26 space-y-8">
-                    <button mat-raised-button (click)="navDetail()">
-                        Categoría  2               
-                    </button>
-                    <button mat-raised-button (click)="navDetail()">
-                        Categoría  2               
-                    </button>
-                    <button mat-raised-button (click)="navDetail()">
-                        Categoría  2               
-                    </button>
-                    <button mat-raised-button (click)="navDetail()">
-                        Categoría  2               
-                    </button>
-                </div>
-                <div class="col-span-1 max-w-26 space-y-8">
-                    <button mat-raised-button (click)="navDetail()">
-                        Categoría  3              
-                    </button>
-                    <button mat-raised-button (click)="navDetail()">
-                        Categoría  3              
-                    </button>
-                    <button mat-raised-button (click)="navDetail()">
-                        Categoría  3              
-                    </button>
-                    <button mat-raised-button (click)="navDetail()">
-                        Categoría  3              
-                    </button>
-                </div>
+
+
             </div>
         </div>
-        </div>
-    
+    </div>
+
 </div>

@@ -1,4 +1,4 @@
-<div class="absolute inset-0 flex min-w-0 flex-col overflow-y-auto" >
+<div class="absolute inset-0 flex min-w-0 flex-col overflow-y-auto">
     <!-- Header -->
     <div class="dark relative flex-0 overflow-hidden bg-blue-950 px-4 py-8 sm:p-16">
         <!-- Background -->
@@ -24,116 +24,141 @@
             </div>
         </div>
     </div>
-    
+
 
     <!-- Main -->
-        <div class="flex flex-auto">
-        <mat-drawer-container class="mx-auto flex flex-auto flex-col ">
-        <mat-drawer class="w-72 dark:bg-gray-900" [autoFocus]="false" [mode]="drawerMode" [opened]="drawerClosed"
-            [position]="'start'" #matDrawer>
-            <!-- Demo sidebar -->
-            <form-sidebar></form-sidebar>
-        </mat-drawer>      
+    <div class="flex flex-auto">
+        <mat-drawer-container class="flex flex-auto flex-col ">
+            <mat-drawer class="w-72 dark:bg-gray-900" [autoFocus]="false" [mode]="drawerMode" [opened]="drawerClosed"
+                [position]="'start'" #matDrawer>
+                <!-- Demo sidebar -->
+                <form-sidebar></form-sidebar>
+            </mat-drawer>
             <!-- Filters -->
-             <mat-drawer-content>
-                <div class="mt-1 p-2 flex items-center text-2xl">
+            <mat-drawer-content>
+                <!--<div class="mt-1 px-2 flex items-center text-2xl">
                     <button mat-button class="bg-primary text-white " (click)="matDrawer.toggle()">
                         <mat-icon class="icon-size-10 px-2" [svgIcon]="'heroicons_solid:bars-3'"></mat-icon>
                         <span>Tipos de GeoServicios</span>
                     </button>
+                </div>-->
+                <div class="flex  justify-center ">
+                    <div class="text-center p-10">
+                        Los geoservicios se encuentran distribuidos de acuerdo a la temática y escala de generación de
+                        la información:
+
+                        <br /><br /><br />
+
+                        Por favor dar click en las diferentes categorías para acceder a los diferentes geoservicios
+                        
+                    </div>
+
                 </div>
-            <div class="flex w-full max-w-max items-start justify-start flex-row">
-                <!--
-                <mat-form-field class="w-full sm:w-36" [subscriptSizing]="'dynamic'">
-                    <mat-select [value]="'all'">
-                        <mat-option [value]="'all'">Todos</mat-option>
 
-                    </mat-select>
-                </mat-form-field>
-                <mat-form-field class="mt-4 w-full sm:ml-4 sm:mt-0 sm:w-72" [subscriptSizing]="'dynamic'">
-                    <mat-icon matPrefix class="icon-size-5" [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
-                    <input placeholder="Buscar" matInput #query />
-                </mat-form-field>-->
-            </div>
+                <div class="flex w-full max-w-400 flex-wrap space-x-6 place-content-center">
+                    <!-- Card #1 -->
+                    <button  (click)="openDialog()">
+                        <fuse-card class="filter-article flex w-full max-w-80   flex-col    hover:bg-gray-200">
+                            <img class="object-cover max-h-40" src="images/URS/house2.jpg" alt="Card cover image" />
+                            <div class="m-8">
+                                <div class="text-2xl font-semibold leading-tight">
+                                    Cartografía de Hogares del Registro Social
+                                </div>
+                                <div class="mt-4">
+                                    Descripción del servicio
+                                </div>
+                            </div>
+                        </fuse-card>
+                    </button >
+                    <button  (click)="openDialog()">
+                        <fuse-card class="filter-article flex w-full max-w-80   flex-col    hover:bg-gray-200">
+                            <img class="object-cover max-h-40" src="images/URS/cat-1.png" alt="Card cover image" />
+                            <div class="m-8">
+                                <div class="text-2xl font-semibold leading-tight">
+                                    Estadísticas del Registro Social
+                                </div>
+                                <div class="mt-4">
+                                    Descripción del servicio
+                                </div>
+                            </div>
+                        </fuse-card>
+                    </button>
+                    <button  (click)="openDialog()">
+                        <fuse-card class="filter-article flex w-full max-w-80   flex-col    hover:bg-gray-200">
+                            <img class="object-cover max-h-40" src="images/URS/cat-4.jpg" alt="Card cover image" />
+                            <div class="m-8">
+                                <div class="text-2xl font-semibold leading-tight p-3 px-10">
+                                    Otras instituciones
+                                </div>
+                                <div class="mt-4">
+                                    Descripción del servicio
+                                </div>
+                            </div>
+                        </fuse-card>
+                    </button>
+                    
 
-            <div class="m-6 flex w-full max-w-400 flex-wrap space-x-6 place-content-center">
-                <!-- Card #1 -->
-                <button>
-                    <fuse-card class="filter-article flex w-full max-w-80   flex-col    hover:bg-gray-200">
-                        <img class="object-cover max-h-40" src="images/URS/house2.jpg" alt="Card cover image" />
-                        <div class="m-8">
-                            <div class="text-2xl font-semibold leading-tight">
-                                Cartografía de Hogares
-                            </div>
-                            <div class="mt-4">
-                                Descripción del servicio
-                            </div>
+
+                </div>
+
+                <div class="flex justify-center p-16">
+                    <mat-chip-set aria-label="Service selection">
+                        <div class="space-x-6">
+                            <mat-chip
+                                matTooltip="Es un estándar que define un “mapa”
+                                 como una representación de la información geográfica 
+                                 en forma de un archivo de imagen digital, conveniente 
+                                 para la exhibición en una pantalla del computador. Los 
+                                 mapas producidos se generan normalmente en un formato 
+                                 de imagen como PNG, GIF o JPEG."
+                                class="bg-blue-950 ">
+                                <div class="text-white ">
+                                    WMS
+                                </div>
+                            </mat-chip>
+                            <mat-chip matTooltip="Es un estándar que ofrece acceso de lectura
+                             a datos vectoriales utilizando el Lenguaje de Marcas Geográficas
+                              (GML) como protocolo subyacente para realizar consultas espaciales,
+                               recuperar los datos y manipular su geometría." 
+                               class="bg-blue-950 ">
+                                <div class="text-white ">
+                                    WFS
+                                </div>
+                            </mat-chip>
+                            <mat-chip matTooltip="Es un estándar que proporciona un enfoque 
+                            complementario al WMS y mejora su rendimiento mediante un pre-renderizado 
+                            y almacenamiento (caché) de las teselas de mapa (tiles) para dar una respuesta
+                             más rápida a las solicitudes de los clientes, agilizando la carga de 
+                             las teselas en pantalla." 
+                             class="bg-blue-950 ">
+                                <div class="text-white ">
+                                    WMTS
+                                </div>
+                            </mat-chip>
+                            <mat-chip matTooltip="Es un estándar basado en lenguaje XML
+                             que está orientado a la visualización geográfica e incluye
+                              anotaciones de mapas e imágenes. Generalmente utilizados
+                               en Google Earth y otros aplicativos de captura
+                                móvil de datos." 
+                                class="bg-blue-950 ">
+                                <div class="text-white ">
+                                    KML
+                                </div>
+                            </mat-chip>
+                            <mat-chip matTooltip="Es un estándar que define una interfaz 
+                            común para la búsqueda y consulta de metadatos relacionados a datos, 
+                            servicios y recursos geográficos." 
+                            class="bg-blue-950 ">
+                                <div class="text-white ">
+                                    CSW
+                                </div>
+                            </mat-chip>
                         </div>
-                    </fuse-card>
-                </button>
-                <button>
-                    <fuse-card class="filter-article flex w-full max-w-80   flex-col    hover:bg-gray-200">
-                        <img class="object-cover max-h-40" src="images/URS/cat-1.png" alt="Card cover image" />
-                        <div class="m-8">
-                            <div class="text-2xl font-semibold leading-tight">
-                                Estadísticas
-                            </div>
-                            <div class="mt-4">
-                                Descripción del servicio
-                            </div>
-                        </div>
-                    </fuse-card>
-                </button>
-                <button>
-                    <fuse-card class="filter-article flex w-full max-w-80   flex-col    hover:bg-gray-200">
-                        <img class="object-cover max-h-40" src="images/URS/cat-2.jpg" alt="Card cover image" />
-                        <div class="m-8">
-                            <div class="text-2xl font-semibold leading-tight">
-                                Servicio de catálogo
-                            </div>
-                            <div class="mt-4">
-                                Descripción del servicio
-                            </div>
-                        </div>
-                    </fuse-card>
-                </button>
+                    </mat-chip-set>
+                </div>
 
-
-            </div>
-            <div class="m-6 flex w-full max-w-400 flex-wrap space-x-6 place-content-center">
-                <!-- Card #1 -->
-
-                <button>
-                    <fuse-card class="filter-article flex w-full max-w-80   flex-col    hover:bg-gray-200">
-                        <img class="object-cover max-h-40" src="images/URS/cat-3.jpg" alt="Card cover image" />
-                        <div class="m-8">
-                            <div class="text-2xl font-semibold leading-tight">
-                               Sensores Remotos
-                            </div>
-                            <div class="mt-4">
-                                Descripción del servicio
-                            </div>
-                        </div>
-                    </fuse-card>
-                </button>
-                <button>
-                    <fuse-card class="filter-article flex w-full max-w-80   flex-col    hover:bg-gray-200">
-                        <img class="object-cover max-h-40" src="images/URS/cat-4.jpg" alt="Card cover image" />
-                        <div class="m-8">
-                            <div class="text-2xl font-semibold leading-tight">
-                                Otras instituciones
-                            </div>
-                            <div class="mt-4">
-                                Descripción del servicio
-                            </div>
-                        </div>
-                    </fuse-card>
-                </button>
-
-
-            </div>
-        </mat-drawer-content>
+            </mat-drawer-content>
         </mat-drawer-container>
-        </div>
-    
+    </div>
+
 </div>

@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { MapContainerComponent } from './mapContainer/map-container.component ';
 import { MapComponent } from './map.component';
 import { MapPortalComponent } from './mapPortal/map-portal/map-portal.component';
 import { MapServiceComponent } from './catalogos-servicios/list.component';
@@ -7,6 +6,7 @@ import { MapDatosComponent } from './catalogo-datos/list.component';
 import { MapDetailsComponent } from './catalogo-datos/datos-page/details.component';
 import { MapAppsComponent } from './geo-apps/list.component';
 import { DescargasComponent } from './descargas/descargas.component';
+import { MapContainerComponent } from './mapContainer/map-container.component';
 
 
 
@@ -23,7 +23,7 @@ export default [
                 component: MapComponent
             },
             {
-                path: 'portal',
+                path: 'portal-geografico',
                 component: MapPortalComponent
             },
             {

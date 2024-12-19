@@ -1,9 +1,10 @@
 import { CdkScrollable } from '@angular/cdk/scrolling';
-import { I18nPluralPipe, NgClass, PercentPipe } from '@angular/common';
+import {  NgClass } from '@angular/common';
 import {
     ChangeDetectionStrategy,
-    ChangeDetectorRef,
+    
     Component,
+    inject,
     Input,
     OnDestroy,
     OnInit,
@@ -26,6 +27,9 @@ import { FuseCardComponent } from '@fuse/components/card';
 import { FormSidebarComponent } from './form-sidebar/form-sidebar.component';
 import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 import { filter, Subject, takeUntil } from 'rxjs';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 @Component({
@@ -50,7 +54,9 @@ import { filter, Subject, takeUntil } from 'rxjs';
         FuseCardComponent,
         MatTooltipModule,
         MatSidenavModule,
-        FormSidebarComponent
+        FormSidebarComponent,
+        MatChipsModule,
+        MatDialogModule,
     ],
 })
 export class MapServiceComponent implements OnInit, OnDestroy {
@@ -142,4 +148,14 @@ export class MapServiceComponent implements OnInit, OnDestroy {
         this._unsubscribeAll.next(null);
         this._unsubscribeAll.complete();
     }
+
+    readonly dialog = inject(MatDialog);
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }

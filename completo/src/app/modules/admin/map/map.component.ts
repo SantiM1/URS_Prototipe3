@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { TreeComponent } from './tree/tree.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 
@@ -27,7 +28,8 @@ import { ActivatedRoute, Router } from '@angular/router';
     MatIconModule,
     MatFormFieldModule,
     MatRadioModule,
-    TreeComponent
+    TreeComponent,
+    MatTooltipModule
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,

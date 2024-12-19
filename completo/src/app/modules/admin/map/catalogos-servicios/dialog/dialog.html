@@ -1,0 +1,83 @@
+<div class="max-w-2xl mx-auto p-6">
+    <h2 mat-dialog-title class="text-2xl font-bold text-gray-800 text-center mb-4">
+      Cartografía de Hogares de la Unidad del Registro Social
+    </h2>
+    <mat-dialog-content class="mat-typography space-y-6">
+      <div>
+        <h3 class="text-lg font-semibold text-gray-700">Servicio WMS</h3>
+        <p class="text-gray-600 text-sm mb-2">
+          El servicio WMS (Web Map Service) permite visualizar mapas desde un servidor geoespacial.
+        </p>
+        <div class="flex flex-col space-y-2">
+          <button mat-button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            Cartografía de Hogares: WMS 1.3.0
+          </button>
+          <button mat-button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            Cobertura Registro Social E25k: WMS 1.3.0
+          </button>
+          <button mat-button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            Escala 1:100k: WMS 1.3.0
+          </button>
+        </div>
+      </div>
+  
+      <div>
+        <h3 class="text-lg font-semibold text-gray-700">Servicio WFS</h3>
+        <p class="text-gray-600 text-sm mb-2">
+          El servicio WFS (Web Feature Service) permite obtener datos geoespaciales en formato vectorial.
+        </p>
+        <div class="flex flex-col space-y-2">
+          <button mat-button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            Cartografía de Hogares: WFS 1.1.0
+          </button>
+          <button mat-button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            Cobertura Registro Social E25k: WFS 1.1.0
+          </button>
+          <button mat-button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            Escala 1:100k: WFS 1.1.0
+          </button>
+        </div>
+      </div>
+  
+      <div>
+        <h3 class="text-lg font-semibold text-gray-700">Servicio WMTS</h3>
+        <p class="text-gray-600 text-sm mb-2">
+          El servicio WMTS (Web Map Tile Service) proporciona mapas en teselas para una carga más rápida.
+        </p>
+        <div class="flex flex-col space-y-2">
+          <button mat-button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            Cartografía de Hogares: WMTS 1.0.0
+          </button>
+          <button mat-button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            Cobertura Registro Social E25k: WMTS 1.0.0
+          </button>
+          <button mat-button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            Escala 1:100k: WMTS 1.0.0
+          </button>
+        </div>
+      </div>
+  
+      <div>
+        <h3 class="text-lg font-semibold text-gray-700">KML</h3>
+        <p class="text-gray-600 text-sm mb-2">
+          Descarga los datos de  Cartografía de Hogares en formato KML, compatible con herramientas como Google Earth.
+        </p>
+        <div class="flex flex-col space-y-2">
+          <button mat-button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            Cobertura del Registro Social
+          </button>
+          <button mat-button class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+            Cobertura del Registro Social - Compilado
+          </button>
+        </div>
+      </div>
+    </mat-dialog-content>
+    <mat-dialog-actions class="flex justify-end space-x-4 mt-4">
+      <button mat-button mat-dialog-close class="px-4 py-2 text-sm font-medium text-gray-600 bg-gray-200 rounded-lg hover:bg-gray-300">
+        Cancelar
+      </button>
+      <button mat-button [mat-dialog-close]="true" cdkFocusInitial class="px-4 py-2 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-950">
+        Descargar Todo
+      </button>
+    </mat-dialog-actions>
+  </div>

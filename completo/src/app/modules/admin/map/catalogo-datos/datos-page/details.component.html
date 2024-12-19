@@ -22,14 +22,14 @@
 
     <!-- Main -->
     <div class="flex flex-auto">
-        <div class="mx-auto flex flex-auto flex-col ">
+        <div class="flex flex-auto flex-col ">
 
             <!-- Filters -->
             <div class="flex-row ">
             
             
         </div>
-            <mat-drawer-container class="mx-auto flex flex-auto flex-col ">
+            <mat-drawer-container class=" flex flex-auto flex-col ">
                 <mat-drawer class="w-72 dark:bg-gray-900" [autoFocus]="false" [mode]="drawerMode"
                     [opened]="drawerClosed" [position]="'start'" #matDrawer>
                     <!-- Demo sidebar -->
@@ -39,7 +39,7 @@
             
 
             
-                <mat-drawer-content>
+                <mat-drawer-content class="w-full">
                     <div class="mt-1 p-2 flex items-center text-2xl">
                         <button mat-button class="bg-primary text-white " (click)="matDrawer.toggle()">
                             <mat-icon class="icon-size-10 px-2" [svgIcon]="'heroicons_solid:bars-3'"></mat-icon>
@@ -53,7 +53,7 @@
                             <input placeholder="Buscar" matInput #query />
                         </mat-form-field>
                     </div>
-                    <div class="m-6 flex w-full max-w-400 flex-wrap place-content-center">
+                    <div class=" flex w-full flex-wrap place-content-center">
                         <div class="p-2">
                             <!-- Card #21 -->
                             <fuse-card class="filter-listing flex w-full max-w-80 flex-col md:max-w-160 md:flex-row">
@@ -113,183 +113,7 @@
                                 </div>
                             </fuse-card>
                         </div>
-                        <div class="p-2">
-                            <!-- Card #21 -->
-                            <fuse-card class="filter-listing flex w-full max-w-80 flex-col md:max-w-160 md:flex-row">
-                                <div class="w-80 flex-0 md:w-64">
-                                    <img class="h-full w-full object-cover" src="images/URS/map1.png"
-                                        alt="Card cover image" />
-                                </div>
-                                <div class="m-8 mb-4 flex flex-auto flex-col">
-
-                                    <div class="text-2xl font-semibold leading-tight flex">
-                                        <mat-icon class="icon-size-6 pr-2 flex justify-center " matPrefix
-                                            [svgIcon]="'heroicons_solid:circle-stack'"></mat-icon>
-                                        2023- Mapa de la Unidad del Registro Social
-                                    </div>
-                                    <div class="-ml-1 mt-2 flex items-center leading-none">
-                                        <div class="flex items-center">
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star'"></mat-icon>
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star'"></mat-icon>
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star'"></mat-icon>
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star'"></mat-icon>
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star_half'"></mat-icon>
-                                        </div>
-                                        <div class="text-secondary ml-2">4.5</div>
-                                        <div class="text-secondary mx-2">&bull;</div>
-                                        <div class="text-secondary">98 calificaciones</div>
-                                    </div>
-                                    <div class="mt-6">
-                                        Descripción del mapa de la Unidad del Registro Social.
-                                        Esta es una descripción genérica, puede ser reemplazada
-                                        por información real.
-                                    </div>
-                                    <div class="-mx-3 mt-3 flex justify-end space-x-6">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-                                        </svg>
-
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M9 3.75H6.912a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859M12 3v8.25m0 0-3-3m3 3 3-3" />
-                                        </svg>
-
-
-                                    </div>
-                                </div>
-                            </fuse-card>
-                        </div>
-                        <div class="p-2">
-                            <!-- Card #21 -->
-                            <fuse-card class="filter-listing flex w-full max-w-80 flex-col md:max-w-160 md:flex-row">
-                                <div class="w-80 flex-0 md:w-64">
-                                    <img class="h-full w-full object-cover" src="images/URS/map1.png"
-                                        alt="Card cover image" />
-                                </div>
-                                <div class="m-8 mb-4 flex flex-auto flex-col">
-
-                                    <div class="text-2xl font-semibold leading-tight flex">
-                                        <mat-icon class="icon-size-6 pr-2 flex justify-center " matPrefix
-                                            [svgIcon]="'heroicons_solid:circle-stack'"></mat-icon>
-                                        2023- Mapa de la Unidad del Registro Social
-                                    </div>
-                                    <div class="-ml-1 mt-2 flex items-center leading-none">
-                                        <div class="flex items-center">
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star'"></mat-icon>
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star'"></mat-icon>
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star'"></mat-icon>
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star'"></mat-icon>
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star_half'"></mat-icon>
-                                        </div>
-                                        <div class="text-secondary ml-2">4.5</div>
-                                        <div class="text-secondary mx-2">&bull;</div>
-                                        <div class="text-secondary">98 calificaciones</div>
-                                    </div>
-                                    <div class="mt-6">
-                                        Descripción del mapa de la Unidad del Registro Social.
-                                        Esta es una descripción genérica, puede ser reemplazada
-                                        por información real.
-                                    </div>
-                                    <div class="-mx-3 mt-3 flex justify-end space-x-6">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-                                        </svg>
-
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M9 3.75H6.912a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859M12 3v8.25m0 0-3-3m3 3 3-3" />
-                                        </svg>
-
-
-                                    </div>
-                                </div>
-                            </fuse-card>
-                        </div>
-                        <div class="p-2">
-                            <!-- Card #21 -->
-                            <fuse-card class="filter-listing flex w-full max-w-80 flex-col md:max-w-160 md:flex-row">
-                                <div class="w-80 flex-0 md:w-64">
-                                    <img class="h-full w-full object-cover" src="images/URS/map1.png"
-                                        alt="Card cover image" />
-                                </div>
-                                <div class="m-8 mb-4 flex flex-auto flex-col">
-
-                                    <div class="text-2xl font-semibold leading-tight flex">
-                                        <mat-icon class="icon-size-6 pr-2 flex justify-center " matPrefix
-                                            [svgIcon]="'heroicons_solid:circle-stack'"></mat-icon>
-                                        2023- Mapa de la Unidad del Registro Social
-                                    </div>
-                                    <div class="-ml-1 mt-2 flex items-center leading-none">
-                                        <div class="flex items-center">
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star'"></mat-icon>
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star'"></mat-icon>
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star'"></mat-icon>
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star'"></mat-icon>
-                                            <mat-icon class="text-orange-500 icon-size-5"
-                                                [svgIcon]="'mat_outline:star_half'"></mat-icon>
-                                        </div>
-                                        <div class="text-secondary ml-2">4.5</div>
-                                        <div class="text-secondary mx-2">&bull;</div>
-                                        <div class="text-secondary">98 calificaciones</div>
-                                    </div>
-                                    <div class="mt-6">
-                                        Descripción del mapa de la Unidad del Registro Social.
-                                        Esta es una descripción genérica, puede ser reemplazada
-                                        por información real.
-                                    </div>
-                                    <div class="-mx-3 mt-3 flex justify-end space-x-6">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-                                        </svg>
-
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="size-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M9 3.75H6.912a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859M12 3v8.25m0 0-3-3m3 3 3-3" />
-                                        </svg>
-
-
-                                    </div>
-                                </div>
-                            </fuse-card>
-                        </div>
+                        
                     </div>
                 </mat-drawer-content>
             </mat-drawer-container>

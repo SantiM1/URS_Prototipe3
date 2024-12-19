@@ -35,57 +35,61 @@
     </div>
     <mat-toolbar-row>
         <span>
-            <mat-chip-set aria-label="Fish selection">
+            <mat-chip-set aria-label="Menu selection">
+                <mat-chip  matTooltip="Desplazar en el mapa" >
+                    <mat-icon class="icon-size-5 flex justify-center " svgIcon="heroicons_outline:hand-raised"></mat-icon>
+                </mat-chip>
+                <mat-chip  matTooltip="Seleccionar área" >
+                    <mat-icon class="icon-size-6 flex justify-center " svgIcon="mat_solid:highlight_alt"></mat-icon>
+                </mat-chip>
                 <mat-chip>
-                    <mat-icon class="icon-size-5 flex justify-center " matPrefix
+                    <mat-icon  matTooltip="Zoom In" class="icon-size-5 flex justify-center " matPrefix
                         [svgIcon]="'heroicons_solid:magnifying-glass-plus'"></mat-icon>
                 </mat-chip>
                 <mat-chip>
-                    <mat-icon class="icon-size-5 flex justify-center" matPrefix
+                    <mat-icon matTooltip="Zoom Out" class="icon-size-5 flex justify-center" matPrefix
                         [svgIcon]="'heroicons_solid:magnifying-glass-minus'"></mat-icon>
                 </mat-chip>
                 <mat-chip>
-                    <mat-icon class="icon-size-5 flex justify-center" matPrefix
+                    <mat-icon matTooltip="Vista Previa"class="icon-size-5 flex justify-center" matPrefix
                         [svgIcon]="'heroicons_solid:chevron-left'"></mat-icon>
                 </mat-chip>
                 <mat-chip>
-                    <mat-icon class="icon-size-5 flex justify-center" matPrefix
+                    <mat-icon  matTooltip="Vista Siguiente"class="icon-size-5 flex justify-center" matPrefix
                         [svgIcon]="'heroicons_solid:chevron-right'"></mat-icon>
                 </mat-chip>
                 <mat-chip>
-                    <mat-icon class="icon-size-5 flex justify-center" matPrefix
+                    <mat-icon  matTooltip="Expandir a Pantalla completa" class="icon-size-5 flex justify-center" matPrefix
                         [svgIcon]="'heroicons_solid:arrows-pointing-out'"></mat-icon>
                 </mat-chip>
-                <mat-chip class="bg-gray-50 fuse-mat-dense fuse-mat-rounded min-w-64 place-content-center">
+                <mat-chip  matTooltip="Buscar por Ubicación" class="bg-gray-50 fuse-mat-dense fuse-mat-rounded min-w-64 place-content-center">
                     <mat-icon class="icon-size-3" matPrefix [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
-                    <input matInput class="px-2" [autocomplete]="'off'" [placeholder]="'Buscar lugar...'" />
+                    <input matInput class="px-2" [autocomplete]="'off'" [placeholder]="'Buscar ubicación...'" />
                 </mat-chip>
                 <mat-chip>
-                    <div class="flex">
-                        <mat-icon class="icon-size-5 flex justify-center" matPrefix
+                    <div class="flex" matTooltip="Buscar por Coordenadas">
+                        <mat-icon  class="icon-size-5 flex justify-center" matPrefix
                             [svgIcon]="'heroicons_solid:map-pin'" />
-                        <p class="text-sm"> Coordenadas</p>
+                            <p class="text-sm"> Coordenadas</p>
                     </div>
                 </mat-chip>
                 <mat-chip>
-                    <div class="flex">
-                        <mat-icon class="icon-size-5 flex justify-center" matPrefix
+                    <div class="flex"  matTooltip="Mostrar Información de cada Objeto">
+                        <mat-icon  class="icon-size-5 flex justify-center" matPrefix
                             [svgIcon]="'heroicons_solid:information-circle'" />
-                        <p class="text-sm"> Información</p>
+                            <p class="text-sm"> Info</p>
                     </div>
                 </mat-chip>
                 <mat-chip>
-                    <div class="flex">
-                        <mat-icon class="icon-size-5 flex justify-center" matPrefix
-                            [svgIcon]="'heroicons_solid:adjustments-vertical'" />
+                    <div class="flex" matTooltip="Herramientas para calcular areas y distancias" >
+                        <mat-icon  class="icon-size-5 flex justify-center" svgIcon="mat_solid:open_in_full"></mat-icon>
                         <p class="text-sm"> Medir</p>
                     </div>
                 </mat-chip>
                 <mat-chip>
-                    <div class="flex">
+                    <div class="flex"  matTooltip="Descargar en varios formatos">
                         <mat-icon class="icon-size-5 flex justify-center" matPrefix
                             [svgIcon]="'heroicons_solid:document-arrow-down'" />
-                        <p class="text-sm"> Descargar PDF</p>
                     </div>
                 </mat-chip>
             </mat-chip-set>
@@ -93,8 +97,12 @@
 
 
     </mat-toolbar-row>
-    <div class="map-container flex-grow col-span-2 rounded-2xl" #map></div>
+    
+    <div class="map-container flex-grow col-span-2 rounded-2xl" #map>
 
+        
+    </div>
+    <img class="absolute w-50 bottom-10 right-32 "src="images/URS/scalebars.png"/>
 </div>
 <div class="w-30 bg-white">
     <!--

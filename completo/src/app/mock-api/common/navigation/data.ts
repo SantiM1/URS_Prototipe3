@@ -96,10 +96,10 @@ export const defaultNavigation: FuseNavigationItem[] = [
         children: [
             {
                 id: 'geoportal',
-                title: 'Portal',
+                title: 'Portal Geográfico',
                 type: 'basic',
                 icon: 'heroicons_outline:map',
-                link: '/apps/maps/portal',
+                link: '/apps/maps/portal-geografico',
             },
             {
                 id: 'geoportal',
@@ -107,6 +107,34 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 type: 'basic',
                 icon: 'heroicons_outline:map',
                 link: '/apps/maps/geovisor',
+            },
+            {
+                id: 'geoportal',
+                title: 'Catalogo de Datos',
+                type: 'basic',
+                icon: 'heroicons_outline:map',
+                link: '/apps/maps/catalogo-datos',
+            },
+            {
+                id: 'geoportal',
+                title: 'Catalogo de Servicios',
+                type: 'basic',
+                icon: 'heroicons_outline:map',
+                link: '/apps/maps/catalogo-servicios',
+            },
+            {
+                id: 'geoportal',
+                title: 'Descargas',
+                type: 'basic',
+                icon: 'heroicons_outline:map',
+                link: '/apps/maps/descargas',
+            },
+            {
+                id: 'geoportal',
+                title: 'GeoApps',
+                type: 'basic',
+                icon: 'heroicons_outline:map',
+                link: '/apps/maps/geo-apps',
             },
            
         ]
@@ -1301,7 +1329,7 @@ export const compactNavigation: FuseNavigationItem[] = [
         icon: 'heroicons_outline:globe-alt',
        children: [],
     },
-    {
+    /*{
         id: 'dashboards',
         title: 'Dashboards',
         tooltip: 'Dashboards',
@@ -1340,7 +1368,7 @@ export const compactNavigation: FuseNavigationItem[] = [
         type: 'aside',
         icon: 'heroicons_outline:bars-3',
         children: [], // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
-    },
+    },*/
 ];
 export const futuristicNavigation: FuseNavigationItem[] = [
     {
