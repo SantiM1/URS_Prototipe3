@@ -15,7 +15,6 @@
             <div class="mt-1 text-center text-3xl font-extrabold leading-tight tracking-tight ">
                 Categoría
             </div>
-
         </div>
     </div>
 
@@ -31,7 +30,7 @@
         </div>
             <mat-drawer-container class=" flex flex-auto flex-col ">
                 <mat-drawer class="w-72 dark:bg-gray-900" [autoFocus]="false" [mode]="drawerMode"
-                    [opened]="drawerClosed" [position]="'start'" #matDrawer>
+                    [opened]="drawerOpened" [position]="'start'" #matDrawer>
                     <!-- Demo sidebar -->
                     <datos-sidebar></datos-sidebar>
                 </mat-drawer>
@@ -39,14 +38,8 @@
             
 
             
-                <mat-drawer-content class="w-full">
-                    <div class="mt-1 p-2 flex items-center text-2xl">
-                        <button mat-button class="bg-primary text-white " (click)="matDrawer.toggle()">
-                            <mat-icon class="icon-size-10 px-2" [svgIcon]="'heroicons_solid:bars-3'"></mat-icon>
-                            <span>Filtros</span>
-                        </button>
-                        
-                    </div>
+                <mat-drawer-content>
+                    
                     <div class="flex  place-content-center">
                         <mat-form-field class="mt-4 w-96 " [subscriptSizing]="'dynamic'">
                             <mat-icon matPrefix class="icon-size-5" [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
@@ -56,7 +49,8 @@
                     <div class=" flex w-full flex-wrap place-content-center">
                         <div class="p-2">
                             <!-- Card #21 -->
-                            <fuse-card class="filter-listing flex w-full max-w-80 flex-col md:max-w-160 md:flex-row">
+                        <button (click)='navPage()'>
+                            <fuse-card  class="filter-listing flex w-full max-w-80 flex-col md:max-w-160 md:flex-row">
                                 <div class="w-80 flex-0 md:w-64">
                                     <img class="h-full w-full object-cover" src="images/URS/map1.png"
                                         alt="Card cover image" />
@@ -66,7 +60,7 @@
                                     <div class="text-2xl font-semibold leading-tight flex">
                                         <mat-icon class="icon-size-6 pr-2 flex justify-center " matPrefix
                                             [svgIcon]="'heroicons_solid:circle-stack'"></mat-icon>
-                                        2023- Mapa de la Unidad del Registro Social
+                                        2023- Mapa de Hogares de la URS
                                     </div>
                                     <div class="-ml-1 mt-2 flex items-center leading-none">
                                         <div class="flex items-center">
@@ -112,6 +106,7 @@
                                     </div>
                                 </div>
                             </fuse-card>
+                        </button>
                         </div>
                         
                     </div>

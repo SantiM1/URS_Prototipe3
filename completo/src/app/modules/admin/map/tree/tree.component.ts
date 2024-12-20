@@ -17,7 +17,7 @@ interface FoodNode {
 const TREE_DATA: FoodNode[] = [
   {
     name: 'Unidad Registro Social',
-    children: [{name: 'Hogares-URS'}],
+    children: [{name: 'Hogares-URS'}, {name: 'Deficiencia Habitacional'}, {name: 'Condición de Pobreza'}],
   },
   {
     name: 'Instituto Nacional de Estadística y Censos (INEC)',

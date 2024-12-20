@@ -20,6 +20,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FuseCardComponent } from '@fuse/components/card';
+import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
 
 @Component({
     selector: 'map-portal',
@@ -54,27 +55,42 @@ import { FuseCardComponent } from '@fuse/components/card';
     ],
 })
 export class MapPortalComponent  {
+ 
 
-  constructor(
+  constructor( private _fuseNavigationService: FuseNavigationService,
     private _activatedRoute: ActivatedRoute,
 
     private _router: Router,
 
 ) {}
+ toggleNavigation(name: string): void {
+        // Get the navigation
+        const navigation =
+            this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>(
+                name
+            );
+        
+        navigation.opened = false
+    }
   navGeovisor(){
     this._router.navigate(['../geovisor'], {relativeTo: this._activatedRoute,});   
+    this.toggleNavigation('mainNavigation')
   }
   navServicios(){
     this._router.navigate(['../catalogo-servicios'], {relativeTo: this._activatedRoute,});   
+    this.toggleNavigation('mainNavigation')
   }
   navDatos(){
     this._router.navigate(['../catalogo-datos'], {relativeTo: this._activatedRoute,});   
+    this.toggleNavigation('mainNavigation')
   }
   navApps(){
-    this._router.navigate(['../geo-apps'], {relativeTo: this._activatedRoute,});   
+    this._router.navigate(['../geo-apps'], {relativeTo: this._activatedRoute,}); 
+    this.toggleNavigation('mainNavigation')  
   }
   navDescargas(){
     this._router.navigate(['../descargas'], {relativeTo: this._activatedRoute,});   
+    this.toggleNavigation('mainNavigation')
   }
  
  

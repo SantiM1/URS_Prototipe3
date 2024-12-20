@@ -93,6 +93,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
         subtitle: 'Unique dashboard designs',
         type: 'group',
         icon: 'heroicons_outline:globe-alt',
+        link:'/apps/maps/portal-geografico',
         children: [
             {
                 id: 'geoportal',
@@ -1315,8 +1316,8 @@ export const compactNavigation: FuseNavigationItem[] = [
     },
     {
         id: 'portal',
-        title: 'Portal',
-        tooltip: 'Portal',
+        title: 'Portal de Servicios',
+        tooltip: 'Portal de Servicios',
         type: 'aside',
         icon: 'heroicons_outline:globe-alt',
         children: [], // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
@@ -1325,9 +1326,10 @@ export const compactNavigation: FuseNavigationItem[] = [
         id: 'geoportal',
         title: 'Geoportal',
         tooltip: 'Geoportal',
-        type: 'aside',
+        type: 'basic',
         icon: 'heroicons_outline:globe-alt',
-       children: [],
+        link:'/apps/maps/portal-geografico',
+       
     },
     /*{
         id: 'dashboards',

@@ -1,82 +1,117 @@
 <div class="flex min-w-0 flex-auto flex-col">
     <!-- Header -->
-    <div
-        class="bg-card flex flex-0 flex-col border-b p-6 dark:bg-transparent sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:py-8">
-        <div class="min-w-0 flex-1">
+    <div class="dark relative flex-0 overflow-hidden bg-blue-950 px-4 py-8 sm:p-16">
+        <!-- Background -->
+        <!-- Rings -->
+        <!-- prettier-ignore -->
+        <svg class="absolute inset-0 pointer-events-none" viewBox="0 0 960 540" width="100%" height="100%"
+            preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+            <g class="text-blue-800 opacity-25" fill="none" stroke="currentColor" stroke-width="100">
+                <circle r="234" cx="196" cy="23"></circle>
+                <circle r="234" cx="790" cy="491"></circle>
+            </g>
+        </svg>
+        <div class="relative z-10 flex flex-col items-center">
+            <h2 class="text-xl font-semibold">Unidad del Registro Social</h2>
+            <div class="mt-1 text-center text-4xl font-extrabold leading-tight tracking-tight sm:text-7xl">
+                Descargas
+            </div>
 
-            <!-- Title -->
-            <div class="mt-2">
-                <h2 class="truncate text-3xl font-extrabold leading-7 tracking-tight sm:leading-10 md:text-4xl">
-                    Descargas
-                </h2>
+        </div>
+    </div>
+
+
+    <!-- Main -->
+    <div class="flex flex-auto">
+        <div class="mx-auto flex flex-auto flex-col ">
+
+            <!-- Filters -->
+
+
+            <div class="flex  place-content-center">
+                <mat-form-field class="mt-4 w-96 " [subscriptSizing]="'dynamic'">
+                    <mat-icon matPrefix class="icon-size-5" [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
+                    <input placeholder="Buscar" matInput #query />
+                </mat-form-field>
+            </div>
+
+            <div class="flex w-full max-w-400 flex-wrap space-x-6 place-content-center p-10">
+                <button (click)="navNormativa()">
+                    <fuse-card class=" rounded-full flex w-48 h-48  flex-col ">
+                        <!--<img class="object-cover" src="images/cards/01-320x200.jpg" alt="Card cover image" />-->
+                        <div class="flex justify-center mx-8 mt-8">
+                            <div class="flex justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="size-20 stroke-amber-600">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z" />
+                                </svg>
+    
+                            </div>
+    
+    
+                        </div>
+                        <div class="mx-8 mb-8">
+                            <div class="text-xl text-amber-600 font-semibold leading-tight">
+                                Normativa
+                            </div>
+    
+                        </div>
+                    </fuse-card>
+                </button>
+                <!-- Card #1 -->
+                <button (click)="navBase()">
+                    <fuse-card class=" rounded-full flex w-48 h-48  flex-col ">
+                        <!--<img class="object-cover" src="images/cards/01-320x200.jpg" alt="Card cover image" />-->
+                        <div class="flex justify-center mx-8 mt-8">
+                            <div class="flex justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-20 stroke-cyan-700">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                                </svg>
+
+                            </div>
+
+
+                        </div>
+                        <div class="mx-8 mb-8">
+                            <div class="text-xl text-cyan-700 font-semibold leading-tight">
+                                Base de datos: Hogares
+                            </div>
+
+                        </div>
+                    </fuse-card>
+                </button>
+                <!-- Card #1 -->
+                <button (click)="navManuales()">
+                    <fuse-card class=" rounded-full flex w-48 h-48  flex-col ">
+                        <!--<img class="object-cover" src="images/cards/01-320x200.jpg" alt="Card cover image" />-->
+                        <div class="flex justify-center mx-8 mt-8">
+                            <div class="flex justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" class="size-20 stroke-orange-600">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M7.5 7.5h-.75A2.25 2.25 0 0 0 4.5 9.75v7.5a2.25 2.25 0 0 0 2.25 2.25h7.5a2.25 2.25 0 0 0 2.25-2.25v-7.5a2.25 2.25 0 0 0-2.25-2.25h-.75m-6 3.75 3 3m0 0 3-3m-3 3V1.5m6 9h.75a2.25 2.25 0 0 1 2.25 2.25v7.5a2.25 2.25 0 0 1-2.25 2.25h-7.5a2.25 2.25 0 0 1-2.25-2.25v-.75" />
+                                </svg>
+    
+                            </div>
+    
+    
+                        </div>
+                        <div class="mx-8 mb-8">
+                            <div class="text-xl text-orange-600 font-semibold leading-tight">
+                                Manuales y Procedimientos
+                            </div>
+    
+                        </div>
+                    </fuse-card>
+                </button>
+
+
+
             </div>
         </div>
     </div>
 
-    <!-- Main -->
-    <div class="flex-auto p-6 sm:p-10">
-
-
-        <div class="-m-4 flex w-full max-w-400 flex-wrap items-start space-x-6">
-            <!-- Card #1 -->
-            <fuse-card class="filter-article flex w-full max-w-40 flex-col p-">
-                <div class="flex h-full items-center justify-center">
-                    <div class="relative"><mat-icon role="img"
-                            class="mat-icon notranslate text-hint opacity-50 icon-size-14 mat-icon-no-color"
-                            aria-hidden="true" ng-reflect-svg-icon="heroicons_solid:document" data-mat-icon-type="svg"
-                            data-mat-icon-name="document" data-mat-icon-namespace="heroicons_solid"><svg
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                                aria-hidden="true" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet"
-                                focusable="false">
-                                <path
-                                    d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625z">
-                                </path>
-                                <path
-                                    d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z">
-                                </path>
-                            </svg></mat-icon>
-                        <div
-                            class="absolute bottom-0 left-0 rounded px-1.5 text-sm font-semibold leading-5 text-white bg-red-600">
-                            PDF </div>
-                    </div>
-                </div>
-                <div class="m-8">
-                    <div class="text-2xl font-semibold leading-tight">
-                        Archivo 1
-                    </div>
-                    <div class="mt-4">
-                        Archivo para descargar
-                    </div>
-                </div>
-            </fuse-card>
-            <fuse-card class="filter-article flex w-full max-w-40 flex-col">
-                <div class="flex h-full items-center justify-center"><div class="relative"><mat-icon role="img" class="mat-icon notranslate text-hint opacity-50 icon-size-14 mat-icon-no-color" aria-hidden="true" ng-reflect-svg-icon="heroicons_solid:document" data-mat-icon-type="svg" data-mat-icon-name="document" data-mat-icon-namespace="heroicons_solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
-                    <path d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625z"></path>
-                    <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z"></path>
-                </svg></mat-icon><div class="absolute bottom-0 left-0 rounded px-1.5 text-sm font-semibold leading-5 text-white bg-green-600"> XLS </div></div></div>
-                <div class="m-8">
-                    <div class="text-2xl font-semibold leading-tight">
-                        Archivo 2
-                    </div>
-                    <div class="mt-4">
-                        Archivo para descargar
-                    </div>
-                </div>
-            </fuse-card>
-            <fuse-card class="filter-article flex w-full max-w-40 flex-col">
-                <div class="flex h-full items-center justify-center"><div class="relative"><mat-icon role="img" class="mat-icon notranslate text-hint opacity-50 icon-size-14 mat-icon-no-color" aria-hidden="true" ng-reflect-svg-icon="heroicons_solid:document" data-mat-icon-type="svg" data-mat-icon-name="document" data-mat-icon-namespace="heroicons_solid"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
-                    <path d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625z"></path>
-                    <path d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z"></path>
-                </svg></mat-icon><div class="absolute bottom-0 left-0 rounded px-1.5 text-sm font-semibold leading-5 text-white bg-blue-600"> DOC </div></div></div>
-                <div class="m-8">
-                    <div class="text-2xl font-semibold leading-tight">
-                        Archivo 3
-                    </div>
-                    <div class="mt-4">
-                        Archivo para descargar
-                    </div>
-                </div>
-            </fuse-card>
-        </div>
-    </div>
 </div>

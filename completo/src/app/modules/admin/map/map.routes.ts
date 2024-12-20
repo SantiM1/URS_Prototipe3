@@ -7,6 +7,10 @@ import { MapDetailsComponent } from './catalogo-datos/datos-page/details.compone
 import { MapAppsComponent } from './geo-apps/list.component';
 import { DescargasComponent } from './descargas/descargas.component';
 import { MapContainerComponent } from './mapContainer/map-container.component';
+import { MapPageComponent } from './catalogo-datos/datos-page/mapPage/mapPage.component';
+import { PdfViewerComponent } from './descargas/normativa/pdf.component';
+import { ManualesComponent } from './descargas/manuales/manuales.component';
+import { BaseDatosComponent } from './descargas/baseDeDatos/baseDatos.component';
 
 
 
@@ -39,13 +43,29 @@ export default [
                 component: MapDetailsComponent,
             },
             {
+                path: 'page',
+                component: MapPageComponent,
+            },
+            {
                 path: 'geo-apps',
                 component: MapAppsComponent,
             },
             {
                 path: 'descargas',
                 component: DescargasComponent,
-            }
+            },
+            {
+                path: 'pdf',
+                component: PdfViewerComponent,
+            },
+            {
+                path: 'manuales',
+                component: ManualesComponent,
+            },
+            {
+                path: 'base',
+                component: BaseDatosComponent,
+            },
         
         ]
     },

@@ -28,7 +28,7 @@ import { FuseNavigationItem } from '@fuse/components/navigation/navigation.types
             >
                  <div fuseVerticalNavigationContentHeader>
                     <div class="mx-6 text-3xl font-bold tracking-tighter">
-                    Tipos de GeoServicios
+                    Filtros de Búsqueda
                     </div>
                     
                        
@@ -67,74 +67,75 @@ export class DatosSidebarComponent {
 
     ) {
         this.menuData = [
-
             {
                 type: 'divider',
             },
-
             {
-                title: 'Filtro',
-                subtitle: 'Filtro de Mapas Web',
+                title: 'Filtros de Capas Geográficas',
+                subtitle: 'Filtrar las capas disponibles en el geoportal',
                 type: 'collapsable',
                 children: [
                     {
-                        title: 'Opción 1',
+                        title: '☐ Nombre de la capa',
                         type: 'basic',
                     },
                     {
-                        title: 'Opción 2',
+                        title: '☐ Tipo de geometría',
                         type: 'basic',
                     },
                     {
-                        title: 'Opción 3',
+                        title: '☐ Fuente de datos',
                         type: 'basic',
                     },
-
+                    {
+                        title: '☐ Fecha de publicación',
+                        type: 'basic',
+                    },
                 ],
             },
             {
-                title: 'Filtro',
-                subtitle: 'Filtro de Mapas Web',
+                title: 'Filtros de Datos Espaciales',
+                subtitle: 'Buscar información basada en atributos espaciales',
                 type: 'collapsable',
                 children: [
                     {
-                        title: 'Opción 1',
+                        title: '☐ Extensión geográfica',
                         type: 'basic',
                     },
                     {
-                        title: 'Opción 2',
+                        title: '☐ Sistema de coordenadas',
                         type: 'basic',
                     },
                     {
-                        title: 'Opción 3',
+                        title: '☐ Escala de resolución',
                         type: 'basic',
                     },
-
                 ],
             },
             {
-                title: 'Filtro',
-                subtitle: 'Filtro de Mapas Web',
+                title: 'Filtros Avanzados',
+                subtitle: 'Opciones avanzadas para refinar los resultados',
                 type: 'collapsable',
                 children: [
                     {
-                        title: 'Opción 1',
+                        title: '☐ Palabras clave',
                         type: 'basic',
                     },
                     {
-                        title: 'Opción 2',
+                        title: '☐ Categoría temática',
                         type: 'basic',
                     },
                     {
-                        title: 'Opción 3',
+                        title: '☐ Estado de disponibilidad',
                         type: 'basic',
                     },
-
+                    {
+                        title: '☐ Última actualización',
+                        type: 'basic',
+                    },
                 ],
             },
-
-            
-
         ];
+        
     }
 }

@@ -1,0 +1,109 @@
+<div class="flex w-full flex-col space-y-6">
+  <!-- Breadcrumb Navigation -->
+  <nav class="bg-white px-4 py-3 rounded-md shadow">
+    <ol class="flex items-center space-x-2 text-gray-600">
+      <li
+        class="text-gray-800 font-semibold cursor-pointer hover:text-sky-500"
+        (click)="navDescargas()"
+      >
+        Descargas
+      </li>
+      <li>
+        <span class="text-gray-400">/</span>
+      </li>
+      <li class="text-gray-800">Base de datos</li>
+    </ol>
+  </nav>
+
+  <!-- Title Section -->
+  <div
+    class="bg-gray-100 flex flex-col border-b p-6 rounded-md shadow sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:py-8"
+  >
+    <div class="min-w-0 flex-1">
+      <h2
+        class="truncate text-3xl font-extrabold leading-7 tracking-tight sm:leading-10 md:text-4xl text-gray-800"
+      >
+        Base de Datos
+      </h2>
+    </div>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="flex-auto p-6 sm:p-10">
+    <div class="flex flex-wrap items-start gap-6">
+      <!-- Card #1 -->
+      <div
+        class="bg-white shadow rounded-lg w-full max-w-xs p-6 flex flex-col items-center"
+      >
+        <div class="relative">
+          <mat-icon
+            role="img"
+            class="mat-icon notranslate text-gray-400 opacity-50 icon-size-14"
+            aria-hidden="true"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              class="w-14 h-14"
+            >
+              <path
+                d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625z"
+              ></path>
+              <path
+                d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z"
+              ></path>
+            </svg>
+          </mat-icon>
+          <div
+            class="absolute bottom-0 left-0 rounded px-2 text-sm font-semibold leading-5 text-white bg-red-600"
+          >
+            SHP
+          </div>
+        </div>
+        <div class="mt-6 text-center">
+          <div class="text-2xl font-semibold text-gray-800">Archivo 1</div>
+          <div class="mt-2 text-gray-600">Archivo para descargar</div>
+        </div>
+      </div>
+
+      <!-- Card #2 -->
+      <div
+        class="bg-white shadow rounded-lg w-full max-w-xs p-6 flex flex-col items-center"
+      >
+        <div class="relative">
+          <mat-icon
+            role="img"
+            class="mat-icon notranslate text-gray-400 opacity-50 icon-size-14"
+            aria-hidden="true"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              class="w-14 h-14"
+            >
+              <path
+                d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0016.5 9h-1.875a1.875 1.875 0 01-1.875-1.875V5.25A3.75 3.75 0 009 1.5H5.625z"
+              ></path>
+              <path
+                d="M12.971 1.816A5.23 5.23 0 0114.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 013.434 1.279 9.768 9.768 0 00-6.963-6.963z"
+              ></path>
+            </svg>
+          </mat-icon>
+          <div
+            class="absolute bottom-0 left-0 rounded px-2 text-sm font-semibold leading-5 text-white bg-green-600"
+          >
+            XLS
+          </div>
+        </div>
+        <div class="mt-6 text-center">
+          <div class="text-2xl font-semibold text-gray-800">Archivo 2</div>
+          <div class="mt-2 text-gray-600">Archivo para descargar</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

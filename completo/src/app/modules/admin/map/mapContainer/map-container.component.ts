@@ -15,6 +15,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
 
 
 @Component({
@@ -39,13 +40,25 @@ import { MatInputModule } from '@angular/material/input';
     ],
 })
 export class MapContainerComponent {
- 
-    constructor(private _fuseMediaWatcherService: FuseMediaWatcherService,
+
+    constructor(
+        private _fuseNavigationService: FuseNavigationService,
+        private _fuseMediaWatcherService: FuseMediaWatcherService,
         private _router: Router,
         private route: ActivatedRoute
     ) {}
+    toggleNavigation(name: string): void {
+            // Get the navigation
+            const navigation =
+                this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>(
+                    name
+                );
+            
+            navigation.opened = true
+        }
     home(): void {
         this._router.navigate(['/apps/maps/portal-geografico']);
+        this.toggleNavigation('mainNavigation')
     }
     signOut(): void {
         this._router.navigate(['/sign-out']);

@@ -65,8 +65,9 @@ export class MapDetailsComponent {
      * Constructor
      */
     constructor(private _fuseMediaWatcherService: FuseMediaWatcherService,
-        private router: Router,
-        private route: ActivatedRoute
+        private _activatedRoute: ActivatedRoute,
+    
+        private _router: Router,
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
@@ -90,7 +91,7 @@ export class MapDetailsComponent {
                 }
             });
           
-            this.router.events.pipe(
+            this._router.events.pipe(
                 filter(event => event instanceof NavigationEnd)  // Filter for NavigationEnd events
               ).subscribe((event: NavigationEnd) => {
                  // Get the current URL
@@ -111,4 +112,7 @@ export class MapDetailsComponent {
         this._unsubscribeAll.next(null);
         this._unsubscribeAll.complete();
     }
+    navPage(){
+        this._router.navigate(['../page'], {relativeTo: this._activatedRoute,});   
+     }
 }
