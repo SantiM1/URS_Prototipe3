@@ -62,7 +62,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: 'Portal',
                 type: 'basic',
                 icon: 'heroicons_outline:user',
-                link: '/portal/land',
+                link: '/portal/land-so',
             },
             {
                 id: 'portal.autoregistro',

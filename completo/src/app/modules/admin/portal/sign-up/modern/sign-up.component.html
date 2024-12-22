@@ -112,10 +112,10 @@
                         mat-flat-button
                         [color]="'primary'"
                         [disabled]="signUpForm.disabled"
-                        (click)="signUp()"
+                        (click)="signOut()"
                     >
                         @if (!signUpForm.disabled) {
-                            <span> Registarse </span>
+                            <span> Registrarse </span>
                         }
                         @if (signUpForm.disabled) {
                             <mat-progress-spinner

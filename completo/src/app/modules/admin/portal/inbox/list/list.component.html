@@ -2,7 +2,7 @@
     <!-- Mails list -->
     @if (mails && mails.length > 0) {
         <div
-            class="relative z-10 flex w-full min-w-0 flex-auto flex-col border-r lg:min-w-90 lg:max-w-90"
+            class="relative z-10 flex w-full min-w-0 flex-auto flex-col border-r "
         >
             <!-- Header -->
             <div
@@ -194,9 +194,9 @@
         <div
             class="flex-auto"
             [ngClass]="{
-                'absolute inset-0 z-20 flex lg:static lg:inset-auto':
+                'absolute inset-0 z-20 flex ':
                     selectedMail && selectedMail.id,
-                'hidden lg:flex': !selectedMail || !selectedMail.id,
+                'hidden': !selectedMail || !selectedMail.id,
             }"
         >
             <router-outlet></router-outlet>

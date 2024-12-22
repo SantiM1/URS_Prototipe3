@@ -1,0 +1,117 @@
+<div class="flex min-w-0 flex-auto flex-col">
+    <!-- Main -->
+    <div class="flex flex-col items-center p-6 sm:p-10">
+        <div class="flex w-full max-w-4xl flex-col">
+            <div class="-ml-4 sm:mt-8">
+                <a mat-button [routerLink]="['../']" [color]="'primary'">
+                    <mat-icon [svgIcon]="'heroicons_outline:arrow-long-left'"></mat-icon>
+                    <span class="ml-2">Regresar al Portal Principal</span>
+                </a>
+            </div>
+            <div class="mt-2 text-4xl font-extrabold leading-tight tracking-tight sm:text-7xl">
+                Preguntas Frecuentes
+            </div>
+
+            <!-- Categoría: Información General -->
+            <div class="mt-12 text-3xl font-bold leading-tight tracking-tight sm:mt-16">
+                Información General
+            </div>
+            <mat-accordion class="mt-8 max-w-4xl">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                        <mat-panel-title class="font-medium leading-tight">
+                            ¿Qué es el Registro Social?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    El Registro Social es una base de datos que contiene información socioeconómica de los hogares ecuatorianos, utilizada para la focalización de programas sociales.
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                        <mat-panel-title class="font-medium leading-tight">
+                            ¿Cómo puedo actualizar mis datos en el Registro Social?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    Para actualizar sus datos, debe acercarse a las oficinas del Registro Social o comunicarse a través de los canales oficiales para solicitar una actualización.
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                        <mat-panel-title class="font-medium leading-tight">
+                            ¿Quiénes pueden acceder a los beneficios del Registro Social?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    Los beneficios están dirigidos a los hogares en situación de vulnerabilidad, identificados a través de la información recopilada en el Registro Social.
+                </mat-expansion-panel>
+
+                <!-- Agregar más preguntas según la categoría -->
+            </mat-accordion>
+
+            <!-- Categoría: Programas y Beneficios -->
+            <div class="mt-12 text-3xl font-bold leading-tight tracking-tight sm:mt-16">
+                Programas y Beneficios
+            </div>
+            <mat-accordion class="mt-8 max-w-4xl">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                        <mat-panel-title class="font-medium leading-tight">
+                            ¿Qué programas sociales utilizan la información del Registro Social?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    Programas como el Bono de Desarrollo Humano, pensiones para adultos mayores y ayudas para personas con discapacidad utilizan esta información para la asignación de beneficios.
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                        <mat-panel-title class="font-medium leading-tight">
+                            ¿Cómo se determina quién recibe el Bono de Desarrollo Humano?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    La asignación se basa en la información socioeconómica registrada, identificando a los hogares en situación de pobreza o extrema pobreza.
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                        <mat-panel-title class="font-medium leading-tight">
+                            ¿Qué criterios se utilizan para evaluar la elegibilidad a los programas sociales?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    Se consideran factores como ingresos, condiciones de vivienda, número de dependientes y situación laboral, entre otros.
+                </mat-expansion-panel>
+            </mat-accordion>
+
+            <!-- Categoría: Procedimientos y Trámites -->
+            <div class="mt-12 text-3xl font-bold leading-tight tracking-tight sm:mt-16">
+                Procedimientos y Trámites
+            </div>
+            <mat-accordion class="mt-8 max-w-4xl">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                        <mat-panel-title class="font-medium leading-tight">
+                            ¿Cómo puedo solicitar una visita para la encuesta del Registro Social?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    Debe comunicarse con las oficinas del Registro Social para programar una visita de evaluación.
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                        <mat-panel-title class="font-medium leading-tight">
+                            ¿Cuánto tiempo tarda el proceso de registro y evaluación?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    Los tiempos pueden variar; generalmente, se le informará sobre los plazos durante el proceso de registro.
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                        <mat-panel-title class="font-medium leading-tight">
+                            ¿Hay algún costo asociado con el registro en el Registro Social?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    No, el proceso de registro y evaluación es completamente gratuito.
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</div>

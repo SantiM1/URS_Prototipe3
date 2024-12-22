@@ -81,7 +81,8 @@ export class SignUpModernComponent implements OnInit {
     /**
      * Sign in
      */
-    signUp(): void {
-        this._router.navigate(['/portal/land']);
+    signOut(): void {
+        this._router.navigate(['/sign-out']);
     }
+    
 }

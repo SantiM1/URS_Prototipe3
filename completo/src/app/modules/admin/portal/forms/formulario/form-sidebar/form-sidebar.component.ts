@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { NavigationEnd, Router } from '@angular/router';
 import { FuseVerticalNavigationComponent } from '@fuse/components/navigation';
 import { FuseNavigationItem } from '@fuse/components/navigation/navigation.types';
 
@@ -41,12 +42,12 @@ import { FuseNavigationItem } from '@fuse/components/navigation/navigation.types
                     </div>
                         <div class="mt-4 flex flex-auto flex-col">
                             <span class="mb-3 text-sm leading-none"
-                            >7 de 24 preguntas completadas</span
+                            >{{qnum}} de 24 preguntas completadas</span
                         >
                         <mat-progress-bar
                             [mode]="'determinate'"
                             [color]="'primary'"
-                            [value]="34.3"
+                            value={{qvalue}}
                         ></mat-progress-bar>
                         </div>
                     </div>
@@ -75,14 +76,14 @@ import { FuseNavigationItem } from '@fuse/components/navigation/navigation.types
 export class FormSidebarComponent {
     menuData: FuseNavigationItem[];
     public currentScreen: string;
-    /**
-     * Constructor
-     */
-    changeScreen(name: string) {
-        this.currentScreen = name;
-    }
-    constructor(
+    public qnum = 0
+    public qvalue = this.qnum/24*100;
+    qnums = [0, 7, 14, 16, 24]
 
+    
+    constructor(
+        private router: Router
+        
     ) {
         this.menuData = [
             {
@@ -94,18 +95,26 @@ export class FormSidebarComponent {
                 type: 'basic',
                 link: 'p0',
                 
-
+                function: () => {
+                    this.qnum = 0
+                    this.qvalue = this.qnum/24*100;
+                   
+                }
             },
             {
                 title: 'Sección I',
                 subtitle: 'Identificación y Ubicación Geográfica de la Vivienda',
-                type: 'collapsable',
+                type: 'group',
                 children: [
                     {
                         title: 'Datos Generales',
                         type: 'basic',
                         icon: 'heroicons_outline:cog-8-tooth',
-                        link: 'p1'
+                        link: 'p1',
+                        function: () => {
+                            this.qnum = 7
+                            this.qvalue = this.qnum/24*100;
+                        }
                     },
                     {
                         title: 'Identificación Censal',
@@ -126,7 +135,7 @@ export class FormSidebarComponent {
             {
                 title: 'Sección II',
                 subtitle: 'Condición de Ocupación',
-                type: 'collapsable',
+                type: 'group',
                 children: [
                     {
                         title: 'Datos Generales',
@@ -140,7 +149,7 @@ export class FormSidebarComponent {
             {
                 title: 'Sección III',
                 subtitle: 'Datos de la vivienda',
-                type: 'collapsable',
+                type: 'group',
                 children: [
                     {
                         title: 'Datos Generales',
@@ -151,14 +160,18 @@ export class FormSidebarComponent {
                         title: 'Materiales de la vivienda',
                         type: 'basic',
                         icon: 'heroicons_outline:user-circle',
-                        link: 'p2'
+                        link: 'p2',
+                        function: () => {
+                            this.qnum = 14
+                            this.qvalue = this.qnum/24*100;
+                        }
                     },
                 ],
             },
             {
                 title: 'Sección IV',
                 subtitle: 'Datos del Hogar',
-                type: 'collapsable',
+                type: 'group',
                 children: [
                     {
                         title: 'Datos Generales',
@@ -170,7 +183,11 @@ export class FormSidebarComponent {
                         title: 'Cuartos',
                         type: 'basic',
                         icon: 'heroicons_outline:user-circle',
-                        link: 'p3'
+                        link: 'p3',
+                        function: () => {
+                            this.qnum = 16
+                            this.qvalue = this.qnum/24*100;
+                        }
 
                     },
                     {
@@ -183,11 +200,21 @@ export class FormSidebarComponent {
             {
                 title: 'Finalizar Encuesta',
                 type: 'basic',
-                link: 'p4'
+                link: 'p4',
+                function: () => {
+                    this.qnum = 24
+                    this.qvalue = this.qnum/24*100;
+                }
                 //disabled: true,
             },
 
         ];
+        router.events.subscribe((val) => {
+            // see also 
+            console.log(this.router.url.slice(-1));
+            this.qnum = this.qnums[+this.router.url.slice(-1)];
+            this.qvalue = this.qnum/24*100
+        });
     }
 }
 

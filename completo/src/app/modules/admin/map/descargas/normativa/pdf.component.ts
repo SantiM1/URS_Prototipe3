@@ -4,12 +4,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FuseCardComponent } from '@fuse/components/card';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @Component({
     selector: 'app-pdf-viewer',
     templateUrl: './pdf.component.html',
-    imports: [PdfViewerModule,
+    imports: [
         FuseCardComponent,
         MatIconModule,
         MatInputModule,

@@ -18,7 +18,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FuseCardComponent } from '@fuse/components/card';
 import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
 import { TranslocoModule } from '@ngneat/transloco';
@@ -32,6 +32,7 @@ import { ApexOptions, NgApexchartsModule } from 'ng-apexcharts';
 import { Subject, takeUntil } from 'rxjs';
 import { FuseFullscreenComponent } from '@fuse/components/fullscreen';
 import { UserComponent } from 'app/layout/common/user/user.component';
+import { PricingSimpleComponent } from '../cards-landing/simple.component';
 
 
 @Component({
@@ -64,7 +65,8 @@ import { UserComponent } from 'app/layout/common/user/user.component';
         MessagesComponent,
         NotificationsComponent,
         UserComponent,
-        FuseFullscreenComponent
+        FuseFullscreenComponent,
+        PricingSimpleComponent
 
     ],
 })
@@ -85,6 +87,7 @@ export class LandingComponent implements OnInit, OnDestroy {
     constructor(
         private _landingService: LandingService,
         private _router: Router,
+        private _activatedRoute: ActivatedRoute,
         private _fuseNavigationService: FuseNavigationService
     ) {}
     
@@ -507,7 +510,15 @@ export class LandingComponent implements OnInit, OnDestroy {
     }
     forms(): void {
         this._router.navigate(['/portal/formulario-urs/p0']);
- 
+        this.closeNavigation('mainNavigation')
+    }
+    faqs(): void {
+        this._router.navigate(['portal/land/faqs']);
+        this.closeNavigation('mainNavigation')
+    }
+    soporte(): void {
+        this._router.navigate(['portal/land/soporte']);
+        this.closeNavigation('mainNavigation')
     }
     toggleNavigation(name: string): void {
         // Get the navigation
@@ -520,5 +531,14 @@ export class LandingComponent implements OnInit, OnDestroy {
             // Toggle the opened status
             navigation.toggle();
         }
+    }
+    closeNavigation(name: string): void {
+        // Get the navigation
+        const navigation =
+            this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>(
+                name
+            );
+        
+        navigation.opened = false
     }
 }

@@ -12,6 +12,7 @@ import { MatPseudoCheckboxModule } from '@angular/material/core';
 import { DeclaracionComponent } from '../declaracion/declaracion.component';
 import { MatChip } from '@angular/material/chips';
 import { InfoSidebarComponent } from './info-sidebar/info-sidebar.component';
+import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
 
 @Component({
     selector: 'formulario',
@@ -48,29 +49,21 @@ export class FormularioComponent
      */
     constructor(private _fuseMediaWatcherService: FuseMediaWatcherService,
         private router: Router,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private _fuseNavigationService: FuseNavigationService,
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
     // @ Lifecycle hooks
     // -----------------------------------------------------------------------------------------------------
     navFormNext():void{
-        /*this.pageIndex = this.pages.indexOf(this.currentScreen);
-        if(this.pageIndex < this.pages.length-1){
-            this.pageIndex += 1
-        }
-        this.router.navigate([this.pages[this.pageIndex]], { relativeTo: this.route });*/
         if(this.pageIndex < 4){
             this.pageIndex += 1
         }
         this.router.navigate([`portal/formulario-urs/p${this.pageIndex}`]);
     }
     navFormPrev():void{
-        /*this.pageIndex = this.pages.indexOf(this.currentScreen);
-        if(this.pageIndex > 0 ){
-            this.pageIndex -= 1
-        }
-        this.router.navigate([this.pages[this.pageIndex]], { relativeTo: this.route });*/
+       
         if(this.pageIndex > 0 ){
             this.pageIndex -= 1
         }
@@ -78,7 +71,18 @@ export class FormularioComponent
     }
     navInit(){
         this.router.navigate(['../land'], { relativeTo: this.route });
+        this.openNavigation('mainNavigation')
     }
+    openNavigation(name: string): void {
+            // Get the navigation
+            const navigation =
+                this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>(
+                    name
+                );
+            
+            navigation.opened = true
+        }
+    
 
     changeBtn(){
         if(this.pageIndex === 4){

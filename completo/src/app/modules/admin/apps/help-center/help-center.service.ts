@@ -11,7 +11,7 @@ import { Observable, ReplaySubject, tap } from 'rxjs';
 export class HelpCenterService {
     private _faqs: ReplaySubject<FaqCategory[]> = new ReplaySubject<
         FaqCategory[]
-    >(1);
+    >(1); 
     private _guides: ReplaySubject<GuideCategory[]> = new ReplaySubject<
         GuideCategory[]
     >(1);
