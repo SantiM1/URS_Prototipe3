@@ -1,0 +1,12 @@
+swiper-container {
+    overflow: visible !important; /* Allow hover effects to overflow the container */
+}
+
+swiper-slide {
+    overflow: visible !important; /* Allow individual slides to overflow */
+}
+
+.hover\:scale-110:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}

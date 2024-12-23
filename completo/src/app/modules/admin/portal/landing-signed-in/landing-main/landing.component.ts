@@ -80,7 +80,14 @@ export class LandingComponent implements OnInit, OnDestroy {
     data: any;
     selectedLanding: string = 'ACME Corp. Backend App';
     private _unsubscribeAll: Subject<any> = new Subject<any>();
-
+    likes = 4;
+    dislikes= 0;
+    addLike(){
+        this.likes += 1
+    }
+    addDislike(){
+        this.dislikes += 1
+    }
     /**
      * Constructor
      */

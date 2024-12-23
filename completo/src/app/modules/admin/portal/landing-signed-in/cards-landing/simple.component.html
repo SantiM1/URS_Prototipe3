@@ -1,106 +1,445 @@
 <div class="relative flex min-w-0 flex-auto flex-col overflow-hidden">
     <!-- Header & Cards -->
-    <div
-        class="relative overflow-hidden px-6 pb-12 "
-    >
+    <div class="relative overflow-hidden px-6 pb-12 ">
         <!-- Background -->
         <!-- prettier-ignore -->
-        <svg class="-z-1 absolute inset-0"
-             viewBox="0 0 960 540" width="100%" height="100%" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <svg class="-z-1 absolute inset-0" viewBox="0 0 960 540" width="100%" height="100%"
+            preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
             <g class="opacity-40 text-gray-200 dark:text-gray-800" fill="none" stroke="currentColor" stroke-width="100">
                 <circle r="234" cx="196" cy="23"></circle>
                 <circle r="234" cx="790" cy="491"></circle>
             </g>
         </svg>
-       
-        <div class="mt-10 flex justify-center sm:mt-20 max-h-160">
-            <div class="w-full">
-                <div
-                    class="grid grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-6 lg:grid-cols-3 lg:gap-x-0 lg:gap-y-0 relative px-30   "
-                >
+
+        <div class="relative ">
+            <swiper-container class="relative rounded-2xl px-20 " slides-per-view="3" loop="true" navigation="true"
+                pagination="true">
+                <swiper-slide class="relative z-10 hover:z-50 py-20   px-10">
                     <!-- Card 1 -->
                     <fuse-card
-                        class="relative max-w-sm flex-col items-center p-8 text-center sm:px-10 sm:py-12 md:max-w-none lg:rounded-none lg:rounded-l-2xl lg:transition-all lg:hover:rounded-2xl lg:hover:shadow-2xl lg:hover:scale-110 lg:z-10 lg:hover:z-50"
-                    >
-                        <div class="text-4xl font-bold leading-tight tracking-tight">
-                            Personal
+                        class="relative max-w-sm flex-col items-center p-8 text-center rounded-2xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+                        <div class="text-3xl font-bold leading-tight tracking-tight">
+                            Geoportal
                         </div>
-                       
-                        <!-- Features -->
-                        <div class="mt-8 space-y-2">
-                            <div><b>10</b> projects</div>
-                            <div><b>5GB</b> storage</div>
-                            <div>Analytics</div>
-                            <div>Free mobile app</div>
-                            <div>Access to forums</div>
+
+                        <div class="mt-6">
+                            <!-- Icons and Stats -->
+                            <div class="flex justify-around mb-6">
+                                <div class="text-center">
+                                    <span class="material-icons text-blue-500 text-4xl">map</span>
+                                    <div class="mt-2 text-sm">Mapas</div>
+                                    <div class="font-bold text-lg">120</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-green-500 text-4xl">place</span>
+                                    <div class="mt-2 text-sm">Marcadores</div>
+                                    <div class="font-bold text-lg">87</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-red-500 text-4xl">layers</span>
+                                    <div class="mt-2 text-sm">Capas</div>
+                                    <div class="font-bold text-lg">32</div>
+                                </div>
+                            </div>
+
+                            <!-- Placeholder Table -->
+                            <table class="w-full border-collapse border border-gray-300 text-sm text-left">
+                                <thead>
+                                    <tr>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Regiones</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Área (km²)</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Población</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">North</td>
+                                        <td class="border border-gray-300 px-2 py-1">1,245</td>
+                                        <td class="border border-gray-300 px-2 py-1">87,560</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">South</td>
+                                        <td class="border border-gray-300 px-2 py-1">3,720</td>
+                                        <td class="border border-gray-300 px-2 py-1">125,890</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">East</td>
+                                        <td class="border border-gray-300 px-2 py-1">2,310</td>
+                                        <td class="border border-gray-300 px-2 py-1">65,430</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <!-- CTA -->
-                        <button
-                            class="fuse-mat-button-large mt-10 w-full"
-                            mat-stroked-button
-                            [color]="'primary'"
-                        >
-                            Start your trial
-                        </button>
                     </fuse-card>
-        
+
+                </swiper-slide>
+                <swiper-slide class="relative z-10 hover:z-50  py-20   px-10">
                     <!-- Card 2 -->
                     <fuse-card
-                        class="relative max-w-sm flex-col items-center p-8 text-center sm:px-10 sm:py-12 md:max-w-none lg:rounded-none lg:transition-all lg:hover:rounded-2xl lg:hover:shadow-2xl lg:hover:scale-105 lg:z-10 lg:hover:z-50"
-                    >
-                       
-                        <div class="mt-8 text-4xl font-bold leading-tight tracking-tight">
-                            Premium
+                        class="relative max-w-sm flex-col items-center p-8 text-center rounded-2xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+
+                        <div class="text-3xl font-bold leading-tight tracking-tight">
+                            Solicitar Certificado
                         </div>
-                        
-                        <!-- Features -->
-                        <div class="mt-8 space-y-2">
-                            <div><b>Unlimited</b> projects</div>
-                            <div><b>Unlimited</b> storage</div>
-                            <div>Custom domains</div>
-                            <div>Bulk editing</div>
-                            <div>12 / 5 support</div>
+                        <!-- Content -->
+                        <div class="mt-6">
+                            <!-- Icons and Stats -->
+                            <div class="flex justify-around mb-6">
+                                <div class="text-center">
+                                    <span class="material-icons text-blue-500 text-4xl">verified</span>
+                                    <div class="mt-2 text-sm">Enviados</div>
+                                    <div class="font-bold text-lg">530</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-green-500 text-4xl">hourglass_empty</span>
+                                    <div class="mt-2 text-sm">En progreso</div>
+                                    <div class="font-bold text-lg">45</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-red-500 text-4xl">cancel</span>
+                                    <div class="mt-2 text-sm">Rechazados</div>
+                                    <div class="font-bold text-lg">12</div>
+                                </div>
+                            </div>
+
+                            <!-- Placeholder Table -->
+                            <table class="w-full border-collapse border border-gray-300 text-sm text-left">
+                                <thead>
+                                    <tr>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Certificado</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Tipo</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Cert-001</td>
+                                        <td class="border border-gray-300 px-2 py-1">Actualización</td>
+                                        <td class="border border-gray-300 px-2 py-1">Enviados</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Cert-089</td>
+                                        <td class="border border-gray-300 px-2 py-1">Ingreso</td>
+                                        <td class="border border-gray-300 px-2 py-1">En progreso</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Cert-034</td>
+                                        <td class="border border-gray-300 px-2 py-1">Reclamo</td>
+                                        <td class="border border-gray-300 px-2 py-1">Rechazados</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <!-- CTA -->
-                        <button
-                            class="fuse-mat-button-large mt-10 w-full"
-                            mat-flat-button
-                            [color]="'primary'"
-                        >
-                            Start your trial
-                        </button>
-                    </fuse-card>
-        
+
+
+                    </fuse-card></swiper-slide>
+                <swiper-slide class="relative z-10 hover:z-50  py-20   px-10">
+
                     <!-- Card 3 -->
                     <fuse-card
-                    class="relative max-w-sm flex-col items-center p-8 text-center sm:px-10 sm:py-12 md:max-w-none lg:rounded-none lg:rounded-r-2xl lg:transition-all  lg:hover:rounded-2xl lg:hover:shadow-2xl lg:hover:scale-110 lg:z-10 lg:hover:z-50"
-                    >
-                        <div class="text-4xl font-bold leading-tight tracking-tight">
-                            Enterprise
+                        class="relative max-w-sm flex-col items-center p-8 text-center rounded-2xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+                        <div class="text-3xl font-bold leading-tight tracking-tight">
+                            Portal Estadístico
                         </div>
-                        
-                        <!-- Features -->
-                        <div class="mt-8 space-y-2">
-                            <div><b>Dedicated</b> hardware</div>
-                            <div><b>%99.9</b> uptime</div>
-                            <div>Advanced analytics</div>
-                            <div>3rd party integrations</div>
-                            <div>24 / 7 support</div>
+                        <!-- Content -->
+                        <div class="mt-6">
+                            <!-- Icons and Stats -->
+                            <div class="flex justify-around mb-6">
+                                <div class="text-center">
+                                    <span class="material-icons text-blue-500 text-4xl">bar_chart</span>
+                                    <div class="mt-2 text-sm">Reports</div>
+                                    <div class="font-bold text-lg">154</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-green-500 text-4xl">insert_chart</span>
+                                    <div class="mt-2 text-sm">Activo</div>
+                                    <div class="font-bold text-lg">87</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-red-500 text-4xl">pie_chart</span>
+                                    <div class="mt-2 text-sm">Archivado</div>
+                                    <div class="font-bold text-lg">32</div>
+                                </div>
+                            </div>
+
+                            <!-- Placeholder Table -->
+                            <table class="w-full border-collapse border border-gray-300 text-sm text-left">
+                                <thead>
+                                    <tr>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Categoria</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Cantidad</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Porcentaje</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Población</td>
+                                        <td class="border border-gray-300 px-2 py-1">12,540</td>
+                                        <td class="border border-gray-300 px-2 py-1">15%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Economy</td>
+                                        <td class="border border-gray-300 px-2 py-1">3,870</td>
+                                        <td class="border border-gray-300 px-2 py-1">3%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Health</td>
+                                        <td class="border border-gray-300 px-2 py-1">1,230</td>
+                                        <td class="border border-gray-300 px-2 py-1">2%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <!-- CTA -->
-                        <button
-                            class="fuse-mat-button-large mt-10 w-full"
-                            mat-stroked-button
-                            [color]="'primary'"
-                        >
-                            Start your trial
-                        </button>
+
+                    </fuse-card></swiper-slide>
+                <swiper-slide class="relative z-10 hover:z-50  py-20   px-10">
+
+                    <!-- Card 4 -->
+                    <fuse-card
+                        class="relative max-w-sm flex-col items-center p-8 text-center rounded-2xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+                        <div class="text-3xl font-bold leading-tight tracking-tight">
+                            Portal Estadístico
+                        </div>
+                        <!-- Content -->
+    <div class="mt-6">
+        <!-- Icons and Stats -->
+        <div class="flex justify-around mb-6">
+            <div class="text-center">
+                <span class="material-icons text-blue-500 text-4xl">bar_chart</span>
+                <div class="mt-2 text-sm">Reports</div>
+                <div class="font-bold text-lg">154</div>
+            </div>
+            <div class="text-center">
+                <span class="material-icons text-green-500 text-4xl">insert_chart</span>
+                <div class="mt-2 text-sm">Activo</div>
+                <div class="font-bold text-lg">87</div>
+            </div>
+            <div class="text-center">
+                <span class="material-icons text-red-500 text-4xl">pie_chart</span>
+                <div class="mt-2 text-sm">Archivado</div>
+                <div class="font-bold text-lg">32</div>
+            </div>
+        </div>
+
+        <!-- Placeholder Table -->
+         <!-- Placeholder Table -->
+         <table class="w-full border-collapse border border-gray-300 text-sm text-left">
+            <thead>
+                <tr>
+                    <th class="border border-gray-300 px-2 py-1 bg-gray-200">Categoria</th>
+                    <th class="border border-gray-300 px-2 py-1 bg-gray-200">Cantidad</th>
+                    <th class="border border-gray-300 px-2 py-1 bg-gray-200">Porcentaje</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border border-gray-300 px-2 py-1">Población</td>
+                    <td class="border border-gray-300 px-2 py-1">12,540</td>
+                    <td class="border border-gray-300 px-2 py-1">15%</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 px-2 py-1">Economy</td>
+                    <td class="border border-gray-300 px-2 py-1">3,870</td>
+                    <td class="border border-gray-300 px-2 py-1">3%</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-300 px-2 py-1">Health</td>
+                    <td class="border border-gray-300 px-2 py-1">1,230</td>
+                    <td class="border border-gray-300 px-2 py-1">2%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+                    </fuse-card></swiper-slide>
+            </swiper-container>
+        </div>
+        <div class="mt-10 flex justify-center  max-h-160">
+            <div class="w-full">
+                <div
+                    class="grid grid-cols-1 gap-y-6 md:grid-cols-2 md:gap-x-6 lg:grid-cols-3 lg:gap-x-0 lg:gap-y-0 relative px-30   ">
+
+                    <!-- Card 1 -->
+                    <fuse-card
+                        class="relative max-w-sm flex-col items-center p-8 text-center sm:px-10 sm:py-12 md:max-w-none lg:rounded-none lg:rounded-l-2xl lg:transition-all lg:hover:rounded-2xl lg:hover:shadow-2xl lg:hover:scale-110 lg:z-10 lg:hover:z-50">
+                        <div class="text-3xl font-bold leading-tight tracking-tight">
+                            Geoportal
+                        </div>
+
+                        <!-- Content -->
+                        <div class="mt-6">
+                            <!-- Icons and Stats -->
+                            <div class="flex justify-around mb-6">
+                                <div class="text-center">
+                                    <span class="material-icons text-blue-500 text-4xl">map</span>
+                                    <div class="mt-2 text-sm">Mapas</div>
+                                    <div class="font-bold text-lg">120</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-green-500 text-4xl">place</span>
+                                    <div class="mt-2 text-sm">Marcadores</div>
+                                    <div class="font-bold text-lg">87</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-red-500 text-4xl">layers</span>
+                                    <div class="mt-2 text-sm">Capas</div>
+                                    <div class="font-bold text-lg">32</div>
+                                </div>
+                            </div>
+
+                            <!-- Placeholder Table -->
+                            <table class="w-full border-collapse border border-gray-300 text-sm text-left">
+                                <thead>
+                                    <tr>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Regiones</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Área (km²)</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Población</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">North</td>
+                                        <td class="border border-gray-300 px-2 py-1">1,245</td>
+                                        <td class="border border-gray-300 px-2 py-1">87,560</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">South</td>
+                                        <td class="border border-gray-300 px-2 py-1">3,720</td>
+                                        <td class="border border-gray-300 px-2 py-1">125,890</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">East</td>
+                                        <td class="border border-gray-300 px-2 py-1">2,310</td>
+                                        <td class="border border-gray-300 px-2 py-1">65,430</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
                     </fuse-card>
+
+                    <!-- Card 2 -->
+                    <fuse-card
+                        class="relative max-w-sm flex-col items-center p-8 text-center sm:px-10 sm:py-12 md:max-w-none lg:rounded-none lg:transition-all lg:hover:rounded-2xl lg:hover:shadow-2xl lg:hover:scale-105 lg:z-10 lg:hover:z-50">
+
+                        <div class="text-3xl font-bold leading-tight tracking-tight">
+                            Solicitar Certificado
+                        </div>
+                        <!-- Content -->
+                        <div class="mt-6">
+                            <!-- Icons and Stats -->
+                            <div class="flex justify-around mb-6">
+                                <div class="text-center">
+                                    <span class="material-icons text-blue-500 text-4xl">verified</span>
+                                    <div class="mt-2 text-sm">Enviados</div>
+                                    <div class="font-bold text-lg">530</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-green-500 text-4xl">hourglass_empty</span>
+                                    <div class="mt-2 text-sm">En progreso</div>
+                                    <div class="font-bold text-lg">45</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-red-500 text-4xl">cancel</span>
+                                    <div class="mt-2 text-sm">Rechazados</div>
+                                    <div class="font-bold text-lg">12</div>
+                                </div>
+                            </div>
+
+                            <!-- Placeholder Table -->
+                            <table class="w-full border-collapse border border-gray-300 text-sm text-left">
+                                <thead>
+                                    <tr>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Certificado</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Tipo</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Cert-001</td>
+                                        <td class="border border-gray-300 px-2 py-1">Actualización</td>
+                                        <td class="border border-gray-300 px-2 py-1">Enviados</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Cert-089</td>
+                                        <td class="border border-gray-300 px-2 py-1">Ingreso</td>
+                                        <td class="border border-gray-300 px-2 py-1">En progreso</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Cert-034</td>
+                                        <td class="border border-gray-300 px-2 py-1">Reclamo</td>
+                                        <td class="border border-gray-300 px-2 py-1">Rechazados</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </fuse-card>
+
+                    <!-- Card 3 -->
+                    <fuse-card
+                        class="relative max-w-sm flex-col items-center p-8 text-center sm:px-10 sm:py-12 md:max-w-none lg:rounded-none lg:rounded-r-2xl lg:transition-all  lg:hover:rounded-2xl lg:hover:shadow-2xl lg:hover:scale-110 lg:z-10 lg:hover:z-50">
+                        <div class="text-3xl font-bold leading-tight tracking-tight">
+                            Portal Estadístico
+                        </div>
+                        <!-- Content -->
+                        <div class="mt-6">
+                            <!-- Icons and Stats -->
+                            <div class="flex justify-around mb-6">
+                                <div class="text-center">
+                                    <span class="material-icons text-blue-500 text-4xl">bar_chart</span>
+                                    <div class="mt-2 text-sm">Reports</div>
+                                    <div class="font-bold text-lg">154</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-green-500 text-4xl">insert_chart</span>
+                                    <div class="mt-2 text-sm">Activo</div>
+                                    <div class="font-bold text-lg">87</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-red-500 text-4xl">pie_chart</span>
+                                    <div class="mt-2 text-sm">Archivado</div>
+                                    <div class="font-bold text-lg">32</div>
+                                </div>
+                            </div>
+
+                             <!-- Placeholder Table -->
+                             <table class="w-full border-collapse border border-gray-300 text-sm text-left">
+                                <thead>
+                                    <tr>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Categoria</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Cantidad</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Porcentaje</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Población</td>
+                                        <td class="border border-gray-300 px-2 py-1">12,540</td>
+                                        <td class="border border-gray-300 px-2 py-1">15%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Economy</td>
+                                        <td class="border border-gray-300 px-2 py-1">3,870</td>
+                                        <td class="border border-gray-300 px-2 py-1">3%</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Health</td>
+                                        <td class="border border-gray-300 px-2 py-1">1,230</td>
+                                        <td class="border border-gray-300 px-2 py-1">2%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fuse-card>
+
+
                 </div>
             </div>
         </div>
-        
-        
+
+
     </div>
 
 </div>

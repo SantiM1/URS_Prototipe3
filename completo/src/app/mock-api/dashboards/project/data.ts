@@ -24,28 +24,28 @@ export const project = {
                 'needs-triage': 5,
             },
         },
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        labels: ['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom'],
         series: {
             'this-week': [
                 {
-                    name: 'New issues',
+                    name: 'Nuevo',
                     type: 'line',
                     data: [42, 28, 43, 34, 20, 25, 22],
                 },
                 {
-                    name: 'Closed issues',
+                    name: 'Cerrado',
                     type: 'column',
                     data: [11, 10, 8, 11, 8, 10, 17],
                 },
             ],
             'last-week': [
                 {
-                    name: 'New issues',
+                    name: 'Nuevo',
                     type: 'line',
                     data: [37, 32, 39, 27, 18, 24, 20],
                 },
                 {
-                    name: 'Closed issues',
+                    name: 'Cerrado',
                     type: 'column',
                     data: [9, 8, 10, 12, 7, 11, 15],
                 },
