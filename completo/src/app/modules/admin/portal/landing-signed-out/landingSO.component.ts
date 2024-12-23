@@ -32,6 +32,7 @@ import { ApexOptions, NgApexchartsModule } from 'ng-apexcharts';
 import { Subject, takeUntil } from 'rxjs';
 import { FuseFullscreenComponent } from '@fuse/components/fullscreen';
 import { UserComponent } from 'app/layout/common/user/user.component';
+import { PricingSimpleComponent } from '../landing-signed-in/cards-landing/simple.component';
 
 
 @Component({
@@ -64,7 +65,8 @@ import { UserComponent } from 'app/layout/common/user/user.component';
         MessagesComponent,
         NotificationsComponent,
         UserComponent,
-        FuseFullscreenComponent
+        FuseFullscreenComponent,
+        PricingSimpleComponent
 
     ],
 })
@@ -79,6 +81,14 @@ export class LandingSOComponent implements OnInit, OnDestroy {
     selectedLandingSO: string = 'ACME Corp. Backend App';
     private _unsubscribeAll: Subject<any> = new Subject<any>();
 
+    likes = 4;
+    dislikes= 0;
+    addLike(){
+        this.likes += 1
+    }
+    addDislike(){
+        this.dislikes += 1
+    }
     /**
      * Constructor
      */
@@ -509,6 +519,14 @@ export class LandingSOComponent implements OnInit, OnDestroy {
         this._router.navigate(['/portal/autoregistro']);
  
     }
+    faqs(): void {
+        this._router.navigate(['portal/land/faqs']);
+        this.closeNavigation('mainNavigation')
+    }
+    soporte(): void {
+        this._router.navigate(['portal/land/soporte']);
+        this.closeNavigation('mainNavigation')
+    }
     toggleNavigation(name: string): void {
         // Get the navigation
         const navigation =
@@ -520,5 +538,14 @@ export class LandingSOComponent implements OnInit, OnDestroy {
             // Toggle the opened status
             navigation.toggle();
         }
+    }
+    closeNavigation(name: string): void {
+        // Get the navigation
+        const navigation =
+            this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>(
+                name
+            );
+        
+        navigation.opened = false
     }
 }
