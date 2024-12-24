@@ -108,7 +108,7 @@ export class UserService {
      */
     getFilters(): Observable<any> {
         return this._httpClient
-            .get<MailFilter[]>('api/apps/mailbox/filters')
+            .get<MailFilter[]>('api/apps/mailboxNotif/filters')
             .pipe(
                 tap((response: any) => {
                     this._filters.next(response);
@@ -121,7 +121,7 @@ export class UserService {
      */
     getFolders(): Observable<any> {
         return this._httpClient
-            .get<MailFolder[]>('api/apps/mailbox/folders')
+            .get<MailFolder[]>('api/apps/mailboxNotif/folders')
             .pipe(
                 tap((response: any) => {
                     this._folders.next(response);
@@ -134,7 +134,7 @@ export class UserService {
      */
     getLabels(): Observable<any> {
         return this._httpClient
-            .get<MailLabel[]>('api/apps/mailbox/labels')
+            .get<MailLabel[]>('api/apps/mailboxNotif/labels')
             .pipe(
                 tap((response: any) => {
                     this._labels.next(response);
@@ -150,7 +150,7 @@ export class UserService {
         this._mailsLoading.next(true);
 
         return this._httpClient
-            .get<Mail[]>('api/apps/mailbox/mails', {
+            .get<Mail[]>('api/apps/mailboxNotif/mails', {
                 params: {
                     filter,
                     page,
@@ -187,7 +187,7 @@ export class UserService {
         this._mailsLoading.next(true);
 
         return this._httpClient
-            .get<Mail[]>('api/apps/mailbox/mails', {
+            .get<Mail[]>('api/apps/mailboxNotif/mails', {
                 params: {
                     folder,
                     page,
@@ -224,7 +224,7 @@ export class UserService {
         this._mailsLoading.next(true);
 
         return this._httpClient
-            .get<Mail[]>('api/apps/mailbox/mails', {
+            .get<Mail[]>('api/apps/mailboxNotif/mails', {
                 params: {
                     label,
                     page,
@@ -289,7 +289,7 @@ export class UserService {
      */
     updateMail(id: string, mail: Mail): Observable<any> {
         return this._httpClient
-            .patch('api/apps/mailbox/mail', {
+            .patch('api/apps/mailboxNotif/mail', {
                 id,
                 mail,
             })
@@ -324,7 +324,7 @@ export class UserService {
             take(1),
             switchMap((labels) =>
                 this._httpClient
-                    .post<MailLabel>('api/apps/mailbox/label', { label })
+                    .post<MailLabel>('api/apps/mailboxNotif/label', { label })
                     .pipe(
                         map((newLabel) => {
                             // Update the labels with the new label
@@ -349,7 +349,7 @@ export class UserService {
             take(1),
             switchMap((labels) =>
                 this._httpClient
-                    .patch<MailLabel>('api/apps/mailbox/label', {
+                    .patch<MailLabel>('api/apps/mailboxNotif/label', {
                         id,
                         label,
                     })
@@ -384,7 +384,7 @@ export class UserService {
             take(1),
             switchMap((labels) =>
                 this._httpClient
-                    .delete('api/apps/mailbox/label', { params: { id } })
+                    .delete('api/apps/mailboxNotif/label', { params: { id } })
                     .pipe(
                         map((isDeleted: any) => {
                             // Find the index of the deleted label within the labels

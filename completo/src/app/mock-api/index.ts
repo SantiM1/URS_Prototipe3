@@ -27,6 +27,7 @@ import { FasesMockApi } from './apps/fases/api';
 import { DispositivosMockApi } from './apps/dispositivos/api';
 import { PlanificacionMockApi } from './apps/planificacion/api';
 import { Messages2MockApi } from './common/messages2/api';
+import { MailboxNotifMockApi } from './apps/mailboxNotif/api';
 
 export const mockApiServices = [
     AcademyMockApi,
@@ -47,6 +48,7 @@ export const mockApiServices = [
     HelpCenterMockApi,
     IconsMockApi,
     MailboxMockApi,
+    MailboxNotifMockApi,
     MessagesMockApi,
     Messages2MockApi,
     NavigationMockApi,

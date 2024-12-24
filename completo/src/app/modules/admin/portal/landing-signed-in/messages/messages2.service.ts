@@ -4,7 +4,7 @@ import { Message } from 'app/modules/admin/portal/landing-signed-in/messages/mes
 import { map, Observable, ReplaySubject, switchMap, take, tap } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class MessagesService {
+export class Messages2Service {
     private _messages: ReplaySubject<Message[]> = new ReplaySubject<Message[]>(
         1
     );
@@ -33,7 +33,7 @@ export class MessagesService {
      * Get all messages
      */
     getAll(): Observable<Message[]> {
-        console.log('Enter1')
+        console.log('Enter2')
         return this._httpClient.get<Message[]>('api/common/messages2').pipe(
             tap((messages) => {
                 console.log(messages)

@@ -6,11 +6,11 @@ import {
     labels as labelsData,
     mails as mailsData,
     settings as settingsData,
-} from 'app/mock-api/apps/mailbox/data';
+} from 'app/mock-api/apps/mailboxNotif/data';
 import { assign, cloneDeep } from 'lodash-es';
 
 @Injectable({ providedIn: 'root' })
-export class MailboxMockApi {
+export class MailboxNotifMockApi {
     private _filters: any[] = filtersData;
     private _folders: any[] = foldersData;
     private _mails: any[] = mailsData;
@@ -37,14 +37,14 @@ export class MailboxMockApi {
         // @ Settings - GET
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onGet('api/apps/mailbox/settings')
+            .onGet('api/apps/mailboxNotif/settings')
             .reply(() => [200, cloneDeep(this._settings)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Settings - PATCH
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onPatch('api/apps/mailbox/settings')
+            .onPatch('api/apps/mailboxNotif/settings')
             .reply(({ request }) => {
                 // Get the settings
                 const settings = cloneDeep(request.body.settings);
@@ -59,7 +59,7 @@ export class MailboxMockApi {
         // -----------------------------------------------------------------------------------------------------
         // @ Folders - GET
         // -----------------------------------------------------------------------------------------------------
-        this._fuseMockApiService.onGet('api/apps/mailbox/folders').reply(() => {
+        this._fuseMockApiService.onGet('api/apps/mailboxNotif/folders').reply(() => {
             let count = 0;
 
             // Iterate through the folders
@@ -108,21 +108,21 @@ export class MailboxMockApi {
         // @ Filters - GET
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onGet('api/apps/mailbox/filters')
+            .onGet('api/apps/mailboxNotif/filters')
             .reply(() => [200, cloneDeep(this._filters)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Labels - GET
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onGet('api/apps/mailbox/labels')
+            .onGet('api/apps/mailboxNotif/labels')
             .reply(() => [200, cloneDeep(this._labels)]);
 
         // -----------------------------------------------------------------------------------------------------
         // @ Labels - POST
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onPost('api/apps/mailbox/label')
+            .onPost('api/apps/mailboxNotif/label')
             .reply(({ request }) => {
                 // Get the label
                 const label = cloneDeep(request.body.label);
@@ -165,7 +165,7 @@ export class MailboxMockApi {
         // @ Labels - PATCH
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onPatch('api/apps/mailbox/label')
+            .onPatch('api/apps/mailboxNotif/label')
             .reply(({ request }) => {
                 // Get the id and label
                 const id = request.body.id;
@@ -200,7 +200,7 @@ export class MailboxMockApi {
         // @ Labels - DELETE
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onDelete('api/apps/mailbox/label')
+            .onDelete('api/apps/mailboxNotif/label')
             .reply(({ request }) => {
                 // Get the id
                 const id = request.params.get('id');
@@ -227,7 +227,7 @@ export class MailboxMockApi {
         // @ Mails - GET
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onGet('api/apps/mailbox/mails', 625)
+            .onGet('api/apps/mailboxNotif/mails', 625)
             .reply(({ request }) => {
                 // First, decide if mails are requested by folder, filter or label
                 const byFolder = request.params.get('folder');
@@ -328,7 +328,7 @@ export class MailboxMockApi {
         // @ Mail - GET
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onGet('api/apps/mailbox/mail')
+            .onGet('api/apps/mailboxNotif/mail')
             .reply(({ request }) => {
                 // Get the id from the params
                 const id = request.params.get('id');
@@ -346,7 +346,7 @@ export class MailboxMockApi {
         // @ Mail - PATCH
         // -----------------------------------------------------------------------------------------------------
         this._fuseMockApiService
-            .onPatch('api/apps/mailbox/mail')
+            .onPatch('api/apps/mailboxNotif/mail')
             .reply(({ request }) => {
                 // Get the id and mail
                 const id = request.body.id;

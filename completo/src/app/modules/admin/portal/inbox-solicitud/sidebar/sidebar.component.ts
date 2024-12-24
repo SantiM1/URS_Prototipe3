@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 import {
     FuseNavigationItem,
     FuseNavigationService,
@@ -42,13 +43,16 @@ export class UserSidebarComponent implements OnInit, OnDestroy {
     constructor(
         private _inboxService: UserService,
         private _matDialog: MatDialog,
-        private _fuseNavigationService: FuseNavigationService
+        private _fuseNavigationService: FuseNavigationService,
+        private router:Router
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
     // @ Lifecycle hooks
     // -----------------------------------------------------------------------------------------------------
-
+    navPortal(){
+        this.router.navigate(['/portal/land'])
+    }
     /**
      * On init
      */

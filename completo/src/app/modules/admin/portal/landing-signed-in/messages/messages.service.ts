@@ -33,10 +33,8 @@ export class MessagesService {
      * Get all messages
      */
     getAll(): Observable<Message[]> {
-        console.log('Enter1')
         return this._httpClient.get<Message[]>('api/common/messages').pipe(
             tap((messages) => {
-                console.log(messages)
                 this._messages.next(messages);
             })
         );

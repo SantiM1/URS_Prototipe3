@@ -1,8 +1,19 @@
 <div class="flex w-full flex-auto flex-col">
+
+   
     <!-- Title -->
     <div
         class="mx-6 mb-8 mt-10 text-4xl font-extrabold leading-none tracking-tight"
     >
+     <!-- Sidebar toggle button -->
+     <button
+     mat-icon-button
+     (click)="navPortal()"
+ >
+     <mat-icon
+         [svgIcon]="'heroicons_outline:arrow-left'"
+     ></mat-icon>
+ </button>
         Bandeja
     </div>
 

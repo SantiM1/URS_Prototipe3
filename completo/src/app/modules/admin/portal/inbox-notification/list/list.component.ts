@@ -10,7 +10,7 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { UserComponent } from 'app/modules/admin/portal/inbox-notification/inbox-notification.component';
 import { UserService } from 'app/modules/admin/portal/inbox-notification/inbox-notification.service';
 import {
@@ -49,7 +49,8 @@ export class UserListComponent implements OnInit, OnDestroy {
      */
     constructor(
         public inboxComponent: UserComponent,
-        private _inboxService: UserService
+        private _inboxService: UserService,
+        private router: Router,
     ) {}
 
     // -----------------------------------------------------------------------------------------------------
@@ -59,6 +60,10 @@ export class UserListComponent implements OnInit, OnDestroy {
     /**
      * On init
      */
+
+    navPortal(){
+        this.router.navigate(['/portal/land'])
+    }
     ngOnInit(): void {
         // Category
         this._inboxService.category$

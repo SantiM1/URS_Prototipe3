@@ -16,7 +16,7 @@ import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Router, RouterLink } from '@angular/router';
-import { MessagesService } from 'app/modules/admin/portal/landing-signed-in/messages/messages2.service';
+import { Messages2Service } from 'app/modules/admin/portal/landing-signed-in/messages/messages2.service';
 import { Message } from 'app/modules/admin/portal/landing-signed-in/messages/messages.types';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -51,7 +51,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
      */
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,
-        private _messagesService: MessagesService,
+        private _messagesService: Messages2Service,
         private _overlay: Overlay,
         private _viewContainerRef: ViewContainerRef,
         private _router: Router,
@@ -231,6 +231,6 @@ export class NotificationsComponent implements OnInit, OnDestroy {
         this.unreadCount = count;
     }
     goToInbox(){
-        this._router.navigate(['/portal/notifications']);
+        this._router.navigate(['/portal/notificaciones']);
     }
 }
