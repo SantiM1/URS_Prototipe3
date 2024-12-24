@@ -66,15 +66,25 @@
                     <mat-error> Este campo es obligatorio </mat-error>
                 </mat-form-field>
 
-                <!-- Actions -->
-                <div class="mt-1.5 inline-flex w-full items-center justify-between">
-                    <mat-checkbox class="-ml-2" [color]="'primary'" [formControlName]="'rememberMe'">
-                        Recuerdame
+                
+                <div class="border rounded bg-gray-25 mt-1.5 inline-flex w-full  justify-between items-end">
+                        
+                    <mat-checkbox
+                        class="px-2 h-14 -ml-2"
+                        [color]="'primary'"
+                        [formControlName]="'agreements'"
+                    >
+                        <span>No soy un robot</span>
+                        
                     </mat-checkbox>
-                    <a class="text-md font-medium text-primary-500 hover:underline"
-                        [routerLink]="['/forgot-password']">¿Olvidó su contraseña?
-                    </a>
+                    <div class="w-14">
+                        <img src="\images\logo\RecaptchaLogo.svg" />
+                    </div>
                 </div>
+                
+                
+
+                
 
                 <!-- Submit button -->
                 <button class="fuse-mat-button-large mt-6 w-full" mat-flat-button [color]="'primary'"
@@ -86,6 +96,17 @@
                     <mat-progress-spinner [diameter]="24" [mode]="'indeterminate'"></mat-progress-spinner>
                     }
                 </button>
+                <!-- Actions -->
+                <div class="mt-1.5 inline-flex w-full items-center justify-between">
+                    <mat-checkbox class="-ml-2" [color]="'primary'" [formControlName]="'rememberMe'">
+                        Recuérdame
+                    </mat-checkbox>
+                    <a class="text-md font-medium text-primary-500 hover:underline"
+                        [routerLink]="['/forgot-password']">¿Olvidó su contraseña?
+                    </a>
+                </div>
+
+               
 
                 <!-- Separator -->
                 <div class="mt-8 flex items-center">

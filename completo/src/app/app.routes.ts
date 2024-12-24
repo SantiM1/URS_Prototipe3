@@ -100,7 +100,7 @@ export const appRoutes: Route[] = [
             {path: 'portal', children: [
                 {path: 'land-so', loadChildren: () => import('app/modules/admin/portal/landing-signed-out/landingSO.routes')},
                 {path: 'land', loadChildren: () => import('app/modules/admin/portal/landing-signed-in/landing.routes')},
-                {path: 'notifications', loadChildren: () => import('app/modules/admin/portal/inbox-notification/inbox-notification.routes')},
+                {path: 'notificaciones', loadChildren: () => import('app/modules/admin/portal/inbox-notification/inbox-notification.routes')},
                 {path: 'formulario-urs', loadChildren: () => import('app/modules/admin/portal/forms/portal.routes')},
                 {path: 'solicitudes', loadChildren: () => import('app/modules/admin/portal/inbox-solicitud/inbox-solicitud.routes')},
                 {path: 'usuario-autentificado', loadChildren: () => import('app/modules/admin/portal/activities/activities.routes')},

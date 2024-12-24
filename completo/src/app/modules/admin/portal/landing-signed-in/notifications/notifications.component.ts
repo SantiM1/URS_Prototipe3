@@ -16,7 +16,7 @@ import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Router, RouterLink } from '@angular/router';
-import { MessagesService } from 'app/modules/admin/portal/landing-signed-in/messages/messages.service';
+import { MessagesService } from 'app/modules/admin/portal/landing-signed-in/messages/messages2.service';
 import { Message } from 'app/modules/admin/portal/landing-signed-in/messages/messages.types';
 import { Subject, takeUntil } from 'rxjs';
 

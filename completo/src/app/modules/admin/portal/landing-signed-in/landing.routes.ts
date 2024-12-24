@@ -5,6 +5,7 @@ import { LandingService } from 'app/modules/admin/portal/landing-signed-in/landi
 import { LandingSupportComponent } from './support-landing/support.component';
 import { LandingFaqsComponent } from './faqs-landing/faqs.component';
 import { LandingPlace } from './landing-place.component';
+import { ServiciosSupportComponent } from './support-servicios/support-servicios.component';
 
 export default [
     {
@@ -25,6 +26,10 @@ export default [
             {
                 path:'faqs',
                 component: LandingFaqsComponent
+            },
+            {
+                path:'servicios',
+                component: ServiciosSupportComponent
             }
 
         ]
