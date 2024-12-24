@@ -7,12 +7,12 @@ import {
     UrlMatchResult,
     UrlSegment,
 } from '@angular/router';
-import { UserDetailsComponent } from 'app/modules/admin/portal/inbox-solititud/details/details.component';
-import { UserEmptyDetailsComponent } from 'app/modules/admin/portal/inbox-solititud/empty-details/empty-details.component';
-import { UserListComponent } from 'app/modules/admin/portal/inbox-solititud/list/list.component';
-import { UserComponent } from 'app/modules/admin/portal/inbox-solititud/inbox.component';
-import { UserService } from 'app/modules/admin/portal/inbox-solititud/inbox.service';
-import { UserSettingsComponent } from 'app/modules/admin/portal/inbox-solititud/settings/settings.component';
+import { UserDetailsComponent } from 'app/modules/admin/portal/inbox-solicitud/details/details.component';
+import { UserEmptyDetailsComponent } from 'app/modules/admin/portal/inbox-solicitud/empty-details/empty-details.component';
+import { UserListComponent } from 'app/modules/admin/portal/inbox-solicitud/list/list.component';
+import { UserComponent } from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.component';
+import { UserService } from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.service';
+import { UserSettingsComponent } from 'app/modules/admin/portal/inbox-solicitud/settings/settings.component';
 import { isEqual } from 'lodash-es';
 import { catchError, finalize, forkJoin, throwError } from 'rxjs';
 

@@ -7,14 +7,14 @@ import {
     FuseNavigationService,
     FuseVerticalNavigationComponent,
 } from '@fuse/components/navigation';
-import { UserComposeComponent } from 'app/modules/admin/portal/inbox-solititud/compose/compose.component';
-import { labelColorDefs } from 'app/modules/admin/portal/inbox-solititud/inbox.constants';
-import { UserService } from 'app/modules/admin/portal/inbox-solititud/inbox.service';
+import { UserComposeComponent } from 'app/modules/admin/portal/inbox-solicitud/compose/compose.component';
+import { labelColorDefs } from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.constants';
+import { UserService } from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.service';
 import {
     MailFilter,
     MailFolder,
     MailLabel,
-} from 'app/modules/admin/portal/inbox-solititud/inbox.types';
+} from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.types';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({

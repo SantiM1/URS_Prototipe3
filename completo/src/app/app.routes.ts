@@ -102,7 +102,7 @@ export const appRoutes: Route[] = [
                 {path: 'land', loadChildren: () => import('app/modules/admin/portal/landing-signed-in/landing.routes')},
                 {path: 'notifications', loadChildren: () => import('app/modules/admin/portal/inbox-notification/inbox-notification.routes')},
                 {path: 'formulario-urs', loadChildren: () => import('app/modules/admin/portal/forms/portal.routes')},
-                {path: 'inbox', loadChildren: () => import('app/modules/admin/portal/inbox-solititud/inbox.routes')},
+                {path: 'solicitudes', loadChildren: () => import('app/modules/admin/portal/inbox-solicitud/inbox-solicitud.routes')},
                 {path: 'usuario-autentificado', loadChildren: () => import('app/modules/admin/portal/activities/activities.routes')},
                 {path: 'autoregistro', loadChildren: () => import('app/modules/admin/portal/sign-up/sign-up.routes')},
             ]},

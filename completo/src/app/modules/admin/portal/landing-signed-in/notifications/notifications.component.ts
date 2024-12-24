@@ -16,16 +16,16 @@ import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Router, RouterLink } from '@angular/router';
-import { MessagesService } from 'app/layout/common/messages/messages.service';
-import { Message } from 'app/layout/common/messages/messages.types';
+import { MessagesService } from 'app/modules/admin/portal/landing-signed-in/messages/messages.service';
+import { Message } from 'app/modules/admin/portal/landing-signed-in/messages/messages.types';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
-    selector: 'messages',
-    templateUrl: './messages.component.html',
+    selector: 'notifications',
+    templateUrl: './notifications.component.html',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    exportAs: 'messages',
+    exportAs: 'notifications',
     standalone: true,
     imports: [
         MatButtonModule,
@@ -37,7 +37,7 @@ import { Subject, takeUntil } from 'rxjs';
         DatePipe,
     ],
 })
-export class MessagesComponent implements OnInit, OnDestroy {
+export class NotificationsComponent implements OnInit, OnDestroy {
     @ViewChild('messagesOrigin') private _messagesOrigin: MatButton;
     @ViewChild('messagesPanel') private _messagesPanel: TemplateRef<any>;
 
@@ -231,6 +231,6 @@ export class MessagesComponent implements OnInit, OnDestroy {
         this.unreadCount = count;
     }
     goToInbox(){
-        this._router.navigate(['/portal/inbox']);
+        this._router.navigate(['/portal/notifications']);
     }
 }

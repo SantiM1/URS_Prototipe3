@@ -6,7 +6,7 @@ import {
     MailFilter,
     MailFolder,
     MailLabel,
-} from 'app/modules/admin/portal/inbox-solititud/inbox.types';
+} from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.types';
 import {
     BehaviorSubject,
     Observable,

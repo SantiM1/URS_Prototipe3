@@ -27,13 +27,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { FuseScrollResetDirective } from '@fuse/directives/scroll-reset';
 import { FuseFindByKeyPipe } from '@fuse/pipes/find-by-key/find-by-key.pipe';
-import { labelColorDefs } from 'app/modules/admin/portal/inbox-solititud/inbox.constants';
-import { UserService } from 'app/modules/admin/portal/inbox-solititud/inbox.service';
+import { labelColorDefs } from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.constants';
+import { UserService } from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.service';
 import {
     Mail,
     MailFolder,
     MailLabel,
-} from 'app/modules/admin/portal/inbox-solititud/inbox.types';
+} from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.types';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({

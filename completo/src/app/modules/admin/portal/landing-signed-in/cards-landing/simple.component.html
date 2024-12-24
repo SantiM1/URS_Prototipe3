@@ -15,65 +15,6 @@
             <!--Swiper Cards-->
             <swiper-container class="relative rounded-tl-3xl px-40 " slides-per-view="3" loop="true" navigation="true"
                 pagination="true">
-                <swiper-slide class="relative z-10 hover:z-50 py-20   px-4">
-                    <!-- Card 1 -->
-                    <fuse-card
-                        class="relative max-w-sm flex-col items-center p-8 text-center rounded-tl-3xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
-                        <div class="text-3xl font-bold leading-tight tracking-tight">
-                            Geoportal
-                        </div>
-
-                        <div class="mt-6">
-                            <!-- Icons and Stats -->
-                            <div class="flex justify-around mb-6">
-                                <div class="text-center">
-                                    <span class="material-icons text-blue-500 text-4xl">map</span>
-                                    <div class="mt-2 text-sm">Mapas</div>
-                                    <div class="font-bold text-lg">120</div>
-                                </div>
-                                <div class="text-center">
-                                    <span class="material-icons text-green-500 text-4xl">place</span>
-                                    <div class="mt-2 text-sm">Marcadores</div>
-                                    <div class="font-bold text-lg">87</div>
-                                </div>
-                                <div class="text-center">
-                                    <span class="material-icons text-red-500 text-4xl">layers</span>
-                                    <div class="mt-2 text-sm">Capas</div>
-                                    <div class="font-bold text-lg">32</div>
-                                </div>
-                            </div>
-
-                            <!-- Placeholder Table -->
-                            <table class="w-full border-collapse border border-gray-300 text-sm text-left">
-                                <thead>
-                                    <tr>
-                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Regiones</th>
-                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Área (km²)</th>
-                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Población</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="border border-gray-300 px-2 py-1">North</td>
-                                        <td class="border border-gray-300 px-2 py-1">1,245</td>
-                                        <td class="border border-gray-300 px-2 py-1">87,560</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="border border-gray-300 px-2 py-1">South</td>
-                                        <td class="border border-gray-300 px-2 py-1">3,720</td>
-                                        <td class="border border-gray-300 px-2 py-1">125,890</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="border border-gray-300 px-2 py-1">East</td>
-                                        <td class="border border-gray-300 px-2 py-1">2,310</td>
-                                        <td class="border border-gray-300 px-2 py-1">65,430</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </fuse-card>
-
-                </swiper-slide>
                 <swiper-slide class="relative z-10 hover:z-50  py-20   px-4">
                     <!-- Card 2 -->
                     <fuse-card
@@ -133,7 +74,129 @@
                         </div>
 
 
-                    </fuse-card></swiper-slide>
+                    </fuse-card>
+                </swiper-slide>
+                <swiper-slide class="relative z-10 hover:z-50  py-20   px-4">
+                    <!-- Card 2 -->
+                    <fuse-card
+                        class="relative max-w-sm flex-col items-center p-8 text-center rounded-tl-3xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+
+                        <div class="text-3xl font-bold leading-tight tracking-tight">
+                            Solicitar Ingreso/Actualización 
+                        </div>
+                        <!-- Content -->
+                        <div class="mt-6">
+                            <!-- Icons and Stats -->
+                            <div class="flex justify-around mb-6">
+                                <div class="text-center">
+                                    <span class="material-icons text-blue-500 text-4xl">verified</span>
+                                    <div class="mt-2 text-sm">Enviados</div>
+                                    <div class="font-bold text-lg">530</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-green-500 text-4xl">hourglass_empty</span>
+                                    <div class="mt-2 text-sm">En progreso</div>
+                                    <div class="font-bold text-lg">45</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-red-500 text-4xl">cancel</span>
+                                    <div class="mt-2 text-sm">Rechazados</div>
+                                    <div class="font-bold text-lg">12</div>
+                                </div>
+                            </div>
+
+                            <!-- Placeholder Table -->
+                            <table class="w-full border-collapse border border-gray-300 text-sm text-left">
+                                <thead>
+                                    <tr>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Certificado</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Tipo</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Cert-001</td>
+                                        <td class="border border-gray-300 px-2 py-1">Actualización</td>
+                                        <td class="border border-gray-300 px-2 py-1">Enviados</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Cert-089</td>
+                                        <td class="border border-gray-300 px-2 py-1">Ingreso</td>
+                                        <td class="border border-gray-300 px-2 py-1">En progreso</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">Cert-034</td>
+                                        <td class="border border-gray-300 px-2 py-1">Reclamo</td>
+                                        <td class="border border-gray-300 px-2 py-1">Rechazados</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </fuse-card>
+                </swiper-slide>
+                <swiper-slide class="relative z-10 hover:z-50 py-20   px-4">
+                    <!-- Card 1 -->
+                    <fuse-card
+                        class="relative max-w-sm flex-col items-center p-8 text-center rounded-tl-3xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+                        <div class="text-3xl font-bold leading-tight tracking-tight">
+                            Geoportal
+                        </div>
+
+                        <div class="mt-6">
+                            <!-- Icons and Stats -->
+                            <div class="flex justify-around mb-6">
+                                <div class="text-center">
+                                    <span class="material-icons text-blue-500 text-4xl">map</span>
+                                    <div class="mt-2 text-sm">Mapas</div>
+                                    <div class="font-bold text-lg">120</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-green-500 text-4xl">place</span>
+                                    <div class="mt-2 text-sm">Marcadores</div>
+                                    <div class="font-bold text-lg">87</div>
+                                </div>
+                                <div class="text-center">
+                                    <span class="material-icons text-red-500 text-4xl">layers</span>
+                                    <div class="mt-2 text-sm">Capas</div>
+                                    <div class="font-bold text-lg">32</div>
+                                </div>
+                            </div>
+
+                            <!-- Placeholder Table -->
+                            <table class="w-full border-collapse border border-gray-300 text-sm text-left">
+                                <thead>
+                                    <tr>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Regiones</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Área (km²)</th>
+                                        <th class="border border-gray-300 px-2 py-1 bg-gray-200">Población</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">North</td>
+                                        <td class="border border-gray-300 px-2 py-1">1,245</td>
+                                        <td class="border border-gray-300 px-2 py-1">87,560</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">South</td>
+                                        <td class="border border-gray-300 px-2 py-1">3,720</td>
+                                        <td class="border border-gray-300 px-2 py-1">125,890</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border border-gray-300 px-2 py-1">East</td>
+                                        <td class="border border-gray-300 px-2 py-1">2,310</td>
+                                        <td class="border border-gray-300 px-2 py-1">65,430</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fuse-card>
+
+                </swiper-slide>
+                
                 <swiper-slide class="relative z-10 hover:z-50  py-20   px-4">
 
                     <!-- Card 3 -->

@@ -11,12 +11,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { UserComponent } from 'app/modules/admin/portal/inbox-solititud/inbox.component';
-import { UserService } from 'app/modules/admin/portal/inbox-solititud/inbox.service';
+import { UserComponent } from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.component';
+import { UserService } from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.service';
 import {
     Mail,
     MailCategory,
-} from 'app/modules/admin/portal/inbox-solititud/inbox.types';
+} from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.types';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({

@@ -14,13 +14,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { UserComponent } from 'app/modules/admin/portal/inbox-solititud/inbox.component';
+import { UserComponent } from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.component';
 import {
     labelColorDefs,
     labelColors,
-} from 'app/modules/admin/portal/inbox-solititud/inbox.constants';
-import { UserService } from 'app/modules/admin/portal/inbox-solititud/inbox.service';
-import { MailLabel } from 'app/modules/admin/portal/inbox-solititud/inbox.types';
+} from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.constants';
+import { UserService } from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.service';
+import { MailLabel } from 'app/modules/admin/portal/inbox-solicitud/inbox-solicitud.types';
 import { debounceTime, take } from 'rxjs';
 
 @Component({

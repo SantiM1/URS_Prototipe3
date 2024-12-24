@@ -23,7 +23,7 @@ import { FuseCardComponent } from '@fuse/components/card';
 import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
 import { TranslocoModule } from '@ngneat/transloco';
 import { LanguagesComponent } from 'app/layout/common/languages/languages.component';
-import { MessagesComponent } from 'app/layout/common/messages/messages.component';
+import { MessagesComponent } from 'app/modules/admin/portal/landing-signed-in/messages/messages.component';
 import { NotificationsComponent } from 'app/layout/common/notifications/notifications.component';
 import { SearchComponent } from 'app/layout/common/search/search.component';
 import { ShortcutsComponent } from 'app/layout/common/shortcuts/shortcuts.component';

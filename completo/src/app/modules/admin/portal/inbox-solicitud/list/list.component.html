@@ -6,17 +6,26 @@
         >
             <!-- Header -->
             <div
-                class="relative flex h-16 flex-0 items-center justify-between border-b bg-gray-50 px-14 dark:bg-transparent"
+                class="relative flex h-16 flex-0 items-center justify-between border-b bg-gray-50 px-4 dark:bg-transparent"
             >
                 <div class="flex items-center">
+                    <!-- Sidebar toggle button -->
+                    <button
+                        mat-icon-button
+                        (click)="inboxComponent.drawer.toggle()"
+                    >
+                        <mat-icon
+                            [svgIcon]="'heroicons_outline:bars-3'"
+                        ></mat-icon>
+                    </button>
                     <!-- Category name -->
                     <div class="ml-2 font-bold uppercase">
-                        Notificaciones
+                        Solicitudes
                     </div>
                 </div>
 
                 <!-- Pagination -->
-                <div class="flex items-center px-4">
+                <div class="flex items-center">
                     <!-- Info -->
                     <div class="mr-3 flex items-center text-md font-medium">
                         <span>{{ pagination.startIndex + 1 }}</span>
@@ -73,12 +82,12 @@
             </div>
 
             <!-- Mail list -->
-            <div class="overflow-y-auto px-10" #mailList>
+            <div class="overflow-y-auto" #mailList>
                 <!-- Item loop -->
                 @for (mail of mails; track trackByFn(i, mail); let i = $index) {
                     <!-- Item -->
                     <a
-                        class="relative m-4 rounded-2xl flex  border hover:bg-hover "
+                        class="relative flex border-t hover:bg-hover first:border-0"
                         [routerLink]="[mail.id]"
                         (click)="onMailSelected(mail)"
                     >

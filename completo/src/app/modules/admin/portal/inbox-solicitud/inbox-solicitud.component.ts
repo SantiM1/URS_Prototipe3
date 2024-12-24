@@ -9,13 +9,14 @@ import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
 import { RouterOutlet } from '@angular/router';
 import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 import { Subject, takeUntil } from 'rxjs';
+import { UserSidebarComponent } from './sidebar/sidebar.component';
 
 @Component({
     selector: 'inbox',
-    templateUrl: './inbox.component.html',
+    templateUrl: './inbox-solicitud.component.html',
     encapsulation: ViewEncapsulation.None,
     standalone: true,
-    imports: [MatSidenavModule, RouterOutlet],
+    imports: [MatSidenavModule, UserSidebarComponent, RouterOutlet],
 })
 export class UserComponent implements OnInit, OnDestroy {
     @ViewChild('drawer') drawer: MatDrawer;

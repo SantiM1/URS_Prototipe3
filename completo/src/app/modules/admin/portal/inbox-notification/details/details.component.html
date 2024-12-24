@@ -173,16 +173,7 @@
                 <div class="flex flex-col px-6 py-8">
                     <!-- Header -->
                     <div class="flex w-full items-center">
-                        <!-- Sender avatar -->
-                        <div
-                            class="flex h-10 w-10 flex-0 items-center justify-center overflow-hidden rounded-full"
-                        >
-                            <img
-                                class="h-full w-full"
-                                [src]="mail.from.avatar"
-                                alt="User avatar"
-                            />
-                        </div>
+                       
 
                         <!-- Info -->
                         <div class="ml-4 min-w-0">
@@ -420,58 +411,7 @@
                 >
                 <div class="font-bold"> Nota:  </div>
 Cuando usted abre su notificación, se considera que ha sido debidamente notificado de su trámite. Esta acción implica que ha recibido la información relacionada con su solicitud o proceso en curso, y que está al tanto de los detalles pertinentes de la gestión que está realizando.
-                    <!-- Buttons 
-                    @if (!replyFormActive) {
-                        <div class="-m-2 flex w-full flex-wrap">
-                            <!-- Reply --
-                            <button
-                                class="m-2"
-                                mat-stroked-button
-                                [color]="'primary'"
-                                (click)="reply()"
-                            >
-                                <mat-icon
-                                    class="icon-size-5"
-                                    [svgIcon]="
-                                        'heroicons_solid:pencil'
-                                    "
-                                ></mat-icon>
-                                <span class="ml-2">Actualizar información</span>
-                            </button>
-                            <!-- Reply all --
-                            <button
-                                class="m-2"
-                                mat-stroked-button
-                                [color]="'primary'"
-                                (click)="replyAll()"
-                            >
-                                <mat-icon
-                                    class="icon-size-5"
-                                    [svgIcon]="
-                                        'heroicons_solid:arrow-uturn-left'
-                                    "
-                                ></mat-icon>
-                                <span class="ml-2">Reply All</span>
-                            </button>
-                            <!-- Forward --
-                            <button
-                                class="m-2"
-                                mat-stroked-button
-                                [color]="'primary'"
-                                (click)="forward()"
-                            >
-                                <mat-icon
-                                    class="icon-size-5"
-                                    [color]="'primary'"
-                                    [svgIcon]="
-                                        'heroicons_solid:chevron-double-right'
-                                    "
-                                ></mat-icon>
-                                <span class="ml-2">Forward</span>
-                            </button>
-                        </div>
-                    }-->
-
+                   
                     <!-- Reply form -->
                     @if (replyFormActive) {
                         <div class="flex w-full flex-col" #replyForm>
