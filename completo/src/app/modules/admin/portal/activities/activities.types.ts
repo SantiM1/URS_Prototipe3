@@ -1,8 +1,8 @@
 export interface Activity {
     id: string;
-    icon?: string;
-    image?: string;
-    description?: string;
+    title: string
+    icon: string;
+    benefits: string[];
     date: string;
     extraContent?: string;
     linkedContent?: string;

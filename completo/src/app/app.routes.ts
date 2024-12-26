@@ -103,8 +103,9 @@ export const appRoutes: Route[] = [
                 {path: 'notificaciones', loadChildren: () => import('app/modules/admin/portal/inbox-notification/inbox-notification.routes')},
                 {path: 'formulario-urs', loadChildren: () => import('app/modules/admin/portal/forms/portal.routes')},
                 {path: 'solicitudes', loadChildren: () => import('app/modules/admin/portal/inbox-solicitud/inbox-solicitud.routes')},
-                {path: 'usuario-autentificado', loadChildren: () => import('app/modules/admin/portal/activities/activities.routes')},
+                {path: 'seguimiento-nominal', loadChildren: () => import('app/modules/admin/portal/activities/activities.routes')},
                 {path: 'autoregistro', loadChildren: () => import('app/modules/admin/portal/sign-up/sign-up.routes')},
+                
             ]},
             // Apps
             {path: 'apps', children: [

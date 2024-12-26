@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { Routes } from '@angular/router';
-import { ActivitiesComponent } from 'app/modules/admin/pages/activities/activities.component';
+import { ActivitiesComponent } from 'app/modules/admin/portal/activities/activities.component';
 import { ActivitiesService } from 'app/modules/admin/pages/activities/activities.service';
 
 export default [
