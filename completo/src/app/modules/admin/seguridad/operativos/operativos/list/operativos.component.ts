@@ -124,6 +124,11 @@ export class OperativoListComponent
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     private _fuseAlertService = inject(FuseAlertService);
     crearSegment:boolean=false;
+    isChecked=false;
+
+    toggleCheck(){
+        this.isChecked = !this.isChecked;
+    }
     /**
      * Constructor
      */

@@ -5,6 +5,12 @@ import { FuseMediaWatcherService } from '@fuse/services/media-watcher/media-watc
 import { Subject, takeUntil } from 'rxjs';
 import { MatIcon } from '@angular/material/icon';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { FuseFullscreenComponent } from '@fuse/components/fullscreen';
+import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
+import { NotificationsComponent } from 'app/layout/common/notifications/notifications.component';
+import { SearchComponent } from 'app/layout/common/search/search.component';
+import { UserComponent } from 'app/layout/common/user/user.component';
+import { MessagesComponent } from '../../portal/landing-signed-in/messages/messages.component';
 
 
 @Component({
@@ -16,6 +22,11 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
     MatIcon,
     MatSidenavModule,
     RouterModule,
+    UserComponent,
+    NotificationsComponent,
+    MessagesComponent,
+    SearchComponent,
+    FuseFullscreenComponent,
   
 ],
   templateUrl: './operativos.component.html',
@@ -43,8 +54,21 @@ export class OperativoComponent {
     private _changeDetectorRef: ChangeDetectorRef,
     private router: Router,
     private route: ActivatedRoute,    
+    private _fuseNavigationService: FuseNavigationService,
 
   ){}
+  toggleNavigation(name: string): void {
+    // Get the navigation
+    const navigation =
+        this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>(
+            name
+        );
+
+    if (navigation) {
+        // Toggle the opened status
+        navigation.toggle();
+    }
+}
 
   async ngOnInit(){
     /* Escuchar el parámetro 'uuid_fp' desde cualquier ruta hija, en este caso se obtendra de datos generales que es la unica a la que se llama agregando el uuid

@@ -41,7 +41,13 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { ActivatedRoute, Router } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseAlertService } from '@fuse/components/alert';
+import { FuseFullscreenComponent } from '@fuse/components/fullscreen';
+import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
+import { SearchComponent } from 'app/layout/common/search/search.component';
+import { UserComponent } from 'app/layout/common/user/user.component';
+import { MessagesComponent } from 'app/modules/admin/portal/landing-signed-in/messages/messages.component';
+import { NotificationsComponent } from 'app/modules/admin/portal/landing-signed-in/notifications/notifications.component';
 import { UsuarioService } from 'app/modules/admin/seguridad/usuarios/usuarios.service';
 import {
     UsuarioPagination,
@@ -75,7 +81,7 @@ import {
                 }
 
                 @screen lg {
-                    grid-template-columns: 10px 35px auto 150px 200px 150px 50px 150px;
+                    grid-template-columns: 10px 35px auto 150px 200px 150px 100px 150px;
                 }
             }
         `,
@@ -105,6 +111,12 @@ import {
         MatRippleModule,
         AsyncPipe,
         CurrencyPipe,
+        UserComponent,
+        NotificationsComponent,
+        MessagesComponent,
+        SearchComponent,
+        FuseFullscreenComponent,
+
     ],
 })
 export class UsuarioListComponent
@@ -122,6 +134,7 @@ export class UsuarioListComponent
     searchInputControl: UntypedFormControl = new UntypedFormControl();
     selectedProduct: UsuarioProduct | null = null;
     selectedProductForm: UntypedFormGroup;
+    isChecked = false;
 
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     private _fuseAlertService = inject(FuseAlertService);
@@ -136,9 +149,24 @@ export class UsuarioListComponent
         private _formBuilder: UntypedFormBuilder,
         private _usuarioService: UsuarioService,
         private router: Router,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private _fuseNavigationService: FuseNavigationService,
     ) {}
+
     
+    toggleNavigation(name: string): void {
+        // Get the navigation
+        const navigation =
+            this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>(
+                name
+            );
+
+        if (navigation) {
+            // Toggle the opened status
+            navigation.toggle();
+        }
+    }
+
     crearUsuario() {
        this.crearSegment = true
        //this.router.navigate(['crear'], { relativeTo: this.route });
@@ -492,4 +520,9 @@ export class UsuarioListComponent
     trackByFn(index: number, item: any): any {
         return item.id || index;
     }
+
+    toggleCheck(){
+        this.isChecked = !this.isChecked;
+    }
+    
 }

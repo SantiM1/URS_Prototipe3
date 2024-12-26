@@ -3,8 +3,11 @@
     <div class="flex-auto p-6 sm:p-10">
         <!-- CONTENT GOES HERE -->
         <!-- Header -->
-        <div
-            class="relative flex flex-0 flex-col border-b px-6 py-8 sm:flex-row sm:items-center sm:justify-between md:px-8">
+        <!-- Title -->
+        <div class="flex px-6 space-x-4 text-4xl font-extrabold tracking-tight">
+            <div>Dispositivos</div>
+        </div>
+        <div class="relative flex border-b px-6 py-8 sm:flex-row sm:items-center sm:justify-between md:px-8">
             <!-- Loader -->
             @if (isLoading) {
             <div class="absolute inset-x-0 bottom-0">
@@ -12,27 +15,28 @@
             </div>
             }
 
-            <!-- Title -->
-            <div class="text-4xl font-extrabold tracking-tight">Dispositivos
-                <div class="flex">
-                    <img class="w-7" src="images/logo/PDF.svg" alt="Logo image" />
-                    <img class="w-7" src="images/logo/Excel.svg" alt="Logo image" />
-                </div>
-            </div>
+
+
             <!-- Actions -->
-            <div class="mt-6 flex shrink-0 items-center sm:ml-4 sm:mt-0">
+            <div class="flex flex-grow justify-between  ">
                 <!-- Search -->
-                <mat-form-field class="fuse-mat-dense fuse-mat-rounded min-w-64" [subscriptSizing]="'dynamic'">
-                    <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
-                    <input matInput [formControl]="searchInputControl" [autocomplete]="'off'"
-                        [placeholder]="'Buscar Registro'" />
-                </mat-form-field>
+                <div class="flex space-x-2">
+                    <mat-form-field class="fuse-mat-dense fuse-mat-rounded min-w-64" [subscriptSizing]="'dynamic'">
+                        <mat-icon class="icon-size-5" matPrefix
+                            [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
+                        <input matInput [formControl]="searchInputControl" [autocomplete]="'off'"
+                            [placeholder]="'Buscar Fase'" />
+                    </mat-form-field>
+                    <img class="w-7" src="images/logo/PDF.svg" alt="Logo image" />
+                    <img class="w-8" src="images/logo/Excel.svg" alt="Logo image" />
+                </div>
                 <!-- Add product button -->
-                <button class="ml-4" mat-flat-button [color]="'primary'" (click)="crearRegistro()">
+                <button class="sm:ml-4" mat-flat-button [color]="'primary'" (click)="crearRegistro()">
                     <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
-                    <span class="ml-2 mr-1">Añadir</span>
+                    <span class="ml-2 mr-1 text-xl">Añadir</span>
                 </button>
             </div>
+
 
         </div>
         <div class="container">
@@ -43,8 +47,8 @@
                 <div class="flex-auto p-6 sm:p-10">
                     <!-- CONTENT GOES HERE -->
                     <div class="container">
-                        <h1 class="text-4xl font-bold pb-3 text-contrast">Crear Registro</h1>
-                        <h3 class="pb-3 text-contrast">Campos con símbolo (*) son obligatorios </h3>
+                        <h1 class="text-4xl font-bold pb-3 text-primary">Crear Registro</h1>
+                        <h3 class="pb-3 text-primary">Campos con símbolo (*) son obligatorios </h3>
                         <mat-expansion-panel [expanded]="crearSegment">
                             <mat-expansion-panel-header>
                                 <mat-panel-title class="font-bold text-black">Datos Generales</mat-panel-title>
@@ -54,67 +58,180 @@
                                 <mat-tab label="Registro Individual">
                                     <section class="registro-ind-section">
                                         <div class="container">
-                                            <form class="mt-8">
-                                                <div class="grid gap-4 grid-cols-1 md:grid-cols-8">
+                                            <form class="">
+                                                <div class="grid gap-4 grid-row-1 ">
                                                     <!-- Name -->
-                                                    <mat-form-field class="col-span-4">
-                                                        <mat-label>Institución*</mat-label>
-                                                        <input matInput />
-                                                    </mat-form-field>
-                                                    <mat-form-field class="col-span-4">
-                                                        <mat-label>Modelo*</mat-label>
-                                                        <input matInput />
-                                                    </mat-form-field>
-                                                    <mat-form-field class="col-span-4">
-                                                        <mat-label>Tipo de dispositivo*</mat-label>
-                                                        <input matInput />
-                                                    </mat-form-field>
-                                                    <mat-form-field class="col-span-4">
-                                                        <mat-label>Especificaciones Técnicas*</mat-label>
-                                                        <input matInput />
-                                                    </mat-form-field>
-                                                    <mat-form-field class="col-span-4">
-                                                        <mat-label>Estado del dispositivo*</mat-label>
-                                                        <input matInput />
-                                                    </mat-form-field>
-                                                    <mat-form-field class="col-span-2">
-                                                        <mat-label>Número de serie*</mat-label>
-                                                        <input matInput />
-                                                    </mat-form-field>
-                                                    <mat-form-field class="col-span-1">
-                                                        <mat-label>Prefijo*</mat-label>
-                                                        <input matInput />
-                                                    </mat-form-field>
-                                                    <mat-form-field class="col-span-1">
-                                                        <mat-label>Imei*</mat-label>
-                                                        <input matInput />
-                                                    </mat-form-field>
-                                                    <mat-form-field class="col-span-4">
-                                                        <mat-label>Descripción*</mat-label>
-                                                        <input matInput />
-                                                    </mat-form-field>
-                                                    <!-- Email -->
-                                                    <mat-form-field class="col-span-2">
-                                                        <mat-label>Observación del dispositivo</mat-label>
-                                                        <input matInput />
-                                                    </mat-form-field>
-                                                    <!--Telephone and Celular-->
-                                                    <mat-form-field class="col-span-2">
-                                                        <mat-label>Marca*</mat-label>
-                                                        <input matInput />
-                                                    </mat-form-field>
-                                                    <mat-form-field class="col-span-2">
-                                                        <mat-label>Estado Asignado</mat-label>
-                                                        <input matInput />
-                                                    </mat-form-field>
-                                                    <mat-form-field class="col-span-7">
-                                                        <mat-label>Observación*</mat-label>
-                                                        <input matInput />
-                                                    </mat-form-field>
-                                                    <mat-slide-toggle class="col-span-1" [color]="'primary'">
-                                                        Estado*
+                                                    <div class="flex items-center gap-2">
+                                                        <label
+                                                            class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                            Institución
+                                                        </label>
+                                                        <span class=" text-red-500 text-3xl ml-1">*</span>
+                                                        <mat-form-field class="flex-1">
 
-                                                    </mat-slide-toggle>
+                                                            <input matInput />
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <!-- Modelo -->
+                                                    <div class="flex items-center gap-2">
+                                                        <label
+                                                            class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                            Modelo
+                                                        </label>
+                                                        <span class=" text-red-500 text-3xl ml-1">*</span>
+                                                        <mat-form-field class="flex-1">
+
+                                                            <input matInput />
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <!-- Tipo de dispositivo -->
+                                                    <div class="flex items-center gap-2">
+                                                        <label
+                                                            class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                            Tipo de dispositivo
+                                                        </label>
+                                                        <span class=" text-red-500 text-3xl ml-1">*</span>
+                                                        <mat-form-field class="flex-1">
+
+                                                            <input matInput />
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <!-- Especificaciones Técnicas -->
+                                                    <div class="flex items-center gap-2">
+                                                        <label
+                                                            class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                            Especificaciones Técnicas
+                                                        </label>
+                                                        <span class=" text-red-500 text-3xl ml-1">*</span>
+                                                        <mat-form-field class="flex-1">
+
+                                                            <input matInput />
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <!-- Estado del dispositivo -->
+                                                    <div class="flex items-center gap-2">
+                                                        <label
+                                                            class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                            Estado del dispositivo
+                                                        </label>
+                                                        <span class=" text-red-500 text-3xl ml-1">*</span>
+                                                        <mat-form-field class="flex-1">
+
+                                                            <input matInput />
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <!-- Número de serie -->
+                                                    <div class="flex items-center gap-2">
+                                                        <label
+                                                            class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                            Número de serie
+                                                        </label>
+                                                        <span class=" text-red-500 text-3xl ml-1">*</span>
+                                                        <mat-form-field class="flex-1">
+
+                                                            <input matInput />
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <!-- Prefijo -->
+                                                    <div class="flex items-center gap-2">
+                                                        <label
+                                                            class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                            Prefijo
+                                                        </label>
+                                                        <span class=" text-red-500 text-3xl ml-1">*</span>
+                                                        <mat-form-field class="flex-1">
+
+                                                            <input matInput />
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <!-- Imei -->
+                                                    <div class="flex items-center gap-2">
+                                                        <label
+                                                            class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                            Imei
+                                                        </label>
+                                                        <span class=" text-red-500 text-3xl ml-1">*</span>
+                                                        <mat-form-field class="flex-1">
+
+                                                            <input matInput />
+                                                        </mat-form-field>
+                                                    </div>
+
+                                                    <!-- Descripción -->
+                                                    <div class="flex items-center gap-2">
+                                                        <label
+                                                            class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                            Descripción
+                                                        </label>
+                                                        <span class=" text-red-500 text-3xl ml-1">*</span>
+                                                        <mat-form-field class="flex-1">
+
+                                                            <input matInput />
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <!-- Observación del dispositivo -->
+                                                    <div class="flex items-center gap-2">
+                                                        <label
+                                                            class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                            Observación del dispositivo
+                                                        </label>
+                                                        <span class=" text-red-500 text-3xl ml-1">*</span>
+                                                        <mat-form-field class="flex-1">
+
+                                                            <input matInput />
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <!-- Marca -->
+                                                    <div class="flex items-center gap-2">
+                                                        <label
+                                                            class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                            Marca
+                                                        </label>
+                                                        <span class=" text-red-500 text-3xl ml-1">*</span>
+                                                        <mat-form-field class="flex-1">
+
+                                                            <input matInput />
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <!-- Estado Asignado -->
+                                                    <div class="flex items-center gap-2">
+                                                        <label
+                                                            class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                            Estado Asignado
+                                                        </label>
+                                                        <span class=" text-red-500 text-3xl ml-1">*</span>
+                                                        <mat-form-field class="flex-1">
+
+                                                            <input matInput />
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <!-- Observación -->
+                                                    <div class="flex items-center gap-2">
+                                                        <label
+                                                            class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                            Observación
+                                                        </label>
+                                                        <span class=" text-red-500 text-3xl ml-1">*</span>
+                                                        <mat-form-field class="flex-1">
+
+                                                            <input matInput />
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <!-- Estado -->
+                                                    <div class="flex py-5 items-center gap-2">
+                                                        <label
+                                                            class="w-1/6 text-left text-lg font-semibold flex items-center">
+                                                            Estado
+                                                        </label>
+                                                        <mat-slide-toggle class="flex-1 px-6" [color]="'primary'"
+                                                            (click)="toggleCheck()">
+                                                            {{
+                                                            isChecked === true
+                                                            ? 'Activo'
+                                                            : 'Inactivo'
+                                                            }}
+                                                        </mat-slide-toggle>
+                                                    </div>
 
 
                                                 </div>
@@ -139,7 +256,8 @@
                                 <mat-tab label="Registro Masivo">
                                     <section class="registro-mas-section">
                                         <div class="flex w-full items-center justify-end border-t px-8 py-4">
-                                            Formato para registro <img class="w-8 p-1" src="images/logo/Excel.svg" alt="Logo image" />
+                                            Formato para registro <img class="w-8 p-1" src="images/logo/Excel.svg"
+                                                alt="Logo image" />
                                         </div>
                                         <div class="flex w-full items-center justify-end border-t px-8 py-4">
 
@@ -155,8 +273,10 @@
                                                                 d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                                                         </svg>
                                                         <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
-                                                                class="font-semibold">Presionar para subir </span>o arrastrar y soltar el archivo</p>
-                                                        <p class="text-xs text-gray-500 dark:text-gray-400">.CSV, .XLS o .XLSX </p>
+                                                                class="font-semibold">Presionar para subir </span>o
+                                                            arrastrar y soltar el archivo</p>
+                                                        <p class="text-xs text-gray-500 dark:text-gray-400">.CSV, .XLS o
+                                                            .XLSX </p>
                                                     </div>
                                                     <input id="dropzone-file" type="file" class="hidden" />
                                                 </label>
@@ -180,7 +300,8 @@
                                 <mat-tab label="Transferencia Masiva">
                                     <section class="registro-mas-section">
                                         <div class="flex w-full items-center justify-end border-t px-8 py-4">
-                                            Formato para transferir dispositivos <img class="w-8 p-1" src="images/logo/Excel.svg" alt="Logo image" />
+                                            Formato para transferir dispositivos <img class="w-8 p-1"
+                                                src="images/logo/Excel.svg" alt="Logo image" />
                                         </div>
                                         <div class="flex w-full items-center justify-end border-t px-8 py-4">
 
@@ -196,8 +317,10 @@
                                                                 d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                                                         </svg>
                                                         <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
-                                                                class="font-semibold">Presionar para subir </span>o arrastrar y soltar el archivo</p>
-                                                        <p class="text-xs text-gray-500 dark:text-gray-400">.CSV, .XLS o .XLSX </p>
+                                                                class="font-semibold">Presionar para subir </span>o
+                                                            arrastrar y soltar el archivo</p>
+                                                        <p class="text-xs text-gray-500 dark:text-gray-400">.CSV, .XLS o
+                                                            .XLSX </p>
                                                     </div>
                                                     <input id="dropzone-file" type="file" class="hidden" />
                                                 </label>
@@ -215,7 +338,7 @@
                                             </mat-form-field>
 
                                         </div>
-                                        
+
                                         <div class="flex w-full items-center justify-end border-t px-8 py-4">
                                             <button class="-ml-4" mat-button [color]="'warn'" (click)="cancelar()">
                                                 Cancelar
@@ -233,7 +356,8 @@
                                 <mat-tab label="Desactivación Masiva">
                                     <section class="registro-mas-section">
                                         <div class="flex w-full items-center justify-end border-t px-8 py-4">
-                                            Formato para desactivación de dispositivos <img class="w-8 p-1" src="images/logo/Excel.svg" alt="Logo image" />
+                                            Formato para desactivación de dispositivos <img class="w-8 p-1"
+                                                src="images/logo/Excel.svg" alt="Logo image" />
                                         </div>
                                         <div class="flex w-full items-center justify-end border-t px-8 py-4">
 
@@ -249,8 +373,10 @@
                                                                 d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                                                         </svg>
                                                         <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
-                                                                class="font-semibold">Presionar para subir </span>o arrastrar y soltar el archivo</p>
-                                                        <p class="text-xs text-gray-500 dark:text-gray-400">.CSV, .XLS o .XLSX </p>
+                                                                class="font-semibold">Presionar para subir </span>o
+                                                            arrastrar y soltar el archivo</p>
+                                                        <p class="text-xs text-gray-500 dark:text-gray-400">.CSV, .XLS o
+                                                            .XLSX </p>
                                                     </div>
                                                     <input id="dropzone-file" type="file" class="hidden" />
                                                 </label>
@@ -264,7 +390,7 @@
                                             </mat-form-field>
 
                                         </div>
-                                        
+
                                         <div class="flex w-full items-center justify-end border-t px-8 py-4">
                                             <button class="-ml-4" mat-button [color]="'warn'" (click)="cancelar()">
                                                 Cancelar
@@ -282,7 +408,8 @@
                                 <mat-tab label="Activación Masiva">
                                     <section class="registro-mas-section">
                                         <div class="flex w-full items-center justify-end border-t px-8 py-4">
-                                            Formato para activación de dispositivos <img class="w-8 p-1" src="images/logo/Excel.svg" alt="Logo image" />
+                                            Formato para activación de dispositivos <img class="w-8 p-1"
+                                                src="images/logo/Excel.svg" alt="Logo image" />
                                         </div>
                                         <div class="flex w-full items-center justify-end border-t px-8 py-4">
 
@@ -298,8 +425,10 @@
                                                                 d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
                                                         </svg>
                                                         <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
-                                                                class="font-semibold">Presionar para subir </span>o arrastrar y soltar el archivo</p>
-                                                        <p class="text-xs text-gray-500 dark:text-gray-400">.CSV, .XLS o .XLSX </p>
+                                                                class="font-semibold">Presionar para subir </span>o
+                                                            arrastrar y soltar el archivo</p>
+                                                        <p class="text-xs text-gray-500 dark:text-gray-400">.CSV, .XLS o
+                                                            .XLSX </p>
                                                     </div>
                                                     <input id="dropzone-file" type="file" class="hidden" />
                                                 </label>
@@ -313,7 +442,7 @@
                                             </mat-form-field>
 
                                         </div>
-                                        
+
                                         <div class="flex w-full items-center justify-end border-t px-8 py-4">
                                             <button class="-ml-4" mat-button [color]="'warn'" (click)="cancelar()">
                                                 Cancelar
@@ -340,12 +469,12 @@
             <div class="flex flex-auto overflow-hidden">
                 <!-- Products list -->
 
-                <div class="flex flex-auto flex-col overflow-hidden sm:mb-18 sm:overflow-y-auto">
+                <div class="flex flex-auto flex-col overflow-hidden mb-18 rounded-2xl border-2 ">
                     @if (products$ | async; as products) {
                     @if (products.length > 0) {
                     <div class="grid">
                         <!-- Header -->
-                        <div class="registro-grid text-secondary sticky top-0 z-10 grid gap-4 bg-gray-50 px-6 py-4 text-md font-semibold shadow dark:bg-black dark:bg-opacity-5 md:px-8"
+                        <div class="registro-grid text-white bg-primary sticky top-0 z-10 grid gap-4 px-6 py-4 text-md font-semibold shadow dark:bg-black dark:bg-opacity-5 md:px-8"
                             matSort matSortDisableClear>
                             <div></div>
                             <div class="hidden md:block" [mat-sort-header]="'No.'">
@@ -389,8 +518,8 @@
                         product of products;
                         track trackByFn($index, product)
                         ) {
-                        <div class="registro-grid grid items-center gap-4 border-b px-6 py-3 md:px-8">
-                            <!-- Image -->
+                            <div class="registro-grid grid items-center gap-4 border-b px-6 py-3 md:px-8">
+                                <!-- Image -->
                             <div class="flex items-center">
 
                             </div>
@@ -427,16 +556,18 @@
                                 {{ product.f_des }}
                             </div>
                             <!-- Active -->
-                            <div class="hidden lg:block">
-                                @if (product.active) {
-                                <mat-icon class="text-green-400 icon-size-5" [svgIcon]="
-                                                    'heroicons_solid:check'
-                                                "></mat-icon>
+                            <div class="hidden items-center lg:block">
+                                @if (product.active) {<div class="flex text-green-400"> Activo
+                                    <mat-icon class="text-green-400 icon-size-5" [svgIcon]="
+                                                        'heroicons_solid:check'
+                                                    "> </mat-icon>
+                                </div>
                                 }
-                                @if (!product.active) {
-                                <mat-icon class="text-gray-400 icon-size-5" [svgIcon]="
-                                                    'heroicons_solid:x-mark'
-                                                "></mat-icon>
+                                @if (!product.active) {<div class="flex text-gray-400"> Inactivo
+                                    <mat-icon class="text-gray-400 icon-size-5" [svgIcon]="
+                                                        'heroicons_solid:x-mark'
+                                                    "></mat-icon>
+                                </div>
                                 }
                             </div>
 
@@ -446,17 +577,17 @@
                             <div class="hidden items-center lg:flex">
                                 <button class="h-7 min-h-7 min-w-10 px-2 leading-6" mat-stroked-button
                                     (click)="toggleDetails(product.id)">
-                                    <mat-icon class="icon-size-5" [svgIcon]="
+                                    <mat-icon class="icon-size-5 text-blue-900 " [svgIcon]="
                                             
                                                     'heroicons_solid:pencil-square'
                                                 "></mat-icon>
                                 </button>
                                 <button class="h-7 min-h-7 min-w-10 px-2 leading-6" mat-stroked-button
                                     (click)="deleteProduct(product.id)">
-                                    <mat-icon class="icon-size-5" [svgIcon]="
+                                    <mat-icon class="icon-size-5 text-red-700" [svgIcon]="
                                         
-                                                'heroicons_solid:x-mark'
-                                            "></mat-icon>
+                                    'heroicons_solid:trash'
+                                    "></mat-icon>
                                 </button>
                             </div>
                         </div>
@@ -473,8 +604,8 @@
                     </div>
 
                     <mat-paginator
-                        class="z-10 border-b bg-gray-50 dark:bg-transparent sm:absolute sm:inset-x-0 sm:bottom-0 sm:border-b-0 sm:border-t"
-                        [ngClass]="{ 'pointer-events-none': isLoading }" [length]="pagination.length"
+                    class="flex justify-center z-10 border-b bg-white dark:bg-transparent sm:absolute sm:inset-x-0 sm:bottom-0 sm:border-b-0 sm:border-t"
+                    [ngClass]="{ 'pointer-events-none': isLoading }" [length]="pagination.length"
                         [pageIndex]="pagination.page" [pageSize]="pagination.size" [pageSizeOptions]="[5, 10, 25, 100]"
                         [showFirstLastButtons]="true"></mat-paginator>
                     } @else {
@@ -491,17 +622,17 @@
                                 <form class="flex w-full flex-col" [formGroup]="selectedProductForm">
                                     <div class="flex flex-auto p-8 sm:flex-row">
                                         <div class="flex flex-auto">
-                                           
+
                                             <mat-form-field class="w-full pr-2">
                                                 <mat-label>Código</mat-label>
                                                 <input matInput [formControlName]="'cod'" />
                                             </mat-form-field>
-                                            
+
                                             <mat-form-field class="w-full pr-2">
                                                 <mat-label>Imei</mat-label>
                                                 <input matInput [formControlName]="'imei'" />
                                             </mat-form-field>
-                                           
+
                                             <mat-form-field class="w-full pl-2">
                                                 <mat-label>Número de serie</mat-label>
                                                 <input matInput [formControlName]="'num'" />
@@ -520,7 +651,7 @@
                                                 <mat-label>Estado de Dispositivo</mat-label>
                                                 <input matInput [formControlName]="'edisp'" />
                                             </mat-form-field>
-                                            <mat-slide-toggle [formControlName]="'active'" [color]="'primary'">
+                                            <mat-slide-toggle class="py-12" [formControlName]="'active'" [color]="'primary'">
                                                 {{
                                                 selectedProductForm.get(
                                                 'active'
@@ -536,8 +667,8 @@
 
                                     <div class="flex w-full items-center justify-end border-t px-8 py-4">
                                         <button class="-ml-4" mat-button [color]="'warn'"
-                                            (click)="deleteSelectedProduct()">
-                                            Borrar
+                                        (click)="toggleDetails(product.id)">
+                                        Cancelar
                                         </button>
                                         <div class="flex items-center">
                                             @if (flashMessage) {
@@ -549,12 +680,11 @@
                                                 <span class="ml-2">Registro Actualizado</span>
                                                 }
                                                 @if (flashMessage === 'error') {
-                                                <mat-icon class="text-red-500" [svgIcon]="
-                                                        'heroicons_outline:x-mark'
-                                                    "></mat-icon>
-                                                <span class="ml-2">An error occurred, try
-                                                    again!</span>
-                                                }
+                                                    <mat-icon class="text-red-500 text-3xl" [svgIcon]="
+                                                    'heroicons_outline:x-mark'
+                                                "></mat-icon>
+                                            <span class="ml-2">Ocurrio un error! Intentar nuevamente</span>
+                                            }
                                             </div>
                                             }
                                             <button mat-flat-button [color]="'primary'"

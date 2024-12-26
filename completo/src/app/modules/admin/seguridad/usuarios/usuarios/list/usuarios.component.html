@@ -1,10 +1,33 @@
-<div class="flex min-w-0 flex-auto flex-col">
+<div class="flex min-w-0 flex-auto bg-white flex-col">
+    <!-- Header -->
+    <div
+        class="bg-card relative z-49 flex h-16 w-full flex-0 items-center px-4 shadow dark:border-b dark:bg-transparent dark:shadow-none md:px-6 print:hidden">
+        <button mat-icon-button (click)="toggleNavigation('mainNavigation')">
+            <mat-icon [svgIcon]="'heroicons_outline:bars-3'"></mat-icon>
+        </button>
+        <div class="ml-auto flex items-center space-x-0.5 pl-2 sm:space-x-2">
+
+            <fuse-fullscreen class="hidden md:block"></fuse-fullscreen>
+            <search [appearance]="'bar'"></search>
+            <!--<shortcuts></shortcuts>-->
+            <messages></messages>
+            <notifications></notifications>
+            <button class="lg:hidden" mat-icon-button>
+                <mat-icon [svgIcon]="'heroicons_outline:chat-bubble-left-right'"></mat-icon>
+            </button>
+            <user></user>
+        </div>
+    </div>
     <!-- Main -->
     <div class="flex-auto p-6 sm:p-10">
         <!-- CONTENT GOES HERE -->
         <!-- Header -->
-        <div
-            class="relative flex flex-0 flex-col border-b px-6 py-8 sm:flex-row sm:items-center sm:justify-between md:px-8">
+        <!-- Title -->
+        <div class="flex px-6 space-x-4 text-4xl font-extrabold tracking-tight">
+            <div>Usuarios</div>
+        </div>
+        <div 
+            class="relative flex border-b px-6 py-8 sm:flex-row sm:items-center sm:justify-between md:px-8">
             <!-- Loader -->
             @if (isLoading) {
             <div class="absolute inset-x-0 bottom-0">
@@ -12,24 +35,26 @@
             </div>
             }
 
-            <div class="space-y-4">
-                <!-- Title -->
-                <div class="text-4xl font-extrabold tracking-tight">
-                    Usuarios
-                </div>
-                <!-- Actions -->
-                <div class="flex flex-grow justify-between  ">
-                    <!-- Search -->
+
+
+            <!-- Actions -->
+            <div class="flex flex-grow justify-between  ">
+                <!-- Search -->
+                <div class="flex space-x-2">
                     <mat-form-field class="fuse-mat-dense fuse-mat-rounded min-w-64" [subscriptSizing]="'dynamic'">
-                        <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
-                        <input matInput [formControl]="searchInputControl" [autocomplete]="'off'" [placeholder]="'Buscar Usuario'" />
+                        <mat-icon class="icon-size-5" matPrefix
+                            [svgIcon]="'heroicons_solid:magnifying-glass'"></mat-icon>
+                        <input matInput [formControl]="searchInputControl" [autocomplete]="'off'"
+                            [placeholder]="'Buscar Usuario'" />
                     </mat-form-field>
-                    <!-- Add product button -->
-                    <button class="sm:ml-4" mat-flat-button [color]="'primary'" (click)="crearUsuario()">
-                        <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
-                        <span class="ml-2 mr-1">Añadir</span>
-                    </button>
+                    <img class="w-7" src="images/logo/PDF.svg" alt="Logo image" />
+                    <img class="w-8" src="images/logo/Excel.svg" alt="Logo image" />
                 </div>
+                <!-- Add product button -->
+                <button class="sm:ml-4" mat-flat-button [color]="'primary'" (click)="crearUsuario()">
+                    <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
+                    <span class="ml-2 mr-1 text-xl">Añadir</span>
+                </button>
             </div>
 
         </div>
@@ -41,54 +66,81 @@
                 <div class="flex-auto p-6 sm:p-10">
                     <!-- CONTENT GOES HERE -->
                     <div class="container">
-                        <!--<h1 class="text-4xl font-bold pb-3 text-contrast">Crear Usuario</h1>
-                        <h3 class="pb-3 text-contrast">Campos con símbolo (*) son obligatorios </h3>-->
+                        <h1 class="text-4xl font-bold pb-3 text-primary">Crear Usuario</h1>
+                        <h3 class="pb-3 text-primary">Campos con símbolo (*) son obligatorios </h3>
                         <mat-expansion-panel [expanded]="crearSegment">
                             <mat-expansion-panel-header>
-                                <mat-panel-title class="font-bold text-black">Crear Usuario</mat-panel-title>
+                                <mat-panel-title class="font-bold text-black">Datos Generales</mat-panel-title>
                             </mat-expansion-panel-header>
 
                             <div class="container">
-                                <form class="mt-8">
-                                    <div class="grid gap-4 grid-cols-1 md:grid-cols-8">
+                                <form class="">
+                                    <div class="grid gap-4 grid-row-1 ">
                                         <!-- Name -->
-                                        <mat-form-field class="col-span-2">
-                                            <mat-label>Nombre*</mat-label>
-                                            <input matInput />
-                                        </mat-form-field>
-                                        <!-- cedula -->
-                                        <mat-form-field class="col-span-1">
-                                            <mat-label>Cédula*</mat-label>
-                                            <input matInput />
-                                        </mat-form-field>
+                                        <div class="flex items-center gap-2">
+                                            <label class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                Nombre
+                                            </label>
+                                            <span class=" text-red-500 text-3xl ml-1">*</span>
+                                            <mat-form-field class="flex-1">
+
+                                                <input matInput />
+                                            </mat-form-field>
+                                        </div>
+                                        <!-- Cédula -->
+                                        <div class="flex items-center gap-2">
+                                            <label class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                Cédula
+                                            </label>
+                                            <span class=" text-red-500 text-3xl ml-1">*</span>
+                                            <mat-form-field class="flex-1">
+                                                <input matInput />
+                                            </mat-form-field>
+                                        </div>
                                         <!-- Email -->
-                                        <mat-form-field class="col-span-2">
-                                            <mat-label>Correo Electrónico*</mat-label>
-                                            <input matInput />
-                                        </mat-form-field>
-
-
-
-
-                                        <!--Telephone and Celular-->
-                                        <mat-form-field class="col-span-1">
-                                            <mat-label>Teléfono/Celular*</mat-label>
-                                            <input matInput />
-                                        </mat-form-field>
-                                        <mat-slide-toggle class="col-span-1" [color]="'primary'">
-                                            Estado
-
-                                        </mat-slide-toggle>
-
-
+                                        <div class="flex items-center gap-2">
+                                            <label class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                Correo Electrónico
+                                            </label>
+                                            <span class=" text-red-500 text-3xl ml-1">*</span>
+                                            <mat-form-field class="flex-1">
+                                                <input matInput />
+                                            </mat-form-field>
+                                        </div>
+                                        <!-- Telephone/Celular -->
+                                        <div class="flex items-center gap-2">
+                                            <label class="w-1/6  text-left  text-lg font-semibold flex items-center">
+                                                Teléfono/Celular
+                                            </label>
+                                            <span class=" text-red-500 text-3xl ml-1">*</span>
+                                            <mat-form-field class="flex-1">
+                                                <input matInput />
+                                            </mat-form-field>
+                                        </div>
+                                        <!-- Estado -->
+                                        <div class="flex py-5 items-center gap-2">
+                                            <label class="w-1/6 text-left text-lg font-semibold flex items-center">
+                                                Estado
+                                            </label>
+                                            <mat-slide-toggle class="flex-1 px-6" [color]="'primary'"
+                                                (click)="toggleCheck()">
+                                                {{
+                                                isChecked === true
+                                                ? 'Activo'
+                                                : 'Inactivo'
+                                                }}
+                                            </mat-slide-toggle>
+                                        </div>
                                     </div>
+
                                     <div class="flex w-full items-center justify-end border-t px-8 py-4">
-                                        <button class="-ml-4" mat-button [color]="'warn'" (click) ="cancelar()">
+                                        <button class="-ml-4" mat-button [color]="'warn'" (click)="cancelar()">
                                             Cancelar
                                         </button>
                                         <div class="flex items-center">
 
-                                            <button mat-flat-button [color]="'primary'"(click) ="crear(); show('alertBox3')">
+                                            <button mat-flat-button [color]="'primary'"
+                                                (click)="crear(); show('alertBox3')">
                                                 Crear
                                             </button>
                                         </div>
@@ -99,18 +151,18 @@
                     </div>
                 </div>
             </div>
-             }
+            }
 
             <!-- Usuarios -->
             <div class="flex flex-auto overflow-hidden">
                 <!-- Products list -->
 
-                <div class="flex flex-auto flex-col overflow-hidden sm:mb-18 sm:overflow-y-auto">
+                <div class="flex flex-auto flex-col overflow-hidden mb-18 rounded-2xl border-2 ">
                     @if (products$ | async; as products) {
                     @if (products.length > 0) {
                     <div class="grid">
                         <!-- Header -->
-                        <div class="usuario-grid text-secondary sticky top-0 z-10 grid gap-4 bg-gray-50 px-6 py-4 text-md font-semibold shadow dark:bg-black dark:bg-opacity-5 md:px-8"
+                        <div class="usuario-grid text-white bg-primary sticky top-0 z-10 grid gap-4 px-6 py-4 text-md font-semibold shadow dark:bg-black dark:bg-opacity-5 md:px-8"
                             matSort matSortDisableClear>
                             <div></div>
                             <div class="hidden md:block" [mat-sort-header]="'No.'">
@@ -125,7 +177,7 @@
                                 Teléfono/Celular
                             </div>
                             <div class="hidden lg:block" [mat-sort-header]="'Active'">
-                                Activo
+                                Estado
                             </div>
                             <div class="hidden lg:block">
                                 Acciones
@@ -170,16 +222,18 @@
                                 </div>
                             </div>
                             <!-- Active -->
-                            <div class="hidden lg:block">
-                                @if (product.active) {
-                                <mat-icon class="text-green-400 icon-size-5" [svgIcon]="
+                            <div class="hidden items-center lg:block">
+                                @if (product.active) { <div class="flex text-green-400"> Activo
+                                    <mat-icon class="text-green-400 icon-size-5" [svgIcon]="
                                                     'heroicons_solid:check'
-                                                "></mat-icon>
+                                                "> </mat-icon>
+                                </div>
                                 }
-                                @if (!product.active) {
-                                <mat-icon class="text-gray-400 icon-size-5" [svgIcon]="
+                                @if (!product.active) {<div class="flex text-gray-400"> Inactivo
+                                    <mat-icon class="text-gray-400 icon-size-5" [svgIcon]="
                                                     'heroicons_solid:x-mark'
                                                 "></mat-icon>
+                                </div>
                                 }
                             </div>
 
@@ -189,16 +243,16 @@
                             <div class="hidden items-center lg:flex">
                                 <button class="h-7 min-h-7 min-w-10 px-2 leading-6" mat-stroked-button
                                     (click)="toggleDetails(product.id)">
-                                    <mat-icon class="icon-size-5" [svgIcon]="
+                                    <mat-icon class="icon-size-5 text-blue-900 " [svgIcon]="
                                             
                                                     'heroicons_solid:pencil-square'
                                                 "></mat-icon>
                                 </button>
                                 <button class="h-7 min-h-7 min-w-10 px-2 leading-6" mat-stroked-button
                                     (click)="deleteProduct(product.id)">
-                                    <mat-icon class="icon-size-5" [svgIcon]="
+                                    <mat-icon class="icon-size-5 text-red-700" [svgIcon]="
                                         
-                                                'heroicons_solid:x-mark'
+                                                'heroicons_solid:trash'
                                             "></mat-icon>
                                 </button>
                             </div>
@@ -216,7 +270,7 @@
                     </div>
 
                     <mat-paginator
-                        class="flex justify-center z-10 border-b bg-gray-50 dark:bg-transparent sm:absolute sm:inset-x-0 sm:bottom-0 sm:border-b-0 sm:border-t"
+                        class="flex justify-center z-10 border-b bg-white dark:bg-transparent sm:absolute sm:inset-x-0 sm:bottom-0 sm:border-b-0 sm:border-t"
                         [ngClass]="{ 'pointer-events-none': isLoading }" [length]="pagination.length"
                         [pageIndex]="pagination.page" [pageSize]="pagination.size" [pageSizeOptions]="[5, 10, 25, 100]"
                         [showFirstLastButtons]="true"></mat-paginator>
@@ -259,11 +313,12 @@
 
                                         <!--Telephone and Celular-->
                                         <div class="flex flex-auto">
-                                            <mat-form-field class="w-1/3 pl-2 pr-4">
+                                            <mat-form-field class="w-1/2 pl-2 pr-4">
                                                 <mat-label>Teléfono/Celular</mat-label>
                                                 <input matInput [formControlName]="'tel'" />
                                             </mat-form-field>
-                                            <mat-slide-toggle [formControlName]="'active'" [color]="'primary'">
+                                            <mat-slide-toggle class="py-12" [formControlName]="'active'" 
+                                                [color]="'primary'">
                                                 {{
                                                 selectedProductForm.get(
                                                 'active'
@@ -279,8 +334,8 @@
 
                                     <div class="flex w-full items-center justify-end border-t px-8 py-4">
                                         <button class="-ml-4" mat-button [color]="'warn'"
-                                            (click)="deleteSelectedProduct()">
-                                            Borrar
+                                            (click)="toggleDetails(product.id)">
+                                            Cancelar
                                         </button>
                                         <div class="flex items-center">
                                             @if (flashMessage) {
@@ -292,7 +347,7 @@
                                                 <span class="ml-2">Usuario Actualizado</span>
                                                 }
                                                 @if (flashMessage === 'error') {
-                                                <mat-icon class="text-red-500" [svgIcon]="
+                                                <mat-icon class=" text-red-500 text-3xl" [svgIcon]="
                                                         'heroicons_outline:x-mark'
                                                     "></mat-icon>
                                                 <span class="ml-2">Ocurrio un error! Intentar nuevamente</span>

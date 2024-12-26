@@ -41,7 +41,13 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { ActivatedRoute, Router } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseAlertService } from '@fuse/components/alert';
+import { FuseFullscreenComponent } from '@fuse/components/fullscreen';
+import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
+import { NotificationsComponent } from 'app/layout/common/notifications/notifications.component';
+import { SearchComponent } from 'app/layout/common/search/search.component';
+import { UserComponent } from 'app/layout/common/user/user.component';
+import { MessagesComponent } from 'app/modules/admin/portal/landing-signed-in/messages/messages.component';
 import { FaseService } from 'app/modules/admin/seguridad/operativos/fase.service';
 import {
     FasePagination,
@@ -105,6 +111,7 @@ import {
         MatRippleModule,
         AsyncPipe,
         CurrencyPipe,
+        
     ],
 })
 export class FaseListComponent
@@ -124,6 +131,11 @@ export class FaseListComponent
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     private _fuseAlertService = inject(FuseAlertService);
     crearSegment:boolean=false;
+    isChecked=false;
+
+    toggleCheck(){
+        this.isChecked = !this.isChecked;
+    }
     /**
      * Constructor
      */
@@ -134,8 +146,11 @@ export class FaseListComponent
         private _formBuilder: UntypedFormBuilder,
         private _faseService: FaseService,
         private router: Router,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        
     ) {}
+
+     
     
     crearFase() {
        this.crearSegment = true
