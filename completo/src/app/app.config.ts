@@ -27,7 +27,7 @@ export const appConfig: ApplicationConfig = {
         provideRouter(
             appRoutes,
             withPreloading(PreloadAllModules),
-            withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
+            withInMemoryScrolling({ scrollPositionRestoration: 'disabled' })
         ),
         // Material Date Adapter
         {

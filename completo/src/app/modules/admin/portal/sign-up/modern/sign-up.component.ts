@@ -82,7 +82,10 @@ export class SignUpModernComponent implements OnInit {
      * Sign in
      */
     signOut(): void {
-        this._router.navigate(['/sign-out']);
+        this._router.navigate(['/sign-out']).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
     }
     
 }

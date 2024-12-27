@@ -113,6 +113,9 @@ export class MapDetailsComponent {
         this._unsubscribeAll.complete();
     }
     navPage(){
-        this._router.navigate(['../page'], {relativeTo: this._activatedRoute,});   
+        this._router.navigate(['../page'], {relativeTo: this._activatedRoute,}).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;   
      }
 }

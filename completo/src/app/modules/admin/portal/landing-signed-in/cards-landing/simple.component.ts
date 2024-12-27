@@ -30,12 +30,21 @@ export class PricingSimpleComponent  {
 
     }
     navServicios(){
-        this.router.navigate(['./servicios'],{ relativeTo: this.route } )
+        this.router.navigate(['./servicios'],{ relativeTo: this.route } ).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; 
     }
     navForm(){
-        this.router.navigate(['../formulario-urs/p0'],{ relativeTo: this.route } )
+        this.router.navigate(['../formulario-urs/p0'],{ relativeTo: this.route } ).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; 
     }
     navGeoportal(){
-        this.router.navigate(['/apps/maps/portal-geografico'] )
+        this.router.navigate(['/apps/maps/portal-geografico'] ).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; 
     }
 }

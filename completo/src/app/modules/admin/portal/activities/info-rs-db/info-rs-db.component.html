@@ -1,0 +1,70 @@
+<div class="relative flex min-w-0 flex-auto flex-row overflow-hidden">
+    <!-- Left Section (Main Content) -->
+    <div class="flex flex-auto flex-col px-6 py-10 sm:px-16 sm:pb-20 sm:pt-18">
+        <!-- Activity feed -->
+        <div class="w-full max-w-3xl">
+            <!-- Title -->
+            <div class="text-4xl font-extrabold leading-none tracking-tight">
+                Seguimiento Nominal
+            </div>
+            <div class="text-secondary mt-1.5 text-lg">
+                Indice de Pobreza RC 2024
+            </div>
+
+            <!-- Check if activities exist -->
+            <div *ngIf="activities.length; else noActivities" class="mt-8">
+                <ol>
+                    <!-- Activities -->
+                    <ng-container *ngFor="let activity of activities; let i = index; trackBy: trackByFn">
+                        <li class="relative flex py-7">
+                            <div class="flex flex-col text-md pt-1 pr-4">
+                                <div class="text-secondary">
+                                    {{ activity.date | date: 'dd MMM YYYY  ' }}
+                                </div>
+                            </div>
+                            <!-- Line -->
+                            <div class="absolute left-24 top-0 h-full w-0.5 bg-gray-300 dark:bg-gray-600"></div>
+
+                            <div class="relative flex flex-auto">
+                                <!-- Icon -->
+                                <div *ngIf="activity.color"
+                                    class="mr-4 mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-{{ activity.color }}-500">
+                                </div>
+                                <!-- Content -->
+                                <div class="flex flex-auto flex-col items-start">
+                                    <div class="flex justify-center py-1 rounded-xl text-{{activity.color}}-600 bg-{{activity.color}}-200 mb-4 min-w-40 cursor-pointer"
+                                        (click)="navTo('info-hogar')"
+                                        *ngIf="activity.title">{{ activity.title }}</div>
+
+                                    <div class="flex justify-center items-center space-x-2">
+                                        <div class="font-semibold">Puntaje: </div>
+                                        <div>{{activity.points}}</div>
+                                    </div>
+                                    <div class="flex justify-center items-center space-x-2">
+                                        <div class="font-semibold">Beneficios: </div>
+                                        <mat-chip-set aria-label="Fish selection">
+                                            <ng-container
+                                                *ngFor="let benefit of activity.benefits; let i = index; trackBy: trackByFn">
+                                                <mat-chip class="cursor-pointer" (click)="navTo('benefits')"> {{benefit}} </mat-chip>
+                                            </ng-container>
+                                        </mat-chip-set>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ng-container>
+                </ol>
+            </div>
+
+            <!-- No activities message -->
+            <ng-template #noActivities>
+                <div class="mt-8 text-secondary text-lg">There is no activity at the moment...</div>
+            </ng-template>
+        </div>
+    </div>
+
+    <!-- Right Section (Bordered Div) -->
+    <div class="flex flex-col w-1/2 min-w-[300px] h-auto border-l border-gray-300 px-6 py-4 bg-gray-50 shadow-md">
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -510,21 +510,36 @@ export class LandingSOComponent implements OnInit, OnDestroy {
         };
     }
     signOut(): void {
-        this._router.navigate(['/sign-out']);
+        this._router.navigate(['/sign-out']).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
     }
     register(): void {
-        this._router.navigate(['/portal/autoregistro']);
+        this._router.navigate(['/portal/autoregistro']).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
     }
     forms(): void {
-        this._router.navigate(['/portal/autoregistro']);
+        this._router.navigate(['/portal/autoregistro']).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
  
     }
     faqs(): void {
-        this._router.navigate(['portal/land/faqs']);
+        this._router.navigate(['portal/land/faqs']).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
         this.closeNavigation('mainNavigation')
     }
     soporte(): void {
-        this._router.navigate(['portal/land/soporte']);
+        this._router.navigate(['portal/land/soporte']).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
         this.closeNavigation('mainNavigation')
     }
     toggleNavigation(name: string): void {

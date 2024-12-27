@@ -51,7 +51,10 @@ export class UserSidebarComponent implements OnInit, OnDestroy {
     // @ Lifecycle hooks
     // -----------------------------------------------------------------------------------------------------
     navPortal(){
-        this.router.navigate(['/portal/land'])
+        this.router.navigate(['/portal/land']).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; 
     }
     /**
      * On init

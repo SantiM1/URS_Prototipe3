@@ -60,17 +60,26 @@ export class FormularioComponent
         if(this.pageIndex < 4){
             this.pageIndex += 1
         }
-        this.router.navigate([`portal/formulario-urs/p${this.pageIndex}`]);
+        this.router.navigate([`portal/formulario-urs/p${this.pageIndex}`]).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
     }
     navFormPrev():void{
        
         if(this.pageIndex > 0 ){
             this.pageIndex -= 1
         }
-        this.router.navigate([`portal/formulario-urs/p${this.pageIndex}`]);
+        this.router.navigate([`portal/formulario-urs/p${this.pageIndex}`]).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
     }
     navInit(){
-        this.router.navigate(['../land'], { relativeTo: this.route });
+        this.router.navigate(['../land'], { relativeTo: this.route }).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
         this.openNavigation('mainNavigation')
     }
     openNavigation(name: string): void {

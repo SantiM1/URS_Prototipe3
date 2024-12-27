@@ -24,7 +24,10 @@ export class UsuarioComponent {
        
     }
     crearUsuario() {
-        this.router.navigate(['crear-editar'], { relativeTo: this.route });
+        this.router.navigate(['crear-editar'], { relativeTo: this.route }).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
     }
 }
 

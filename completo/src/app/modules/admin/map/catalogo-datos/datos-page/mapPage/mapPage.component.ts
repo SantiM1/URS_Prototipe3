@@ -22,9 +22,15 @@ export class MapPageComponent {
 
   // Example method (optional)
   navDetail(){
-    this._router.navigate(['../detalle'], {relativeTo: this._activatedRoute,});   
+    this._router.navigate(['../detalle'], {relativeTo: this._activatedRoute,}).then(() => {
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });; ;   
   }
   navPortal(){
-    this._router.navigate(['../portal-geografico'], {relativeTo: this._activatedRoute,});   
+    this._router.navigate(['../portal-geografico'], {relativeTo: this._activatedRoute,}).then(() => {
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });; ;   
   }
 }

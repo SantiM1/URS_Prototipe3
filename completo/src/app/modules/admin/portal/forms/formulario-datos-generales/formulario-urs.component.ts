@@ -64,7 +64,10 @@ export class FormularioURSComponent {
      */
    
     back(): void {
-        this._router.navigate(['/portal/land']);
+        this._router.navigate(['/portal/land']).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
     }
     ngAfterViewInit() {
         const myAPIKey = '8c31c50c46834e5aaa1a7d1246c6e9d7'; 

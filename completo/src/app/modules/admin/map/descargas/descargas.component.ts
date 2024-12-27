@@ -24,12 +24,21 @@ export class DescargasComponent {
           private route: ActivatedRoute
       ) {}
       navNormativa(): void {
-        this.router.navigate(['../pdf'], { relativeTo: this.route });
+        this.router.navigate(['../pdf'], { relativeTo: this.route }).then(() => {
+          // Scroll to top after navigation
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      });; ;
       }
       navManuales(): void {
-        this.router.navigate(['../manuales'], { relativeTo: this.route });
+        this.router.navigate(['../manuales'], { relativeTo: this.route }).then(() => {
+          // Scroll to top after navigation
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      });; ;
       }
       navBase(): void {
-        this.router.navigate(['../base'], { relativeTo: this.route });
+        this.router.navigate(['../base'], { relativeTo: this.route }).then(() => {
+          // Scroll to top after navigation
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      });; ;
       }
 }

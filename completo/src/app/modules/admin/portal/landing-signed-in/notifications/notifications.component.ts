@@ -231,6 +231,9 @@ export class NotificationsComponent implements OnInit, OnDestroy {
         this.unreadCount = count;
     }
     goToInbox(){
-        this._router.navigate(['/portal/notificaciones']);
+        this._router.navigate(['/portal/notificaciones']).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
     }
 }

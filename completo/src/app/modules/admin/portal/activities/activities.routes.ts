@@ -1,14 +1,24 @@
-import { inject } from '@angular/core';
 import { Routes } from '@angular/router';
-import { ActivitiesComponent } from 'app/modules/admin/portal/activities/activities.component';
-import { ActivitiesService } from 'app/modules/admin/pages/activities/activities.service';
+import { InfoRSDBComponent } from './info-rs-db/info-rs-db.component';
+import { ActivitiesPlace } from './activities.component';
+import { InfoRSComponent } from './info-rs/info-rs.component';
+
 
 export default [
     {
         path: '',
-        component: ActivitiesComponent,
-        resolve: {
-            activities: () => inject(ActivitiesService).getActivities(),
-        },
+        component: ActivitiesPlace,
+        children: [
+
+            {
+                path: '',
+                component: InfoRSComponent,
+            },
+            {
+                path: 'db',
+                loadChildren: () => import('app/modules/admin/portal/activities/info-rs-db/info-rs-db.routes')
+            },
+
+        ]
     },
 ] as Routes;

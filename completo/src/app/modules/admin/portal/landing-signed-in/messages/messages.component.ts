@@ -231,6 +231,9 @@ export class MessagesComponent implements OnInit, OnDestroy {
         this.unreadCount = count;
     }
     goToInbox(){
-        this._router.navigate(['/portal/solicitudes']);
+        this._router.navigate(['/portal/solicitudes']).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
     }
 }

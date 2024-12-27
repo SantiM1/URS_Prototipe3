@@ -1,78 +1,50 @@
-import { CommonModule, DatePipe, TitleCasePipe } from '@angular/common';
-import {
-    ChangeDetectionStrategy,
-    Component,
-    OnInit,
-    ViewEncapsulation,
-} from '@angular/core';
-import { MatChipsModule } from '@angular/material/chips';
+import { Component } from "@angular/core";
+import { Router, RouterLink, RouterOutlet } from "@angular/router";
+import { InfoRCComponent } from "./info-rc/info-rc.component";
+import { FuseFullscreenComponent } from "@fuse/components/fullscreen";
+import { FuseNavigationService, FuseVerticalNavigationComponent } from "@fuse/components/navigation";
+import { SearchComponent } from "app/layout/common/search/search.component";
+import { UserComponent } from 'app/layout/common/user/user.component';
+import { MessagesComponent } from "../landing-signed-in/messages/messages.component";
+import { NotificationsComponent } from "../landing-signed-in/notifications/notifications.component";
+import { MatIconModule } from "@angular/material/icon";
+import { QueryComponent } from "./query/query.component";
+
 
 @Component({
-    selector: 'activity',
+    selector: 'activities-place',
     templateUrl: './activities.component.html',
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [TitleCasePipe, DatePipe, CommonModule, MatChipsModule],
+    imports: [
+        RouterOutlet,
+        InfoRCComponent,
+        UserComponent,
+        NotificationsComponent,
+        MessagesComponent,
+        SearchComponent,
+        FuseFullscreenComponent,
+        MatIconModule,
+        QueryComponent,
+    ]
 })
-export class ActivitiesComponent implements OnInit {
-    activities = [
-        {
-            id: 1,
-            title: 'RS 2002',
-            date: new Date().toISOString(),
-            icon: 'bg-green-500',
-            benefits: ['BDH'],
-        },
-        {
-            id: 2,
-            title: 'RS 2002',
-            date: new Date(new Date().setDate(new Date().getDate() - 1)).toISOString(),
-            icon: 'bg-red-500',
-            benefits: ['BDH', 'CDH'],
-        },
-        {
-            id: 3,
-            title: 'RS 2002',
-            date: new Date(new Date().setDate(new Date().getDate() - 2)).toISOString(),
-            icon: 'bg-amber-500',
-            benefits: ['BDH', 'CDH'],
-        },
-    ];
 
-    ngOnInit(): void {}
+export class ActivitiesPlace {
 
-    /**
-     * Check if two dates fall on the same day
-     * @param current
-     * @param compare
-     */
-    isSameDay(current: string, compare: string): boolean {
-        const currentDate = new Date(current);
-        const compareDate = new Date(compare);
-        return (
-            currentDate.getFullYear() === compareDate.getFullYear() &&
-            currentDate.getMonth() === compareDate.getMonth() &&
-            currentDate.getDate() === compareDate.getDate()
-        );
-    }
+    constructor(
+        router: Router,
+        private _fuseNavigationService: FuseNavigationService,
 
-    /**
-     * Get the relative format of the given date
-     * @param date
-     */
-    getRelativeFormat(date: string): string {
-        const diffTime = Math.abs(Date.now() - new Date(date).getTime());
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        return diffDays === 0 ? 'Today' : `${diffDays} day(s) ago`;
-    }
+    ) { }
+    toggleNavigation(name: string): void {
+        // Get the navigation
+        const navigation =
+            this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>(
+                name
+            );
 
-    /**
-     * Track by function for ngFor loops
-     * @param index
-     * @param item
-     */
-    trackByFn(index: number, item: any): any {
-        return item.id || index;
+        if (navigation) {
+            // Toggle the opened status
+            navigation.toggle();
+        }
     }
 }

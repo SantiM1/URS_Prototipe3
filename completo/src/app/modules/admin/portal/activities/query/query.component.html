@@ -1,0 +1,97 @@
+<div class="grid grid-cols-2 gap-4 bg-white w-full p-8 rounded-lg shadow-md place-content-center">
+    <!-- Input 1 with Label -->
+    <div class="w-full">
+        <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Tipo de Búsqueda</mat-label>
+            <select matNativeControl required [(ngModel)]="searchType" class="p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                <option value="cedula">Cédula</option>
+                <option value="nombres">Nombres y Apellidos</option>
+                <option value="certificado">No. Certificado</option>
+            </select>
+        </mat-form-field>
+    </div>
+
+    <!-- Input 2 with Label -->
+    <div class="w-full">
+        <mat-form-field appearance="fill" class="w-full">
+            <mat-label>Fecha</mat-label>
+            <input 
+                matInput 
+                [matDatepicker]="picker" 
+                class="p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            >
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <!-- Input 3 with Label -->
+    <div class="w-full col-span-2">
+        <!-- Single Input for 'Cédula' and 'No. Certificado' -->
+        <mat-form-field 
+            appearance="fill" 
+            class="w-1/2"
+            *ngIf="searchType !== 'nombres'"
+        >
+            <mat-label *ngIf="searchType === 'cedula'">Cédula</mat-label>
+            <mat-label *ngIf="searchType === 'certificado'">No. Certificado</mat-label>
+            <input 
+                matInput 
+                type="text" 
+                [placeholder]="getPlaceholder()"
+                [(ngModel)]="inputValue"
+                class="p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            >
+        </mat-form-field>
+
+        <!-- Grid of 4 Inputs for 'Nombres y Apellidos' -->
+        <div *ngIf="searchType === 'nombres'" class="grid grid-cols-2 gap-4">
+            <mat-form-field appearance="fill" class="w-full">
+                <mat-label>Primer Nombre</mat-label>
+                <input 
+                    matInput 
+                    type="text" 
+                    [(ngModel)]="firstName" 
+                    class="p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                >
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="w-full">
+                <mat-label>Segundo Nombre</mat-label>
+                <input 
+                    matInput 
+                    type="text" 
+                    [(ngModel)]="secondName" 
+                    class="p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                >
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="w-full">
+                <mat-label>Primer Apellido</mat-label>
+                <input 
+                    matInput 
+                    type="text" 
+                    [(ngModel)]="firstLastName" 
+                    class="p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                >
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="w-full">
+                <mat-label>Segundo Apellido</mat-label>
+                <input 
+                    matInput 
+                    type="text" 
+                    [(ngModel)]="secondLastName" 
+                    class="p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                >
+            </mat-form-field>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="col-span-2 flex justify-center">
+        <button 
+            class="w-1/3 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition-all"
+        >
+            Consultar
+        </button>
+    </div>
+</div>

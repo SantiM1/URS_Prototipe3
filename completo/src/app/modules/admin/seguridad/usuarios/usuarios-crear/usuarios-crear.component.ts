@@ -61,10 +61,16 @@ export class UsuariosCrearComponent {
             },
         },
     });
-    this.router.navigate(['..'], { relativeTo: this.route });
+    this.router.navigate(['..'], { relativeTo: this.route }).then(() => {
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });; ;
   }
   
 back ():void{
-  this.router.navigate(['..'], { relativeTo: this.route });
+  this.router.navigate(['..'], { relativeTo: this.route }).then(() => {
+    // Scroll to top after navigation
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});; ;
 }
 }

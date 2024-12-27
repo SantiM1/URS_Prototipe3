@@ -171,7 +171,10 @@ export class UserDetailsComponent implements OnInit, OnDestroy {
         // Navigate to the parent
         this._router.navigate(['./'], {
             relativeTo: this._activatedRoute.parent,
-        });
+        }).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
     }
 
     /**
@@ -210,7 +213,10 @@ export class UserDetailsComponent implements OnInit, OnDestroy {
                 // Navigate to the parent
                 this._router.navigate(['./'], {
                     relativeTo: this._activatedRoute.parent,
-                });
+                }).then(() => {
+                    // Scroll to top after navigation
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });; ;
             }
         }
     }
@@ -238,7 +244,10 @@ export class UserDetailsComponent implements OnInit, OnDestroy {
                 // Navigate to the parent
                 this._router.navigate(['./'], {
                     relativeTo: this._activatedRoute.parent,
-                });
+                }).then(() => {
+                    // Scroll to top after navigation
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });; ;
             }
         }
     }
@@ -266,7 +275,10 @@ export class UserDetailsComponent implements OnInit, OnDestroy {
                 // Navigate to the parent
                 this._router.navigate(['./'], {
                     relativeTo: this._activatedRoute.parent,
-                });
+                }).then(() => {
+                    // Scroll to top after navigation
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });; ;
             }
         }
     }

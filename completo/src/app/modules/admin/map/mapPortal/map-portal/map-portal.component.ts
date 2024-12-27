@@ -73,23 +73,38 @@ export class MapPortalComponent  {
         navigation.opened = false
     }
   navGeovisor(){
-    this._router.navigate(['../geovisor'], {relativeTo: this._activatedRoute,});   
+    this._router.navigate(['../geovisor'], {relativeTo: this._activatedRoute,}).then(() => {
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });; ;   
     this.toggleNavigation('mainNavigation')
   }
   navServicios(){
-    this._router.navigate(['../catalogo-servicios'], {relativeTo: this._activatedRoute,});   
+    this._router.navigate(['../catalogo-servicios'], {relativeTo: this._activatedRoute,}).then(() => {
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });; ;   
     this.toggleNavigation('mainNavigation')
   }
   navDatos(){
-    this._router.navigate(['../catalogo-datos'], {relativeTo: this._activatedRoute,});   
+    this._router.navigate(['../catalogo-datos'], {relativeTo: this._activatedRoute,}).then(() => {
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });; ;   
     this.toggleNavigation('mainNavigation')
   }
   navApps(){
-    this._router.navigate(['../geo-apps'], {relativeTo: this._activatedRoute,}); 
+    this._router.navigate(['../geo-apps'], {relativeTo: this._activatedRoute,}).then(() => {
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });; ; 
     this.toggleNavigation('mainNavigation')  
   }
   navDescargas(){
-    this._router.navigate(['../descargas'], {relativeTo: this._activatedRoute,});   
+    this._router.navigate(['../descargas'], {relativeTo: this._activatedRoute,}).then(() => {
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });; ;   
     this.toggleNavigation('mainNavigation')
   }
  

@@ -44,16 +44,28 @@ export class MapComponent implements OnInit, AfterViewInit {
 
 ) {}
   navDatos(){
-    this._router.navigate(['../catalogo-datos'], {relativeTo: this._activatedRoute,});   
+    this._router.navigate(['../catalogo-datos'], {relativeTo: this._activatedRoute,}) .then(() => {
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });; ;   
   }
   navServicios(){
-    this._router.navigate(['../catalogo-servicios'], {relativeTo: this._activatedRoute,});   
+    this._router.navigate(['../catalogo-servicios'], {relativeTo: this._activatedRoute,}).then(() => {
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });; ;   
   }
   navApps(){
-    this._router.navigate(['../geo-apps'], {relativeTo: this._activatedRoute,});   
+    this._router.navigate(['../geo-apps'], {relativeTo: this._activatedRoute,}).then(() => {
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });;   
   }
   navDescargas(){
-    this._router.navigate(['../descargas'], {relativeTo: this._activatedRoute,});   
+    this._router.navigate(['../descargas'], {relativeTo: this._activatedRoute,}).then(() => {
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });;   
   }
 
 

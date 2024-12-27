@@ -24,7 +24,10 @@ export class BaseDatosComponent {
               private route: ActivatedRoute
           ) {}
           navDescargas(): void {
-            this.router.navigate(['../descargas'], { relativeTo: this.route });
+            this.router.navigate(['../descargas'], { relativeTo: this.route }).then(() => {
+                // Scroll to top after navigation
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });; ;
           }
     
 }

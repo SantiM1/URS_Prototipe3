@@ -25,10 +25,16 @@ export class DeclaracionComponent {
 
   }
   confirm(): void {
-    this._router.navigate(['/portal/formulario-urs']);
+    this._router.navigate(['/portal/formulario-urs']).then(() => {
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });; ;
   }
   cancelar(): void {
-    this._router.navigate(['/portal/land']);
+    this._router.navigate(['/portal/land']).then(() => {
+      // Scroll to top after navigation
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  });; ;
   }
   confirmar():void{
     const confirmation = this._fuseConfirmationService.open({

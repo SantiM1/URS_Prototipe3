@@ -57,13 +57,22 @@ export class MapContainerComponent {
             navigation.opened = true
         }
     home(): void {
-        this._router.navigate(['/apps/maps/portal-geografico']);
+        this._router.navigate(['/apps/maps/portal-geografico']).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
         this.toggleNavigation('mainNavigation')
     }
     signOut(): void {
-        this._router.navigate(['/sign-out']);
+        this._router.navigate(['/sign-out']).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
     }
     register(): void {
-        this._router.navigate(['/portal/autoregistro']);
+        this._router.navigate(['/portal/autoregistro']).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; ;
     }
 }

@@ -23,7 +23,10 @@ export class PdfViewerComponent {
               private route: ActivatedRoute
           ) {}
           navDescargas(): void {
-            this.router.navigate(['../descargas'], { relativeTo: this.route });
+            this.router.navigate(['../descargas'], { relativeTo: this.route }).then(() => {
+                // Scroll to top after navigation
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });; ;
           }
     // Path to the PDF file (this could be a URL or a local path)
     pdfSrc: string = 'files/geoportal.pdf';

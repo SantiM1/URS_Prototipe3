@@ -62,7 +62,10 @@ export class UserListComponent implements OnInit, OnDestroy {
      */
 
     navPortal(){
-        this.router.navigate(['/portal/land'])
+        this.router.navigate(['/portal/land']).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });; 
     }
     ngOnInit(): void {
         // Category
