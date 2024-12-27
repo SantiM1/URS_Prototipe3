@@ -1,0 +1,101 @@
+<div class="flex flex-auto rounded-xl overflow-hidden px-50 mb-28">
+    <table class="table-auto shadow-md w-full rounded-xl overflow-hidden">
+        <thead>
+            <tr>
+                <td
+                    class="border border-gray-300 px-4 py-1 text-center bg-primary text-gray-100 font-semibold min-w-10">
+                    No.</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-60">Cédula</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-60">Nombre</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-10">Seleccionar
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td
+                    class="border border-gray-300 px-4 py-1 text-center bg-primary text-gray-100 font-semibold min-w-10">
+                    1</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-60">1732456522</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-60">Juan Morales
+                    Armen</td>
+                 <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-10">
+                    <button
+                        class="text-blue-600 rounded-full transform transition-transform duration-200 hover:scale-150 ">
+                        <mat-icon class="text-current "
+                            [svgIcon]="'heroicons_solid:check-circle'"></mat-icon>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td
+                    class="border border-gray-300 px-4 py-1 text-center bg-primary text-gray-100 font-semibold min-w-10">
+                    2</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-60">1723456789</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-60">Juan Morales
+                    García</td>
+                 <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-10">
+                    <button
+                        class="text-blue-600 rounded-full transform transition-transform duration-200 hover:scale-150 ">
+                        <mat-icon class="text-current "
+                            [svgIcon]="'heroicons_solid:check-circle'"></mat-icon>
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td
+                    class="border border-gray-300 px-4 py-1 text-center bg-primary text-gray-100 font-semibold min-w-10">
+                    3</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-60">1729876543</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-60">Juan Morales
+                    López</td>
+                    <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-10">
+                        <button
+                            class="text-blue-600 rounded-full transform transition-transform duration-200 hover:scale-150 ">
+                            <mat-icon class="text-current "
+                                [svgIcon]="'heroicons_solid:check-circle'"></mat-icon>
+                        </button>
+                    </td>
+            </tr>
+            <tr>
+                <td
+                    class="border border-gray-300 px-4 py-1 text-center bg-primary text-gray-100 font-semibold min-w-10">
+                    4</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-60">1725647382</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-60">Juan Carlos
+                    Morales</td>
+                    <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-10">
+                        <button
+                            class="text-blue-600 rounded-full transform transition-transform duration-200 hover:scale-150 ">
+                            <mat-icon class="text-current "
+                                [svgIcon]="'heroicons_solid:check-circle'"></mat-icon>
+                        </button>
+                    </td>
+            </tr>
+            <tr>
+                <td
+                    class="border border-gray-300 px-4 py-1 text-center bg-primary text-gray-100 font-semibold min-w-10">
+                    5</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-60">1723498576</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-60">Juan Manuel
+                    Morales</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-10">
+                    <button
+                        class="text-blue-600 rounded-full transform transition-transform duration-200 hover:scale-150 ">
+                        <mat-icon class="text-current "
+                            [svgIcon]="'heroicons_solid:check-circle'"></mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <mat-paginator
+                        class="flex justify-center sm:absolute sm:inset-x-0 sm:bottom-0"
+                        [ngClass]="{ 'pointer-events-none': true }"
+                        [length]="10"
+                        [pageIndex]="1"
+                        [pageSize]="5"
+                        [pageSizeOptions]="[5, 10, 25, 100]"
+                        [showFirstLastButtons]="true"
+                    ></mat-paginator>
+</div>

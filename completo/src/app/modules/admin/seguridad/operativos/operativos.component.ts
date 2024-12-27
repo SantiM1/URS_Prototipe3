@@ -123,9 +123,15 @@ export class OperativoComponent {
   goToPanel(panel: string): void {
     this.selectedPanel = panel;
     if (this.uuid_fp) {
-      this.router.navigate([panel, this.uuid_fp], { relativeTo: this.route });
+      this.router.navigate([panel, this.uuid_fp], { relativeTo: this.route }).then(() => {
+        // Scroll to top after navigation
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });; ;
     } else {
-        this.router.navigate([panel], { relativeTo: this.route });
+        this.router.navigate([panel], { relativeTo: this.route }).then(() => {
+          // Scroll to top after navigation
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      });; ;
     }   
   }
   
