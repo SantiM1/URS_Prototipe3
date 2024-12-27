@@ -42,7 +42,13 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseAlertService } from '@fuse/components/alert';
+import { FuseFullscreenComponent } from '@fuse/components/fullscreen';
+import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
 import { FuseConfirmationService } from '@fuse/services/confirmation';
+import { NotificationsComponent } from 'app/layout/common/notifications/notifications.component';
+import { SearchComponent } from 'app/layout/common/search/search.component';
+import { UserComponent } from 'app/layout/common/user/user.component';
+import { MessagesComponent } from 'app/modules/admin/portal/landing-signed-in/messages/messages.component';
 import { PlanificacionService } from 'app/modules/admin/seguridad/planificacion/planificacion.service';
 import {
     PlanificacionPagination,
@@ -107,7 +113,12 @@ import {
         MatTabsModule,
         AsyncPipe,
         CurrencyPipe,
-    ],
+        UserComponent,
+        NotificationsComponent,
+        MessagesComponent,
+        SearchComponent,
+        FuseFullscreenComponent,
+        ],
 })
 export class PlanificacionListComponent
     implements OnInit, AfterViewInit, OnDestroy
@@ -126,6 +137,8 @@ export class PlanificacionListComponent
     private _unsubscribeAll: Subject<any> = new Subject<any>();
     private _fuseAlertService = inject(FuseAlertService);
     crearSegment:boolean=false;
+    isChecked = false;
+
     /**
      * Constructor
      */
@@ -136,9 +149,26 @@ export class PlanificacionListComponent
         private _formBuilder: UntypedFormBuilder,
         private _planificacionService: PlanificacionService,
         private router: Router,
-        private route: ActivatedRoute
-    ) {}
+        private route: ActivatedRoute,
+        private _fuseNavigationService: FuseNavigationService,
+        ) {}
+
+        toggleCheck(){
+            this.isChecked = !this.isChecked;
+        }
+        
+        toggleNavigation(name: string): void {
+            // Get the navigation
+            const navigation =
+                this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>(
+                    name
+                );
     
+            if (navigation) {
+                // Toggle the opened status
+                navigation.toggle();
+            }
+        }
     crearRegistro() {
        this.crearSegment = true
        //this.router.navigate(['crear'], { relativeTo: this.route });

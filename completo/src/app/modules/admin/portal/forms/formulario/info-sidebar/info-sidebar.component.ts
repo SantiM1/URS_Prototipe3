@@ -99,7 +99,7 @@ export class InfoSidebarComponent {
     ) {
         router.events.subscribe((val) => {
             // see also 
-            console.log(this.router.url.slice(-1));
+            //console.log(this.router.url.slice(-1));
             this.helpText = this.text[+this.router.url.slice(-1)];
             this.title = this.titles[+this.router.url.slice(-1)];
             this.helpText2 = this.text2[+this.router.url.slice(-1)];

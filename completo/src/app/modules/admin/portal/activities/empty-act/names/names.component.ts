@@ -29,10 +29,18 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 export class NamesComponent {
    constructor(private activeRoute: ActivatedRoute, private router: Router) {}
    
-       
+   navDirect(name: string, scroll:number):void {
+    this.router.navigate([name]).then(() => {
+        // Scroll to top after navigation
+        window.scrollTo({ top: scroll, behavior: 'smooth' });
+    });
+}
      
        // Navigate back to the previous page
        goBack(): void {
-        this.router.navigate(['../'], {relativeTo: this.activeRoute})
+        this.router.navigate(['../'], {relativeTo: this.activeRoute}).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
        }
 }

@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Router, RouterLink, RouterOutlet } from "@angular/router";
+import { ActivatedRoute, Router, RouterLink, RouterOutlet } from "@angular/router";
 
 import { FuseFullscreenComponent } from "@fuse/components/fullscreen";
 import { FuseNavigationService, FuseVerticalNavigationComponent } from "@fuse/components/navigation";
@@ -34,10 +34,18 @@ import { QueryComponent } from "../query/query.component";
 export class ActivitiesEmptyPlace {
 
     constructor(
-        router: Router,
+        private router: Router,
+        private activeRoute: ActivatedRoute,
         private _fuseNavigationService: FuseNavigationService,
 
     ) { }
+
+    navTo(name: string):void {
+        this.router.navigate([name],{relativeTo: this.activeRoute}).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
     toggleNavigation(name: string): void {
         // Get the navigation
         const navigation =

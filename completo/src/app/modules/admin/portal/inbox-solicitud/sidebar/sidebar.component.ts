@@ -134,7 +134,7 @@ export class UserSidebarComponent implements OnInit, OnDestroy {
                 title: folder.title,
                 type: 'basic',
                 icon: folder.icon,
-                link: '/portal/inbox/' + folder.slug,
+                link: '/portal/solicitudes/' + folder.slug,
             };
 
             // If the count is available and is bigger than zero...

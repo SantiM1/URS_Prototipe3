@@ -6,6 +6,8 @@ import {
     ViewEncapsulation,
 } from '@angular/core';
 import { MatChipsModule } from '@angular/material/chips';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FuseNavigationService } from '@fuse/components/navigation';
 
 @Component({
     selector: 'activity',
@@ -16,6 +18,21 @@ import { MatChipsModule } from '@angular/material/chips';
     imports: [TitleCasePipe, DatePipe, CommonModule, MatChipsModule],
 })
 export class InfoRSComponent implements OnInit {
+
+    constructor(
+        private router: Router,
+        private activeRoute: ActivatedRoute,
+        private _fuseNavigationService: FuseNavigationService,
+
+    ) { }
+
+
+    navTo(name: string):void {
+        this.router.navigate([name],{relativeTo: this.activeRoute}).then(() => {
+                // Scroll to top after navigation
+                window.scrollTo({ top: 850, behavior: 'smooth' });
+            });
+    }
     activities = [
         {
             id: 1,

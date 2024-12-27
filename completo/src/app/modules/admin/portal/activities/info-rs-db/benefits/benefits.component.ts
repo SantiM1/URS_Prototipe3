@@ -7,6 +7,7 @@ import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { ActivatedRoute, Router } from "@angular/router";
 import {Location} from '@angular/common';
+import { MatIconModule } from "@angular/material/icon";
 
 @Component({
     selector: 'benefits-box',
@@ -19,6 +20,7 @@ import {Location} from '@angular/common';
         MatDatepickerModule,
         FormsModule, 
         CommonModule,
+        MatIconModule,
     ],
 })
 export class BenefitsComponent {

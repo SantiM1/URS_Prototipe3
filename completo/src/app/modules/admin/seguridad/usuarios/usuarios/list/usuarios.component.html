@@ -26,8 +26,7 @@
         <div class="flex px-6 space-x-4 text-4xl font-extrabold tracking-tight">
             <div>Usuarios</div>
         </div>
-        <div 
-            class="relative flex border-b px-6 py-8 sm:flex-row sm:items-center sm:justify-between md:px-8">
+        <div class="relative flex border-b px-6 py-8 sm:flex-row sm:items-center sm:justify-between md:px-8">
             <!-- Loader -->
             @if (isLoading) {
             <div class="absolute inset-x-0 bottom-0">
@@ -317,7 +316,7 @@
                                                 <mat-label>Teléfono/Celular</mat-label>
                                                 <input matInput [formControlName]="'tel'" />
                                             </mat-form-field>
-                                            <mat-slide-toggle class="py-12" [formControlName]="'active'" 
+                                            <mat-slide-toggle class="py-12" [formControlName]="'active'"
                                                 [color]="'primary'">
                                                 {{
                                                 selectedProductForm.get(

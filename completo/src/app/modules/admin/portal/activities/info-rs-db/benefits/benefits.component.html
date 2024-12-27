@@ -4,9 +4,9 @@
           class="flex items-center px-4 py-2 bg-primary text-white font-semibold rounded-xl hover:bg-gray-400"
           (click) ='goBack()'
         >
-          <span class="material-icons mr-2">arrow_back</span>
-          Regresar
-        </button>
+        <mat-icon class="text-current icon-size-7 " [svgIcon]="'heroicons_outline:x-circle'"></mat-icon>
+        Cerrar
+      </button>
       </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- CDH Section -->
@@ -18,7 +18,7 @@
           class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600" 
           
         >
-          Learn More
+          Ver detalle
         </button>
       </div>
   
@@ -31,7 +31,7 @@
           class="px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600" 
           
         >
-          Learn More
+        Ver detalle
         </button>
       </div>
     </div>

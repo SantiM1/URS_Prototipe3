@@ -30,21 +30,46 @@ export class PricingSimpleComponent  {
 
     }
     navServicios(){
+        if(this.router.url == '/portal/land-so'){
+           
+            this.router.navigate(['/portal/autoregistro'] ).then(() => {
+                // Scroll to top after navigation
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });; 
+        }else{
         this.router.navigate(['./servicios'],{ relativeTo: this.route } ).then(() => {
             // Scroll to top after navigation
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });; 
     }
+    }
     navForm(){
+        if(this.router.url == '/portal/land-so'){
+           
+            this.router.navigate(['/portal/autoregistro'] ).then(() => {
+                // Scroll to top after navigation
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });; 
+        }else{
         this.router.navigate(['../formulario-urs/p0'],{ relativeTo: this.route } ).then(() => {
             // Scroll to top after navigation
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });; 
     }
+    }
     navGeoportal(){
+        if(this.router.url == '/portal/land-so'){
+           
+            this.router.navigate(['/portal/autoregistro'] ).then(() => {
+                // Scroll to top after navigation
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });; 
+        }else{
+            
         this.router.navigate(['/apps/maps/portal-geografico'] ).then(() => {
             // Scroll to top after navigation
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });; 
+    }
     }
 }

@@ -6,6 +6,7 @@
         ViewEncapsulation,
     } from '@angular/core';
     import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
     import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
     @Component({
         selector: 'activity',
@@ -13,7 +14,13 @@
         encapsulation: ViewEncapsulation.None,
         changeDetection: ChangeDetectionStrategy.OnPush,
         standalone: true,
-        imports: [TitleCasePipe, DatePipe, CommonModule, MatChipsModule, RouterModule],
+        imports: [TitleCasePipe, 
+            DatePipe,
+             CommonModule, 
+             MatChipsModule, 
+             RouterModule,
+            MatIconModule,
+        ],
     })
     export class InfoRSDBComponent implements OnInit {
 
@@ -26,7 +33,7 @@
         navTo(name: string): void {
             this.router.navigate([name], { relativeTo: this.activeRoute }).then(() => {
                 // Scroll to top after navigation
-                window.scrollTo({ top: 900, behavior: 'smooth' });
+                window.scrollTo({ top: 850, behavior: 'smooth' });
             });
         }
         

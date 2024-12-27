@@ -211,7 +211,7 @@ export class FormSidebarComponent {
         ];
         router.events.subscribe((val) => {
             // see also 
-            console.log(this.router.url.slice(-1));
+            //console.log(this.router.url.slice(-1));
             this.qnum = this.qnums[+this.router.url.slice(-1)];
             this.qvalue = this.qnum/24*100
         });

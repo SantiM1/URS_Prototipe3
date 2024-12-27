@@ -21,7 +21,7 @@ import { ActivatedRoute, Router } from "@angular/router";
         FormsModule, 
         CommonModule,
         MatButtonModule, 
-        MatIconModule
+        MatIconModule,
     ],
 })
 export class InfoHogarComponent {

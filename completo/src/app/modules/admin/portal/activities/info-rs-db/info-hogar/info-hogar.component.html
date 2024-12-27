@@ -5,8 +5,8 @@
           class="flex items-center px-4 py-2 bg-primary text-white font-semibold rounded-xl hover:bg-gray-400"
           (click) ='goBack()'
         >
-          <span class="material-icons mr-2">arrow_back</span>
-          Regresar
+        <mat-icon class="text-current icon-size-7 " [svgIcon]="'heroicons_outline:x-circle'"></mat-icon>
+          Cerrar
         </button>
       </div>
    
@@ -80,7 +80,7 @@
         
         <div class="flex items-center space-x-4 justify-center"> 
             <div> Historial de Cambios </div>
-            <mat-icon class="text-current icon-size-7 "[svgIcon]="'heroicons_outline:clipboard-document-list'"></mat-icon>
+            <mat-icon class="text-current icon-size-7 " [svgIcon]="'heroicons_outline:clipboard-document-list'"></mat-icon>
          </div>
     </button>
 </div>

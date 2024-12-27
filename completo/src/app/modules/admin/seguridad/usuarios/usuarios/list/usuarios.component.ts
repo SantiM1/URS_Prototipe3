@@ -153,6 +153,9 @@ export class UsuarioListComponent
         private _fuseNavigationService: FuseNavigationService,
     ) {}
 
+    toggleCheck(){
+        this.isChecked = !this.isChecked;
+    }
     
     toggleNavigation(name: string): void {
         // Get the navigation
@@ -521,8 +524,6 @@ export class UsuarioListComponent
         return item.id || index;
     }
 
-    toggleCheck(){
-        this.isChecked = !this.isChecked;
-    }
+    
     
 }

@@ -6,7 +6,7 @@
             <!-- Title -->
              <div>
             <div class="text-4xl font-extrabold leading-none text-center tracking-tight">
-                Seguimiento Nominal 2
+                Seguimiento Nominal
                 <div class="text-secondary mt-1.5 text-lg">
                     Indice de Pobreza RC 2024
                 </div>
@@ -23,7 +23,7 @@
 
                         <li class="relative flex py-7">
                             <div
-                                class=" flex flex-col text-md pt-1 pr-5">
+                                class=" flex flex-col text-md pt-1 pr-6">
                                 <div class="text-secondary">
                                     {{ activity.date }}
                                 </div>
@@ -34,11 +34,12 @@
                             <div class="relative flex flex-auto">
                                 <!-- Icon -->
                                 <div *ngIf="activity.color"
-                                    class="mr-4 mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-{{ activity.color }}-500">
+                                    class="mr-4 mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-{{ activity.color }}-500">
                                 </div>
                                 <!-- Content -->
                                 <div class="flex flex-auto flex-col items-start ">
-                                    <div class="flex justify-center py-1 rounded-xl text-{{activity.color}}-600 bg-{{activity.color}}-200 mb-4 min-w-40"
+                                    <div (click)="navTo('./db')"
+                                    class="cursor-pointer flex justify-center py-1 rounded-xl text-{{activity.color}}-600 bg-{{activity.color}}-200 mb-4 min-w-40"
                                         *ngIf="activity.title">{{ activity.title }}</div>
 
                                     <div class="flex justify-center items-center space-x-2">
