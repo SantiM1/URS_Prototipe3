@@ -2,8 +2,8 @@ import { Component } from "@angular/core";
 import { Router, RouterLink, RouterOutlet } from "@angular/router";
 
 @Component({
-    selector: 'landing-place',
-    templateUrl: './landing-place.component.html',
+    selector: 'landing-container',
+    templateUrl: './landing-container.component.html',
     standalone:true,
     imports:[
         RouterOutlet

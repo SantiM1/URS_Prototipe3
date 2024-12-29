@@ -9,7 +9,7 @@ import { UserComponent } from 'app/layout/common/user/user.component';
 import { MatIconModule } from "@angular/material/icon";
 import { InfoRCComponent } from "../info-rc/info-rc.component";
 import { NotificationsComponent } from "app/layout/common/notifications/notifications.component";
-import { MessagesComponent } from "../../landing-signed-in/messages/messages.component";
+import { MessagesComponent } from "../../landing-signed-in/landing-messages/messages.component";
 import { QueryComponent } from "../query/query.component";
 
 

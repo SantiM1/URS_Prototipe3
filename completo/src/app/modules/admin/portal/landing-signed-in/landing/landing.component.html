@@ -95,7 +95,7 @@
                         Identificación de extranjero)
                     </div>
                     <div class="-mx-3 mt-3 ">
-                        <button mat-flat-button [color]="'primary'" class="flex-grow w-80" (click)="forms()">
+                        <button mat-flat-button [color]="'primary'" class="flex-grow w-80" (click)="navTo('/portal/formulario-urs/p0')">
                             <mat-icon class="icon-size-5 " [svgIcon]="'heroicons_solid:question-mark-circle'"></mat-icon>
                             <span class="ml-2">Formulario</span>
                         </button>
@@ -138,7 +138,7 @@
           <h2 class="text-lg font-bold mb-4">Compartenos tu opinión!</h2>
           <div class="space-y-2">
             <!-- Button: Preguntas, quejas o sugerencias -->
-            <button (click)="soporte()" class="min-w-80  border border-white p-4 flex items-center justify-between text-white rounded-lg hover:bg-white hover:text-blue-900">
+            <button (click)="navTo('portal/land/soporte')" class="min-w-80  border border-white p-4 flex items-center justify-between text-white rounded-lg hover:bg-white hover:text-blue-900">
               Preguntas, quejas o sugerencias
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1.707-10.707a1 1 0 10-1.414 1.414L11.586 10H7a1 1 0 100 2h4.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414l-3-3z" clip-rule="evenodd" />
@@ -146,7 +146,7 @@
             </button>
             <h2 class="text-lg font-bold mb-4">¿Necesitas ayuda?</h2>
             <!-- Button: Encuesta de satisfacción sitio web -->
-            <button (click)="faqs()" class="min-w-80  border border-white p-4 flex items-center justify-between text-white rounded-lg hover:bg-white hover:text-blue-900">
+            <button (click)="navTo('portal/land/faqs')" class="min-w-80  border border-white p-4 flex items-center justify-between text-white rounded-lg hover:bg-white hover:text-blue-900">
               Preguntas frequentes (FAQ)
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1.707-10.707a1 1 0 10-1.414 1.414L11.586 10H7a1 1 0 100 2h4.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414l-3-3z" clip-rule="evenodd" />

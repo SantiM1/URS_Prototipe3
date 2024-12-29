@@ -14,15 +14,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
-import { MatSelectModule } from '@angular/material/select';
 import { RouterLink } from '@angular/router';
 import { fuseAnimations } from '@fuse/animations';
 import { FuseAlertComponent } from '@fuse/components/alert';
-import { HelpCenterService } from 'app/modules/admin/apps/help-center/help-center.service';
 
 @Component({
-    selector: 'support-servicios',
-    templateUrl: './support-servicios.component.html',
+    selector: 'landing-support',
+    templateUrl: './soporte.component.html',
     encapsulation: ViewEncapsulation.None,
     animations: fuseAnimations,
     standalone: true,
@@ -37,11 +35,9 @@ import { HelpCenterService } from 'app/modules/admin/apps/help-center/help-cente
         MatInputModule,
         TextFieldModule,
         MatRadioModule,
-        MatFormFieldModule,
-        MatSelectModule
     ],
 })
-export class ServiciosSupportComponent implements OnInit {
+export class LandingSupportComponent implements OnInit {
     @ViewChild('supportNgForm') supportNgForm: NgForm;
 
     alert: any;
@@ -65,14 +61,14 @@ export class ServiciosSupportComponent implements OnInit {
         this.cat = selectedCategory
         // Update visibility of textarea
         switch (selectedCategory) {
-            case 'soporte':
-                this.messageLabel = '¿Necesitas ayuda específica? Contactate con uno de nuestros chats de soporte! Describe tu problema o solicitud';
+            case 'preguntas':
+                this.messageLabel = '¿Tienes una pregunta específica? No olvides revisar la sección de preguntas frecuentes!';
                 break;
-            case 'ingreso':
-                this.messageLabel = 'Para Ingresar Otro Usuario al Sistema';
+            case 'quejas':
+                this.messageLabel = 'Describe el problema encontrado. Haremos lo posible para solucionarlo!';
                 break;
-            case 'actualizacion':
-                this.messageLabel = 'Para Actualizar Otro Usuario al Sistema';
+            case 'sugerencias':
+                this.messageLabel = '¿Como podemos mejorar? Nos encanta escuchar sugerencias!';
                 break;
             default:
                 this.messageLabel = 'Message';

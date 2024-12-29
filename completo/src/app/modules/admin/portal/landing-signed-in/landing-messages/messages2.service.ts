@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Message } from 'app/modules/admin/portal/landing-signed-in/messages/messages.types';
+import { Message } from 'app/modules/admin/portal/landing-signed-in/landing-messages/messages.types';
 import { map, Observable, ReplaySubject, switchMap, take, tap } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class MessagesService {
+export class Messages2Service {
     private _messages: ReplaySubject<Message[]> = new ReplaySubject<Message[]>(
         1
     );
@@ -33,8 +33,10 @@ export class MessagesService {
      * Get all messages
      */
     getAll(): Observable<Message[]> {
-        return this._httpClient.get<Message[]>('api/common/messages').pipe(
+        console.log('Enter2')
+        return this._httpClient.get<Message[]>('api/common/messages2').pipe(
             tap((messages) => {
+                console.log(messages)
                 this._messages.next(messages);
             })
         );
@@ -50,7 +52,7 @@ export class MessagesService {
             take(1),
             switchMap((messages) =>
                 this._httpClient
-                    .post<Message>('api/common/messages', { message })
+                    .post<Message>('api/common/messages2', { message })
                     .pipe(
                         map((newMessage) => {
                             // Update the messages with the new message
@@ -75,7 +77,7 @@ export class MessagesService {
             take(1),
             switchMap((messages) =>
                 this._httpClient
-                    .patch<Message>('api/common/messages', {
+                    .patch<Message>('api/common/messages2', {
                         id,
                         message,
                     })
@@ -110,7 +112,7 @@ export class MessagesService {
             take(1),
             switchMap((messages) =>
                 this._httpClient
-                    .delete<boolean>('api/common/messages', { params: { id } })
+                    .delete<boolean>('api/common/messages2', { params: { id } })
                     .pipe(
                         map((isDeleted: boolean) => {
                             // Find the index of the deleted message
@@ -140,7 +142,7 @@ export class MessagesService {
             take(1),
             switchMap((messages) =>
                 this._httpClient
-                    .get<boolean>('api/common/messages/mark-all-as-read')
+                    .get<boolean>('api/common/messages2/mark-all-as-read')
                     .pipe(
                         map((isUpdated: boolean) => {
                             // Go through all messages and set them as read

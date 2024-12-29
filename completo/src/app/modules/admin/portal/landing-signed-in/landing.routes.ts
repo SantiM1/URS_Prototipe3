@@ -1,11 +1,11 @@
 import { inject } from '@angular/core';
 import { Routes } from '@angular/router';
-import { LandingComponent } from 'app/modules/admin/portal/landing-signed-in/landing-main/landing.component';
+import { LandingComponent } from 'app/modules/admin/portal/landing-signed-in/landing/landing.component';
 import { LandingService } from 'app/modules/admin/portal/landing-signed-in/landing.service';
-import { LandingSupportComponent } from './support-landing/support.component';
-import { LandingFaqsComponent } from './faqs-landing/faqs.component';
-import { LandingPlace } from './landing-place.component';
-import { ServiciosSupportComponent } from './support-servicios/support-servicios.component';
+import { LandingSupportComponent } from './landing-soporte/soporte.component';
+import { LandingFaqsComponent } from './landing-faqs/faqs.component';
+import { LandingPlace } from './landing-container.component';
+import { ServiciosSupportComponent } from './landing-servicios/servicios.component';
 
 export default [
     {

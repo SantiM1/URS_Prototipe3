@@ -5,8 +5,8 @@ import { FuseFullscreenComponent } from "@fuse/components/fullscreen";
 import { FuseNavigationService, FuseVerticalNavigationComponent } from "@fuse/components/navigation";
 import { SearchComponent } from "app/layout/common/search/search.component";
 import { UserComponent } from 'app/layout/common/user/user.component';
-import { MessagesComponent } from "../landing-signed-in/messages/messages.component";
-import { NotificationsComponent } from "../landing-signed-in/notifications/notifications.component";
+import { MessagesComponent } from "../landing-signed-in/landing-messages/messages.component";
+import { NotificationsComponent } from "../landing-signed-in/landing-notifications/notifications.component";
 import { MatIconModule } from "@angular/material/icon";
 import { QueryComponent } from "./query/query.component";
 

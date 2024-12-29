@@ -16,16 +16,16 @@ import { MatButton, MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Router, RouterLink } from '@angular/router';
-import { MessagesService } from 'app/modules/admin/portal/landing-signed-in/messages/messages.service';
-import { Message } from 'app/modules/admin/portal/landing-signed-in/messages/messages.types';
+import { Messages2Service } from 'app/modules/admin/portal/landing-signed-in/landing-messages/messages2.service';
+import { Message } from 'app/modules/admin/portal/landing-signed-in/landing-messages/messages.types';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
-    selector: 'messages',
-    templateUrl: './messages.component.html',
+    selector: 'notifications',
+    templateUrl: './notifications.component.html',
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    exportAs: 'messages',
+    exportAs: 'notifications',
     standalone: true,
     imports: [
         MatButtonModule,
@@ -37,7 +37,7 @@ import { Subject, takeUntil } from 'rxjs';
         DatePipe,
     ],
 })
-export class MessagesComponent implements OnInit, OnDestroy {
+export class NotificationsComponent implements OnInit, OnDestroy {
     @ViewChild('messagesOrigin') private _messagesOrigin: MatButton;
     @ViewChild('messagesPanel') private _messagesPanel: TemplateRef<any>;
 
@@ -51,7 +51,7 @@ export class MessagesComponent implements OnInit, OnDestroy {
      */
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,
-        private _messagesService: MessagesService,
+        private _messagesService: Messages2Service,
         private _overlay: Overlay,
         private _viewContainerRef: ViewContainerRef,
         private _router: Router,
@@ -231,7 +231,7 @@ export class MessagesComponent implements OnInit, OnDestroy {
         this.unreadCount = count;
     }
     goToInbox(){
-        this._router.navigate(['/portal/solicitudes']).then(() => {
+        this._router.navigate(['/portal/notificaciones']).then(() => {
             // Scroll to top after navigation
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });; ;

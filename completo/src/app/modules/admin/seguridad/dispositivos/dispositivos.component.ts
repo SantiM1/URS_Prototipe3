@@ -10,7 +10,7 @@ import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/co
 import { NotificationsComponent } from 'app/layout/common/notifications/notifications.component';
 import { SearchComponent } from 'app/layout/common/search/search.component';
 import { UserComponent } from 'app/layout/common/user/user.component';
-import { MessagesComponent } from '../../portal/landing-signed-in/messages/messages.component';
+import { MessagesComponent } from '../../portal/landing-signed-in/landing-messages/messages.component';
 
 
 @Component({
