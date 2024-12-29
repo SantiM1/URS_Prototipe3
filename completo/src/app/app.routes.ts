@@ -3,7 +3,7 @@ import { initialDataResolver } from 'app/app.resolvers';
 import { AuthGuard } from 'app/core/auth/guards/auth.guard';
 import { NoAuthGuard } from 'app/core/auth/guards/noAuth.guard';
 import { LayoutComponent } from 'app/layout/layout.component';
-import { MapComponent } from './modules/admin/map/map.component';
+import { MapComponent } from './modules/URS/geoportal/map.component';
 
 // prettier-ignore
 /* eslint-disable max-len */
@@ -90,26 +90,25 @@ export const appRoutes: Route[] = [
             //Seguridad
             {path: 'seguridad', children: [
                 
-                {path: 'usuarios', loadChildren: () => import('app/modules/admin/seguridad/usuarios/usuarios.routes')},
-                {path: 'operativosfase', loadChildren: () => import('app/modules/admin/seguridad/operativos/operativos.routes')},
-                {path: 'dispositivos', loadChildren: () => import('app/modules/admin/seguridad/dispositivos/dispositivos.routes')},
-                {path: 'planificacion', loadChildren: () => import('app/modules/admin/seguridad/planificacion/planificacion.routes')},
-                {path: 'sistema', loadChildren: () => import('app/modules/admin/seguridad/sistema/sistema.routes')},
+                {path: 'usuarios', loadChildren: () => import('app/modules/URS/seguridad/usuarios/usuarios.routes')},
+                {path: 'operativosfase', loadChildren: () => import('app/modules/URS/seguridad/operativos/operativos.routes')},
+                {path: 'dispositivos', loadChildren: () => import('app/modules/URS/seguridad/dispositivos/dispositivos.routes')},
+                {path: 'planificacion', loadChildren: () => import('app/modules/URS/seguridad/planificacion/planificacion.routes')},
+                {path: 'sistema', loadChildren: () => import('app/modules/URS/seguridad/sistema/sistema.routes')},
             ]},
             //Portal
             {path: 'portal', children: [
-                {path: 'land-so', loadChildren: () => import('app/modules/admin/portal/landing-signed-out/landingSO.routes')},
-                {path: 'land', loadChildren: () => import('app/modules/admin/portal/landing-signed-in/landing.routes')},
-                {path: 'notificaciones', loadChildren: () => import('app/modules/admin/portal/inbox-notification/inbox-notification.routes')},
-                {path: 'formulario-urs', loadChildren: () => import('app/modules/admin/portal/forms/portal.routes')},
-                {path: 'solicitudes', loadChildren: () => import('app/modules/admin/portal/inbox-solicitud/inbox-solicitud.routes')},
-                {path: 'seguimiento-nominal', loadChildren: () => import('app/modules/admin/portal/activities/activities.routes')},
-                {path: 'autoregistro', loadChildren: () => import('app/modules/admin/portal/sign-up/sign-up.routes')},
-                
+                {path: 'land-so', loadChildren: () => import('app/modules/URS/portal/landing-signed-out/landingSO.routes')},
+                {path: 'land', loadChildren: () => import('app/modules/URS/portal/landing-signed-in/landing.routes')},
+                {path: 'notificaciones', loadChildren: () => import('app/modules/URS/portal/inbox-notification/inbox-notification.routes')},
+                {path: 'formulario-urs', loadChildren: () => import('app/modules/URS/portal/forms/portal.routes')},
+                {path: 'solicitudes', loadChildren: () => import('app/modules/URS/portal/inbox-solicitud/inbox-solicitud.routes')},
+                {path: 'seguimiento-nominal', loadChildren: () => import('app/modules/URS/portal/activities/activities.routes')},
+                {path: 'autoregistro', loadChildren: () => import('app/modules/URS/portal/sign-up/sign-up.routes')},
+                {path: 'maps',  loadChildren: () => import('app/modules/URS/geoportal/map.routes')},
             ]},
             // Apps
             {path: 'apps', children: [
-                {path: 'maps',  loadChildren: () => import('app/modules/admin/map/map.routes')},
                 {path: 'academy', loadChildren: () => import('app/modules/admin/apps/academy/academy.routes')},
                 {path: 'chat', loadChildren: () => import('app/modules/admin/apps/chat/chat.routes')},
                 {path: 'contacts', loadChildren: () => import('app/modules/admin/apps/contacts/contacts.routes')},
