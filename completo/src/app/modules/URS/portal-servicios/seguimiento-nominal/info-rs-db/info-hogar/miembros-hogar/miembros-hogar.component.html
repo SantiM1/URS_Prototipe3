@@ -1,0 +1,29 @@
+<h2 class="text-xl font-bold mb-4">Detalles de Personas</h2>
+<mat-dialog-content class="overflow-x-auto">
+  <table class="table-auto border-collapse border border-gray-200 w-full text-left">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border border-gray-200 px-4 py-2">No.</th>
+        <th class="border border-gray-200 px-4 py-2">Cédula</th>
+        <th class="border border-gray-200 px-4 py-2">Nombre</th>
+        <th class="border border-gray-200 px-4 py-2">Fecha Nacimiento</th>
+        <th class="border border-gray-200 px-4 py-2">Nacionalidad</th>
+        <th class="border border-gray-200 px-4 py-2">Discapacidad</th>
+        <th class="border border-gray-200 px-4 py-2">Parentesco</th>
+        <th class="border border-gray-200 px-4 py-2">Puntaje</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of tableData">
+        <td class="border border-gray-200 px-4 py-2">{{ row.no }}</td>
+        <td class="border border-gray-200 px-4 py-2">{{ row.cedula }}</td>
+        <td class="border border-gray-200 px-4 py-2">{{ row.nombre }}</td>
+        <td class="border border-gray-200 px-4 py-2">{{ row.fechaNacimiento }}</td>
+        <td class="border border-gray-200 px-4 py-2">{{ row.nacionalidad }}</td>
+        <td class="border border-gray-200 px-4 py-2">{{ row.discapacidad }}</td>
+        <td class="border border-gray-200 px-4 py-2">{{ row.parentesco }}</td>
+        <td class="border border-gray-200 px-4 py-2">{{ row.puntaje }}</td>
+      </tr>
+    </tbody>
+  </table>
+</mat-dialog-content>

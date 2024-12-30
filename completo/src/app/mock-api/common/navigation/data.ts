@@ -94,49 +94,49 @@ export const defaultNavigation: FuseNavigationItem[] = [
         subtitle: 'Unique dashboard designs',
         type: 'group',
         icon: 'heroicons_outline:globe-alt',
-        link:'/apps/maps/portal-geografico',
+        link:'/portal/maps/portal-geografico',
         children: [
             {
                 id: 'geoportal',
                 title: 'Portal Geográfico',
                 type: 'basic',
                 icon: 'heroicons_outline:map',
-                link: '/apps/maps/portal-geografico',
+                link: '/portal/maps/portal-geografico',
             },
             {
                 id: 'geoportal',
                 title: 'Visor Geográfico',
                 type: 'basic',
                 icon: 'heroicons_outline:map',
-                link: '/apps/maps/geovisor',
+                link: '/portal/maps/geovisor',
             },
             {
                 id: 'geoportal',
                 title: 'Catalogo de Datos',
                 type: 'basic',
                 icon: 'heroicons_outline:map',
-                link: '/apps/maps/catalogo-datos',
+                link: '/portal/maps/catalogo-datos',
             },
             {
                 id: 'geoportal',
                 title: 'Catalogo de Servicios',
                 type: 'basic',
                 icon: 'heroicons_outline:map',
-                link: '/apps/maps/catalogo-servicios',
+                link: '/portal/maps/catalogo-servicios',
             },
             {
                 id: 'geoportal',
                 title: 'Descargas',
                 type: 'basic',
                 icon: 'heroicons_outline:map',
-                link: '/apps/maps/descargas',
+                link: '/portal/maps/descargas',
             },
             {
                 id: 'geoportal',
                 title: 'GeoApps',
                 type: 'basic',
                 icon: 'heroicons_outline:map',
-                link: '/apps/maps/geo-apps',
+                link: '/portal/maps/geo-apps',
             },
            
         ]
@@ -1329,7 +1329,7 @@ export const compactNavigation: FuseNavigationItem[] = [
         tooltip: 'Geoportal',
         type: 'basic',
         icon: 'heroicons_outline:globe-alt',
-        link:'/apps/maps/portal-geografico',
+        link:'/portal/maps/portal-geografico',
        
     },
     /*{

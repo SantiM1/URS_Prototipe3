@@ -1,11 +1,11 @@
 import { inject } from '@angular/core';
 import { NavigationService } from 'app/core/navigation/navigation.service';
-import { MessagesService } from 'app/modules/URS/portal/landing-signed-in/landing-messages/messages.service';
+import { MessagesService } from 'app/modules/URS/portal-servicios/landing-signed-in/landing-messages/messages.service';
 import { NotificationsService } from 'app/layout/common/notifications/notifications.service';
 import { QuickChatService } from 'app/layout/common/quick-chat/quick-chat.service';
 import { ShortcutsService } from 'app/layout/common/shortcuts/shortcuts.service';
 import { forkJoin } from 'rxjs';
-import { Messages2Service } from './modules/URS/portal/landing-signed-in/landing-messages/messages2.service';
+import { Messages2Service } from './modules/URS/portal-servicios/landing-signed-in/landing-messages/messages2.service';
 
 export const initialDataResolver = () => {
     const messagesService = inject(MessagesService);

@@ -48,7 +48,7 @@ import { FuseConfirmationService } from '@fuse/services/confirmation';
 import { NotificationsComponent } from 'app/layout/common/notifications/notifications.component';
 import { SearchComponent } from 'app/layout/common/search/search.component';
 import { UserComponent } from 'app/layout/common/user/user.component';
-import { MessagesComponent } from 'app/modules/URS/portal/landing-signed-in/landing-messages/messages.component';
+import { MessagesComponent } from 'app/modules/URS/portal-servicios/landing-signed-in/landing-messages/messages.component';
 import { PlanificacionService } from 'app/modules/URS/seguridad/planificacion/planificacion.service';
 import {
     PlanificacionPagination,

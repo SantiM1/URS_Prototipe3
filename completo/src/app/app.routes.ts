@@ -98,13 +98,13 @@ export const appRoutes: Route[] = [
             ]},
             //Portal
             {path: 'portal', children: [
-                {path: 'land-so', loadChildren: () => import('app/modules/URS/portal/landing-signed-out/landingSO.routes')},
-                {path: 'land', loadChildren: () => import('app/modules/URS/portal/landing-signed-in/landing.routes')},
-                {path: 'notificaciones', loadChildren: () => import('app/modules/URS/portal/inbox-notification/inbox-notification.routes')},
-                {path: 'formulario-urs', loadChildren: () => import('app/modules/URS/portal/forms/portal.routes')},
-                {path: 'solicitudes', loadChildren: () => import('app/modules/URS/portal/inbox-solicitud/inbox-solicitud.routes')},
-                {path: 'seguimiento-nominal', loadChildren: () => import('app/modules/URS/portal/activities/activities.routes')},
-                {path: 'autoregistro', loadChildren: () => import('app/modules/URS/portal/sign-up/sign-up.routes')},
+                {path: 'land-so', loadChildren: () => import('app/modules/URS/portal-servicios/landing-signed-out/landingSO.routes')},
+                {path: 'land', loadChildren: () => import('app/modules/URS/portal-servicios/landing-signed-in/landing.routes')},
+                {path: 'notificaciones', loadChildren: () => import('app/modules/URS/portal-servicios/inbox-notification/inbox-notification.routes')},
+                {path: 'formulario-urs', loadChildren: () => import('app/modules/URS/portal-servicios/forms/portal.routes')},
+                {path: 'solicitudes', loadChildren: () => import('app/modules/URS/portal-servicios/inbox-solicitud/inbox-solicitud.routes')},
+                {path: 'seguimiento-nominal', loadChildren: () => import('app/modules/URS/portal-servicios/seguimiento-nominal/seguimientoNom.routes')},
+                {path: 'autoregistro', loadChildren: () => import('app/modules/URS/portal-servicios/sign-up/sign-up.routes')},
                 {path: 'maps',  loadChildren: () => import('app/modules/URS/geoportal/map.routes')},
             ]},
             // Apps

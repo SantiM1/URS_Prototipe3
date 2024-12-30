@@ -1,0 +1,88 @@
+<div class="flex flex-col  rounded-xl overflow-hidden p-6 ">
+
+    <div class="mb-6">
+        <button 
+          class="flex items-center px-4 py-2 bg-primary text-white font-semibold rounded-xl hover:bg-gray-400"
+          (click) ='goBack()'
+        >
+        <mat-icon class="text-current icon-size-7 " [svgIcon]="'heroicons_outline:x-circle'"></mat-icon>
+          Cerrar
+        </button>
+      </div>
+   
+     <!-- Title -->
+     <div class="text-4xl font-extrabold leading-none tracking-tight">
+        
+        Información del Hogar
+    </div>
+    <div class="text-secondary mt-1.5 text-lg pb-10">
+        25 Diciembre 2024
+    </div>
+    
+
+    <table class="table-auto shadow-md w-full rounded-xl overflow-hidden ">
+        <tbody>
+            <tr>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-primary text-gray-100 font-semibold min-w-60">Certificado</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700 min-w-60">0182719391</td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-primary text-gray-100 font-semibold">Código Único Eléctrico Nacional</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700">8932120967</td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-primary text-gray-100 font-semibold">Fecha Encuesta</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700">23/09/2023</td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-primary text-gray-100 font-semibold">Provincia</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700">Azuay</td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-primary text-gray-100 font-semibold">Cantón</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700">Cuenca</td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-primary text-gray-100 font-semibold">Parroquia</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700">Sucre</td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-primary text-gray-100 font-semibold">Dirección</td>
+                <td class="border border-gray-300 px-4 py-1 text-center bg-white text-gray-700">Av. Primero de Mayo No. 902</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="flex justify-center space-x-10 pt-10">
+  <!-- Image Placeholder 1 -->
+  <div
+    class="w-40 h-40 flex justify-center items-center bg-gray-300 rounded-md cursor-pointer hover:shadow-lg"
+    
+  >
+    <span class="text-gray-700 font-medium">Image 1</span>
+  </div>
+
+  <!-- Image Placeholder 2 -->
+  <div
+    class="w-40 h-40 flex justify-center items-center bg-gray-300 rounded-md cursor-pointer hover:shadow-lg"
+    
+  >
+    <span class="text-gray-700 font-medium">Image 2</span>
+  </div>
+</div>
+    <button (click)="openMiembrosDialog()"
+    mat-button class="bg-primary text-white hover:bg-blue-900 py-10 mt-10 mx-20 text-xl">
+        
+        <div class="flex items-center space-x-4 justify-center"> 
+           <div> Miembros del Hogar </div>
+           <mat-icon class="text-current icon-size-8 "[svgIcon]="'heroicons_outline:home'"></mat-icon>
+        </div>
+    </button>
+    <button (click)="openHistorialDialog()"
+     mat-button class="bg-primary text-white hover:bg-blue-900 py-10 mt-10 mx-20 text-xl">
+        
+        <div class="flex items-center space-x-4 justify-center"> 
+            <div> Historial de Cambios </div>
+            <mat-icon class="text-current icon-size-7 " [svgIcon]="'heroicons_outline:clipboard-document-list'"></mat-icon>
+         </div>
+    </button>
+</div>

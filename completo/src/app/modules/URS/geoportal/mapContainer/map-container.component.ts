@@ -57,7 +57,7 @@ export class MapContainerComponent {
             navigation.opened = true
         }
     home(): void {
-        this._router.navigate(['/apps/maps/portal-geografico']).then(() => {
+        this._router.navigate(['/portal/maps/portal-geografico']).then(() => {
             // Scroll to top after navigation
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });; ;
