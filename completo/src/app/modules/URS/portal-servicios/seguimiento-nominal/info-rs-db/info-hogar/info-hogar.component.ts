@@ -11,6 +11,8 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { MatDialog, MatDialogModule } from "@angular/material/dialog";
 import { MiembrosHogarComponent } from "./miembros-hogar/miembros-hogar.component";
 import { HistorialCambiosComponent } from "./historial-cambios/historial-cambios.component";
+import { PicturesHogarComponent } from "./picture-hogar/picture-hogar.component";
+import { LocationHogarComponent } from "./location-hogar/location-hogar.component";
 
 @Component({
     selector: 'info-hogar',
@@ -48,6 +50,18 @@ export class InfoHogarComponent {
        }
        openHistorialDialog(): void {
         this.dialog.open(HistorialCambiosComponent, {
+          width: '900px', // Adjust width as needed
+          data: {}, // Pass any data if needed
+        });
+      }
+      openImgDialog(): void {
+        this.dialog.open(PicturesHogarComponent, {
+          width: '900px', // Adjust width as needed
+          data: {}, // Pass any data if needed
+        });
+      }
+      openLocationDialog(): void {
+        this.dialog.open(LocationHogarComponent, {
           width: '900px', // Adjust width as needed
           data: {}, // Pass any data if needed
         });

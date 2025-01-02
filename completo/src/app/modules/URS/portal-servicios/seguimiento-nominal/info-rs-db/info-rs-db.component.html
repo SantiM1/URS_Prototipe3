@@ -1,16 +1,15 @@
 <div class="relative flex min-w-0 flex-auto flex-row overflow-hidden">
-    
+
     <!-- Left Section (Main Content) -->
     <div class="flex flex-auto flex-col px-6 py-10 sm:px-16 sm:pb-20">
         <div class="mb-6">
-            <button 
-              class="flex items-center px-4 py-2 bg-primary text-white font-semibold rounded-xl hover:bg-gray-400"
-              (click) ="navTo('../')"
-            >
-            <mat-icon class="text-current icon-size-7 " [svgIcon]="'heroicons_outline:chevron-double-left'"></mat-icon>
-              Regresar
+            <button class="flex items-center px-4 py-2 bg-primary text-white font-semibold rounded-xl hover:bg-gray-400"
+                (click)="navTo('../')">
+                <mat-icon class="text-current icon-size-7 "
+                    [svgIcon]="'heroicons_outline:chevron-double-left'"></mat-icon>
+                Regresar
             </button>
-          </div>
+        </div>
         <!-- Activity feed -->
         <div class="w-full max-w-3xl">
             <!-- Title -->
@@ -29,7 +28,7 @@
                         <li class="relative flex py-7">
                             <div class="flex flex-col text-md pt-1 pr-4">
                                 <div class="text-secondary">
-                                    {{ activity.date | date: 'dd MMM YYYY  ' }}
+                                    {{ activity.date | date: 'dd MMM YYYY ' }}
                                 </div>
                             </div>
                             <!-- Line -->
@@ -43,8 +42,7 @@
                                 <!-- Content -->
                                 <div class="flex flex-auto flex-col items-start">
                                     <div class="flex justify-center py-1 rounded-xl text-{{activity.color}}-600 bg-{{activity.color}}-200 mb-4 min-w-40 cursor-pointer"
-                                        (click)="navTo('info-hogar')"
-                                        *ngIf="activity.title">{{ activity.title }}</div>
+                                        (click)="navTo('info-hogar')" *ngIf="activity.title">{{ activity.title }}</div>
 
                                     <div class="flex justify-center items-center space-x-2">
                                         <div class="font-semibold">Puntaje: </div>
@@ -53,9 +51,9 @@
                                     <div class="flex justify-center items-center space-x-2">
                                         <div class="font-semibold">Beneficios: </div>
                                         <mat-chip-set aria-label="Fish selection">
-                                            <ng-container
-                                                *ngFor="let benefit of activity.benefits; let i = index; trackBy: trackByFn">
-                                                <mat-chip class="cursor-pointer" (click)="navTo('benefits')"> {{benefit}} </mat-chip>
+                                            <ng-container>
+                                                <mat-chip class="px-4 cursor-pointer" (click)="navTo('benefits')">
+                                                    {{activity.benefits.length}} </mat-chip>
                                             </ng-container>
                                         </mat-chip-set>
                                     </div>
@@ -74,7 +72,8 @@
     </div>
 
     <!-- Right Section (Bordered Div) -->
-    <div class="flex flex-col justify-center w-1/2 min-w-[300px] h-auto border-l border-gray-300 px-6 py-4 bg-gray-50 shadow-md">
+    <div
+        class="flex flex-col justify-center w-1/2 min-w-[300px] h-auto border-l border-gray-300 px-6 py-4 bg-gray-50 shadow-md">
         <router-outlet></router-outlet>
     </div>
 </div>

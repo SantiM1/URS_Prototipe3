@@ -91,10 +91,19 @@ export const mails = [
         bcc: ["Marta Alvarez <marta.alvarez@company.com>", "Daniel Ramirez <daniel.ramirez@company.com>"],
         date: "2019-12-28T15:20:00.000Z",
         subject: "Solicitud #4567: Ingreso de Formulario del Registro Social",
-        content: "Estimado Juan, \n\nSu solicitud para el ingreso del formulario de Registro Social está en proceso. Por favor, revise los documentos requeridos y asegúrese de completar los pasos pendientes. \n\nPara continuar, haga clic en el siguiente enlace: (Ingresar Formulario). \n\nAtentamente,\n\nUnidad del Registro Social",
+        content:`<div> Estimado Juan, <div/>
+        
+        <div> Su solicitud para el ingreso del formulario de Registro Social está en proceso.
+         Por favor, revise los documentos requeridos y asegúrese de completar los pasos pendientes. 
+         Para continuar, haga clic en el siguiente enlace: <div/>
+         
+         <a class='bg-blue-900 text-white p-2 rounded-xl' href='/portal/formulario-urs/p0'>Ingresar al Formulario<a/> 
+         
+         <div> Atentamente,
+         Unidad del Registro Social  <div/>`,
         attachments: [],
         starred: false,
-        important: false,
+        important: true,
         unread: true,
         folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
         labels: ["67d3c4-f6ed-4ea6-9579-a12f95a9d76e"]
@@ -113,7 +122,7 @@ export const mails = [
         content: "Estimado Juan, \n\nSu solicitud de actualización de datos del formulario de Registro Social ha sido recibida. En breve, recibirá una notificación para confirmar los cambios realizados. \n\nAgradecemos su colaboración.\n\nAtentamente,\n\nUnidad del Registro Social",
         attachments: [],
         starred: false,
-        important: false,
+        important: true,
         unread: true,
         folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
         labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
@@ -132,7 +141,7 @@ export const mails = [
         content: "Estimado Juan, \n\nLa solicitud para el cambio de núcleo familiar en el Registro Social ha sido aceptada. Por favor, revise los documentos actualizados en el portal en línea. \n\nPuede acceder al enlace aquí: (Acceder a Núcleo Familiar). \n\nAtentamente,\n\nUnidad del Registro Social",
         attachments: [],
         starred: false,
-        important: false,
+        important: true,
         unread: true,
         folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
         labels: ["8b035cb5-65c0-4ab1-bb4c-43b0e442d1f3"]
@@ -152,7 +161,7 @@ export const mails = [
             content: "Estimado Juan, \n\nHemos recibido su reclamo respecto al porcentaje de pobreza asignado. Nuestro equipo está revisando la información y le contactará próximamente con una resolución. \n\nGracias por su paciencia.\n\nAtentamente,\n\nUnidad del Registro Social",
             attachments: [],
             starred: false,
-            important: false,
+            important: true,
             unread: true,
             folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
             labels: ["184cd689-4ee4-47cf-9f8a-12233d614326"]
@@ -171,7 +180,7 @@ export const mails = [
             content: "Estimado Juan, \n\nA continuación, encontrará la información necesaria para acceder al Registro Social. Por favor, asegúrese de tener los documentos requeridos a la mano antes de iniciar el proceso. \n\nPuede acceder aquí: (Acceder a Información). \n\nAtentamente,\n\nUnidad del Registro Social",
             attachments: [],
             starred: false,
-            important: false,
+            important: true,
             unread: true,
             folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
             labels: ["b2d1e4e7-7cfd-4b51-ae59-217a093df754"]
@@ -190,7 +199,7 @@ export const mails = [
             content: "Estimado Juan, \n\nSu certificado de Registro Social ha sido generado con éxito. Puede descargarlo utilizando el siguiente enlace: (Descargar Certificado). \n\nGracias por usar nuestro servicio.\n\nAtentamente,\n\nUnidad del Registro Social",
             attachments: [],
             starred: false,
-            important: false,
+            important: true,
             unread: true,
             folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
             labels: ["b67fc437-6118-4ec8-a3c7-9320b828e3fc"]
@@ -209,7 +218,7 @@ export const mails = [
             content: "Estimado Juan, \n\nEl ingreso de su formulario ha sido confirmado. Por favor, haga clic en el siguiente enlace para completar el proceso: (Ingresar Formulario). \n\nGracias por su colaboración.\n\nAtentamente,\n\nUnidad del Registro Social",
             attachments: [],
             starred: false,
-            important: false,
+            important: true,
             unread: true,
             folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
             labels: ["b167d3c4-f6ed-4ea6-9579-a12f95a9d76e"]
@@ -228,7 +237,7 @@ export const mails = [
                 content: "Estimado Juan, \n\nHemos actualizado los datos de su formulario de Registro Social. Por favor revise la información ingresada y comuníquese con nosotros si encuentra algún error. \n\nGracias por su colaboración.\n\nAtentamente,\n\nUnidad del Registro Social",
                 attachments: [],
                 starred: false,
-                important: false,
+                important: true,
                 unread: true,
                 folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
                 labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
@@ -247,7 +256,7 @@ export const mails = [
                 content: "Estimado Juan, \n\nEl cambio de núcleo familiar en su Registro Social ha sido procesado. Por favor revise los datos para confirmar que todo esté correcto. \n\nGracias por su confianza.\n\nAtentamente,\n\nUnidad del Registro Social",
                 attachments: [],
                 starred: false,
-                important: false,
+                important: true,
                 unread: true,
                 folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
                 labels: ["b2d1e4e7-7cfd-4b51-ae59-217a093df754"]
@@ -266,7 +275,7 @@ export const mails = [
                 content: "Estimado Juan, \n\nHemos recibido su reclamo y estamos revisando los detalles del porcentaje asignado. Le notificaremos tan pronto como tengamos una actualización. \n\nGracias por su paciencia.\n\nAtentamente,\n\nUnidad del Registro Social",
                 attachments: [],
                 starred: false,
-                important: false,
+                important: true,
                 unread: true,
                 folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
                 labels: ["b167d3c4-f6ed-4ea6-9579-a12f95a9d76e"]
@@ -285,7 +294,7 @@ export const mails = [
                 content: "Estimado Juan, \n\nAquí encontrará la información para acceder al Registro Social. Por favor, asegúrese de revisar los requisitos antes de proceder. \n\nPuede consultar la información aquí: (Ver información). \n\nAtentamente,\n\nUnidad del Registro Social",
                 attachments: [],
                 starred: false,
-                important: false,
+                important: true,
                 unread: true,
                 folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
                 labels: ["8b035cb5-65c0-4ab1-bb4c-43b0e442d1f3"]
@@ -304,7 +313,7 @@ export const mails = [
                     content: "Estimado Juan, \n\nEl certificado solicitado está disponible para su descarga. Por favor, utilice el siguiente enlace: (Descargar Certificado). \n\nGracias por confiar en nosotros.\n\nAtentamente,\n\nUnidad del Registro Social",
                     attachments: [],
                     starred: false,
-                    important: false,
+                    important: true,
                     unread: true,
                     folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
                     labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
@@ -323,7 +332,7 @@ export const mails = [
                     content: "Estimado Juan, \n\nEl formulario que ingresó ha sido procesado correctamente. Puede verificar los detalles y continuar con los pasos requeridos aquí: (Ver detalles). \n\nGracias por su cooperación.\n\nAtentamente,\n\nUnidad del Registro Social",
                     attachments: [],
                     starred: false,
-                    important: false,
+                    important: true,
                     unread: true,
                     folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
                     labels: ["b2d1e4e7-7cfd-4b51-ae59-217a093df754"]
@@ -342,7 +351,7 @@ export const mails = [
                     content: "Estimado Juan, \n\nSe han actualizado exitosamente los datos de su formulario. Por favor, revise la nueva información ingresada y confirme su validez. \n\nGracias por colaborar con nuestro equipo.\n\nAtentamente,\n\nUnidad del Registro Social",
                     attachments: [],
                     starred: false,
-                    important: false,
+                    important: true,
                     unread: true,
                     folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
                     labels: ["b167d3c4-f6ed-4ea6-9579-a12f95a9d76e"]
@@ -361,7 +370,7 @@ export const mails = [
                     content: "Estimado Juan, \n\nEl cambio de núcleo familiar ha sido aprobado y actualizado en su Registro Social. Si tiene preguntas adicionales, no dude en contactarnos. \n\nGracias por utilizar nuestro servicio.\n\nAtentamente,\n\nUnidad del Registro Social",
                     attachments: [],
                     starred: false,
-                    important: false,
+                    important: true,
                     unread: true,
                     folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
                     labels: ["8b035cb5-65c0-4ab1-bb4c-43b0e442d1f3"]
@@ -380,7 +389,7 @@ export const mails = [
                         content: "Estimado Juan, \n\nEstamos procesando su reclamo sobre el porcentaje de pobreza asignado. Le notificaremos en cuanto tengamos una resolución al respecto. \n\nGracias por su paciencia.\n\nAtentamente,\n\nUnidad del Registro Social",
                         attachments: [],
                         starred: false,
-                        important: false,
+                        important: true,
                         unread: true,
                         folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
                         labels: ["184cd689-4ee4-47cf-9f8a-12233d614326"]
@@ -399,7 +408,7 @@ export const mails = [
                         content: "Estimado Juan, \n\nAdjuntamos información detallada sobre cómo acceder al Registro Social y los pasos a seguir. Si tiene alguna duda, no dude en contactarnos. \n\nGracias por elegir nuestro servicio.\n\nAtentamente,\n\nUnidad del Registro Social",
                         attachments: [],
                         starred: false,
-                        important: false,
+                        important: true,
                         unread: true,
                         folder: "7c004a19-4506-48ef-93ab-f16381302e3b",
                         labels: ["b67fc437-6118-4ec8-a3c7-9320b828e3fc"]
@@ -418,7 +427,7 @@ export const mails = [
                         content: "Estimado Juan, \n\nEl certificado solicitado ya está disponible. Por favor, utilice el enlace para proceder con la descarga: (Descargar Certificado). \n\nAtentamente,\n\nUnidad del Registro Social",
                         attachments: [],
                         starred: false,
-                        important: false,
+                        important: true,
                         unread: true,
                         folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
                         labels: ["745cf30e-ca84-47a1-a553-b70eb630d8e7"]
@@ -437,7 +446,7 @@ export const mails = [
                         content: "Estimado Juan, \n\nSus datos han sido actualizados satisfactoriamente en el formulario de Registro Social. Por favor, revise los cambios realizados. \n\nAgradecemos su atención.\n\nAtentamente,\n\nUnidad del Registro Social",
                         attachments: [],
                         starred: false,
-                        important: false,
+                        important: true,
                         unread: true,
                         folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
                         labels: ["8b035cb5-65c0-4ab1-bb4c-43b0e442d1f3"]

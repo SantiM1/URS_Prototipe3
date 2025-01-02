@@ -177,49 +177,6 @@ export class UserDetailsComponent implements OnInit, OnDestroy {
         });; ;
     }
 
-    /**
-     * Toggle label
-     *
-     * @param label
-     */
-    toggleLabel(label: MailLabel): void {
-        let deleted = false;
-
-        // Update the mail object
-        if (this.mail.labels.includes(label.id)) {
-            // Set the deleted
-            deleted = true;
-
-            // Delete the label
-            this.mail.labels.splice(this.mail.labels.indexOf(label.id), 1);
-        } else {
-            // Add the label
-            this.mail.labels.push(label.id);
-        }
-
-        // Update the mail on the server
-        this._inboxService
-            .updateMail(this.mail.id, { labels: this.mail.labels })
-            .subscribe();
-
-        // If the label was deleted...
-        if (deleted) {
-            // If the current activated route has a label parameter and it equals to the one we are removing...
-            if (
-                this._activatedRoute.snapshot.paramMap.get('label') &&
-                this._activatedRoute.snapshot.paramMap.get('label') ===
-                    label.slug
-            ) {
-                // Navigate to the parent
-                this._router.navigate(['./'], {
-                    relativeTo: this._activatedRoute.parent,
-                }).then(() => {
-                    // Scroll to top after navigation
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });; ;
-            }
-        }
-    }
 
     /**
      * Toggle important

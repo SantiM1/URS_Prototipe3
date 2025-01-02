@@ -7,10 +7,10 @@ const now = DateTime.now();
 export const messages = [
     {
         id: '832276cc-c5e9-4fcc-8e23-d38e2e267bc9',
-        title: 'Solicitud #7345',
+        title: 'Solicitud #4567',
         description: 'Ingreso de Formulario del Registro Social',
         time: now.minus({ minutes: 25 }).toISO(), // 25 minutes ago
-        link: '/portal/solicitudes',
+        link: '/portal/solicitudes/inbox/1/a1f7d459-4b64-482e-876e-7a493afc9bce',
         read: false,
     },
     {

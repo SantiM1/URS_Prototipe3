@@ -16,6 +16,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/components/navigation';
+import { FuseFullscreenComponent } from '@fuse/components/fullscreen';
+import { LanguagesComponent } from 'app/layout/common/languages/languages.component';
+
+import { ShortcutsComponent } from 'app/layout/common/shortcuts/shortcuts.component';
+import { UserComponent } from 'app/layout/common/user/user.component';
+import { MessagesComponent } from '../../portal-servicios/landing-signed-in/landing-messages/messages.component';
+import { NotificationsComponent } from '../../portal-servicios/landing-signed-in/landing-notifications/notifications.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -36,7 +44,14 @@ import { FuseNavigationService, FuseVerticalNavigationComponent } from '@fuse/co
         MatTabsModule,
         MatToolbarModule,
         MatFormFieldModule,
-        MatInputModule 
+        MatInputModule,
+        LanguagesComponent,
+                CommonModule,
+                ShortcutsComponent,
+                MessagesComponent,
+                NotificationsComponent,
+                UserComponent,
+                FuseFullscreenComponent,
     ],
 })
 export class MapContainerComponent {

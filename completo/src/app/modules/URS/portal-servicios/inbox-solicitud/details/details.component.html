@@ -22,10 +22,9 @@
                 <!-- Toggle labels button & menu -->
                 <button
                     class="ml-auto"
-                    mat-icon-button
-                    [matMenuTriggerFor]="toggleLabelMenu"
+                   
                 >
-                    <mat-icon [svgIcon]="'heroicons_outline:tag'"></mat-icon>
+                    
                 </button>
                 <mat-menu #toggleLabelMenu="matMenu">
                     @for (label of labels; track trackByFn($index, label)) {
@@ -34,14 +33,7 @@
                             (click)="toggleLabel(label)"
                             matRipple
                         >
-                            <mat-checkbox
-                                class="pointer-events-none"
-                                [color]="'primary'"
-                                [checked]="mail.labels.includes(label.id)"
-                                [disableRipple]="true"
-                            >
-                                {{ label.title }}
-                            </mat-checkbox>
+                            
                         </div>
                     }
                 </mat-menu>
@@ -54,7 +46,7 @@
                 >
                     <mat-icon
                         [ngClass]="{
-                            'text-red-600 dark:text-red-500': mail.important,
+                            'text-blue-600 dark:text-red-500': mail.important,
                         }"
                         [svgIcon]="'heroicons_outline:exclamation-circle'"
                     ></mat-icon>
@@ -140,24 +132,7 @@
                 <div class="my-1 mr-4 flex flex-auto text-2xl">
                     {{ mail.subject }}
                 </div>
-                <!-- Labels -->
-                @if (mail.labels && mail.labels.length > 0) {
-                    <div
-                        class="-mx-1 flex flex-wrap items-center justify-start"
-                    >
-                        @for (
-                            label of mail.labels | fuseFindByKey: 'id' : labels;
-                            track label
-                        ) {
-                            <div
-                                class="m-1 whitespace-nowrap rounded-full px-2.5 py-0.5 text-sm font-medium"
-                                [ngClass]="labelColors[label.color].combined"
-                            >
-                                {{ label.title }}
-                            </div>
-                        }
-                    </div>
-                }
+                
             </div>
         </div>
 

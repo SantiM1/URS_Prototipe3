@@ -7,10 +7,10 @@ const now = DateTime.now();
 export const messages = [
     {
         id: '832276cc-c5e9-4fcc-8e23-d38e2e267bc9',
-        title: 'Notificación #789F',
-        description: 'Ingreso de Formulario del Registro Social',
+        title: 'Notificación #5617',
+        description: 'Su solicitud de cambio de contraseña ha sido completada',
         time: now.minus({ minutes: 25 }).toISO(), // 25 minutes ago
-        link: '/portal/notificaciones',
+        link: '/portal/notificaciones/inbox/1/c879fa32-77a5-4b39-94a3-df98b6f65f7e',
         read: false,
     },
     {

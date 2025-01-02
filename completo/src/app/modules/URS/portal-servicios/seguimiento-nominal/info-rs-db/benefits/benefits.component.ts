@@ -36,12 +36,12 @@ export class BenefitsComponent {
     goBack(): void {
      this.router.navigate(['../'], {relativeTo: this.activeRoute})
     }
-    openInfoDialog(titleName: string): void {
+    openInfoDialog(titleName: string, descriptionText: string): void {
         this.dialog.open(BenefitsDialogComponent, {
           width: '400px',
           data: {
             title: titleName,
-            description: 'Este es un texto descriptivo que proporciona más detalles sobre el tema.',
+            description: descriptionText,
             imageUrl: 'images/URS/cat-1.png', // Replace with your actual image URL
           },
         });

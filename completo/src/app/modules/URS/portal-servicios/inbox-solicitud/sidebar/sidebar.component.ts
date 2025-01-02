@@ -80,8 +80,7 @@ export class UserSidebarComponent implements OnInit, OnDestroy {
             .subscribe((labels: MailLabel[]) => {
                 this.labels = labels;
 
-                // Generate menu links
-                this._generateLabelsMenuLinks();
+                
             });
 
         // Generate other menu links
@@ -159,29 +158,7 @@ export class UserSidebarComponent implements OnInit, OnDestroy {
      *
      * @private
      */
-    private _generateLabelsMenuLinks(): void {
-        // Reset the labels menu
-        this._labelsMenuData = [];
-
-        // Iterate through the labels
-        this.labels.forEach((label) => {
-            // Generate menu item for the label
-            this._labelsMenuData.push({
-                id: label.id,
-                title: label.title,
-                type: 'basic',
-                icon: 'heroicons_outline:tag',
-                classes: {
-                    icon: labelColorDefs[label.color].text,
-                },
-                link: '/portal/inbox/label/' + label.slug,
-            });
-        });
-
-        // Update the menu data
-        this._updateMenuData();
-    }
-
+   
     /**
      * Generate other menus
      *
