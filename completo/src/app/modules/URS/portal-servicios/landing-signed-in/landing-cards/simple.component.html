@@ -44,12 +44,36 @@
                         
                         <!-- Text Section -->
                         <div class="h-12 text-2xl font-bold leading-tight tracking-tight overflow-hidden">
-                            Solicitar Ingreso/Actualización del Formulario
+                            Solicitar Ingreso del Formulario del Registro Social
                         </div>
                         
                         <!-- Image Section -->
                         <div class="h-40 w-full ">
                             <img src="images/URS/formulario.png" class="h-full object-contain rounded-md overflow-hidden" />
+                        </div>
+                        
+                        <!-- Button Section -->
+                        <div class="mt-4">
+                            <button mat-button class="px-4 py-2 text-white bg-primary rounded-xl hover:bg-blue-900">
+                                Solicitarlo Ahora
+                            </button>
+                        </div>
+                    </fuse-card>
+                    
+                </swiper-slide>
+                <swiper-slide class="relative z-10 hover:z-50 py-20 px-4">
+                    <!-- Card 2 -->
+                    <fuse-card (click)="navTo('/portal/formulario-urs-actualizacion/p0')"
+                        class="flex h-96 w-72 flex-col justify-between items-center cursor-pointer p-4 text-center rounded-tl-3xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+                        
+                        <!-- Text Section -->
+                        <div class="h-12 text-2xl font-bold leading-tight tracking-tight overflow-hidden">
+                            Solicitar Actualización del Formulario del Registro Social
+                        </div>
+                        
+                        <!-- Image Section -->
+                        <div class="h-40 w-full ">
+                            <img src="images/URS/update.jpg" class="h-full object-contain rounded-md overflow-hidden" />
                         </div>
                         
                         <!-- Button Section -->
@@ -129,29 +153,7 @@
                         </div>
                     </fuse-card>
                 </swiper-slide>
-                <swiper-slide class="relative z-10 hover:z-50 py-20 px-4">
-                    <!-- Card 6 -->
-                    <fuse-card (click)="navTo('/portal/seguimiento-nominal/ep')"
-                        class="flex h-96 w-72 flex-col justify-between items-center cursor-pointer p-4 text-center rounded-tl-3xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
-                        
-                        <!-- Text Section -->
-                        <div class="h-12 text-2xl font-bold leading-tight tracking-tight overflow-hidden">
-                            Seguimiento Nominal
-                        </div>
-                        
-                        <!-- Image Section -->
-                        <div class="h-40 w-full">
-                            <img src="images/URS/seguimientoNominal.jpg" class=" w-full object-cover rounded-md" />
-                        </div>
-                        
-                        <!-- Button Section -->
-                        <div class="mt-4">
-                            <button mat-button class="px-4 py-2 text-white bg-primary rounded-xl hover:bg-blue-900">
-                                Solicitarlo Ahora
-                            </button>
-                        </div>
-                    </fuse-card>
-                </swiper-slide>
+               
             </swiper-container>
         </div>
         

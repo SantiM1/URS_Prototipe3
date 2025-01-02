@@ -1,0 +1,85 @@
+<div class="absolute inset-0 flex min-w-0 flex-col overflow-hidden">
+    <mat-drawer-container class="h-full flex-auto">
+
+        <mat-drawer class="w-72 dark:bg-gray-900" [autoFocus]="false" [mode]="drawerMode" [opened]="drawerOpened"
+            [position]="'end'" #matDrawer>
+            <!-- Demo sidebar -->
+            <form-sidebar></form-sidebar>
+        </mat-drawer>
+
+        <!-- Drawer content -->
+        <mat-drawer-content class="flex flex-col overflow-hidden">
+            <!-- Header -->
+            <div
+                class="bg-card flex flex-0 flex-col border-b p-6 dark:bg-transparent sm:flex-row sm:items-center sm:justify-between ">
+                <div class="min-w-0 flex-1">
+
+                    <!-- Title -->
+                    <div class="mt-2">
+                        <!-- Sidebar toggle button -->
+                        
+                        <h2 class="truncate text-3xl font-extrabold leading-7 tracking-tight sm:leading-10 md:text-4xl">
+                            <button mat-icon-button (click)="navInit()">
+                                <mat-icon [svgIcon]="'heroicons_outline:arrow-left'"></mat-icon>
+                            </button>
+                            Formulario de la Unidad del Registro Social-2024
+                        </h2>
+
+                    </div>
+
+
+                </div>
+
+                <!-- Actions -->
+                <div class="mt-6 flex shrink-0 items-center sm:ml-4 sm:mt-0">
+                    <button mat-icon-button (click)="matDrawer.toggle()">
+                        <mat-icon [svgIcon]="'heroicons_outline:bars-3'"></mat-icon>
+                    </button>
+                </div>
+            </div>
+
+
+
+            <!-- Main -->
+            <div class="flex-auto overflow-y-auto" cdkScrollable>
+                <!-- CONTENT GOES HERE -->
+                <router-outlet></router-outlet>
+            </div>
+            <!-- Footer -->
+            <div class="bg-card flex flex-0 justify-between border-b p-2  ">
+                <div class="mt-6 flex shrink-0 items-center sm:ml-4 sm:mt-0 text-3xl">
+                    <button mat-icon-button (click)="matDrawer2.toggle()">
+                        <mat-icon [svgIcon]="'heroicons_outline:question-mark-circle'"></mat-icon>
+                        Ayuda
+                    </button>
+                </div>
+                <div class="flex justify-end">
+                    <button class="mr-2 px-8 bg-contrast " mat-flat-button type="button" matStepperPrevious
+                        (click)="navFormPrev()">
+                        Anterior
+                    </button>
+                    @if(!changeBtn()){
+                    <button class="px-8" mat-flat-button [color]="'primary'" type="button" matStepperNext
+                        (click)="navFormNext()">
+                        Siguiente
+                    </button>
+                    }
+                    @if(changeBtn()){
+                    <button class="px-8" mat-flat-button [color]="'primary'" type="button" matStepperNext
+                        (click)="navInit()">
+                        Finalizar
+                    </button>
+                    }
+                </div>
+            </div>
+        </mat-drawer-content>
+        <mat-drawer class="w-72 dark:bg-gray-900" [autoFocus]="false" [mode]="drawerMode" [opened]="drawerClosed"
+            #matDrawer2>
+            <!-- Demo sidebar -->
+            <info-sidebar></info-sidebar>
+
+        </mat-drawer>
+
+    </mat-drawer-container>
+
+</div>

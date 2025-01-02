@@ -6,7 +6,8 @@ import { LandingSupportComponent } from './landing-soporte/soporte.component';
 import { LandingFaqsComponent } from './landing-faqs/faqs.component';
 import { LandingPlace } from './landing-container.component';
 import { ServiciosSupportComponent } from './landing-servicios/servicios.component';
-import { CertificateComponent } from './landing-certificate/certificate.component';
+import { CertificateComponent } from './landing-certificate/certificate-end/certificate.component';
+import { CertificateFormComponent } from './landing-certificate/certificate-form/certificate-form.component';
 
 export default [
     {
@@ -35,6 +36,10 @@ export default [
             {
                 path:'certificado',
                 component: CertificateComponent
+            },
+            {
+                path:'certificado-form',
+                component: CertificateFormComponent
             }
 
         ]

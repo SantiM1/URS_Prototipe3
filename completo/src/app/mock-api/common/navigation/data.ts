@@ -1312,7 +1312,7 @@ export const compactNavigation: FuseNavigationItem[] = [
         title: 'Seguridad',
         tooltip: 'Seguridad',
         type: 'aside',
-        icon: 'heroicons_outline:globe-alt',
+        icon: 'heroicons_outline:shield-check',
         children: [], // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
     },
     {
@@ -1328,10 +1328,19 @@ export const compactNavigation: FuseNavigationItem[] = [
         title: 'Geoportal',
         tooltip: 'Geoportal',
         type: 'basic',
-        icon: 'heroicons_outline:globe-alt',
+        icon: 'heroicons_outline:map-pin',
         link:'/portal/maps/portal-geografico',
        
     },
+    {
+        id: 'seguimientoNominal',
+        title: 'Seguimiento Nominal',
+        tooltip: 'Seguimiento Nominal',
+        type: 'basic',
+        icon: 'heroicons_outline:paper-airplane',
+        link:'/portal/seguimiento-nominal/ep',
+       
+    }
     /*{
         id: 'dashboards',
         title: 'Dashboards',

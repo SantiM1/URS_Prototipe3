@@ -1,0 +1,71 @@
+<div class="flex min-w-0 flex-auto flex-col">
+    <div class="flex border-solid border-black bg-contrast py-2  text-2xl justify-center items-center">
+        <div> Sección I: Identificación y Ubicación Geográfica de la Vivienda </div>
+       
+    </div>
+    <div class="bg-gray-900 min-h-4 max-h-4 flex-grow"></div>
+    <!-- Main -->
+    <div class="flex-auto p-6 sm:p-10">
+        <div class="flex justify-center">
+            <!-- Horizontal stepper -->
+
+                        
+                       
+                        <div class="flex-grow">
+                            
+                        <div class="grid gap-4 grid-cols-8">
+                            <div class="col-span-3">
+                                <p> 1. Provincia</p>
+                            <mat-form-field class="w-96 ">
+                                <mat-select  value = "country-1">
+                                    <mat-option value="country-1">Pichincha</mat-option>
+                                    <mat-option value="country-2">Opción 2</mat-option>
+                                    <mat-option value="country-3">Opción 3</mat-option>
+                                </mat-select>
+                                <mat-icon class="icon-size-5" matPrefix
+                                    [svgIcon]="'heroicons_solid:map-pin'"></mat-icon>
+                            </mat-form-field>
+                            <p> 2. Cantón</p>
+                            <mat-form-field class="w-96">
+                                <mat-select value = "country-1">
+                                    <mat-option value="country-1">Quito</mat-option>
+                                    <mat-option value="country-2">Opción 2</mat-option>
+                                    <mat-option value="country-3">Opción 3</mat-option>
+                                </mat-select>
+                                <mat-icon class="icon-size-5" matPrefix
+                                    [svgIcon]="'heroicons_solid:map-pin'"></mat-icon>
+                            </mat-form-field>
+                            <p> 3. Parroquia </p>
+                            <mat-form-field class="w-96 ">
+                                <mat-select value = "country-2">
+                                    <mat-option value="country-1">Centro Histórico</mat-option>
+                                    <mat-option value="country-2">Conocoto</mat-option>
+                                    <mat-option value="country-3">Iñaquito</mat-option>
+                                </mat-select>
+                                <mat-icon class="icon-size-5" matPrefix
+                                    [svgIcon]="'heroicons_solid:map-pin'"></mat-icon>
+                            </mat-form-field>
+                            <div class=" flex flex-col">
+                                <span class="mb-2 font-medium"> 4. Área</span>
+                                <mat-radio-group class="flex flex-col" [color]="'primary'"
+                                    >
+                                    <mat-radio-button class="mb-2" [value]="'everything'">
+                                        Rural
+                                    </mat-radio-button>
+                                    <mat-radio-button class="mb-2" [value]="'just-good'" checked="true">
+                                       Urbana
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+                        </div>
+                            <div class="col-span-5">
+                                <div class="map-container col-span-2 min-h-96 rounded-2xl py-3" #map></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+ 
+
+        </div>
+    </div>
+</div>

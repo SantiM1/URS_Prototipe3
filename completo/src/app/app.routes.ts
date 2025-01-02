@@ -102,6 +102,7 @@ export const appRoutes: Route[] = [
                 {path: 'land', loadChildren: () => import('app/modules/URS/portal-servicios/landing-signed-in/landing.routes')},
                 {path: 'notificaciones', loadChildren: () => import('app/modules/URS/portal-servicios/inbox-notification/inbox-notification.routes')},
                 {path: 'formulario-urs', loadChildren: () => import('app/modules/URS/portal-servicios/forms/portal.routes')},
+                {path: 'formulario-urs-actualizacion', loadChildren: () => import('app/modules/URS/portal-servicios/forms-update/portal.routes')},
                 {path: 'solicitudes', loadChildren: () => import('app/modules/URS/portal-servicios/inbox-solicitud/inbox-solicitud.routes')},
                 {path: 'seguimiento-nominal', loadChildren: () => import('app/modules/URS/portal-servicios/seguimiento-nominal/seguimientoNom.routes')},
                 {path: 'autoregistro', loadChildren: () => import('app/modules/URS/portal-servicios/sign-up/sign-up.routes')},

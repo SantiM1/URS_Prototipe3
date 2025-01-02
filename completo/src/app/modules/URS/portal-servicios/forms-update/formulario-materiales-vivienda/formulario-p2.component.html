@@ -1,0 +1,74 @@
+<div class="flex min-w-0 flex-auto flex-col">
+    <div class="flex border-solid border-black bg-contrast py-2  text-2xl justify-center items-center">
+        <div> Sección III: Datos de la Vivienda </div>
+       
+    </div>
+    <div class="bg-gray-900 min-h-4 max-h-4 flex-grow"></div>
+    <!-- Main -->
+    <div class="flex-auto p-6 sm:p-10">
+        <div class="flex justify-center">
+            <!-- Horizontal stepper -->
+            <div class="grid gap-4 grid-cols-8">
+
+                <div class="col-span-4">
+                  
+                    <h2 class=" text-lg font-bold  tracking-tight overflow-y-auto">
+                        Selecciona el material predominante o más común del: </h2>
+                    <h3  class=" text-sm font-medium  tracking-tight overflow-y-auto">
+                        *En caso que se identifiquen varios materiales, escoger el de mayor superficie y calidad </h3>
+                    <p> 3. Techo de la vivienda</p>
+                    <mat-form-field class="w-96 ">
+                        <mat-select  value="country-1">
+                            <mat-option value="country-1">Zinc</mat-option>
+                            <mat-option value="country-2">Opción 2</mat-option>
+                            <mat-option value="country-3">Opción 3</mat-option>
+                        </mat-select>
+                        <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:map-pin'"></mat-icon>
+                    </mat-form-field>
+                    <p> 4. Piso de la vivienda</p>
+                    <mat-form-field class="w-96">
+                        <mat-select  value="country-1">
+                            <mat-option value="country-1">Cerámica</mat-option>
+                            <mat-option value="country-2">Opción 2</mat-option>
+                            <mat-option value="country-3">Opción 3</mat-option>
+                        </mat-select>
+                        <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:map-pin'"></mat-icon>
+                    </mat-form-field>
+                    <p> 5. Paredes de la vivienda </p>
+                    <mat-form-field class="w-96 ">
+                        <mat-select  value="country-1">
+                            <mat-option value="country-1">Madera</mat-option>
+                            <mat-option value="country-2">Opción 2</mat-option>
+                            <mat-option value="country-3">Opción 3</mat-option>
+                        </mat-select>
+                        <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:map-pin'"></mat-icon>
+                    </mat-form-field>
+
+                </div>
+                <div class="col-span-4">
+
+                <div class="grid grid-row-4 gap-4  ">
+                    <h2 class="truncate text-lg font-bold leading-7 tracking-tight">
+                        Estado del material </h2>
+                   
+
+                    <mat-slider class="row-start-4" min="1" max="3" step="1" showTickMarks discrete [displayWith]="formatLabel">
+                        <input matSliderThumb value="3">
+                    </mat-slider>
+                    <mat-slider class="row-start-7" min="1" max="3" step="1" showTickMarks discrete [displayWith]="formatLabel">
+                        <input matSliderThumb value="1.5">
+                    </mat-slider>
+                    <mat-slider class="row-start-10" min="1" max="3" step="1" showTickMarks discrete [displayWith]="formatLabel">
+                        <input matSliderThumb value="0">
+                    </mat-slider>
+                      
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
