@@ -3,9 +3,9 @@
     <div class="flex flex-auto flex-col items-center p-6 sm:p-10">
         <div class="flex w-full max-w-4xl flex-col">
             <div class="-ml-4 sm:mt-8 ">
-                <a mat-button [routerLink]="['../']"class="bg-blue-950 text-white" >
+                <a mat-button [routerLink]="['../servicios']"class="bg-blue-950 text-white" >
                     <mat-icon [svgIcon]="'heroicons_outline:arrow-long-left'" class="text-white"></mat-icon>
-                    <span class="ml-2">Regresar al Portal Principal</span>
+                    <span class="ml-2">Regresar </span>
                 </a>
             </div>
             <div
@@ -41,33 +41,31 @@
                             te contactaremos para dar seguimiento!
                         </div>
                     </div>
-                    <!-- Selection -->
-                    <div class="mb-4">
-                        <mat-radio-group
+                    <div class="mb-4 flex items-center justify-center">
+                        <div
                             class="flex flex-col sm:flex-row mt-2 space-y-2 sm:space-y-0 sm:space-x-4"
-                            formControlName="category"
-                            (change)="onCategoryChange($event.value)"
                         >
-                            <mat-radio-button
-                                class="flex items-center"
-                                [value]="'preguntas'"
+                            <div
+                                class="card flex items-center justify-center p-14 shadow-lg border rounded-lg cursor-pointer hover:bg-gray-100 transition"
+                                (click)="onCategoryChange('preguntas')"
                             >
-                                Preguntas
-                            </mat-radio-button>
-                            <mat-radio-button
-                                class="flex items-center"
-                                [value]="'quejas'"
+                                <span>Preguntas</span>
+                            </div>
+                            <div
+                                class="card flex items-center justify-center p-14 shadow-lg border rounded-lg cursor-pointer hover:bg-gray-100 transition"
+                                (click)="onCategoryChange('quejas')"
                             >
-                                Quejas
-                            </mat-radio-button>
-                            <mat-radio-button
-                                class="flex items-center"
-                                [value]="'sugerencias'"
+                                <span>Quejas</span>
+                            </div>
+                            <div
+                                class="card flex items-center justify-center p-14 shadow-lg border rounded-lg cursor-pointer hover:bg-gray-100 transition"
+                                (click)="onCategoryChange('sugerencias')"
                             >
-                                Sugerencias
-                            </mat-radio-button>
-                        </mat-radio-group>
+                                <span>Sugerencias</span>
+                            </div>
+                        </div>
                     </div>
+                    
                     <!-- Message -->
                     <div [hidden] = 'isCategorySelected'>
                         <mat-form-field class="w-full">

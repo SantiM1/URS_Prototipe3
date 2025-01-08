@@ -1,0 +1,72 @@
+<div class="flex min-w-0 flex-auto flex-col">
+    <!-- Main -->
+    <div class="flex flex-auto flex-col items-center p-6 sm:p-10">
+        <div class="flex w-full max-w-4xl flex-col">
+            <div class="-ml-4 sm:mt-8 ">
+                <a mat-button [routerLink]="['../servicios']" class="bg-blue-950 text-white">
+                    <mat-icon [svgIcon]="'heroicons_outline:arrow-long-left'" class="text-white"></mat-icon>
+                    <span class="ml-2">Regresar</span>
+                </a>
+            </div>
+            <div class="mt-2 text-4xl font-extrabold leading-tight tracking-tight sm:text-7xl">
+                Servicios
+            </div>
+            <!-- Form -->
+            <div class="bg-card mt-8 rounded-2xl p-6 pb-7 shadow sm:mt-12 sm:p-10 sm:pb-7">
+                <!-- Alert -->
+                @if (alert) {
+                <fuse-alert class="mb-8" [type]="alert.type" [showIcon]="false">
+                    {{ alert.message }}
+                </fuse-alert>
+                }
+                <form class="space-y-3" [formGroup]="supportForm" #supportNgForm="ngForm">
+                    <div class="mb-6">
+                        <div class="text-2xl font-bold tracking-tight">
+                            Selecciona el tipo de servicio
+                        </div>
+                        <div class="text-secondary">
+                            Las solicitudes de servicio serán procesadas y una respuesta será enviada al correo institucional!
+                        </div>
+                    </div>
+
+                    <!-- Selection -->
+                    <div class="mb-4">
+                        <mat-form-field class="w-full mt-2" appearance="fill">
+                            <mat-label>Selecciona una opción</mat-label>
+                            <mat-select formControlName="category" (selectionChange)="onCategoryChange($event.value)">
+                                <mat-option value="soporte">Soporte</mat-option>
+                                <mat-option value="ingreso">Ingreso del Formulario</mat-option>
+                                <mat-option value="actualizacion">Actualización del Formulario</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Message -->
+                    <div [hidden]='isCategorySelected'>
+                        <mat-form-field class="w-full">
+                            <textarea matInput [formControlName]="'message'" [required]="true" [rows]="5"
+                                cdkTextareaAutosize></textarea>
+                            <mat-label>{{ messageLabel }}</mat-label>
+                            @if (supportForm.get('message').hasError('required')) {
+                            <mat-error> Required </mat-error>
+                            }
+                        </mat-form-field>
+                    </div>
+                    <!-- Actions -->
+                    <div class="flex items-center justify-end">
+                        <button mat-button [color]="'accent'" [disabled]="
+                                supportForm.pristine || supportForm.untouched
+                            " (click)="clearForm()">
+                            Clear
+                        </button>
+                        <button class="ml-2" mat-flat-button [color]="'primary'" [disabled]="
+                                supportForm.pristine || supportForm.invalid
+                            " (click)="sendForm()">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

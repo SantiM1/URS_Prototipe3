@@ -13,58 +13,46 @@
             </div>
             <!-- Form -->
             <div class="bg-card mt-8 rounded-2xl p-6 pb-7 shadow sm:mt-12 sm:p-10 sm:pb-7">
-                <!-- Alert -->
-                @if (alert) {
-                <fuse-alert class="mb-8" [type]="alert.type" [showIcon]="false">
-                    {{ alert.message }}
-                </fuse-alert>
-                }
-                <form class="space-y-3" [formGroup]="supportForm" #supportNgForm="ngForm">
+               
+                <form class="space-y-3"  #supportNgForm="ngForm">
                     <div class="mb-6">
                         <div class="text-2xl font-bold tracking-tight">
-                            Selecciona el tipo de servicio
+                            Selecciona la opción que deseas visitar
                         </div>
-                        <div class="text-secondary">
-                            Las solicitudes de servicio serán procesadas y una respuesta será enviada al correo institucional!
+                        <div class="mb-4 flex items-center justify-center">
+                            <div
+                                class="flex flex-col sm:flex-row mt-2 space-y-2 sm:space-y-0 sm:space-x-4 text-2xl font-bold"
+                            >
+                                <div
+                                    class="card flex flex-col items-center justify-center py-10 w-60 shadow-lg border rounded-lg cursor-pointer hover:bg-gray-100 transition"
+                                    (click)="navTo('portal/land/faqs')"
+                                >
+                                
+                                    <span class="">Preguntas Frecuentes
+                                        
+                                    </span>
+                                    <mat-icon class="icon-size-20 mt-3"[svgIcon]="'heroicons_outline:question-mark-circle'"></mat-icon>
+                                   
+                                </div>
+                                <div
+                                    class="card flex flex-col items-center justify-center py-10 w-60 shadow-lg border rounded-lg cursor-pointer hover:bg-gray-100 transition"
+                                    (click)="navTo('portal/land/soporte')"
+                                >
+                                    <span>Soporte</span>
+                                    <mat-icon class="icon-size-20 mt-3"[svgIcon]="'heroicons_outline:cog'"></mat-icon>
+                                </div>
+                                <div
+                                    class="card flex flex-col items-center justify-center py-10 w-60 shadow-lg border rounded-lg cursor-pointer hover:bg-gray-100 transition"
+                                    (click)="navTo('portal/land/otros-servicios')"
+                                >
+                                    <span>Otros Servicios</span>
+                                    <mat-icon class="icon-size-20 mt-3"[svgIcon]="'heroicons_outline:book-open'"></mat-icon>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Selection -->
-                    <div class="mb-4">
-                        <mat-form-field class="w-full mt-2" appearance="fill">
-                            <mat-label>Selecciona una opción</mat-label>
-                            <mat-select formControlName="category" (selectionChange)="onCategoryChange($event.value)">
-                                <mat-option value="soporte">Soporte</mat-option>
-                                <mat-option value="ingreso">Ingreso del Formulario</mat-option>
-                                <mat-option value="actualizacion">Actualización del Formulario</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-
-                    <!-- Message -->
-                    <div [hidden]='isCategorySelected'>
-                        <mat-form-field class="w-full">
-                            <textarea matInput [formControlName]="'message'" [required]="true" [rows]="5"
-                                cdkTextareaAutosize></textarea>
-                            <mat-label>{{ messageLabel }}</mat-label>
-                            @if (supportForm.get('message').hasError('required')) {
-                            <mat-error> Required </mat-error>
-                            }
-                        </mat-form-field>
-                    </div>
-                    <!-- Actions -->
-                    <div class="flex items-center justify-end">
-                        <button mat-button [color]="'accent'" [disabled]="
-                                supportForm.pristine || supportForm.untouched
-                            " (click)="clearForm()">
-                            Clear
-                        </button>
-                        <button class="ml-2" mat-flat-button [color]="'primary'" [disabled]="
-                                supportForm.pristine || supportForm.invalid
-                            " (click)="sendForm()">
-                            Submit
-                        </button>
-                    </div>
+                    
                 </form>
             </div>
         </div>

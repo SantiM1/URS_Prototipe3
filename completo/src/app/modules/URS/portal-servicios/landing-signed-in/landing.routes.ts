@@ -8,6 +8,7 @@ import { LandingPlace } from './landing-container.component';
 import { ServiciosSupportComponent } from './landing-servicios/servicios.component';
 import { CertificateComponent } from './landing-certificate/certificate-end/certificate.component';
 import { CertificateFormComponent } from './landing-certificate/certificate-form/certificate-form.component';
+import { ServiciosComponent } from './otros-servicios/servicios.component';
 
 export default [
     {
@@ -32,6 +33,10 @@ export default [
             {
                 path:'servicios',
                 component: ServiciosSupportComponent
+            },
+            {
+                path:'otros-servicios',
+                component: ServiciosComponent
             },
             {
                 path:'certificado',
