@@ -2,13 +2,15 @@ import { CommonModule } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-table-dialog',
   templateUrl: './miembros-hogar.component.html',
   standalone:true,
   imports:[ MatDialogModule,
-    CommonModule
+    CommonModule,
+    MatIconModule,
 
   ]
 })
@@ -24,7 +26,7 @@ export class MiembrosHogarComponent {
       nacionalidad: 'Ecuatoriana',
       discapacidad: 'No',
       parentesco: 'Hermano',
-      puntaje: 4.1,
+      puntaje: 3.7,
     },
     {
       no: 2,
@@ -34,7 +36,7 @@ export class MiembrosHogarComponent {
       nacionalidad: 'Mexicana',
       discapacidad: 'Sí',
       parentesco: 'Madre',
-      puntaje: 3.8,
+      puntaje: 3.7,
     },
     {
       no: 3,
@@ -54,7 +56,7 @@ export class MiembrosHogarComponent {
       nacionalidad: 'Argentina',
       discapacidad: 'No',
       parentesco: 'Esposa',
-      puntaje: 4.3,
+      puntaje: 3.7,
     },
   ];
 }

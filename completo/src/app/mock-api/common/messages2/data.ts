@@ -10,7 +10,7 @@ export const messages = [
         title: 'Notificación #5617',
         description: 'Su solicitud de cambio de contraseña ha sido completada',
         time: now.minus({ minutes: 25 }).toISO(), // 25 minutes ago
-        link: '/portal/notificaciones/inbox/1/c879fa32-77a5-4b39-94a3-df98b6f65f7e',
+        link: 'siips/portal/notificaciones/inbox/1/c879fa32-77a5-4b39-94a3-df98b6f65f7e',
         read: false,
     },
     {
@@ -20,7 +20,7 @@ export const messages = [
             'Certificado de Registro del Formulario del Registro Social',
         time: now.minus({ minutes: 50 }).toISO(), // 50 minutes ago
         read: false,
-        link: '/portal/notificaciones',
+        link: 'siips/portal/notificaciones',
     },
     {
         id: '22148c0c-d788-4d49-9467-447677d11b76',
@@ -28,7 +28,7 @@ export const messages = [
         description: "Actualización de datos del Formulario de Registro Social Finalizada",
         time: now.minus({ hours: 3 }).toISO(), // 3 hours ago
         read: true,
-        link: '/portal/notificaciones/sent',
+        link: 'siips/portal/notificaciones',
         useRouter: true,
     },
 ];

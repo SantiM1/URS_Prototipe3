@@ -1340,6 +1340,15 @@ export const compactNavigation: FuseNavigationItem[] = [
         icon: 'heroicons_outline:paper-airplane',
         link:'/portal/seguimiento-nominal/ep',
        
+    },
+    {
+        id: 'seguimientoNominal',
+        title: 'Seguimiento Nominal (No. certificado)',
+        tooltip: 'Seguimiento Nominal  (No. certificado)',
+        type: 'basic',
+        icon: 'heroicons_outline:beaker',
+        link:'/portal/seguimiento-nominal-cert/ep',
+       
     }
     /*{
         id: 'dashboards',

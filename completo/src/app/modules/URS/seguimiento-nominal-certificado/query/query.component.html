@@ -1,0 +1,57 @@
+<div class="grid grid-cols-2 gap-4 bg-white w-full p-8 rounded-lg shadow-md place-content-center">
+    <!-- Input 1 with Label -->
+    <div class="w-full">
+        <mat-form-field 
+        appearance="fill" 
+        class="w-full"
+    >
+        
+        <mat-label >No. Certificado*</mat-label>
+        <input 
+            matInput 
+            type="text" 
+            [placeholder]="getPlaceholder()"
+            [(ngModel)]="inputValue"
+            class="p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        >
+        
+    </mat-form-field>
+    </div>
+
+    <!-- Input 2 with Label -->
+    <div class="w-full ">
+        <mat-form-field appearance="fill" class="w-full ">
+            <mat-label>Fecha</mat-label>
+            <input 
+                matInput 
+                [matDatepicker]="picker" 
+                class="p-2  border rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            >
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <!-- Input 3 with Label -->
+    <div class="w-full col-span-2">
+        <!-- Single Input for 'Cédula' and 'No. Certificado' -->
+         <div class="flex w-full">
+      
+        <div class="flex flex-auto m-7  min-h-12 ">
+        <button (click) ="navDirect('portal/seguimiento-nominal-cert/', 300)"
+            class=" flex flex-auto justify-center items-center text-center bg-primary text-white font-semibold rounded-md hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 transition-all"
+        >
+            Consultar
+        </button>
+        </div>
+    </div>
+        <!-- Submit Button -->
+        
+
+        
+        
+    </div>
+
+    
+</div>

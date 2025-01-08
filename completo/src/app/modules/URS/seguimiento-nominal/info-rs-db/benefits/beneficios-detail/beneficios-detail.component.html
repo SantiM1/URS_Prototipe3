@@ -1,0 +1,33 @@
+
+<h2 class="text-xl font-bold mb-4">{{data.title}}</h2>
+<mat-dialog-content class="overflow-x-auto">
+  <table class="table-auto border-collapse border border-gray-200 w-full text-left">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border border-gray-200 px-4 py-2">No.</th>
+        <th class="border border-gray-200 px-4 py-2">Cambios</th>
+        <th class="border border-gray-200 px-4 py-2">Fecha cambio</th>
+        <th class="border border-gray-200 px-4 py-2">Certificado</th>
+        <th class="border border-gray-200 px-4 "></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of tableData">
+        <td class="border border-gray-200 px-4 py-2">{{ row.no }}</td>
+        <td class="border border-gray-200 px-4 py-2">{{ row.tipoCambio }}</td>
+        <td class="border border-gray-200 px-4 py-2">{{ row.fechaCambio }}</td>
+        <td class="border border-gray-200 px-4 py-2">{{ row.certificado }}</td>
+        <td class="border border-gray-200 px-4 flex justify-center">
+          <button
+            mat-button
+            class="bg-primary hover:bg-blue-900 text-white rounded-2xl p-2 text-center flex justify-center items-center"
+            (click)="onView(row.certificado)"
+          >
+            Ver más
+            <mat-icon class="icon-size-7 text-current pl-2"[svgIcon]="'heroicons_outline:eye'"></mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</mat-dialog-content>

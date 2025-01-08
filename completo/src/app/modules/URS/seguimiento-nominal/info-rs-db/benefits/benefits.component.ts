@@ -38,7 +38,7 @@ export class BenefitsComponent {
     }
     openInfoDialog(titleName: string, descriptionText: string): void {
         this.dialog.open(BenefitsDialogComponent, {
-          width: '400px',
+          width: '900px',
           data: {
             title: titleName,
             description: descriptionText,

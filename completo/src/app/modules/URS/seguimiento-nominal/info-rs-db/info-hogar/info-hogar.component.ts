@@ -44,7 +44,7 @@ export class InfoHogarComponent {
 
        openMiembrosDialog(): void {
          this.dialog.open(MiembrosHogarComponent, {
-           width: '900px', // Adjust width as needed
+           width: '1100px', // Adjust width as needed
            data: {}, // Pass any data if needed
          });
        }

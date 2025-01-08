@@ -1,4 +1,4 @@
-<h2 class="text-xl font-bold mb-4">Detalles de Personas</h2>
+<h2 class="text-xl font-bold mb-4">Detalles de Miembros del Hogar</h2>
 <mat-dialog-content class="overflow-x-auto">
   <table class="table-auto border-collapse border border-gray-200 w-full text-left">
     <thead>
@@ -8,9 +8,10 @@
         <th class="border border-gray-200 px-4 py-2">Nombre</th>
         <th class="border border-gray-200 px-4 py-2">Fecha Nacimiento</th>
         <th class="border border-gray-200 px-4 py-2">Nacionalidad</th>
-        <th class="border border-gray-200 px-4 py-2">Discapacidad</th>
+        <th class="border border-gray-200 px-4 py-2">Disc.</th>
         <th class="border border-gray-200 px-4 py-2">Parentesco</th>
         <th class="border border-gray-200 px-4 py-2">Puntaje</th>
+        <th class="border border-gray-200 px-4 py-2">Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +24,16 @@
         <td class="border border-gray-200 px-4 py-2">{{ row.discapacidad }}</td>
         <td class="border border-gray-200 px-4 py-2">{{ row.parentesco }}</td>
         <td class="border border-gray-200 px-4 py-2">{{ row.puntaje }}</td>
+        <td class="border border-gray-200 px-4 flex justify-center">
+          <button
+            mat-button
+            class="bg-primary hover:bg-blue-900 text-white rounded-2xl p-2 text-center flex justify-center items-center"
+            
+          >
+          Consultar
+            <mat-icon class="icon-size-7 text-current pl-2"[svgIcon]="'heroicons_outline:eye'"></mat-icon>
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>

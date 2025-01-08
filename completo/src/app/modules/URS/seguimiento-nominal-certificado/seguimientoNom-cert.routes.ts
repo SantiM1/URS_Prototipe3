@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
-import { InfoRSDBComponent } from './info-rs-db/info-rs-db.component';
-import { ActivitiesPlace } from './seguimientoNom.component';
-import { InfoRSComponent } from './info-rs/info-rs.component';
+import { ActivitiesPlace } from './seguimientoNom-cert.component';
+
 import { ActivitiesEmptyPlace } from './empty/empty.component';
 import { NamesComponent } from './empty/names/names.component';
+import { InfoRSComponent } from '../seguimiento-nominal/info-rs/info-rs.component';
+
+
 
 
 export default [
@@ -18,7 +20,7 @@ export default [
             },
             {
                 path: 'db',
-                loadChildren: () => import('app/modules/URS/portal-servicios/seguimiento-nominal/info-rs-db/info-rs-db.routes')
+                loadChildren: () => import('app/modules/URS/seguimiento-nominal/info-rs-db/info-rs-db.routes')
             },
             
 
