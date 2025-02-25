@@ -6,7 +6,7 @@
         ViewEncapsulation,
     } from '@angular/core';
     import { MatChipsModule } from '@angular/material/chips';
-import { MatIconModule } from '@angular/material/icon';
+    import { MatIconModule } from '@angular/material/icon';
     import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
     @Component({
         selector: 'activity',
@@ -14,10 +14,10 @@ import { MatIconModule } from '@angular/material/icon';
         encapsulation: ViewEncapsulation.None,
         changeDetection: ChangeDetectionStrategy.OnPush,
         standalone: true,
-        imports: [TitleCasePipe, 
+        imports: [TitleCasePipe,
             DatePipe,
-             CommonModule, 
-             MatChipsModule, 
+             CommonModule,
+             MatChipsModule,
              RouterModule,
             MatIconModule,
         ],
@@ -29,18 +29,18 @@ import { MatIconModule } from '@angular/material/icon';
             private activeRoute: ActivatedRoute
         ){}
 
-        
+
         navTo(name: string): void {
             this.router.navigate([name], { relativeTo: this.activeRoute }).then(() => {
                 // Scroll to top after navigation
                 window.scrollTo({ top: 850, behavior: 'smooth' });
             });
         }
-        
+
         ngOnInit(): void {
-           
+
         }
-        
+
         activities = [
             {
                 id: 1,
@@ -66,17 +66,9 @@ import { MatIconModule } from '@angular/material/icon';
                 benefits: ['BDH', 'CDH'],
                 points: '5',
             },
-            {
-                id: 4,
-                title: 'Pobre',
-                date: new Date(new Date().setDate(new Date().getDate() - 3)).toISOString(),
-                color: 'amber',
-                benefits: ['BDH', 'CDH'],
-                points: '5',
-            },
         ];
 
-       
+
 
         /**
          * Check if two dates fall on the same day

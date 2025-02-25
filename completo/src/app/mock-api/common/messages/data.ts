@@ -10,7 +10,7 @@ export const messages = [
         title: 'Solicitud #4567',
         description: 'Ingreso de Formulario del Registro Social',
         time: now.minus({ minutes: 25 }).toISO(), // 25 minutes ago
-        link: 'siips/portal/solicitudes/inbox/1/a1f7d459-4b64-482e-876e-7a493afc9bce',
+        link: 'portal/solicitudes/inbox/1/a1f7d459-4b64-482e-876e-7a493afc9bce',
         read: false,
     },
     {
@@ -20,7 +20,7 @@ export const messages = [
             'Certificado de Registro del Formulario del Registro Social',
         time: now.minus({ minutes: 50 }).toISO(), // 50 minutes ago
         read: false,
-        link: 'siips/portal/solicitudes',
+        link: 'portal/solicitudes',
     },
     {
         id: '22148c0c-d788-4d49-9467-447677d11b76',
@@ -28,7 +28,7 @@ export const messages = [
         description: "Actualización de datos del Formulario de Registro Social Finalizada",
         time: now.minus({ hours: 3 }).toISO(), // 3 hours ago
         read: true,
-        link: 'siips/portal/solicitudes',
+        link: 'portal/solicitudes',
         useRouter: true,
     },
 ];

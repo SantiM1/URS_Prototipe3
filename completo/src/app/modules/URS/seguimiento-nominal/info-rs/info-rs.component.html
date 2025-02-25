@@ -1,6 +1,8 @@
 <div class="relative flex flex-auto overflow-hidden">
     <!-- Main -->
-    <div class="flex flex-auto px-6 py-10">
+    <!--div class="flex flex-auto px-6 py-10"-->
+    <!-- Left Section (Main Content) -->
+    <div class="flex flex-auto flex-col px-6 py-10 sm:px-16 sm:pb-20">
         <!-- Activity feed -->
         <div class="flex flex-auto justify-center">
             <!-- Title -->
@@ -8,11 +10,11 @@
             <div class="text-4xl font-extrabold leading-none text-center tracking-tight">
                 Seguimiento Nominal
                 <div class="text-secondary mt-1.5 text-lg">
-                    Indice de Pobreza RC 2024
+                    Bases del RS - Indice de Pobreza
                 </div>
-                 
+
             </div>
-            
+
 
 <!-- Check if activities exist -->
             <div *ngIf="activities.length; else noActivities" class="mt-8">
@@ -46,7 +48,7 @@
                                         <div class="font-semibold">Puntaje: </div>
                                         <div>{{activity.points}} </div>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                         </li>
@@ -55,11 +57,24 @@
                 </ol>
             </div>
 
+
             <!-- No activities message -->
             <ng-template #noActivities>
                 <div class="mt-8 text-secondary text-lg">There is no activity at the moment...</div>
             </ng-template>
         </div>
         </div>
+    </div>
+    <!-- Right Section (Bordered Div) -->
+    <div
+        class="flex flex-col justify-center w-1/2 min-w-[300px] h-auto border-l border-gray-300 px-6 py-4 bg-gray-50 shadow-md">
+        <button (click)="openHistorialDialog()"
+                mat-button class="bg-primary text-white hover:bg-blue-900 py-10 mt-10 mx-20 text-xl">
+
+            <div class="flex items-center space-x-4 justify-center">
+                <div> Historial de Cambios </div>
+                <mat-icon class="text-current icon-size-7 " [svgIcon]="'heroicons_outline:clipboard-document-list'"></mat-icon>
+            </div>
+        </button>
     </div>
 </div>

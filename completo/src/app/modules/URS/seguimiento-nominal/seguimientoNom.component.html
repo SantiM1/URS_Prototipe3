@@ -24,22 +24,147 @@
     <query-box></query-box>
     </div>
     <!-- Title for Registro Civil -->
-    <h2 class="text-2xl font-bold text-start ml-32 text-gray-700 mt-8">Información Registro Civil</h2>
+    <h2 class="text-2xl font-bold text-start ml-32 text-gray-700 mt-8">Información del Registro Civil</h2>
     <div class="flex flex-auto h-100 border-2 rounded-xl mx-20 mb-10 justify-center items-center">
         <info-rc></info-rc>
     </div>
 
     <!-- Title for Registro Social -->
-    <h2 class="text-2xl font-bold text-start ml-32 text-gray-700 mt-4">Información Registro Social</h2>
+    <h2 class="text-2xl font-bold text-start ml-32 text-gray-700 mt-4">Información del Registro Social</h2>
     <div class="flex flex-auto border-2 rounded-xl mx-20 mb-10">
         <router-outlet></router-outlet>
     </div>
+    <!-- Title for Barra Consultas -->
+    <h2 class="text-2xl font-bold text-start ml-32 text-gray-700 mt-4">Servicios de Consulta</h2>
+    <div class="flex flex-auto border-2 rounded-xl mx-20 mb-10">
+        <div class="relative" style="width: 1280px; align-content: center;">
+            <!-- Swiper Cards -->
+            <swiper-container class="relative rounded-tl-3xl px-10" slides-per-view="8" loop="true" navigation="true" pagination="false">
+                <swiper-slide class="relative z-10 hover:z-50 py-20 px-4">
+                    <!-- Card 3 -->
+                    <fuse-card (click)="navTo('/portal/maps/portal-geografico')"
+                               class="flex h-30 w-30 flex-col justify-between items-center cursor-pointer p-4 text-center rounded-tl-3xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+
+                        <!-- Image Section -->
+                        <div class="h-30 w-full">
+                            <img src="images/URS/logo_mies.png" class=" w-full object-cover rounded-md" />
+                        </div>
+
+                    </fuse-card>
+                </swiper-slide>
+                <swiper-slide class="relative z-10 hover:z-50 py-20 px-4">
+                    <!-- Card 3 -->
+                    <fuse-card (click)="navTo('/portal/maps/portal-geografico')"
+                               class="flex h-30 w-30 flex-col justify-between items-center cursor-pointer p-4 text-center rounded-tl-3xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+
+                        <!-- Image Section -->
+                        <div class="h-30 w-full">
+                            <img src="images/URS/logo_miduvi.png" class=" w-full object-cover rounded-md" />
+                        </div>
+
+                    </fuse-card>
+                </swiper-slide>
+                <swiper-slide class="relative z-10 hover:z-50 py-20 px-4">
+                    <!-- Card 2 -->
+                    <fuse-card (click)="navTo('/portal/formulario-urs/p0')"
+                               class="flex h-30 w-30 flex-col justify-between items-center cursor-pointer p-4 text-center rounded-tl-3xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+
+                        <!-- Image Section -->
+                        <div class="h-30 w-full ">
+                            <img src="images/URS/logo_secap.png" class="h-full object-contain rounded-md overflow-hidden" />
+                        </div>
+
+                    </fuse-card>
+
+                </swiper-slide>
+                <swiper-slide class="relative z-10 hover:z-50 py-20 px-4">
+                    <!-- Card 2 -->
+                    <fuse-card (click)="navTo('/portal/formulario-urs/p0')"
+                               class="flex h-30 w-30 flex-col justify-between items-center cursor-pointer p-4 text-center rounded-tl-3xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+
+                        <!-- Image Section -->
+                        <div class="h-30 w-full ">
+                            <img src="images/URS/logo_iess.png" class="h-full object-contain rounded-md overflow-hidden" />
+                        </div>
+
+                    </fuse-card>
+
+                </swiper-slide>
+                <swiper-slide class="relative z-10 hover:z-50 py-20 px-4">
+                    <!-- Card 2 -->
+                    <fuse-card (click)="navTo('/portal/formulario-urs/p0')"
+                               class="flex h-30 w-30 flex-col justify-between items-center cursor-pointer p-4 text-center rounded-tl-3xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+
+                        <!-- Image Section -->
+                        <div class="h-30 w-full ">
+                            <img src="images/URS/logo_senescyt.png" class="h-full object-contain rounded-md overflow-hidden" />
+                        </div>
+
+                    </fuse-card>
+
+                </swiper-slide>
+                <swiper-slide class="relative z-10 hover:z-50 py-20 px-4">
+                    <!-- Card 2 -->
+                    <fuse-card (click)="navTo('/portal/formulario-urs/p0')"
+                               class="flex h-30 w-30 flex-col justify-between items-center cursor-pointer p-4 text-center rounded-tl-3xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+
+                        <!-- Image Section -->
+                        <div class="h-30 w-full ">
+                            <img src="images/URS/logo_minedu.png" class="h-full object-contain rounded-md overflow-hidden" />
+                        </div>
+
+                    </fuse-card>
+
+                </swiper-slide>
+                <swiper-slide class="relative z-10 hover:z-50 py-20 px-4">
+                    <!-- Card 2 -->
+                    <fuse-card (click)="navTo('/portal/formulario-urs-actualizacion/p0')"
+                               class="flex h-30 w-30 flex-col justify-between items-center cursor-pointer p-4 text-center rounded-tl-3xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+
+                        <!-- Image Section -->
+                        <div class="h-30 w-full ">
+                            <img src="images/URS/logo_ministerio_energia.png" class="h-full object-contain rounded-md overflow-hidden" />
+                        </div>
+
+                    </fuse-card>
+                </swiper-slide>
+                <swiper-slide class="relative z-10 hover:z-50 py-20 px-4">
+                    <!-- Card 3 -->
+                    <fuse-card (click)="navTo('/portal/maps/portal-geografico')"
+                               class="flex h-30 w-30 flex-col justify-between items-center cursor-pointer p-4 text-center rounded-tl-3xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+
+                        <!-- Image Section -->
+                        <div class="h-30 w-full">
+                            <img src="images/URS/logo_sri.png" class=" w-full object-cover rounded-md" />
+                        </div>
+
+                    </fuse-card>
+                </swiper-slide>
+                <swiper-slide class="relative z-10 hover:z-50 py-20 px-4">
+                    <!-- Card 3 -->
+                    <fuse-card (click)="navTo('/portal/maps/portal-geografico')"
+                               class="flex h-30 w-30 flex-col justify-between items-center cursor-pointer p-4 text-center rounded-tl-3xl transition-all hover:shadow-lg hover:scale-110 z-10 hover:z-50">
+
+                        <!-- Image Section -->
+                        <div class="h-30 w-full">
+                            <img src="images/URS/logo_ant.png" class=" w-full object-cover rounded-md" />
+                        </div>
+
+                    </fuse-card>
+                </swiper-slide>
+
+
+
+            </swiper-container>
+        </div>
+    </div>
+
      <!--Footer-->
      <div class="bg-slate-900 w-full text-white mx-auto p-10 px-30 flex flex-col md:flex-row justify-between items-center mt-10">
         <!-- Section: Feedback and Suggestions -->
-        <h2 class="text-lg font-bold mb-4">¿Necesitas más información? Consula otros servicios: </h2>
+        <h2 class="text-lg font-bold mb-4">¿Necesitas más información? Consulta otros servicios: </h2>
         <div class="mb-6 md:mb-0 pr-2">
-    
+
           <div class="space-y-2">
             <!-- Button: Preguntas, quejas o sugerencias -->
             <button  class="min-w-80  border border-white p-4 flex items-center justify-between text-white rounded-lg hover:bg-white hover:text-blue-900">
@@ -51,7 +176,7 @@
           </div>
         </div>
         <div class="mb-6 md:mb-0">
-            
+
             <div class="space-y-2">
               <!-- Button: Preguntas, quejas o sugerencias -->
               <button  class="min-w-80  border border-white p-4 flex items-center justify-between text-white rounded-lg hover:bg-white hover:text-blue-900">
@@ -62,9 +187,9 @@
               </button>
             </div>
           </div>
-    
-       
-    
+
+
+
         <!-- Section: Contact Information -->
         <div class="text-center md:text-right">
           <p>Derechos Reservados © 2024 | Unidad del Registro Social</p>

@@ -10,11 +10,19 @@ import { MatIconModule } from "@angular/material/icon";
 import { QueryComponent } from "./query/query.component";
 import { MessagesComponent } from "../portal-servicios/landing-signed-in/landing-messages/messages.component";
 import { NotificationsComponent } from "../portal-servicios/landing-signed-in/landing-notifications/notifications.component";
-
+import { FuseCardComponent } from '@fuse/components/card';
+import { MatButtonModule } from '@angular/material/button';
+import { NgClass } from '@angular/common';
+import {
+    ChangeDetectionStrategy,
+    ViewEncapsulation,
+    CUSTOM_ELEMENTS_SCHEMA
+} from '@angular/core';
 
 @Component({
     selector: 'seguimiento-place',
     templateUrl: './seguimientoNom.component.html',
+    styleUrl: 'simple.css',
     standalone: true,
     imports: [
         RouterOutlet,
@@ -26,7 +34,11 @@ import { NotificationsComponent } from "../portal-servicios/landing-signed-in/la
         FuseFullscreenComponent,
         MatIconModule,
         QueryComponent,
-    ]
+        FuseCardComponent,
+        MatButtonModule,
+        NgClass,
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 
 export class ActivitiesPlace {
@@ -36,6 +48,10 @@ export class ActivitiesPlace {
         private _fuseNavigationService: FuseNavigationService,
 
     ) { }
+
+    navTo(name: string){
+    }
+
     toggleNavigation(name: string): void {
         // Get the navigation
         const navigation =

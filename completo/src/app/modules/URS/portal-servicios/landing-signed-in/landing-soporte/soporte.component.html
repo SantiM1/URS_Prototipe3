@@ -37,11 +37,11 @@
                             Selecciona el tipo de solicitud
                         </div>
                         <div class="text-secondary">
-                            Tu solicitud será procesada y, en caso que sea necesario, 
+                            Tu solicitud será procesada y, en caso que sea necesario,
                             te contactaremos para dar seguimiento!
                         </div>
                     </div>
-                    <div class="mb-4 flex items-center justify-center">
+                    <div class="mb-2 flex items-center justify-center">
                         <div
                             class="flex flex-col sm:flex-row mt-2 space-y-2 sm:space-y-0 sm:space-x-4"
                         >
@@ -49,23 +49,36 @@
                                 class="card flex items-center justify-center p-14 shadow-lg border rounded-lg cursor-pointer hover:bg-gray-100 transition"
                                 (click)="onCategoryChange('preguntas')"
                             >
-                                <span>Preguntas</span>
+
+                                <!-- Image Section -->
+                                <div style="align:center">
+                                    <h2 class="text-xl font-bold mb-2 text-orange-600" style="text-align:center">Preguntas</h2>
+                                    <img src="images/URS/icono-preguntas.png" class="w-50 object-cover rounded-md" />
+                                </div>
                             </div>
                             <div
                                 class="card flex items-center justify-center p-14 shadow-lg border rounded-lg cursor-pointer hover:bg-gray-100 transition"
                                 (click)="onCategoryChange('quejas')"
                             >
-                                <span>Quejas</span>
+                                <!-- Image Section -->
+                                <div style="align:center">
+                                    <h2 class="text-xl font-bold mb-2 text-cyan-600" style="text-align:center">Quejas</h2>
+                                    <img src="images/URS/icono-quejas.png" class="w-50 object-cover rounded-md" />
+                                </div>
                             </div>
                             <div
                                 class="card flex items-center justify-center p-14 shadow-lg border rounded-lg cursor-pointer hover:bg-gray-100 transition"
                                 (click)="onCategoryChange('sugerencias')"
                             >
-                                <span>Sugerencias</span>
+                                <!-- Image Section -->
+                                <div style="align:center">
+                                    <h2 class="text-xl font-bold mb-2 text-green-600" style="text-align:center">Sugerencias</h2>
+                                    <img src="images/URS/icono-sugerencias.png" class="w-50 object-cover rounded-md" />
+                                </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Message -->
                     <div [hidden] = 'isCategorySelected'>
                         <mat-form-field class="w-full">
@@ -73,39 +86,40 @@
                                 matInput
                                 [formControlName]="'message'"
                                 [required]="true"
-                                [rows]="5"
-                                cdkTextareaAutosize
+                                [rows]="4"
                             ></textarea>
-                            <mat-label>{{ messageLabel }}</mat-label>
+                            <mat-label class="text-xl font-bold mb-2 text-black-800">{{ messageLabel }}</mat-label>
                             @if (supportForm.get('message').hasError('required')) {
                                 <mat-error> Required </mat-error>
                             }
                         </mat-form-field>
-                    </div>
-                    <!-- Actions -->
-                    <div class="flex items-center justify-end">
-                        <button
-                            mat-button
-                            [color]="'accent'"
-                            [disabled]="
+
+                        <!-- Actions -->
+                        <div class="flex items-center justify-end">
+                            <button
+                                mat-button
+                                [color]="'accent'"
+                                [disabled]="
                                 supportForm.pristine || supportForm.untouched
                             "
-                            (click)="clearForm()"
-                        >
-                            Clear
-                        </button>
-                        <button
-                            class="ml-2"
-                            mat-flat-button
-                            [color]="'primary'"
-                            [disabled]="
+                                (click)="clearForm()"
+                            >
+                                Cancelar
+                            </button>
+                            <button
+                                class="ml-2"
+                                mat-flat-button
+                                [color]="'#4169E1'"
+                                [disabled]="
                                 supportForm.pristine || supportForm.invalid
                             "
-                            (click)="sendForm()"
-                        >
-                            Submit
-                        </button>
+                                (click)="sendForm()"
+                            >
+                                Enviar Comentario
+                            </button>
+                        </div>
                     </div>
+
                 </form>
             </div>
         </div>

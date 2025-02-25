@@ -84,7 +84,7 @@ export const mails = [
         id: "a1f7d459-4b64-482e-876e-7a493afc9bce",
         type: "mail",
         from: {
-            contact: "Unidad del registro social <registro.social@company.com>"
+            contact: "Unidad del Registro Social <registro.social@company.com>"
         },
         to: "me <hughes.brian@company.com>",
         cc: ["Ana Morales <ana.morales@company.com>", "Luis Torres <luis.torres@company.com>"],
@@ -92,13 +92,13 @@ export const mails = [
         date: "2019-12-28T15:20:00.000Z",
         subject: "Solicitud #4567: Ingreso de Formulario del Registro Social",
         content:`<div> Estimado Juan, <div/>
-        
+
         <div> Su solicitud para el ingreso del formulario de Registro Social está en proceso.
-         Por favor, revise los documentos requeridos y asegúrese de completar los pasos pendientes. 
+         Por favor, revise los documentos requeridos y asegúrese de completar los pasos pendientes.
          Para continuar, haga clic en el siguiente enlace: <div/>
-         
-         <a class='bg-blue-900 text-white p-2 rounded-xl' href='/portal/formulario-urs/p0'>Ingresar al Formulario<a/> 
-         
+
+         <a class='bg-blue-900 text-white p-2 rounded-xl' href='/portal/formulario-urs/p0'>Ingresar al Formulario<a/>
+
          <div> Atentamente,
          Unidad del Registro Social  <div/>`,
         attachments: [],
@@ -112,14 +112,24 @@ export const mails = [
         id: "7fd9e3ba-9077-4c94-92d5-b3f77b6fd924",
         type: "mail",
         from: {
-            contact: "Unidad del registro social <registro.social@company.com>"
+            contact: "Unidad del Registro Social <registro.social@company.com>"
         },
-        to: "me <hughes.brian@company.com>",
+        to: "ciudadano <hughes.brian@company.com>",
         cc: ["Camila Diaz <camila.diaz@company.com>", "Jose Marin <jose.marin@company.com>"],
         bcc: ["Paula Ortiz <paula.ortiz@company.com>", "Esteban Castillo <esteban.castillo@company.com>"],
-        date: "2019-12-27T10:45:00.000Z",
-        subject: "Solicitud #8934: Actualización de datos del Formulario de Registro Social",
-        content: "Estimado Juan, \n\nSu solicitud de actualización de datos del formulario de Registro Social ha sido recibida. En breve, recibirá una notificación para confirmar los cambios realizados. \n\nAgradecemos su colaboración.\n\nAtentamente,\n\nUnidad del Registro Social",
+        date: "2025-01-10T10:45:00.000Z",
+        subject: "Solicitud #8934: Certificado del Registro Social",
+        content: `<div> Estimado Juan, <div/>
+
+        <div> Su certificado del Registro Social ha sido generado satisfactoriamente.
+         El documento ha sido enviado a su correo electrónico juanperez@gmail.com y al buzón de solicitudes finalizadas del Portal de Servicios, en donde puede descargar su certificado en formato PDF.
+
+         Para descargar el certificado haga clic en el siguiente enlace: <div/>
+
+         <a class='bg-blue-900 text-white p-2 rounded-xl' href='/images/certificados/Certificado-levantamiento-No-11001381.pdf'>Descargar certificado<a/>
+
+         <div> Atentamente,
+         Unidad del Registro Social  <div/>`,
         attachments: [],
         starred: false,
         important: true,
@@ -131,7 +141,7 @@ export const mails = [
         id: "ef679d53-3219-4817-91a5-8c874c6e89dc",
         type: "mail",
         from: {
-            contact: "Unidad del registro social <registro.social@company.com>"
+            contact: "Unidad del Registro Social <registro.social@company.com>"
         },
         to: "me <hughes.brian@company.com>",
         cc: ["Alejandro Ponce <alejandro.ponce@company.com>", "Lucia Perez <lucia.perez@company.com>"],
@@ -146,12 +156,12 @@ export const mails = [
         folder: "fbdc8e79-a0c4-4a27-bc98-9c81ee7a86e5",
         labels: ["8b035cb5-65c0-4ab1-bb4c-43b0e442d1f3"]
     },
-    
+
         {
             id: "b89f0531-4c2a-497b-873e-6f7db00c450e",
             type: "mail",
             from: {
-                contact: "Unidad del registro social <registro.social@company.com>"
+                contact: "Unidad del Registro Social <registro.social@company.com>"
             },
             to: "me <hughes.brian@company.com>",
             cc: ["Sofia Martinez <sofia.martinez@company.com>", "Javier Guzman <javier.guzman@company.com>"],
@@ -170,7 +180,7 @@ export const mails = [
             id: "3e4dc751-8a56-4c69-b211-79cb9ae703b4",
             type: "mail",
             from: {
-                contact: "Unidad del registro social <registro.social@company.com>"
+                contact: "Unidad del Registro Social <registro.social@company.com>"
             },
             to: "me <hughes.brian@company.com>",
             cc: ["Paola Rojas <paola.rojas@company.com>", "Diego Vargas <diego.vargas@company.com>"],
@@ -189,7 +199,7 @@ export const mails = [
             id: "6cd3291f-b8a4-40e2-a3f2-f54c1d835e7f",
             type: "mail",
             from: {
-                contact: "Unidad del registro social <registro.social@company.com>"
+                contact: "Unidad del Registro Social <registro.social@company.com>"
             },
             to: "me <hughes.brian@company.com>",
             cc: ["Laura Navarro <laura.navarro@company.com>", "Juan Hernandez <juan.hernandez@company.com>"],
@@ -208,7 +218,7 @@ export const mails = [
             id: "2ef1c7d6-83dc-4574-8cf2-43aeb9a7ed3d",
             type: "mail",
             from: {
-                contact: "Unidad del registro social <registro.social@company.com>"
+                contact: "Unidad del Registro Social <registro.social@company.com>"
             },
             to: "me <hughes.brian@company.com>",
             cc: ["Victor Salinas <victor.salinas@company.com>", "Elena Montoya <elena.montoya@company.com>"],
@@ -227,7 +237,7 @@ export const mails = [
                 id: "8a10f5d3-86b9-4c60-990f-9b2e7e8d5c21",
                 type: "mail",
                 from: {
-                    contact: "Unidad del registro social <registro.social@company.com>"
+                    contact: "Unidad del Registro Social <registro.social@company.com>"
                 },
                 to: "me <hughes.brian@company.com>",
                 cc: ["Ana Lopez <ana.lopez@company.com>", "Luis Mendoza <luis.mendoza@company.com>"],
@@ -246,7 +256,7 @@ export const mails = [
                 id: "4a61d841-f3c2-4b2c-828f-659e02827d52",
                 type: "mail",
                 from: {
-                    contact: "Unidad del registro social <registro.social@company.com>"
+                    contact: "Unidad del Registro Social <registro.social@company.com>"
                 },
                 to: "me <hughes.brian@company.com>",
                 cc: ["Oscar Medina <oscar.medina@company.com>", "Patricia Alvarez <patricia.alvarez@company.com>"],
@@ -265,7 +275,7 @@ export const mails = [
                 id: "0fc5d82b-e6b0-4c02-bd6d-0b69e6379b12",
                 type: "mail",
                 from: {
-                    contact: "Unidad del registro social <registro.social@company.com>"
+                    contact: "Unidad del Registro Social <registro.social@company.com>"
                 },
                 to: "me <hughes.brian@company.com>",
                 cc: ["Elena Vargas <elena.vargas@company.com>", "Julio Herrera <julio.herrera@company.com>"],
@@ -284,7 +294,7 @@ export const mails = [
                 id: "2438b2b5-70ab-4b86-9299-02c15c04194c",
                 type: "mail",
                 from: {
-                    contact: "Unidad del registro social <registro.social@company.com>"
+                    contact: "Unidad del Registro Social <registro.social@company.com>"
                 },
                 to: "me <hughes.brian@company.com>",
                 cc: ["Gabriela Flores <gabriela.flores@company.com>", "Mario Suarez <mario.suarez@company.com>"],
@@ -303,7 +313,7 @@ export const mails = [
                     id: "9d04e192-4c8c-4d26-9b16-2ecb85f48b27",
                     type: "mail",
                     from: {
-                        contact: "Unidad del registro social <registro.social@company.com>"
+                        contact: "Unidad del Registro Social <registro.social@company.com>"
                     },
                     to: "me <hughes.brian@company.com>",
                     cc: ["Claudia Reyes <claudia.reyes@company.com>", "Hector Silva <hector.silva@company.com>"],
@@ -322,7 +332,7 @@ export const mails = [
                     id: "c8b738b9-b426-4370-9751-47d7a6fa9f45",
                     type: "mail",
                     from: {
-                        contact: "Unidad del registro social <registro.social@company.com>"
+                        contact: "Unidad del Registro Social <registro.social@company.com>"
                     },
                     to: "me <hughes.brian@company.com>",
                     cc: ["Silvia Romero <silvia.romero@company.com>", "Alfonso Ortega <alfonso.ortega@company.com>"],
@@ -341,7 +351,7 @@ export const mails = [
                     id: "4dfec8c4-13c1-4eb6-a9e4-cc66a45f3bb6",
                     type: "mail",
                     from: {
-                        contact: "Unidad del registro social <registro.social@company.com>"
+                        contact: "Unidad del Registro Social <registro.social@company.com>"
                     },
                     to: "me <hughes.brian@company.com>",
                     cc: ["Enrique Alvarez <enrique.alvarez@company.com>", "Marina Gutierrez <marina.gutierrez@company.com>"],
@@ -360,7 +370,7 @@ export const mails = [
                     id: "51a92712-67d7-4d32-82cd-9d37d79f7075",
                     type: "mail",
                     from: {
-                        contact: "Unidad del registro social <registro.social@company.com>"
+                        contact: "Unidad del Registro Social <registro.social@company.com>"
                     },
                     to: "me <hughes.brian@company.com>",
                     cc: ["Ricardo Vargas <ricardo.vargas@company.com>", "Luisa Morales <luisa.morales@company.com>"],
@@ -379,7 +389,7 @@ export const mails = [
                         id: "0e42a27d-4b0b-4ab5-b702-bc9e246e716b",
                         type: "mail",
                         from: {
-                            contact: "Unidad del registro social <registro.social@company.com>"
+                            contact: "Unidad del Registro Social <registro.social@company.com>"
                         },
                         to: "me <hughes.brian@company.com>",
                         cc: ["Manuel Torres <manuel.torres@company.com>", "Cecilia Ruiz <cecilia.ruiz@company.com>"],
@@ -398,7 +408,7 @@ export const mails = [
                         id: "acf493bf-5de2-42c9-9127-b9e814a3d337",
                         type: "mail",
                         from: {
-                            contact: "Unidad del registro social <registro.social@company.com>"
+                            contact: "Unidad del Registro Social <registro.social@company.com>"
                         },
                         to: "me <hughes.brian@company.com>",
                         cc: ["Diana Salinas <diana.salinas@company.com>", "Pablo Herrera <pablo.herrera@company.com>"],
@@ -417,7 +427,7 @@ export const mails = [
                         id: "18397b42-94ae-4de4-9fa7-f44a53273b27",
                         type: "mail",
                         from: {
-                            contact: "Unidad del registro social <registro.social@company.com>"
+                            contact: "Unidad del Registro Social <registro.social@company.com>"
                         },
                         to: "me <hughes.brian@company.com>",
                         cc: ["Eduardo Martinez <eduardo.martinez@company.com>", "Carmen Rojas <carmen.rojas@company.com>"],
@@ -436,7 +446,7 @@ export const mails = [
                         id: "84ab8cd7-ecfc-4f46-9dc2-3b9268b8a9fb",
                         type: "mail",
                         from: {
-                            contact: "Unidad del registro social <registro.social@company.com>"
+                            contact: "Unidad del Registro Social <registro.social@company.com>"
                         },
                         to: "me <hughes.brian@company.com>",
                         cc: ["Teresa Alvarez <teresa.alvarez@company.com>", "Hugo Castillo <hugo.castillo@company.com>"],
@@ -451,12 +461,12 @@ export const mails = [
                         folder: "1ee2ea29-9a1f-4c27-b4d2-5e465703b6a0",
                         labels: ["8b035cb5-65c0-4ab1-bb4c-43b0e442d1f3"]
                     }
-                
-                
-            
-            
-        
-    
-    
+
+
+
+
+
+
+
 ]
 ;

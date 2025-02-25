@@ -8,6 +8,9 @@ import {
 import { MatChipsModule } from '@angular/material/chips';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FuseNavigationService } from '@fuse/components/navigation';
+import { MatIconModule } from '@angular/material/icon';
+import { HistorialCambiosComponent } from "../info-rs-db/info-hogar/historial-cambios/historial-cambios.component";
+import { MatDialog, MatDialogModule } from "@angular/material/dialog";
 
 @Component({
     selector: 'activity',
@@ -15,7 +18,7 @@ import { FuseNavigationService } from '@fuse/components/navigation';
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [TitleCasePipe, DatePipe, CommonModule, MatChipsModule],
+    imports: [TitleCasePipe, DatePipe, CommonModule, MatChipsModule, MatIconModule, MatDialogModule],
 })
 export class InfoRSComponent implements OnInit {
 
@@ -23,6 +26,7 @@ export class InfoRSComponent implements OnInit {
         private router: Router,
         private activeRoute: ActivatedRoute,
         private _fuseNavigationService: FuseNavigationService,
+        private dialog: MatDialog
 
     ) { }
 
@@ -36,14 +40,6 @@ export class InfoRSComponent implements OnInit {
     activities = [
         {
             id: 1,
-            title: 'No Pobre',
-            date: "RC 2022",
-            color: 'green',
-            benefits: ['BDH'],
-            points: '8',
-        },
-        {
-            id: 2,
             title: 'Extremo Pobre',
             date: "RC 2018",
             color: 'red',
@@ -51,7 +47,7 @@ export class InfoRSComponent implements OnInit {
             points: '2',
         },
         {
-            id: 3,
+            id: 2,
             title: 'Pobre',
             date: "RC 2014",
             color: 'amber',
@@ -59,16 +55,23 @@ export class InfoRSComponent implements OnInit {
             points: '5',
         },
         {
-            id: 4,
-            title: 'Pobre',
-            date: "RC 2011",
-            color: 'amber',
-            benefits: ['BDH', 'CDH'],
-            points: '5',
+            id: 3,
+            title: 'No Pobre',
+            date: "RC 2002",
+            color: 'green',
+            benefits: [],
+            points: '7',
         },
     ];
 
     ngOnInit(): void {}
+
+    openHistorialDialog(): void {
+                                 this.dialog.open(HistorialCambiosComponent, {
+                                   width: '900px', // Adjust width as needed
+                                   data: {}, // Pass any data if needed
+                                 });
+                               }
 
     /**
      * Check if two dates fall on the same day

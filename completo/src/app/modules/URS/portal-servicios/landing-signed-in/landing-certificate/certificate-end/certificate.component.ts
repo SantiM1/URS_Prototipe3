@@ -20,4 +20,12 @@ export class CertificateComponent {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });;
     }
+
+descargaCertificado(){
+        let objeto_window_referencia = window.open('/images/certificados/Certificado-levantamiento-No-11001381.pdf', '_blank');
+        this.router.navigate(['../'], {relativeTo: this.activeRoute}).then(() => {
+            // Scroll to top after navigation
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });;
+    }
 }

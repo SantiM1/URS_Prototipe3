@@ -1,6 +1,6 @@
 <div class="container mx-auto p-6">
     <div class="mb-6">
-        <button 
+        <button
           class="flex items-center px-4 py-2 bg-primary text-white font-semibold rounded-xl hover:bg-gray-400"
           (click) ='goBack()'
         >
@@ -9,31 +9,47 @@
       </button>
       </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
       <!-- CDH Section -->
-      <div class="p-6 border rounded-lg shadow-md bg-white">
+      <div class="h-140 p-6 border rounded-lg shadow-md bg-white">
         <h2 class="text-xl font-bold mb-2 text-blue-600">PTV</h2>
-        <p class="text-gray-700 mb-4">
+          <!-- Image Section -->
+          <div class="h-30 w-full" style="align:center">
+              <img src="images/URS/beneficios_bono_1.png" class="w-50 object-cover rounded-md" />
+          </div>
+          <div class="h-30 w-full">
+        <p class="text-black-400 mb-4">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             PTV (Pensión Toda una Vida: ): Transferencia mensual de USD 100,00, que tiene como fin cubrir carencias económicas y gastos que incurren las personas que presentan un porcentaje de discapacidad mayor o igual al 40%, establecido por el Ministerio de Salud Pública.      </p>
         <button (click)="openInfoDialog('Pensión Toda una Vida (PTV)', 'Transferencia mensual de USD 100,00, que tiene como fin cubrir carencias económicas y gastos que incurren las personas que presentan un porcentaje de discapacidad mayor o igual al 40%, establecido por el Ministerio de Salud Pública.')"
-          class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600" 
-          
-        >
+          class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">
           Ver detalle
         </button>
+          </div>
       </div>
-  
+
       <!-- BDH Section -->
-      <div class="p-6 border rounded-lg shadow-md bg-white">
+      <div class="h-140 p-6 border rounded-lg shadow-md bg-white">
         <h2 class="text-xl font-bold mb-2 text-green-600">BDH</h2>
-        <p class="text-gray-700 mb-4">
+          <!-- Image Section -->
+          <div class="h-30 w-full" style="align:center">
+              <img src="images/URS/beneficios_bono_2.png" class="w-50 object-cover rounded-md" />
+          </div>
+        <p class="text-black-400 mb-4">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             BDH (Bono de Desarrollo Humano): Transferencia monetaria mensual de USD 55,00 para cubrir vulnerabilidades relacionadas a la situación económica del núcleo familiar.  </p>
         <button (click)="openInfoDialog('Bono de Desarrollo Humano (BDH)', 'Transferencia monetaria mensual de USD 55,00 para cubrir vulnerabilidades relacionadas a la situación económica del núcleo familiar. Está dirigida al representante de las familias que viven en situación de pobreza y extrema pobreza según información de Registro Social vigente, que no accedan a seguridad social contributiva, a excepción de Seguro Social Campesino y Trabajo no Remunerado en el Hogar; de preferencia a la mujer jefa de hogar o cónyuge, o en aquella persona que tenga como responsabilidad las decisiones de compra y cuya edad esté comprendida entre los 18 y 64 años.')"
-          class="px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600" 
-          
+          class="px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600"
+
         >
         Ver detalle
         </button>
       </div>
     </div>
   </div>
-  

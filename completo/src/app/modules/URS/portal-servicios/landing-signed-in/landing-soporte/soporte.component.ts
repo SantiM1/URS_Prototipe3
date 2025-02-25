@@ -45,6 +45,7 @@ export class LandingSupportComponent implements OnInit {
     messageLabel = 'Message';
     cat = ''
     isCategorySelected = true; // Initialize as false to hide textarea by default
+    viewButtons = false;
 
     constructor(private _formBuilder: UntypedFormBuilder) {}
 
@@ -57,8 +58,9 @@ export class LandingSupportComponent implements OnInit {
     }
 
     onCategoryChange(selectedCategory: string): void {
-        this.isCategorySelected = false
-        this.cat = selectedCategory
+        this.viewButtons = true;
+        this.isCategorySelected = false;
+        this.cat = selectedCategory;
         // Update visibility of textarea
         switch (selectedCategory) {
             case 'preguntas':
