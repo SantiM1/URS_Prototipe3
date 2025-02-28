@@ -1,0 +1,518 @@
+<div class="flex min-w-0 flex-auto flex-col">
+    <!-- Header -->
+    <div
+        class="bg-card flex flex-0 flex-col border-b p-6 dark:bg-transparent sm:flex-row sm:items-center sm:justify-between sm:px-10 sm:py-8"
+    >
+        <div class="min-w-0 flex-1">
+            <!-- Breadcrumbs -->
+            <div class="flex flex-wrap items-center font-medium">
+                <div>
+                    <a class="whitespace-nowrap text-primary-500"
+                        >Seguimiento Nominal</a
+                    >
+                </div>
+            </div>
+            <!-- Title -->
+            <div class="mt-2">
+                <h2
+                    class="truncate text-3xl font-extrabold leading-7 tracking-tight sm:leading-10 md:text-4xl"
+                >
+                    Seguimiento Nominal por Hogar
+                </h2>
+                <h3
+                    class="truncate text-1xl text-secundary-500 leading-7 tracking-tight sm:leading-10 md:text-1xl"
+                >
+                    CI. 1701010113 - LUIS FERNANDO FERNANDEZ YANEZ
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <div class="flex-auto p-6 sm:p-10">
+        <div class="-m-4 flex w-full max-w-400 flex-wrap items-start">
+
+        </div>
+
+        <div class="flex w-full max-w-400  flex-wrap items-start" style="border: 0px red solid;">
+            <mat-accordion class="w-full">
+                <mat-expansion-panel [expanded]="true" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title> MIEMBROS DEL HOGAR </mat-panel-title>
+                        <mat-panel-description>
+
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <div class="-m-1 flex w-full flex-wrap items-start">
+
+                        <!-- BASE 1 -->
+                        <div class="-m-1 flex flex-wrap items-start w-full max-w-80 ">
+                            <!-- Card #49 - TITULO BASE 1 -->
+                            <fuse-card
+                                class="filter-testimonial flex w-full max-w-80 flex-col lg:rounded-none lg:rounded-l"
+                            >
+                                <!-- Titulo base -->
+                                <div class="text-4xl font-bold leading-relaxed text-center">
+                                    Base 2002
+                                </div>
+                                <!-- Titulo CERTIFICADO -->
+                                <div class="my-4 flex w-full items-center justify-between px-2">
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">CERTIFICADO</span>
+                                        <span class="text-2xl font-bold">75233</span>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">FECHA ENCUESTA</span>
+                                        <span class="text-1xl">06-MAY-2002</span>
+                                    </div>
+                                </div>
+
+                            </fuse-card>
+                            <!-- Card #49 - 1 -->
+                            <fuse-card
+                                class="filter-testimonial w-full max-w-80 flex-col items-center text-center sm:px-1 sm:py-12 lg:rounded-none lg:rounded-l"
+                            >
+                                <!-- Titulo Nucleo -->
+                                <div class="text-2xl font-bold leading-tight tracking-tight">
+                                    NUCLEO 1
+                                </div>
+
+                                <!-- Integrantes del Nucleo -->
+                                <div class="text-secondary mt-2 flex flex-col">
+                                    <div>JEFE(A) DE NUCLEO</div>
+                                    <div><b>ANGEL LUIS FERNANDEZ PEREZ</b></div>
+                                    <hr class="mb-0 mt-8 w-full border-t" />
+                                    <div>ESPOSA</div>
+                                    <div><b>ANA SOFIA YANEZ MIRANDA</b></div>
+                                    <hr class="mb-0 mt-8 w-full border-t" />
+                                    <div class="text-blue-500 font-bold">HIJO(A)</div>
+                                    <div class="text-blue-500 font-bold"><b>LUIS FERNANDO FERNANDEZ YANEZ</b></div>
+                                    <div class="my-4 flex w-full items-center justify-between px-2 text-blue-500">
+                                        <div class="flex flex-col items-center">
+                                            <span class="font-bold">16 años</span>
+                                            <span class="text-blue-500 text-sm font-medium">Edad</span>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <span class="font-bold">Soltero(a)</span>
+                                            <span class="text-blue-500 text-sm font-medium">Estado Civil</span>
+                                        </div>
+                                    </div>
+                                    <hr class="mb-8 mt-0 w-full border-t" />
+                                </div>
+
+                            </fuse-card>
+                        </div>
+
+                        <!-- BASE 2 -->
+                        <div class="-m-1 flex flex-wrap items-start w-full max-w-80 ">
+                            <!-- Card #49 - TITULO BASE 2 -->
+                            <fuse-card
+                                class="filter-testimonial flex w-full max-w-80 flex-col"
+                            >
+                                <!-- Titulo base -->
+                                <div class="text-4xl font-bold leading-relaxed text-center">
+                                    Base 2008
+                                </div>
+                                <!-- Titulo CERTIFICADO -->
+                                <div class="my-4 flex w-full items-center justify-between px-2">
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">CERTIFICADO</span>
+                                        <span class="text-2xl font-bold">87133</span>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">FECHA ENCUESTA</span>
+                                        <span class="text-1xl">21-JUN-2008</span>
+                                    </div>
+                                </div>
+
+                            </fuse-card>
+                            <!-- Card #49 - 2 -->
+                            <fuse-card
+                                class="filter-testimonial w-full max-w-80 flex-col items-center text-center sm:px-1 sm:py-12 lg:rounded-none lg:rounded-l"
+                            >
+                                <!-- Titulo Nucleo -->
+                                <div class="text-2xl font-bold leading-tight tracking-tight">
+                                    NUCLEO 1
+                                </div>
+
+                                <!-- Integrantes del Nucleo -->
+                                <div class="text-secondary mt-2 flex flex-col">
+                                    <div>JEFE(A) DE NUCLEO</div>
+                                    <div><b>ANGEL LUIS FERNANDEZ PEREZ</b></div>
+                                    <hr class="mb-0 mt-8 w-full border-t" />
+                                    <div>ESPOSA</div>
+                                    <div><b>ANA SOFIA YANEZ MIRANDA</b></div>
+                                    <hr class="mb-0 mt-8 w-full border-t" />
+                                    <div class="text-blue-500 font-bold">HIJO(A)</div>
+                                    <div class="text-blue-500 font-bold"><b>LUIS FERNANDO FERNANDEZ YANEZ</b></div>
+                                    <div class="my-4 flex w-full items-center justify-between px-2 text-blue-500">
+                                        <div class="flex flex-col items-center">
+                                            <span class="font-bold">22 años</span>
+                                            <span class="text-blue-500 text-sm font-medium">Edad</span>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <span class="font-bold">Soltero(a)</span>
+                                            <span class="text-blue-500 text-sm font-medium">Estado Civil</span>
+                                        </div>
+                                    </div>
+                                    <hr class="mb-8 mt-0 w-full border-t" />
+                                    <div>HIJO(A)</div>
+                                    <div><b>LUCIA MARIBEL FERNANDEZ YANEZ</b></div>
+                                    <hr class="mb-8 mt-0 w-full border-t" />
+                                </div>
+
+                            </fuse-card>
+                        </div>
+
+                        <!-- BASE 3 -->
+                        <div class="-m-1 flex flex-wrap items-start w-full max-w-80 ">
+                            <!-- Card #49 - TITULO BASE 3 -->
+                            <fuse-card
+                                class="filter-testimonial flex w-full max-w-80 flex-col"
+                            >
+                                <!-- Titulo base -->
+                                <div class="text-4xl font-bold leading-relaxed text-center">
+                                    Base 2014
+                                </div>
+                                <!-- Titulo CERTIFICADO -->
+                                <div class="my-4 flex w-full items-center justify-between px-2">
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">CERTIFICADO</span>
+                                        <span class="text-2xl font-bold">98460</span>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">FECHA ENCUESTA</span>
+                                        <span class="text-1xl">06-MAY-2002</span>
+                                    </div>
+                                </div>
+
+                            </fuse-card>
+                            <!-- Card #49 - 3-1 -->
+                            <fuse-card
+                                class="filter-pricing w-full max-w-80 flex-col items-center p-8 text-center sm:px-1 sm:py-12 lg:rounded-none lg:rounded-l"
+                            >
+                                <!-- Titulo Nucleo -->
+                                <div class="text-2xl font-bold leading-tight tracking-tight">
+                                    NUCLEO 1
+                                </div>
+
+                                <!-- Integrantes del Nucleo -->
+                                <div class="text-secondary mt-2 flex flex-col">
+                                    <div>JEFE(A) DE NUCLEO</div>
+                                    <div><b>ANGEL LUIS FERNANDEZ PEREZ</b></div>
+                                    <hr class="mb-0 mt-8 w-full border-t" />
+                                    <div>ESPOSA</div>
+                                    <div><b>ANA SOFIA YANEZ MIRANDA</b></div>
+                                    <hr class="mb-0 mt-8 w-full border-t" />
+                                    <div>HIJO(A)</div>
+                                    <div><b>LUCIA MARIBEL FERNANDEZ YANEZ</b></div>
+                                    <hr class="mb-8 mt-0 w-full border-t" />
+                                </div>
+                            </fuse-card>
+                            <!-- Card #49 - 3-2 -->
+                            <fuse-card
+                                class="filter-pricing w-full max-w-80 flex-col items-center p-8 text-center sm:px-1 sm:py-12 lg:rounded-none lg:rounded-l"
+                            >
+                                <!-- Titulo Nucleo -->
+                                <div class="text-2xl font-bold leading-tight tracking-tight">
+                                    NUCLEO 2
+                                </div>
+
+                                <!-- Integrantes del Nucleo -->
+                                <div class="text-secondary mt-2 flex flex-col">
+                                    <div class="text-blue-500 font-bold">JEFE(A) DE NUCLEO</div>
+                                    <div class="text-blue-500 font-bold"><b>LUIS FERNANDO FERNANDEZ YANEZ</b></div>
+                                    <div class="my-4 flex w-full items-center justify-between px-2 text-blue-500">
+                                        <div class="flex flex-col items-center">
+                                            <span class="font-bold">26 años</span>
+                                            <span class="text-blue-500 text-sm font-medium">Edad</span>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <span class="font-bold">Casado(a)</span>
+                                            <span class="text-blue-500 text-sm font-medium">Estado Civil</span>
+                                        </div>
+                                    </div>
+                                    <hr class="mb-8 mt-0 w-full border-t" />
+                                    <div>ESPOSA</div>
+                                    <div><b>DIANA MERCY LEMA PINEDA</b></div>
+                                    <hr class="mb-0 mt-8 w-full border-t" />
+                                </div>
+
+                            </fuse-card>
+                        </div>
+
+                        <!-- BASE 4 -->
+                        <div class="-m-1 flex flex-wrap items-start w-80 ">
+                            <!-- Card #49 - TITULO BASE 4 -->
+                            <fuse-card
+                                class="filter-testimonial flex w-full max-w-80 flex-col"
+                            >
+                                <!-- Titulo base -->
+                                <div class="text-4xl font-bold leading-relaxed text-center">
+                                    Base 2018
+                                </div>
+                                <!-- Titulo CERTIFICADO -->
+                                <div class="my-4 flex w-full items-center justify-between px-2">
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">CERTIFICADO</span>
+                                        <span class="text-2xl font-bold">11385</span>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">FECHA ENCUESTA</span>
+                                        <span class="text-1xl">27-ABR-2018</span>
+                                    </div>
+                                </div>
+
+                            </fuse-card>
+                            <!-- Card #49 - 1 -->
+                            <fuse-card
+                                class="filter-pricing w-full max-w-80 flex-col items-center p-8 text-center sm:px-1 sm:py-12 lg:rounded-none lg:rounded-l"
+                            >
+                                <!-- Titulo Nucleo -->
+                                <div class="text-2xl font-bold leading-tight tracking-tight">
+                                    NUCLEO 1
+                                </div>
+
+                                <!-- Integrantes del Nucleo -->
+                                <div class="text-secondary mt-2 flex flex-col">
+                                    <div class="text-blue-500 font-bold">JEFE(A) DE NUCLEO</div>
+                                    <div class="text-blue-500 font-bold"><b>LUIS FERNANDO FERNANDEZ YANEZ</b></div>
+                                    <div class="my-4 flex w-full items-center justify-between px-2 text-blue-500">
+                                        <div class="flex flex-col items-center">
+                                            <span class="font-bold">30 años</span>
+                                            <span class="text-blue-500 text-sm font-medium">Edad</span>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <span class="font-bold">Casado(a)</span>
+                                            <span class="text-blue-500 text-sm font-medium">Estado Civil</span>
+                                        </div>
+                                    </div>
+                                    <hr class="mb-0 mt-8 w-full border-t" />
+                                    <div>ESPOSA</div>
+                                    <div><b>DIANA MERCY LEMA PINEDA</b></div>
+                                    <hr class="mb-0 mt-8 w-full border-t" />
+                                    <div>HIJO(A)</div>
+                                    <div><b>HILDA LUCIANA FERNANDEZ LEMA</b></div>
+                                    <hr class="mb-8 mt-0 w-full border-t" />
+                                </div>
+
+                            </fuse-card>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title> INFORMACIÓN DE VIVIENDA </mat-panel-title>
+                        <mat-panel-description>
+
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <div class="-m-4 flex w-full flex-wrap items-start">
+
+                        <!-- BASE 1 -->
+                        <div class="-m-1 flex flex-wrap items-start w-full max-w-80 ">
+                            <!-- Card #49 - TITULO BASE 1 -->
+                            <fuse-card
+                                class="filter-testimonial flex w-full max-w-80 flex-col lg:rounded-none lg:rounded-l"
+                            >
+                                <!-- Titulo base -->
+                                <div class="text-4xl font-bold leading-relaxed text-center">
+                                    Base 2002
+                                </div>
+                                <!-- Titulo CERTIFICADO -->
+                                <div class="my-4 flex w-full items-center justify-between px-2">
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">CERTIFICADO</span>
+                                        <span class="text-2xl font-bold">75233</span>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">FECHA ENCUESTA</span>
+                                        <span class="text-1xl">06-MAY-2002</span>
+                                    </div>
+                                </div>
+
+                            </fuse-card>
+                            <!-- Card #49 - 1 -->
+                            <fuse-card
+                                class="filter-testimonial w-full max-w-80 flex-col items-center text-center sm:px-1 sm:py-3 lg:rounded-none lg:rounded-l"
+                            >
+                                <!-- Información Hogar -->
+                                <div class="mt-8 space-y-2">
+                                    <div><b>Vivienda</b></div>
+                                    <div>En arriendo</div>
+                                    <div><b>Dirección</b></div>
+                                    <div>AV. 10 DE AGOSTO Y CUERO Y CAICEDO</div>
+                                </div>
+                                <!-- CTA -->
+                                <button
+                                    class="fuse-mat-button-large mt-10"
+                                    mat-stroked-button
+                                    [color]="'primary'"
+                                    (click)="openViviendaDetalleDialog()"
+                                >
+                                    Más información...
+                                </button>
+                            </fuse-card>
+                        </div>
+
+                        <!-- BASE 2 -->
+                        <div class="-m-1 flex flex-wrap items-start w-full max-w-80 ">
+                            <!-- Card #49 - TITULO BASE 2 -->
+                            <fuse-card
+                                class="filter-testimonial flex w-full max-w-80 flex-col lg:rounded-none lg:rounded-l"
+                            >
+                                <!-- Titulo base -->
+                                <div class="text-4xl font-bold leading-relaxed text-center">
+                                    Base 2008
+                                </div>
+                                <!-- Titulo CERTIFICADO -->
+                                <div class="my-4 flex w-full items-center justify-between px-2">
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">CERTIFICADO</span>
+                                        <span class="text-2xl font-bold">87133</span>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">FECHA ENCUESTA</span>
+                                        <span class="text-1xl">21-JUN-2008</span>
+                                    </div>
+                                </div>
+
+                            </fuse-card>
+                            <!-- Card #49 - 2 -->
+                            <fuse-card
+                                class="filter-testimonial w-full max-w-80 flex-col items-center text-center sm:px-1 sm:py-3 lg:rounded-none lg:rounded-l"
+                            >
+                                <!-- Titulo Nucleo -->
+                                <div class="text-2xl font-bold leading-tight tracking-tight">
+
+                                </div>
+
+                                <!-- Información Hogar -->
+                                <div class="mt-8 space-y-2">
+                                    <div><b>Vivienda</b></div>
+                                    <div>Propia y Esta Pagandola</div>
+                                    <div><b>Dirección</b></div>
+                                    <div>BOGOTÁ #175 Y RÍO DE JANEIRO</div>
+                                </div>
+                                <!-- CTA -->
+                                <button
+                                    class="fuse-mat-button-large mt-10"
+                                    mat-stroked-button
+                                    [color]="'primary'"
+                                    (click)="openViviendaDetalleDialog()"
+                                >
+                                    Más información...
+                                </button>
+                            </fuse-card>
+                        </div>
+
+                        <!-- BASE 3 -->
+                        <div class="-m-1 flex flex-wrap items-start w-full max-w-80 ">
+                            <!-- Card #49 - TITULO BASE 3 -->
+                            <fuse-card
+                                class="filter-testimonial flex w-full max-w-80 flex-col lg:rounded-none lg:rounded-l"
+                            >
+                                <!-- Titulo base -->
+                                <div class="text-4xl font-bold leading-relaxed text-center">
+                                    Base 2014
+                                </div>
+                                <!-- Titulo CERTIFICADO -->
+                                <div class="my-4 flex w-full items-center justify-between px-2">
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">CERTIFICADO</span>
+                                        <span class="text-2xl font-bold">98460</span>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">FECHA ENCUESTA</span>
+                                        <span class="text-1xl">18-OCT-2014</span>
+                                    </div>
+                                </div>
+
+                            </fuse-card>
+                            <!-- Card #49 - 3-1 -->
+                            <fuse-card
+                                class="filter-pricing w-full max-w-80 flex-col items-center p-8 text-center sm:px-1 sm:py-3 lg:rounded-none lg:rounded-l"
+                            >
+                                <!-- Titulo Nucleo -->
+                                <div class="text-2xl font-bold leading-tight tracking-tight">
+
+                                </div>
+
+                                <!-- Información Hogar -->
+                                <div class="mt-8 space-y-2">
+                                    <div><b>Vivienda</b></div>
+                                    <div>Propia y Pagada Completamente</div>
+                                    <div><b>Dirección</b></div>
+                                    <div>BOGOTÁ #175 Y RÍO DE JANEIRO</div>
+                                </div>
+                                <!-- CTA -->
+                                <button
+                                    class="fuse-mat-button-large mt-10"
+                                    mat-stroked-button
+                                    [color]="'primary'"
+                                    (click)="openViviendaDetalleDialog()"
+                                >
+                                    Más información...
+                                </button>
+                            </fuse-card>
+                        </div>
+
+                        <!-- BASE 4 -->
+                        <div class="-m-1 flex flex-wrap items-start w-100">
+                            <!-- Card #49 - TITULO BASE 4 -->
+                            <fuse-card
+                                class="filter-testimonial flex w-full max-w-80 flex-col lg:rounded-none lg:rounded-l"
+                            >
+                                <!-- Titulo base -->
+                                <div class="text-4xl font-bold leading-relaxed text-center">
+                                    Base 2018
+                                </div>
+                                <!-- Titulo CERTIFICADO -->
+                                <div class="my-4 flex w-full items-center justify-between px-2">
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">CERTIFICADO</span>
+                                        <span class="text-2xl font-bold">11385</span>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <span class="text-secondary font-medium">FECHA ENCUESTA</span>
+                                        <span class="text-1xl">27-ABR-2018</span>
+                                    </div>
+                                </div>
+
+                            </fuse-card>
+                            <!-- Card #49 - 1 -->
+                            <fuse-card
+                                class="filter-pricing w-full max-w-80 flex-col items-center p-8 text-center sm:px-1 sm:py-3 lg:rounded-none lg:rounded-l"
+                            >
+                                <!-- Titulo Nucleo -->
+                                <div class="text-2xl font-bold leading-tight tracking-tight">
+
+                                </div>
+
+                                <!-- Información Hogar -->
+                                <div class="mt-8 space-y-2">
+                                    <div><b>Vivienda</b></div>
+                                    <div>En arriendo</div>
+                                    <div><b>Dirección</b></div>
+                                    <div>JUAN RAMON ROCA #738 Y ROBLES VACA</div>
+                                </div>
+                                <!-- CTA -->
+                                <button
+                                    class="fuse-mat-button-large mt-10"
+                                    mat-stroked-button
+                                    [color]="'primary'"
+                                    (click)="openViviendaDetalleDialog()"
+                                >
+                                    Más información...
+                                </button>
+                            </fuse-card>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+
+            </mat-accordion>
+        </div>
+
+
+    </div>
+</div>

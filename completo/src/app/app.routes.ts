@@ -89,7 +89,7 @@ export const appRoutes: Route[] = [
             ]},
             //Seguridad
             {path: 'seguridad', children: [
-                
+
                 {path: 'usuarios', loadChildren: () => import('app/modules/URS/seguridad/usuarios/usuarios.routes')},
                 {path: 'operativosfase', loadChildren: () => import('app/modules/URS/seguridad/operativos/operativos.routes')},
                 {path: 'dispositivos', loadChildren: () => import('app/modules/URS/seguridad/dispositivos/dispositivos.routes')},
@@ -108,6 +108,8 @@ export const appRoutes: Route[] = [
                 {path: 'seguimiento-nominal-cert', loadChildren: () => import('app/modules/URS/seguimiento-nominal-certificado/seguimientoNom-cert.routes')},
                 {path: 'autoregistro', loadChildren: () => import('app/modules/URS/portal-servicios/sign-up/sign-up.routes')},
                 {path: 'maps',  loadChildren: () => import('app/modules/URS/geoportal/map.routes')},
+                // Cards
+                {path: 'seguimiento-nominal-hogar-cards', loadChildren: () => import('app/modules/URS/seguimiento-nominal-hogar-cards/seguimiento-nominal-hogar-cards.routes')},
             ]},
             // Apps
             {path: 'apps', children: [
